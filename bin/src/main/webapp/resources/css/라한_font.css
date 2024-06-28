@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/*font css*/
+
+/* @font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url('../../font/woff2-subset/Pretendard-Bold.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Bold.subset.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url('../../font/woff2-subset/Pretendard-SemiBold.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-SemiBold.subset.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url('../../font/woff2-subset/Pretendard-Medium.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url('../../font/woff2-subset/Pretendard-Regular.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Regular.subset.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url('../../font/woff2-subset/Pretendard-Light.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Light.subset.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), url('../../font/woff2-subset/Pretendard-Thin.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Thin.subset.woff') format('woff');
+} */
+
+/*YoonGothicPro700 윤고딕폰트*/
+@font-face {
+	font-family: 'Yoon730';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Yoon730'),
+				url('../../font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Yoon740';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Yoon740'),
+				url('../../font/YoonGothicPro700/YoonGothicPro740.eot') format('embedded-opentype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro740.ttf') format('truetype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro740.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Yoon770';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Yoon770'),
+				url('../../font/YoonGothicPro700/YoonGothicPro770.eot') format('embedded-opentype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro770.ttf') format('truetype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro770.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Yoon780';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Yoon780'),
+				url('../../font/YoonGothicPro700/YoonGothicPro780.eot') format('embedded-opentype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro780.ttf') format('truetype'),
+				url('../../font/YoonGothicPro700/YoonGothicPro780.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Perpetua Bold';
+	font-weight: bold;
+	src: local('PerpetuaMTPro-Bold'), url('../../font/Perpetua/PerpetuaMTPro-Bold.otf') format('otf'),
+	url('../../font/Perpetua/Perpetua-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Gotham';
+	font-weight: 700;
+	src: local('Gotham-Bold'), url('../../font/Gotham/Gotham-Bold.otf') format('otf'),
+	url('../../font/Gotham/Gotham-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Gotham-Medium';
+	font-weight: 500;
+	src: local('Gotham-Medium'), url('../../font/Gotham/Gotham-Medium.otf') format('otf'),
+	url('../../font/Gotham/Gotham-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Gotham-Book';
+	font-weight: 400;
+	src: local('Gotham-Book'), url('../../font/Gotham/Gotham-Book.otf') format('otf'),
+	url('../../font/Gotham/Gotham-Book.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Gotham-Light';
+	font-weight: 300;
+	src: local('Gotham-Light'), url('../../font/Gotham/Gotham-Light.otf') format('otf'),
+	url('../../font/Gotham/Gotham-Light.woff') format('woff');
+}
