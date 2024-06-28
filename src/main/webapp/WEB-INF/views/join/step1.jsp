@@ -13,6 +13,25 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/swiper_bundle.min.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
