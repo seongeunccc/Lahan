@@ -1,18 +1,22 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="false"%>
 <html>
 <head>
-	<title>Home</title>
+<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+	<h1>Hello world!</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+	<P>The time on the server is ${serverTime}.</P>
 
 
-난마스터야
+	난마스터야
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
 </body>
 </html>
