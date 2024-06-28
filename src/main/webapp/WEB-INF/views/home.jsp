@@ -29,7 +29,7 @@
 	<nav></nav>
 	<header></header>
 	<article></article>
-	마스터가 수정
+	마스터가 수정을 한번더 함
 	<aside></aside>
 	<footer></footer>
 	
