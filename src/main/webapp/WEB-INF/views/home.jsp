@@ -18,5 +18,11 @@
 		<li>3</li>
 	</ul>
 
+	<nav></nav>
+	<header></header>
+	<article></article>
+	<aside></aside>
+	<footer></footer>
+
 </body>
 </html>
