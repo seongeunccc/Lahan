@@ -23,6 +23,30 @@
 	
 	<context:component-scan base-package="kr.hotel.lahan" />
 	
+		<!-- 데이터 객체 등록  -->
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value ="com.mysql.cj.jdbc.Driver"/>
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC&amp;useSSL=false"/> <!--이 부분은 false로 해줘라-->
+		<beans:property name="username" value="root"/>
+		<beans:property name="password" value="qwe123!@#"/>
+	</beans:bean>
+	
+	<!-- <beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"/>
+	</beans:bean>
+	데이터 객체 등록  -->
+	
+		<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="mapperLocations" 
+		value="classpath:kr/hotel/lahan/dao/mapper/*.xml"></beans:property>
+	</beans:bean>
+	
+	
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+	</beans:bean>
+	
 	
 	
 </beans:beans>
