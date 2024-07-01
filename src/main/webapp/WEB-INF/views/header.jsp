@@ -2,111 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>LAHAN || 여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
-
-
-
-
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
-	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
-	
-	<!-- js -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
-	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
-	
-
-<style>
-.loading-box {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 180px;
-	height: 180px;
-	z-index: 9999;
-}
-
-.loading {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	border: 3px solid #ddd;
-	border-radius: 50%;
-	border-top-color: rgba(0, 0, 0, 0.2);
-	animation: spin 1.5s linear infinite;
-	-webkit-animation: spin 1.5s linear infinite;
-}
-
-@
-keyframes spin { 0% {
-	-webkit-transform: rotate(0deg);
-}
-
-100
-%
-{
--webkit-transform
-:
-rotate(
-360deg
-);
-}
-}
-@
--webkit-keyframes spin { 0% {
-	-webkit-transform: rotate(0deg);
-}
-
-100
-%
-{
--webkit-transform
-:
-rotate(
-360deg
-);
-}
-}
-.loading-txt {
-	-moz-animation: loading-text-opacity 2s linear 0s infinite normal;
-	-o-animation: loading-text-opacity 2s linear 0s infinite normal;
-	-webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
-	animation: loading-text-opacity 2s linear 0s infinite normal;
-	color: #fff;
-	font-family: 'Gotham-Light', 'Yoon730';
-	font-size: inherit;
-	text-align: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 9999;
-}
-</style>
-
-</head>
-<body>
+<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
 			<div class="h-wrap">
@@ -227,5 +123,4 @@ rotate(
 				</div>
 			</div>
 		
-</body>
-</html>
+		</header>
