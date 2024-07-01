@@ -1,21 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>라한</title>
+    <meta http-equiv="content-language" content="kr">
+	<meta name="robots" content="index,follow">
+	<meta name="title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="author" content="라한셀렉트">
+	<meta name="description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta name="keywords" content="라한호텔, 라한셀렉트, 라한호텔 경주, 라한호텔 포항, 라한호텔 전주, 호텔현대 바이 라한 울산, 호텔현대 바이 라한 목포">
 
+	<meta property="og:locale" content="ko_KR">
+	<meta property="og:type" content="website">
+	<meta property="og:rich_attachment" content="true">
+	<meta property="og:site_name" content="라한셀렉트">
+	<meta property="og:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta property="og:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta property="og:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
+	<meta property="og:url" content="https://www.lahanhotel.com/gyeongju/ko/main.do">
 
+	<meta name="twitter:card" content="main_logo_bl">
+	<meta name="twitter:site" content="라한셀렉트">
+	<meta name="twitter:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="twitter:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta name="twitter:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
+	<meta name="twitter:creator" content="라한셀렉트">
+	<link rel="canonical" href="https://www.lahanhotels.com/">
 
 	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_jquery-ui.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_h-common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_swiper-bundle.min.css">
 	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
+	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents1.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents2.css">
 	
 	<!-- js -->
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
@@ -23,23 +51,28 @@
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/contents1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/contents2.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
-	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
+
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
-	
-	
-	
-	
-	
-	
-	<style>
+    
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
+    <!-- End Google Tag Manager -->
+    <style>
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -97,21 +130,16 @@
 			z-index: 9999;
 		}
      </style>
-
 </head>
 <body>
-  <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTWJWS8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-
-
-<div class="wrap main">
     
+    
+    <div class="wrap sub">
     
 		<div class="skip-nav">
 			<a href="#header">푸터 영역 바로가기</a>
@@ -119,15 +147,7 @@
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
         
-            
-
-
-
-
-
-
-
-<header id="header" class="header">
+		<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
 			<div class="h-wrap">
@@ -175,293 +195,123 @@
 				</div>
 			</div>	
 		</header>
-		
 		<div id="container" class="container">
-			<!--(레이아웃명([PC][국문] - MAIN 레이아웃) 최종수정일 : 2023-07-27 16:47)-->
-
-			<section class="main-visual">
-				<div class="btn-bell-wrap">
-					<button type="button" class="btn-bell">BELL<span class="bell-count">0</span></button>
-				</div>
-                <!-- 메인팝업 include -->
-                
-
-
-
-
-
-
-
-
-
-
-<!-- 메인 프로모션  -->
-
-	<script type="text/javascript">	
-	$(".bell-count").text('0');
-	
-		$(".btn-bell-wrap").hide();	
-	
-	</script>
-                <!-- //메인팝업 include -->
-
-				<div class="m-resv-wrap ver1"><!-- 1차오픈 class ver1/ 2차 오픈때는 ver1 삭제 -->
-					<div class="m-resv-inner">
-						
+			<!--(레이아웃명([PC][국문] - 라한 소개 > 호텔소개 레이아웃) 최종수정일 : 2022-12-01 18:14)-->
+			
+			
+			<section class="sub-visual">
+	            <div class="sub-visual-wrap">
+	               <div class="sub-visual-list">	                  
+	                  <div class="sub-nav-wrap bgType dotColor1">
+	                     	                     <ul class="sub-nav">
+	                        <li><a href="/lahan/admin/hotel.do" class="on">호텔관리</a></li>
+	                        <li>
+	                           <a href="/lahan/admin/product.do">상품관리</a>	                           
+	                        </li>
+	                     </ul>
+	                  </div>	                  
+	                  	<div class="sub-visual-txt brand-lahan">
+	                  		<h3 class="sub-tit02">ABOUT HOTEL</h3>
+                            <p>Lahan hotel 리스트를 확인하고 추가 및 삭제가 가능합니다.</p>
+	                  	</div>
+	                	<img src="${pageContext.request.contextPath}/resources/images/sub_visual_brand.jpg" alt="sub visual">
+	               </div>
+	            </div>
+	         </section>
+			
+			
+			
+			<section class="sub-contents">
+				<div class="sub-contents-wrap ty-01">
+					<!-- 컨텐츠 시작 -->
+					<div class="sub-cont-tit">
+						<h3 class="sub-tit02">ADD HOTEL</h3>
 					</div>
-				</div>
-				<div class="m-visual-wrap">
-					<div class="m-visual-list">
-						<div class="m-visual-txt">
-							<h2>Delightful Stay</h2>
-							<p>여행이 더 즐거운 곳, 라한</p>
-						</div>
-						<img src="/revolution/content/fileImage.do?fileId=16880&cntntsSn=16384" alt=""/>
-					</div>
-				</div>
-				<div class="scroll-txt">
-					<p>Scroll Down</p>
-				</div>
-			</section>
-			<section class="main-ourhotel">
-				<div class="main-tit">
-					<h3>OUR HOTELS</h3>
-					<p>여행이 더 즐거워지는 전국 라한으로 봄 여행을 떠나세요.</p>
-				</div>
-				<div class="main-inner-content main-inner-img">
-					<div class="inner-img-box">
-						<div class="m-img-list">
-							<a href="/gyeongju/ko/main.do" title="라한셀렉트 경주" target="_blank">
-								<div class="m-lahan-select hotel-label">
-                                  <img src="/revolution/content/fileImage.do?fileId=16848&cntntsSn=16384" alt=""/>
-									<i>라한셀렉트 경주</i>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16883&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-						<div class="m-img-list">
-							<a href="/jeonju/ko/main.do" title="라한호텔 전주" target="_blank">
-								<div class="m-lahan-hotel hotel-label">
-									<img src="/revolution/content/fileImage.do?fileId=16789&cntntsSn=16384" alt=""/>
-									<i>라한호텔 전주</i>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16850&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-						<div class="m-img-list">
-							<a href="/pohang/ko/main.do" title="라한호텔 포항" target="_blank">
-								<div class="m-lahan-hotel hotel-label">
-									<img src="/revolution/content/fileImage.do?fileId=16761&cntntsSn=16384" alt=""/>
-									<i>라한호텔 포항</i>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16760&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-						<div class="m-img-list">
-							<a href="/ulsan/ko/main.do" title="호텔현대 바이 라한 울산" target="_blank">
-								<div class="m-hd-lahan hotel-label">
-									<img src="/revolution/content/fileImage.do?fileId=16857&cntntsSn=16384" alt=""/>
-									<i>호텔현대 바이 라한 울산</i>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16825&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-						<div class="m-img-list">
-							<a href="/hub/ko/hotel/brandIntroduce.do">
-								<div class="m--lahan hotel-label">
-									<img src="/revolution/content/fileImage.do?fileId=16860&cntntsSn=16384" alt=""/>
-									<i>여행이 더 즐거운 곳, 라한</i>
-									<button type="button" class="link-txt"><span>브랜드 소개</span></button>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16828&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-						<div class="m-img-list">
-							<a href="/mokpo/ko/main.do" title="호텔현대 바이 라한 목포" target="_blank">
-								<div class="m-hd-lahan hotel-label">
-									<img src="/revolution/content/fileImage.do?fileId=16900&cntntsSn=16384" alt=""/>
-									<i>호텔현대 바이 라한 목포</i>
-								</div>
-								<span>
-									<img src="/revolution/content/fileImage.do?fileId=16801&cntntsSn=16384" alt=""/>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="main-aboutlahan grey-bg">
-				<div>
-					<div class="left">
-						<div class="main-tit">
-							<h3>ABOUT LAHAN</h3>
-							<p> 이름에 담긴 '즐거운 한국, 즐거운 여행'</p>
-						</div>
-						<div class="main-inner-content">
-							<p><b style="color:#8b4513;"> 즐거움을 뜻하는 순우리말 '라온' + 한국 '한(韓)' = 라한  </b><br/> 
-라한호텔은 즐거운 국내여행을 위한 한층 독특하고 깊이있는 경험을 선사합니다. <br/>
-객실, 다이닝, 부대시설 그리고 다채로운 라이프스타일 프로그램 등<br/>
-호텔에 대한 틀에 박힌 기준에서 벗어나 '스테이 그 이상의 경험'을 제공하는<br/>
-전국 라한호텔에서 즐거운 국내여행을 시작하세요.<br/><br/>
-<a href="/hub/ko/hotel/brandIntroduce.do" target="_blank"> [더보기] </a>
-</p>
-						</div>
-					</div>
-					<div class="right">
-						
-						<div class="video-wrap">
-							<iframe width="832" height="468" src="https://www.youtube.com/embed/S5HgzeQUp4w?rel=0&vq=hd720&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						
-
-						
-
-					</div>
-				</div>
-			</section>
-			<section class="main-clublahan navy-bg">
-				<div class="main-tit">
-					<h3>CLUB LAHAN</h3>
-					<p>라한호텔을 이용하는 가장 스마트한 방법! 무료멤버십 클럽라한을 만나세요.</p>
-				</div>
-				<div class="main-inner-content">
-					<div class="inner-icon-box">
-						<ul>
-							<li>
-								<span class="m-icon"></span>
-								<strong>회원 특전</strong>
-								<p>레이트 체크아웃, 웰컴스낵 등 가입 즉시 제공되는 풍성한 특전</p>
-							</li>
-							<li>
-								<span class="m-icon"></span>
-								<strong>포인트 적립 및 결제</strong>
-								<p>현금처럼 이용가능한 포인트 3~5% 적립 </p>
-							</li>
-							<li>
-								<span class="m-icon"></span>
-								<strong>회원전용 상품</strong>
-								<p>멤버를 위한 연중 최적가 객실 상품과 프로모션</p>
-							</li>
-						</ul>
-					</div>
-					<div class="btn-box btn-inline-box mt80">
-						<a href="/hub/ko/clublahan/membership.do" title="혜택보기" class="btn btn-wh">혜택보기</a>
-						<a href="/hub/ko/clublahan/list.do" title="회원전용 상품" class="btn btn-gold">회원전용 상품</a>
-					</div>
-				</div>
-			</section>
-
-			<section class="main-insta">
-				<div class="main-tit">
-					<h3>INSTAGRAM</h3>
-					<p>SNS로 생생하게 만나는 전국라한 호텔 소식</p>
-				</div>
-				<div class="main-inner-content">
-					<p class="insta-tit">
-						<a href="https://www.instagram.com/lahan_hotel/" target="_blank" title="라한 인스타로 이동">lahan_hotel</a>
-					</p>
-                    
-
-
-
-
-
-
-
-
-
-
-            
-                <div class="inner-img-box">
-                    
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/lahan_hotel/?hl=ko" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242526&sysCode=HUBSITE" alt="라한X위글위글"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C6X7NuCRRub/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242537&sysCode=HUBSITE" alt="5월 프로그램"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C6IwtQBx9qR/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242547&sysCode=HUBSITE" alt="라한 컨셉룸"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C57bAUIx7Tz/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242572&sysCode=HUBSITE" alt="레디백 "></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C5uqaPExcW4/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242584&sysCode=HUBSITE" alt="라봄페 "></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/lahan_hotel/?hl=ko" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220928&sysCode=HUBSITE" alt="라한 샤쉐"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C3665U3x7P4/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220918&sysCode=HUBSITE" alt="코닥 이벤트"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C3ZsUo_RoTs/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220908&sysCode=HUBSITE" alt="하녹당"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C3H5I57Rof9/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220898&sysCode=HUBSITE" alt="설인사"></span>
-                            </a>
-                        </div>
-                    
-                        <div class="m-instaimg-list">
-                        	<a href="https://www.instagram.com/p/C2_5qPxxlfm/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220888&sysCode=HUBSITE" alt="클럽라한"></span>
-                            </a>
-                        </div>
-                    
-                                  
+					
+					
+					<div class="hotel_cont_wrap">
+					
+					
+            <form action="/lahan/admin/hoteladding.do" method="post">
+    <div class="login-wrap ty-02">
+        <div class="login-box">
+            <div class="input-login-wrap">
+                <div class="input-wrap">
+                    <input type="text" id="hotelname" name="hotelname" placeholder="호텔명을 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>호텔명을 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
                 </div>
-            
+                <div class="input-wrap">
+                    <input type="text" id="hotelinfo" name="hotelinfo" placeholder="호텔정보를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>호텔정보를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="hotelroomct" name="hotelroomct" placeholder="객실 수를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>객실 수를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="hotelsub" name="hotelsub" placeholder="부대시설 정보를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>부대시설 정보를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="hoteladd" name="hoteladd" placeholder="호텔주소를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>호텔주소를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="hotelcall" name="hotelcall" placeholder="대표전화를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>대표전화를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="hotelurl" name="hotelurl" placeholder="홈페이지 주소를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>홈페이지 주소를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+               <!--  <div class="input-wrap">
+                    <input type="file" id="hotelImage" name="hotelImage" accept="image/*">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>호텔 이미지를 업로드해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <div class="btn-inline-box">
+                <button type="submit" class="loginbtn">등록</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+					</div>
+					<!-- 컨텐츠 끝 -->
 				</div>
 			</section>
-		
-
 		</div>
 		<footer id="footer" class="footer">
 			<!--(FOOTER 최종수정일 : 2023-02-28 08:19)-->
@@ -629,9 +479,8 @@
 	<input id="searchMonth" name="month" value="" type="hidden">
 	<input id="searchYear" name="year" value="" type="hidden">
 
-</form>		
-		
-		
+</form>
+
     <script>
         $(document).ready(function() {
             <!-- 호텔찾기 클릭시 레이어창 닫기-->
@@ -645,12 +494,6 @@
         $("#btnBannerClose").click(function() {
 			setCookie("HUBSITE_ko_mainBanner","done",1);
             $(".banner-close").click();
-		});
-
-		window.addEventListener('load', function() {
-			setTimeout(function() {
-				scrollTo(0,0);
-			}, 100);
 		});
 
     </script>
@@ -751,10 +594,7 @@
         var alertResv0038 = '체크인 날짜 기준, 예약 가능한 횟수를 초과하였습니다. 추가 문의사항은 통합예약실(1644-8005)로 연락 바랍니다.';
 		var alertAjaxError = 'Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"';
 	</script>
-	<!-- // 221228 메인 타이틀 모션 추가 -->		
-		
-		
-		
-		
+	<!-- // 221228 메인 타이틀 모션 추가 -->
+
 </body>
 </html>

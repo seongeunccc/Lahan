@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
 
-
-
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
@@ -119,35 +117,7 @@
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
         
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-        <div id="banner" class="banner-wrap show-banner">
-			<div class="banner-btn-box">
-				<a href="javascript:;" id="btnBannerClose">오늘 하루 보지않기</a>
-				<a href="javascript:;" class="banner-close"><span>닫기</span></a>
-			</div>
-			<div class="banner-inner">
-				<ul class="banner-txt">
-					<li><a href="https://www.lahanhotels.com/hub/ko/promtn/list.do">클럽라한 가입하고, 쿠폰 골라받기 [CLICK]</a></li>
-				</ul>
-			</div>
-		</div>
-	
-
-        
+           
 		<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
@@ -163,16 +133,16 @@
 					
 					<ul class="nav-list">
 						<li>
-							<a href="/admin/member.do">회원관리</a>
+							<a href="/lahan/admin/member.do">회원관리</a>
 						</li>
 						<li>
-							<a href="/admin/reservation.do">예약관리</a>
+							<a href="/lahan/admin/reservation.do">예약관리</a>
 						</li>
 						<li>
-							<a href="/admin/add.do">호텔/상품 관리</a>
+							<a href="/lahan/admin/hotel.do">호텔/상품 관리</a>
 						</li>
 						<li>
-							<a href="/admin/notice.do">공지/문의 관리</a>
+							<a href="/lahan/admin/notice.do">공지/문의 관리</a>
 						</li>
 					</ul>
 				</div>
@@ -192,83 +162,9 @@
 						<ul class="lang-wrap">
 							<li class="option" value="ENG" onclick="location.href='/hub/en/main.do';">ENG</li>
 						</ul>
-					</div>
-					<a href="javascript:;" title="전체메뉴보기" class="btn-all">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-					
+					</div>					
 				</div>
-			</div>
-            <div class="all-menulist">
-				<div class="all-menulist-wrap">
-					<ul class="all-1depth">
-						<li><a href="/admin/member.do" title="회원관리">회원관리<!-- 라한--></a></li>
-						<li><a href="/admin/member.do" title="회원 리스트">회원 리스트<!-- 브랜드 소개--></a></li>
-						<li>
-							<a href="/hub/ko/hotel/hotelIntroduce.do" title="호텔 소개">호텔 소개<!-- 호텔 소개 --></a>
-							<ul class="all-2depth">
-								<li><a href="/hub/ko/hotel/hotelIntroduce.do" title="전체보기">전체보기<!-- 전체보기 --></a></li>
-								<li><a href="/hub/ko/hotel/gyeongjuDc.do" title="라한셀렉트 경주">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
-								<li><a href="/hub/ko/hotel/jeonjuDc.do" title="라한호텔 전주">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
-								<li><a href="/hub/ko/hotel/pohangDc.do" title="라한호텔 포항">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
-								<li><a href="/hub/ko/hotel/ulsanDc.do" title="호텔현대 바이 라한 울산">호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></a></li>
-								<li><a href="/hub/ko/hotel/mokpoDc.do" title="호텔현대 바이 라한 목포">호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/package/list.do" title="스페셜 오퍼">스페셜 오퍼<!-- 스페셜 오퍼 --></a></li>
-						<li><a href="/hub/ko/package/list.do" title="패키지">패키지<!-- 객실 패키지--></a></li>
-						<li><a href="/hub/ko/promtn/list.do" title="프로모션">프로모션<!-- 프로모션 --></a></li>
-						<li><a href="/hub/ko/spclguide/list.do" title="프로모션">스페셜 가이드<!-- 스페셜 가이드 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/clublahan/membership.do" title="클럽라한">클럽라한<!-- 클럽라한--></a></li>
-						<li><a href="/hub/ko/clublahan/membership.do" title="멤버십 소개">멤버십 소개<!-- 멤버십 소개--></a></li>
-						<li>
-							<a href="/hub/ko/clublahan/list.do" title="회원 전용 상품">회원 전용 상품<!-- 회원 전용상품 --></a>
-							<ul class="all-2depth">
-								<li><a href="/hub/ko/clublahan/list.do" title="패키지">패키지<!-- 객실패키지 --></a></li>
-								<li><a href="/hub/ko/clublahan/promtnlist.do" title="프로모션">프로모션<!-- 프로모션 --></a></li>
-							</ul>
-						</li>
-						<li><a href="/hub/ko/clublahan/mbershipInq/list.do" title="멤버십 문의">멤버십 문의<!-- 멤버십 문의 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/onlineshop/subMain.do" title="온라인샵">온라인샵<!-- 온라인샵 --></a></li>
-						<li><a href="/hub/ko/onlineshop/subMain.do?searchOnshopSe=S01" title="PB">PB<!-- PB --></a></li>
-						<li><a href="/hub/ko/onlineshop/subMain.do?searchOnshopSe=S02" title="상품권">상품권<!-- 상품권 --></a></li>
-						<li><a href="/hub/ko/onlineshop/subMain.do?searchOnshopSe=S03" title="선물세트">선물세트<!-- 선물세트 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/notice/generalInfo/list.do" title="공지사항">공지사항<!-- 공지사항 --></a></li>
-						<li><a href="/hub/ko/notice/generalInfo/list.do" title="일반안내">일반안내<!-- 일반안내 --></a></li>
-						<li><a href="/hub/ko/notice/financialDisclosure/list.do" title="결산공고">결산공고<!-- 결산공고--></a></li>
-						<li><a href="/hub/ko/notice/certificatesAwards/list.do" title="인증/수상 내역">인증/수상 내역<!-- 인증/수상 내역 --></a></li>
-						<li><a href="/hub/ko/notice/recruitment/list.do" title="채용">채용<!-- 채용 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/customer/contact.do" title="고객문의">고객문의<!-- 고객문의 --></a></li>
-						<li><a href="/hub/ko/customer/contact.do" title="연락처">연락처<!-- 연락처 --></a></li>
-						<li><a href="/hub/ko/customer/faq/list.do" title="자주 묻는 질문 (FAQ)">자주 묻는 질문 (FAQ)<!-- 자주 묻는 질문(FAQ) --></a></li>
-						<li><a href="/hub/ko/customer/qnaForm.do" title="일반문의">일반문의<!-- 일반문의 --></a></li>
-						<li><a href="/hub/ko/customer/consigned.do" title="위탁운영 문의">위탁운영 문의<!-- 위탁운영 문의 --></a></li>
-						<li><a href="/hub/ko/customer/reports.do" title="제보">제보<!-- 제보 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="/hub/ko/mypage.do" title="마이페이지">마이페이지<!-- 마이페이지 --></a></li>
-						<li><a href="/hub/ko/mypage/mypoint/myPointForm.do" title="마이포인트">마이포인트<!-- 마이포인트 --></a></li>
-						<li><a href="/hub/ko/mypage/mycoupon/myCouponForm.do" title="마이쿠폰">마이쿠폰<!-- 마이쿠폰 --></a></li>
-<!--			예약조회/확인			
-     <li><a href="#none" title="예약조회/확인">예약조회/확인</a></li>
--->
-						<li><a href="/hub/ko/mypage/update/pwCheckForm.do" title="개인정보관리/탈퇴">개인정보관리/탈퇴<!-- 개인정보관리/탈퇴 --></a></li>
-					</ul>
-				</div>
-			</div>
-		
+			</div>	
 		</header>
 		
 		<div id="container" class="container">

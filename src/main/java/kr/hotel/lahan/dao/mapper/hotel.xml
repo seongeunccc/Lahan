@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "kr.hotel.lahan.dao.HotelDao">
+
+  <insert id="hoteladd">
+        INSERT INTO hotel
+        (name, room_name, room_size, room_number, room_min, room_max, info, amenity, address, callnum, url) 
+        VALUES 
+        (#{name}, #{roomName}, #{roomSize}, #{roomNumber}, #{roomMin}, #{roomMax}, #{info}, #{amenity}, #{address}, #{callnum}, #{url})
+    </insert>
+
+
+</mapper>
