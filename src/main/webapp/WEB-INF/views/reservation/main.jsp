@@ -147,9 +147,8 @@
 		</div>
 	
 
-	<header id="header" class="header">
  	<%@ include file="/WEB-INF/views/header.jsp" %> 
-	</header>
+	
     <%--     
 		<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
