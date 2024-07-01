@@ -1,29 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-<p class="text-center">È¸¿ø °¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.</p>
+<p class="text-center">íšŒì› ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.</p>
 		<div class="card mb-3">
 			<div class="card-body">
 				<p>
-					<strong>¾ÆÀÌµğ:</strong> ${param.userid}
+					<strong>ì•„ì´ë””:</strong> ${param.id}
 				</p>
 				<p>
-					<strong>ÀÌ¸§:</strong> ${param.name}
+					<strong>ì´ë¦„:</strong> ${param.name}
 				</p>
 				<p>
-					<strong>ÀÌ¸ŞÀÏ:</strong> ${param.email}
+					<strong>ì´ë©”ì¼:</strong> ${param.email}
 				</p>
 			</div>
 		</div>
 		<div class="text-center">
-			<a href="./homepage.ho" class="btn btn-primary">¸ŞÀÎÀ¸·Î ÀÌµ¿</a>
+			<a href="./homepage.ho" class="btn btn-primary">ë©”ì¸ìœ¼ë¡œ ì´ë™</a>
 		</div>
 
 </body>
