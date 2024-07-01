@@ -45,10 +45,16 @@ public class LoginJoinController {
 		return "/join/step3";
 	}
 	
-	@RequestMapping("/login/loginform")
+	@RequestMapping("/login/loginForm")
 	public String loginForm(Model model) {
 		
 		return "/login/loginForm";
+	}
+	
+	@RequestMapping("/login/loginNonMemForm")
+	public String loginNonMemForm(Model model) {
+		
+		return "/login/loginNonMemForm";
 	}
 	
 	@RequestMapping("/login/loginCommand")

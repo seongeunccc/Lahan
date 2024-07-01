@@ -32,9 +32,9 @@
 				</div>
 				<div class="h-box-right">
 					<ul class="set-wrap">
-						<li><a href="/hub/ko/join/step1.do" title="회원가입">회원가입<!-- 회원가입 --></a></li>
-						<li><a href="/hub/ko/login/loginForm.do" title="로그인">로그인<!-- 로그인 --></a></li>
-                        <li><a href="/hub/ko/login/loginNonMemForm.do" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li>   
+						<li><a href="./join/step1" title="회원가입">회원가입<!-- 회원가입 --></a></li>
+						<li><a href="./login/loginForm" title="로그인">로그인<!-- 로그인 --></a></li>
+                        <li><a href="/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li>   
 					</ul>
 					<a href="javascript:;" title="호텔찾기" class="btn-search-lahan open_layer" layer-data="search1"><span>호텔찾기<!-- 호텔찾기 --></span></a>
 					<div class="lang-box select">
