@@ -14,10 +14,15 @@ public class ReservationController {
 		
 		return "reservation/main";
 	}
-	
+
 	@RequestMapping(value = "/header")
 	public String header(Model model) {
 		
 		return "header";
+	}
+	@RequestMapping(value = "resv/calendar")
+	public String calendar(Model model) {
+		
+		return "reservation/calendar";
 	}
 }
