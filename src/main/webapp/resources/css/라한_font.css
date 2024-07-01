@@ -1,48 +1,66 @@
 @charset "utf-8";
 
-/*font css*/
-
-/* @font-face {
-	font-family: 'Pretendard';
-	font-weight: 700;
-	font-display: swap;
-	src: local('Pretendard Bold'), url('../../font/woff2-subset/Pretendard-Bold.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Bold.subset.woff') format('woff');
+/* Noto Sans Korean */
+@font-face {
+  font-family: "Noto Sans KR 200", sans-serif;
+  font-optical-sizing: auto;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200&display=swap");
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 600;
-	font-display: swap;
-	src: local('Pretendard SemiBold'), url('../../font/woff2-subset/Pretendard-SemiBold.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-SemiBold.subset.woff') format('woff');
+  font-family: "Noto Sans KR 300", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Noto Sans KR 400", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 500;
-	font-display: swap;
-	src: local('Pretendard Medium'), url('../../font/woff2-subset/Pretendard-Medium.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Medium.subset.woff') format('woff');
+  font-family: "Noto Sans KR 500", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto Sans KR 600", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto Sans KR 700", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 400;
-	font-display: swap;
-	src: local('Pretendard Regular'), url('../../font/woff2-subset/Pretendard-Regular.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Regular.subset.woff') format('woff');
+  font-family: "Noto Sans KR 800", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@800&display=swap");
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 300;
-	font-display: swap;
-	src: local('Pretendard Light'), url('../../font/woff2-subset/Pretendard-Light.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Light.subset.woff') format('woff');
-}
 
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 100;
-	font-display: swap;
-	src: local('Pretendard Thin'), url('../../font/woff2-subset/Pretendard-Thin.subset.woff2') format('woff2'), url('../../font/woff-subset/Pretendard-Thin.subset.woff') format('woff');
-} */
+
+
+
+
 
 /*YoonGothicPro700 윤고딕폰트*/
 @font-face {
@@ -95,27 +113,25 @@
 @font-face {
 	font-family: 'Gotham';
 	font-weight: 700;
-	src: local('Gotham-Bold'), url('../../font/Gotham/Gotham-Bold.otf') format('otf'),
-	url('../../font/Gotham/Gotham-Bold.woff') format('woff');
+	src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap') format('truetype');
 }
 
 @font-face {
 	font-family: 'Gotham-Medium';
 	font-weight: 500;
-	src: local('Gotham-Medium'), url('../../font/Gotham/Gotham-Medium.otf') format('otf'),
-	url('../../font/Gotham/Gotham-Medium.woff') format('woff');
+	src: url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap') format('truetype');
+
 }
 
 @font-face {
 	font-family: 'Gotham-Book';
 	font-weight: 400;
-	src: local('Gotham-Book'), url('../../font/Gotham/Gotham-Book.otf') format('otf'),
-	url('../../font/Gotham/Gotham-Book.woff') format('woff');
+	src: url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap') format('truetype');
 }
 
 @font-face {
 	font-family: 'Gotham-Light';
 	font-weight: 300;
-	src: local('Gotham-Light'), url('../../font/Gotham/Gotham-Light.otf') format('otf'),
-	url('../../font/Gotham/Gotham-Light.woff') format('woff');
+	src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap') format('truetype');
+
 }
