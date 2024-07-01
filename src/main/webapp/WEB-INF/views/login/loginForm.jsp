@@ -4,535 +4,139 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
+	<!-- css -->
 
-<!-- css -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
-	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
-	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_jquery-ui.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_h-common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_swiper-bundle.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents1.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents2.css">
+		
 	<!-- js -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
-	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-3.5.1.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/swiper-bundle.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-ui.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents1.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents2.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/h-common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/printThis.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv-cal.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv.js"></script>
 	
 
-<style>
-.loading-box {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 180px;
-	height: 180px;
-	z-index: 9999;
-}
+	<script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/date_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/num_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/string_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/bluewaves_common.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/paging_util.js"></script>
+	
+	
+	
+	
+	<style>
+		body {
+  		font-family: "Noto Sans KR 300", sans-serif;
+		}
+		.loading-box {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 180px;
+			height: 180px;
+			z-index: 9999;
+		}
 
-.loading {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	border: 3px solid #ddd;
-	border-radius: 50%;
-	border-top-color: rgba(0, 0, 0, 0.2);
-	animation: spin 1.5s linear infinite;
-	-webkit-animation: spin 1.5s linear infinite;
-}
+		.loading {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			border: 3px solid #ddd;
+			border-radius: 50%;
+			border-top-color: rgba(0, 0, 0, 0.2);
+			animation: spin 1.5s linear infinite;
+			-webkit-animation: spin 1.5s linear infinite;
+		}
 
-@
-keyframes spin { 0% {
-	-webkit-transform: rotate(0deg);
-}
+		@keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
 
-100
-%
-{
--webkit-transform
-:
-rotate(
-360deg
-);
-}
-}
-@
--webkit-keyframes spin { 0% {
-	-webkit-transform: rotate(0deg);
-}
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
 
-100
-%
-{
--webkit-transform
-:
-rotate(
-360deg
-);
-}
-}
-.loading-txt {
-	-moz-animation: loading-text-opacity 2s linear 0s infinite normal;
-	-o-animation: loading-text-opacity 2s linear 0s infinite normal;
-	-webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
-	animation: loading-text-opacity 2s linear 0s infinite normal;
-	color: #fff;
-	font-family: 'Gotham-Light', 'Yoon730';
-	font-size: inherit;
-	text-align: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 9999;
-}
-</style>
+		@-webkit-keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
 
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
 
-
+		.loading-txt {
+			-moz-animation: loading-text-opacity 2s linear 0s infinite normal;
+			-o-animation: loading-text-opacity 2s linear 0s infinite normal;
+			-webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
+			animation: loading-text-opacity 2s linear 0s infinite normal;
+			color: #fff;
+			font-family: "Noto Sans KR 300", sans-serif;
+			font-size: inherit;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 9999;
+		}
+     </style>
 
 </head>
 <body>
-
-<header id="header" class="header">
-			<!--(HEAD 최종수정일 : 2024-04-01 19:13:00)-->
-
-			<div class="h-wrap">
-				<div class="h-box-left">
-				
-				
-					<h1 class="logo">
-						<a href="../main.html" title="메인으로 이동">
-							<span><img src="../../../static/pc/images/hub/main_logo_bl.png" alt="LAHAN"/></span>
-						</a>
-					</h1>
-				
-					<ul class="nav-list">
-
-    
-    
-        
-        
-		    
-			
-				
-			
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
+    <!-- End Google Tag Manager -->
+		<div class="skip-nav">
+			<a href="#header">푸터 영역 바로가기</a>
+			<a href="#container">컨텐츠 바로가기</a>
+			<a href="#footer">푸터 영역 바로가기</a>
+		</div>
 		
-						<li>
-							<a href="../hotel/brandIntroduce.html">라한</a>
-						</li>
-    
-
-    
-    
-        
-        
-		    
-			
-				
-			
 		
-						<li>
-							<a href="../package/list.html">스페셜 오퍼</a>
-						</li>
-    
-
-    
-    
-        
-        
-		    
-			
-				
-			
-		
-						<li>
-							<a href="../clublahan/membership.html">클럽라한</a>
-						</li>
-    
-
-    
-    
-        
-        
-		    
-			
-				
-			
-		
-						<li>
-							<a href="../onlineshop/subMain.html">온라인샵</a>
-						</li>
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-					</ul>
-				</div>
-				<div class="h-box-right">
-					<ul class="set-wrap">
-
-
-						<li><a href="../join/step1.html" title="회원가입">회원가입<!-- 회원가입 --></a></li>
-						<li><a href="loginForm.html" title="로그인">로그인<!-- 로그인 --></a></li>
-                        <li><a href="loginNonMemForm.html" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li>   
-
-						
-					</ul>
-					<a href="javascript:;" title="호텔찾기" class="btn-search-lahan open_layer" layer-data="search1"><span>호텔찾기<!-- 호텔찾기 --></span></a>
-					<div class="lang-box select">
-						<div class="as-select selected">
-							<span class="select-lang selected-value">
-                                KOR
-                                
-                            </span>
-						</div>
-						<ul class="lang-wrap">
-                            
-                            
-							<li class="option" value="ENG" onclick="location.href='../../en/main.html';">ENG</li>
-                            
-						</ul>
-					</div>
-					<a href="javascript:;" title="전체메뉴보기" class="btn-all">
-						<span></span>
-						<span></span>
-						<span></span>
-					</a>
-					<a href="../resv/step1.html" title="예약하기" class="btn-rev btn-gold" layer-data="select1">예약하기<!-- 예약하기 --></a>
-				</div>
+        <div id="banner" class="banner-wrap show-banner">
+			<div class="banner-btn-box">
+				<a href="javascript:;" id="btnBannerClose">오늘 하루 보지않기</a>
+				<a href="javascript:;" class="banner-close"><span>닫기</span></a>
 			</div>
-            <div class="all-menulist">
-				<div class="all-menulist-wrap">
-					<ul class="all-1depth">
-						<li><a href="../hotel/brandIntroduce.html" title="라한">라한<!-- 라한--></a></li>
-						<li><a href="../hotel/brandIntroduce.html" title="브랜드 소개">브랜드 소개<!-- 브랜드 소개--></a></li>
-						<li>
-							<a href="../hotel/hotelIntroduce.html" title="호텔 소개">호텔 소개<!-- 호텔 소개 --></a>
-							<ul class="all-2depth">
-								<li><a href="../hotel/hotelIntroduce.html" title="전체보기">전체보기<!-- 전체보기 --></a></li>
-								<li><a href="../hotel/gyeongjuDc.html" title="라한셀렉트 경주">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
-								<li><a href="../hotel/jeonjuDc.html" title="라한호텔 전주">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
-								<li><a href="../hotel/pohangDc.html" title="라한호텔 포항">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
-								<li><a href="../hotel/ulsanDc.html" title="호텔현대 바이 라한 울산">호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></a></li>
-								<li><a href="../hotel/mokpoDc.html" title="호텔현대 바이 라한 목포">호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="../package/list.html" title="스페셜 오퍼">스페셜 오퍼<!-- 스페셜 오퍼 --></a></li>
-						<li><a href="../package/list.html" title="패키지">패키지<!-- 객실 패키지--></a></li>
-						<li><a href="../promtn/list.html" title="프로모션">프로모션<!-- 프로모션 --></a></li>
-						<li><a href="../spclguide/list.html" title="프로모션">스페셜 가이드<!-- 스페셜 가이드 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="../clublahan/membership.html" title="클럽라한">클럽라한<!-- 클럽라한--></a></li>
-						<li><a href="../clublahan/membership.html" title="멤버십 소개">멤버십 소개<!-- 멤버십 소개--></a></li>
-						<li>
-							<a href="../clublahan/list.html" title="회원 전용 상품">회원 전용 상품<!-- 회원 전용상품 --></a>
-							<ul class="all-2depth">
-								<li><a href="../clublahan/list.html" title="패키지">패키지<!-- 객실패키지 --></a></li>
-								<li><a href="../clublahan/promtnlist.html" title="프로모션">프로모션<!-- 프로모션 --></a></li>
-							</ul>
-						</li>
-						<li><a href="../clublahan/mbershipInq/list.html" title="멤버십 문의">멤버십 문의<!-- 멤버십 문의 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="../onlineshop/subMain.html" title="온라인샵">온라인샵<!-- 온라인샵 --></a></li>
-						<li><a href="../onlineshop/subMain932d.html?searchOnshopSe=S01" title="PB">PB<!-- PB --></a></li>
-						<li><a href="../onlineshop/subMainf93b.html?searchOnshopSe=S02" title="상품권">상품권<!-- 상품권 --></a></li>
-						<li><a href="../onlineshop/subMain45ae.html?searchOnshopSe=S03" title="선물세트">선물세트<!-- 선물세트 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="../notice/generalInfo/list.html" title="공지사항">공지사항<!-- 공지사항 --></a></li>
-						<li><a href="../notice/generalInfo/list.html" title="일반안내">일반안내<!-- 일반안내 --></a></li>
-						<li><a href="../notice/financialDisclosure/list.html" title="결산공고">결산공고<!-- 결산공고--></a></li>
-						<li><a href="../notice/certificatesAwards/list.html" title="인증/수상 내역">인증/수상 내역<!-- 인증/수상 내역 --></a></li>
-						<li><a href="../notice/recruitment/list.html" title="채용">채용<!-- 채용 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="../customer/contact.html" title="고객문의">고객문의<!-- 고객문의 --></a></li>
-						<li><a href="../customer/contact.html" title="연락처">연락처<!-- 연락처 --></a></li>
-						<li><a href="../customer/faq/list.html" title="자주 묻는 질문 (FAQ)">자주 묻는 질문 (FAQ)<!-- 자주 묻는 질문(FAQ) --></a></li>
-						<li><a href="../customer/qnaForm.html" title="일반문의">일반문의<!-- 일반문의 --></a></li>
-						<li><a href="../customer/consigned.html" title="위탁운영 문의">위탁운영 문의<!-- 위탁운영 문의 --></a></li>
-						<li><a href="../customer/reports.html" title="제보">제보<!-- 제보 --></a></li>
-					</ul>
-					<ul class="all-1depth">
-						<li><a href="loginForm0a54.html" title="마이페이지">마이페이지<!-- 마이페이지 --></a></li>
-						<li><a href="loginForm177a.html" title="마이포인트">마이포인트<!-- 마이포인트 --></a></li>
-						<li><a href="loginFormc20d.html" title="마이쿠폰">마이쿠폰<!-- 마이쿠폰 --></a></li>
-<!--			예약조회/확인			
-     <li><a href="#none" title="예약조회/확인">예약조회/확인</a></li>
--->
-						<li><a href="loginFormb29f.html" title="개인정보관리/탈퇴">개인정보관리/탈퇴<!-- 개인정보관리/탈퇴 --></a></li>
-					</ul>
-				</div>
+			<div class="banner-inner">
+				<ul class="banner-txt">
+					<li><a href="https://www.lahanhotels.com/hub/ko/promtn/list.do">클럽라한 가입하고, 쿠폰 골라받기 [CLICK]</a></li>
+				</ul>
 			</div>
-		
-		</header>
-		<div id="container" class="container">
-			<!--(페이지 URL)-->
+		</div>
 
-
-
-
-
-
-
-
-
-
-<script>
-    let SUBMIT_STATUS = false;
-    const LOGIN_ID_COOKIE_NM = "loginId";
-    jQuery(function(){
-
-        const saveId = getCookie(LOGIN_ID_COOKIE_NM);
-        if (saveId != undefined && saveId != null) {
-            jQuery("#userId").val(saveId);
-            jQuery("#saveUserIdCheck").prop("checked", true);
-        }
-
-
-        //id , pw input enter 이벤트 추가
-        jQuery(document).on("keyup", "#userId, #password", function(event){
-            if (event.keyCode === 13) {
-                login();
-            }
-        });
-
-
-        //id input keyup 이벤트
-        jQuery(document).on("keyup", "#userId", function(){
-
-            const $id = jQuery(this);
-            let value = $id.val();
-
-            //알파벳 , 숫자만 입력 가능하도록
-            $id.val(value.replace(/[^a-z|A-Z|0-9]/g, ''));
-
-            //대문자 입력시 소문자로 치환
-            $id.val($id.val().toLowerCase());
-            // ---- 아이디 정규식 체크 end
-        });
-
-
-
-    });
-
-    function login() {
-        if (!validation()) {
-            return false;
-        }
-        loginApi();
-    }
-
-    //필수값 체크
-    function validation() {
-
-        let flag = true;
-
-        //id 입력 체크
-        if (jQuery("#userId").val() == "") {
-            jQuery("#userId").closest(".input-wrap").find(".txtGuideWrap").addClass("on");
-            flag = false;
-        }else {
-            jQuery("#userId").closest(".input-wrap").find(".txtGuideWrap").removeClass("on");
-        }
-
-        //pw 입력 체크
-        if (jQuery("#password").val() == "") {
-            jQuery("#password").closest(".input-wrap").find(".txtGuideWrap").addClass("on");
-            flag = false;
-        }else {
-            jQuery("#password").closest(".input-wrap").find(".txtGuideWrap").removeClass("on");
-        }
-
-        return flag;
-    }
-
-    function snsLoginPopup(snsType) {
-        $("#selectedSnsType").val(snsType);
-		window.open('', 'snsLogin', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-        let loginUrl = "";
-        switch (snsType) {
-            case "GOOGLE" : loginUrl = "https://accounts.google.com/o/oauth2/auth?client_id=642751551440-tt5fnjle2ejeq7fdbnuqtnsvb7rfdv42.apps.googleusercontent.com&amp;response_type=code&amp;redirect_uri=https://www.lahanhotels.com/sns/google/callback.do&amp;scope=profile+email"; break;
-            case "FACEBOOK" : loginUrl = "https://www.facebook.com/v2.5/dialog/oauth?client_id=2076315245911231&amp;response_type=code&amp;scope=email&amp;redirect_uri=https%3A%2F%2Fwww.lahanhotels.com%2Fsns%2Ffacebook%2Fcallback.do"; break;
-            case "KAKAO" : loginUrl = "https://kauth.kakao.com/oauth/authorize?client_id=35ff55bdd6671142ae413edc7cd1bc78&amp;response_type=code&amp;redirect_uri=https://www.lahanhotels.com/sns/kakao/callback.do"; break;
-            case "NAVER" : loginUrl = "https://nid.naver.com/oauth2.0/authorize?client_id=4QZQrDPw29Mu5pG0K9Ed&amp;response_type=code&amp;redirect_uri=https://www.lahanhotels.com/sns/naver/callback.do"; break;
-        }
-        document.snsLoginForm.action = loginUrl;
-        document.snsLoginForm.target = "snsLogin";
-        document.snsLoginForm.submit();
-    }
-
-    //로그인 성공시 callback
-    function fncSnsLoginCallback() {
-		snsLoginApi()
-    }
-
-    function snsLoginApi() {
-
-         if(SUBMIT_STATUS){
-            alert("이미 처리 중입니다. 잠시만 기다려주세요. ");
-            return;
-        }
-
-        let langCode = jQuery("#langCode").val();
-
-		jQuery.ajax({
-			type : "POST",
-			url : "/hub/api/login/snsLogin.json",
-			dataType : "json",
-			data : {
-                nextURL: jQuery("#nextURL").val()
-			},
-			async : true,
-			global : false,
-			beforeSend : function() {
-			    SUBMIT_STATUS = true;
-			},
-			complete: function () {
-			    SUBMIT_STATUS = false;
-			},
-			success : function(data){
-			    if (data.isSuccess == "true") {
-			        //로그인 성공
-
-					//로그인은 성공 했으나, 회원 상태에 따라 redirect
-			        if (data.redirectURL) {
-			            location.href = data.redirectURL;
-			        }else {
-			            //이동해야할 nextURL 있을 경우
-			            if (data.nextURL != null) {
-			                location.href = data.nextURL;
-			            }else {
-			                //메인페이지
-			                location.href = `/hub/${langCode}/main.do`;
-			            }
-			        }
-
-			    }else {
-			        //로그인 실패
-			        //결과 메세지가 있을 경우 메세지 출력
-			        if (data.resultMsg != null && data.resultMsg != "") {
-			            alert(data.resultMsg.replaceAll("\\n", "\n"));
-			        }
-
-			        //리다이렉트 url이 있을경우
-			        //휴면
-			        if (data.redirectURL != null) {
-			            location.href = data.redirectURL;
-			        }
-			    }
-
-			},
-			error:function(r, s, e){
-			    alert("API 통신중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
-			    return false;
-			}
-			})
-
-    }
-
-    function loginApi() {
-
-        if(SUBMIT_STATUS){
-            alert("이미 처리 중입니다. 잠시만 기다려주세요. ");
-            return;
-        }
-
-        let langCode = jQuery("#langCode").val();
-        jQuery.ajax({
-            type : "POST",
-            url : "/hub/api/login/login.json",
-            dataType : "json",
-            data : {
-                userId: jQuery("#userId").val(),
-                password: jQuery("#password").val(),
-                nextURL: jQuery("#nextURL").val()
-            },
-            async : true,
-            global : false,
-            beforeSend : function() {
-                SUBMIT_STATUS = true;
-            },
-            complete: function () {
-                SUBMIT_STATUS = false;
-            },
-            success : function(data){
-                if (data.isSuccess == "true") {
-                    //로그인 성공
-
-                    if(jQuery("#saveUserIdCheck").is(":checked")){
-                        //로그인 id 저장
-                        setCookie(LOGIN_ID_COOKIE_NM, jQuery("#userId").val(), 30);
-                    }
-
-					//로그인은 성공 했으나, 회원 상태에 따라 redirect
-	                // 휴면 , pw만료
-                    if (data.redirectURL) {
-                        location.href = data.redirectURL;
-                    }else {
-                        //이동해야할 nextURL 있을 경우
-	                    if (data.nextURL != null) {
-	                        location.href = data.nextURL;
-	                    }else {
-	                        //메인페이지
-	                        location.href = `/hub/${langCode}/main.do`;
-	                    }
-                    }
-
-                }else {
-                    //로그인 실패
-                    //결과 메세지가 있을 경우 메세지 출력
-                    if (data.resultMsg != null && data.resultMsg != "") {
-                        alert(data.resultMsg.replaceAll("\\n", "\n"));
-                    }
-
-                    //리다이렉트 url이 있을경우
-                    if (data.redirectURL != null) {
-                        location.href = data.redirectURL;
-                    }
-                }
-
-            },
-            error:function(r, s, e){
-                alert("API 통신중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
-                return false;
-            }
-        })
-    }
-
-
-</script>
+<%@ include file="/WEB-INF/views/header.jsp" %> 
+	
 <input type="hidden" id="nextURL" name="nextURL" value="" />
 <form name="snsLoginForm" method="get"></form>
-<form name="form" method="post">
-<input type="hidden" id="langCode" name="" value="ko" />
 
+
+<form name="form" method="post" action="./loginCommand">
+<input type="hidden" id="langCode" name="" value="ko" />
     <div id="container" class="container login">
         <section class="sub-contents">
             <div class="sub-contents-wrap login">
@@ -548,11 +152,12 @@ rotate(
                         <li><a href="loginNonMemForm.html" title="비회원" class="">비회원<!-- 비회원 --></a></li>
                     </ul>
                 </div>
+                
                 <div class="login-wrap ty-02">
                     <div class="login-box">
                         <div class="input-login-wrap">
                             <div class="input-wrap">
-                                <input type="text" id="userId" name="userId" placeholder="아이디를 입력해 주세요." maxlength="20">
+                                <input type="text" id="id" name="id" placeholder="아이디를 입력해 주세요." maxlength="20">
                                 <div class="txtGuideWrap"><!-- 에러 문구 활성화시 class on 추가 -->
                                     <ul class="txtGuide">
                                         <li class="error"><p>아이디를 입력해 주세요.</p></li>
@@ -560,14 +165,14 @@ rotate(
                                 </div>
                             </div>
                             <div class="input-wrap">
-                                <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요." maxlength="20">
+                                <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해 주세요." maxlength="20">
                                 <div class="txtGuideWrap"><!-- 에러 문구 활성화시 class on 추가 -->
                                     <ul class="txtGuide">
                                         <li class="error"><p>비밀번호를 입력해 주세요.</p></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="idsave-wrap">
+                       <!--<div class="idsave-wrap">
 									<span class="frm frm-chk">
 					                  <input type="checkbox" id="saveUserIdCheck"><label for="saveUserIdCheck">아이디 저장</label>
 					                </span>
@@ -575,11 +180,12 @@ rotate(
                                 <ul class="loginFind">
                                     <li><a href="findId.html">아이디/비밀번호 찾기</a></li>
                                 </ul>
-                            </div>
+                            </div> -->    
                         </div>
                         <div class="btn-inline-box">
-                            <button type="button" class="loginbtn" onclick="login(); return false;">로그인</button>
+                            <button type="submit" class="loginbtn" >로그인</button>
                         </div>
+                        </form>
                         <ul class="loginSns">
                             <li><a href="javascript:snsLoginPopup('NAVER')" class="lo-icon lo-naver"><span>네이버 로그인</span></a></li>
                             <li><a href="javascript:snsLoginPopup('GOOGLE')" class="lo-icon lo-google"><span>구글 로그인</span></a></li>
@@ -597,7 +203,7 @@ rotate(
                                 <p>클럽라한 가입 후, 회원 전용 혜택과 특별한 서비스를 만나보세요.</p>
                             </div>
                             <div class="btn-inline-box">
-                                <button type="button" onclick="location.href='../join/step1.html'" class="onlineMemBtn">신규 가입하기</button>
+                                <button type="button" onclick="location.href='./join/step1'" class="onlineMemBtn">신규 가입하기</button>
                             </div>
 	                        <p class="join-guide-txt">클럽라한은 내국인 전용 멤버십으로, 가입을 위해서는 국내에서 개통한 본인명의의 휴대폰번호가 필요합니다.</p>
                         </div>
@@ -617,8 +223,10 @@ rotate(
         </section>
     </div>
 
-</form>
-		</div>
+		
+		
+		
+		
 		<footer id="footer" class="footer">
 			<!--(FOOTER 최종수정일 : 2023-02-28 08:19:02)-->
 
@@ -900,6 +508,15 @@ rotate(
         var alertResv0038 = '체크인 날짜 기준, 예약 가능한 횟수를 초과하였습니다. 추가 문의사항은 통합예약실(1644-8005)로 연락 바랍니다.';
 		var alertAjaxError = 'Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"';
 	</script>
+	<!-- // 221228 메인 타이틀 모션 추가 -->
 
 </body>
+
+</html>
+	
+	
+
+</body>
+
+
 </html>
