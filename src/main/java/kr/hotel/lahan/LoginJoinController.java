@@ -1,28 +1,54 @@
 package kr.hotel.lahan;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.hotel.lahan.command.JCommand;
+
 @Controller
 public class LoginJoinController {
 	
-	@RequestMapping("/step1")
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@Autowired JCommand jCommand;
+	
+//	@RequestMapping("/step1")
+//	public String joinStep1(Model model) {
+//		System.out.println("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½1 È­ï¿½ï¿½");
+//		return "/join/step1";
+//	}
+	
+	@RequestMapping("/join/step1")
 	public String joinStep1(Model model) {
-		System.out.println("È¸¿ø°¡ÀÔ ½ºÅÜ1 È­¸é");
+	
 		return "/join/step1";
 	}
 	
-	@RequestMapping("/step1_1")
-	public String joinStep1_1(Model model) {
-		System.out.println("È¸¿ø°¡ÀÔ ½ºÅÜ1_1 È­¸é");
-		return "/join/step1_1";
-	}
-	
-	@RequestMapping("/step2")
+	@RequestMapping("/join/step2")
 	public String joinStep2(Model model) {
-		System.out.println("È¸¿ø°¡ÀÔ ½ºÅÜ2");
+		
 		return "/join/step2";
 	}
+	
+	@RequestMapping("/join/step3")
+	public String joinStep3(HttpServletRequest request, Model model) {
+		
+		model.addAttribute("request",request);
+		jCommand.join(model);
+		return "/join/step3";
+	}
+	
+	@RequestMapping("/login/loginform")
+	public String loginForm(Model model) {
+		
+		return "/login/loginForm";
+	}
+	
 
 }
