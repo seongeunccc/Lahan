@@ -18,23 +18,24 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
 	
 	<!-- js -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-3.5.1.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/swiper-bundle.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-ui.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents1.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents2.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/h-common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/printThis.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv-cal.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv.js"></script>
 	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
-	
-	
+
+	<script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/date_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/num_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/string_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/bluewaves_common.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/paging_util.js"></script>
 	
 	
 	
