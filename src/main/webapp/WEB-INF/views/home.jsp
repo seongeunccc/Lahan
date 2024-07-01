@@ -10,16 +10,8 @@
 
 	<P>The time on the server is ${serverTime}.</P>
 
-
 	이상준 깃 테스트
-	
-	
 	깃테스트2
-	
-	
-	
-	
-	
 	
 
 </body>
