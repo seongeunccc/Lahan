@@ -147,7 +147,10 @@
 		</div>
 	
 
-        
+	<header id="header" class="header">
+ 	<%@ include file="/WEB-INF/views/header.jsp" %> 
+	</header>
+    <%--     
 		<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
@@ -157,7 +160,7 @@
 						<a href="./main" title="메인으로 이동">
 							<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN"/>
 							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>
-							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png" alt="LAHAN3"/></span>
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN3"/></span>
 						</a>
 					</h1> 
 					
@@ -269,7 +272,7 @@
 				</div>
 			</div>
 		
-		</header>
+		</header> --%>
 		
 		<div id="container" class="container">
 			<!--(레이아웃명([PC][국문] - MAIN 레이아웃) 최종수정일 : 2023-07-27 16:47)-->
