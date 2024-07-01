@@ -12,7 +12,7 @@ public class ReservationController {
 	@RequestMapping(value = "/main")
 	public String home(Model model) {
 		
-		return "main";
+		return "reservation/main";
 	}
 	
 	@RequestMapping(value = "/header")
