@@ -307,7 +307,7 @@ $(".prcode-box .btn-com, .btn-prcode-close").on("click", function () {
 
 
 </script>
-	<%@ include file="/WEB-INF/views/footer.jsp" %> 
+ 
 	
 	
 	</div>
