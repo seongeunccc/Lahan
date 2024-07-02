@@ -167,34 +167,34 @@
 .frm-chk label::before {
 	width: 32px;
 	height: 32px;
-	background: url("../../../images/hub/icon/icon_check_32x32.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_check_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk input[type=checkbox]:checked+label::before {
-	background: url("../../../images/hub/icon/icon_checked_32x32.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_checked_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk label:hover::before {
-	background: url("../../../images/hub/icon/icon_check_hover_32x32.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_check_hover_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk.type02 label::before {
 	width: 26px;
 	height: 26px;
-	background: url("../../../images/hub/icon/icon_check_26x26.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_check_26x26.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk.type02 input[type=checkbox]:checked+label::before {
-	background: url("../../../images/hub/icon/icon_checked_26x26.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_checked_26x26.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk.type02 label:hover::before {
-	background: url("../../../images/hub/icon/icon_check_hover_26x26.png") no-repeat;
+	background: url("/lahan/resources/images/hub/icon/icon_check_hover_26x26.png") no-repeat;
 	background-size: cover;
 }
 

@@ -74,7 +74,21 @@ public class LoginJoinController {
 			System.out.println("아이디 없음");
 			return "/join/step1";
 		}
+		if(result==3) {
+			System.out.println("관리자로그인 성공");			
+			return "redirect:/admin/admin.do";
+		}
 		return null;
+	}
+	
+	@RequestMapping("/login/logout")
+	public String logout(Model model) {
+		return "/login/logout";
+	}
+	
+	@RequestMapping("/member/memberinfo")
+	public String memberInfo(Model model) {
+		return "/member/memberinfo";
 	}
 	
 
