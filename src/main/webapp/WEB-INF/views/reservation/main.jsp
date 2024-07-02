@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
 
-
-
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
@@ -31,13 +29,14 @@
 	<script src="https://www.lahanhotels.com/static/pc/js/resv.js"></script>
 	
 
-	<script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/date_util.js"></script>
-    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/num_util.js"></script>
-    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/string_util.js"></script>
-    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/bluewaves_common.js"></script>
-    <script type="text/javascript" src="https://www.lahanhotels.com//static/bluewaves/js/paging_util.js"></script>
+	<script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/date_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/num_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/string_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/bluewaves_common.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/paging_util.js"></script>
 	
 	
+
 	
 	
 	<style>
@@ -100,17 +99,12 @@
 			transform: translate(-50%, -50%);
 			z-index: 9999;
 		}
+		
+	
      </style>
 
 </head>
 <body>
-  <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
-    <!-- End Google Tag Manager -->
 
 
 
@@ -122,18 +116,6 @@
 			<a href="#container">컨텐츠 바로가기</a>
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
-        
-            
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -163,17 +145,7 @@
 					<button type="button" class="btn-bell">BELL<span class="bell-count">0</span></button>
 				</div>
                 <!-- 메인팝업 include -->
-                
-
-
-
-
-
-
-
-
-
-
+            
 <!-- 메인 프로모션  -->
 
 	<script type="text/javascript">	
@@ -287,6 +259,9 @@
 					<p>Scroll Down</p>
 				</div>
 			</section>
+			
+			
+			
 			<section class="main-ourhotel">
 				<div class="main-tit">
 					<h3>OUR HOTELS</h3>
@@ -366,13 +341,13 @@
 			</section>
 			<section class="main-aboutlahan grey-bg">
 				<div>
-					<div class="left">
+					<div class="test_introLahan black-han-sans-regular">
 						<div class="main-tit">
 							<h3>ABOUT LAHAN</h3>
 							<p> 이름에 담긴 '즐거운 한국, 즐거운 여행'</p>
 						</div>
 						<div class="main-inner-content">
-							<p><b style="color:#8b4513;"> 즐거움을 뜻하는 순우리말 '라온' + 한국 '한(韓)' = 라한  </b><br/> 
+							<p><b style="color:#8b4513;" class=""> 즐거움을 뜻하는 순우리말 '라온' + 한국 '한(韓)' = 라한  </b><br/> 
 라한호텔은 즐거운 국내여행을 위한 한층 독특하고 깊이있는 경험을 선사합니다. <br/>
 객실, 다이닝, 부대시설 그리고 다채로운 라이프스타일 프로그램 등<br/>
 호텔에 대한 틀에 박힌 기준에서 벗어나 '스테이 그 이상의 경험'을 제공하는<br/>
@@ -402,17 +377,17 @@
 					<div class="inner-icon-box">
 						<ul>
 							<li>
-								<span class="m-icon"></span>
+								<span class="m-icon"><img src="${pageContext.request.contextPath}/resources/images/icon_benefit_W.svg" alt="icon_benefit_W.svg" /></span>
 								<strong>회원 특전</strong>
 								<p>레이트 체크아웃, 웰컴스낵 등 가입 즉시 제공되는 풍성한 특전</p>
 							</li>
 							<li>
-								<span class="m-icon"></span>
+								<span class="icon_mid"><img src="${pageContext.request.contextPath}/resources/images/icon_point_W.svg" alt="icon_point_W.svg" /></span>
 								<strong>포인트 적립 및 결제</strong>
 								<p>현금처럼 이용가능한 포인트 3~5% 적립 </p>
 							</li>
 							<li>
-								<span class="m-icon"></span>
+								<span class="m-icon"><img src="${pageContext.request.contextPath}/resources/images/icon_membersOnly_W.svg" alt="icon_membersOnly_W.svg" /></span>
 								<strong>회원전용 상품</strong>
 								<p>멤버를 위한 연중 최적가 객실 상품과 프로모션</p>
 							</li>
@@ -434,15 +409,6 @@
 					<p class="insta-tit">
 						<a href="https://www.instagram.com/lahan_hotel/" target="_blank" title="라한 인스타로 이동">lahan_hotel</a>
 					</p>
-                    
-
-
-
-
-
-
-
-
 
 
             
@@ -451,71 +417,71 @@
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/lahan_hotel/?hl=ko" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242526&sysCode=HUBSITE" alt="라한X위글위글"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=242526&sysCode=HUBSITE" alt="라한X위글위글"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C6X7NuCRRub/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242537&sysCode=HUBSITE" alt="5월 프로그램"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=242537&sysCode=HUBSITE" alt="5월 프로그램"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C6IwtQBx9qR/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242547&sysCode=HUBSITE" alt="라한 컨셉룸"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=242547&sysCode=HUBSITE" alt="라한 컨셉룸"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C57bAUIx7Tz/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242572&sysCode=HUBSITE" alt="레디백 "></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=242572&sysCode=HUBSITE" alt="레디백 "></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C5uqaPExcW4/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=242584&sysCode=HUBSITE" alt="라봄페 "></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=242584&sysCode=HUBSITE" alt="라봄페 "></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/lahan_hotel/?hl=ko" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220928&sysCode=HUBSITE" alt="라한 샤쉐"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220928&sysCode=HUBSITE" alt="라한 샤쉐"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C3665U3x7P4/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220918&sysCode=HUBSITE" alt="코닥 이벤트"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220918&sysCode=HUBSITE" alt="코닥 이벤트"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C3ZsUo_RoTs/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220908&sysCode=HUBSITE" alt="하녹당"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220908&sysCode=HUBSITE" alt="하녹당"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C3H5I57Rof9/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220898&sysCode=HUBSITE" alt="설인사"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220898&sysCode=HUBSITE" alt="설인사"></span>
                             </a>
                         </div>
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C2_5qPxxlfm/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
-                            	<span><img src="/util/file/download.do?fileSn=220888&sysCode=HUBSITE" alt="클럽라한"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
+                            	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220888&sysCode=HUBSITE" alt="클럽라한"></span>
                             </a>
                         </div>
                     
@@ -527,87 +493,10 @@
 		
 
 		</div>
-		<footer id="footer" class="footer">
-			<!--(FOOTER 최종수정일 : 2023-02-28 08:19)-->
-
-			<div class="f-wrap">
-				<div class="f-box-top">
-					<div class="box-top-inner">
-						<ul class="f-nav-list">
-                            <li><a href="https://www.lahanhotels.com/hub/ko/hotel/brandIntroduce.do" title="라한 브랜드">라한 브랜드<!-- 라한 브랜드 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/clublahan/membership.do" title="멤버십">멤버십<!-- 무료멤버십 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/notice/generalInfo/list.do" title="공지사항">공지사항<!-- 공지사항 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/customer/contact.do" title="제안/제보">제안/제보<!-- 고객문의 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/ethical/terms.do" title="윤리경영">윤리경영<!-- 윤리경영 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/sitemap.do" title="사이트맵">사이트맵<!-- 사이트맵 --></a></li>
-						</ul>
-						<ul class="f-nav-list">
-							<li><a href="https://www.lahanhotels.com/hub/ko/termsUse/terms.do" title="이용약관">이용약관<!-- 이용약관 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/terms/terms.do" title="개인정보처리방침" class="pr-po"><strong>개인정보처리방침<!-- 개인정보처리방침 --></strong></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="f-box-bottom">
-					<div class="box-bottom-inner">
-						<div class="box-bottom-left">
-							<span class="f-logo">
-								<img src="/static/pc/images/hub/footer_logo.png" alt="LAHAN LOGO"/>
-							</span>
-							<ul class="f-lahan-info">
-								<li><b>라한프라퍼티스매니지먼트(주)<!-- (주)라한프라퍼티스 매니지먼트 --></b></li>
-								<li>
-									<p>주소 &#58; 서울특별시 중구 한강대로 416 서울스퀘어 21층<!-- 주소 &#58; 서울특별시 중구 한강대로 416 서울스퀘어 21층 --></p>
-
-									<p>통합예약실 1644-8005<!-- 통합예약실 --></p>
-
-								</li>
-								<li>
-
-									<p>사업자등록번호 666-86-01031<!-- 사업자등록번호 666&#45;86&#45;01031 --></p>
-
-									<p>통신판매신고번호 2015-경북경주-0192호<!-- 통신판매신고번호 00구00000호 --></p>
-								</li>
-							</ul>
-						</div>
-						<div class="box-bottom-right">
-
-							<ul class="f-cer-info">
-								<li>
-                                    <a href="https://isms.kisa.or.kr/main/ispims/issue/?certificationMode=list" target="_blank">
-									    <span><img src="/static/pc/images/common/f-cer1.png" alt="호텔 예약 서비스 및 멤버십 서비스 인증 이미지"></span>
-									    <span>인증범위. 라한호텔 예약 및 멤버십 서비스<br/>유효기간. 2023.12.06 ~ 2026.12.05<!-- 인증범위. 호텔 예약 서비스 및 멤버십 서비스<br/>유효기간. 2020.09.16 ~ 2023.09.15 --></span>
-                        			</a>
-								</li>
-							</ul>
-
-							<div class="f-site-info">
-								<div class="f-select-wrap select">
-									<div class="select-lahan selected">
-										<span class="select-site selected-value">FAMILY SITE<!-- FAMILY SITE --></span>
-									</div>
-									<ul class="f-select-box">
-										<!-- <li><a href="https://www.seamarqhotel.com/" title="GANGNEUNG" class="option" target="_blank">강릉 씨마크</a></li>강릉 씨마크 -->
-										<li><a href="https://www.lahanhotels.com/mokpo/ko/main.do" title="MOKPO" class="option" target="_blank">호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></a></li>
-										<li><a href="https://www.lahanhotels.com/ulsan/ko/main.do" title="ULSAN" class="option" target="_blank">호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></a></li>
-										<li><a href="https://www.lahanhotels.com/pohang/ko/main.do" title="POHANG" class="option" target="_blank">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
-										<li><a href="https://www.lahanhotels.com/jeonju/ko/main.do" title="JEONJU" class="option" target="_blank">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
-										<li><a href="https://www.lahanhotels.com/gyeongju/ko/main.do" title="GYEONGJU" class="option" target="_blank">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
-										<li><a href="https://www.lahanhotels.com/hub/ko/main.do" title="LAHAN" class="option" target="_blank">라한<!-- 라한 --></a></li>
-									</ul>
-								</div>
-								<div class="f-sns-wrap">
-									<a href="https://www.instagram.com/lahan_hotel/" title="Lahan Instagram" target="_blank"><span>라한 인스타그램<!-- 라한 인스타그램 --></span></a>
-									<a href="https://www.facebook.com/LAHANHOTEL" title="Lahan Facebook" target="_blank"><span>라한 페이스북<!-- 라한 페이스북 --></span></a>
-									<a href="https://pf.kakao.com/_Umxebxb" title="Lahan Kakaochanel" target="_blank"><span>라한 카카오채널<!-- 라한 카카오채널 --></span></a>
-								</div>
-								<p class="copTxt">&#169; 2022 by Lahan Hotels Co., Ltd<!-- &#169; 2022 by Lahan Hotels Co., Ltd --></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		
-		</footer>
+		 <%@ include file="/WEB-INF/views/footer.jsp" %> 
+		
+		
 		<div class="loading-box" style="display: none;">
 			<div class="loading"></div>
 			<p class="loading-txt">LOADING</p>
@@ -626,42 +515,42 @@
 					<div class="lahan-item lahan-item1">
                         <a href="https://www.lahanhotels.com/hub/ko/main.do" title="라한" target="_blank">
 						<span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_wh.png" alt="라한"/></span>
-						<span><img src="/static/pc/images/hub/search/lahan_bl.png" alt="라한"/></span>
+						<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_bl.png" alt="라한"/></span>
 						<p>라한<!-- 라한 --></p>
                         </a>
 					</div>
 					<div class="lahan-item lahan-item2">
                         <a href="https://www.lahanhotels.com/gyeongju/ko/main.do" title="라한셀렉트 경주" target="_blank">
 						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_select_wh.png" alt="라한셀렉트 경주"/></span>
-						    <span><img src="/static/pc/images/hub/search/lahan_select_bl.png" alt="라한셀렉트 경주"/></span>
+						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_select_bl.png" alt="라한셀렉트 경주"/></span>
 						    <p>라한셀렉트 경주<!-- 라한셀렉트 경주 --></p>
                         </a>
 					</div>
 					<div class="lahan-item lahan-item3">
                         <a href="https://www.lahanhotels.com/jeonju/ko/main.do" title="라한호텔 전주" target="_blank">
 						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 전주"/></span>
-						    <span><img src="/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 전주"/></span>
+						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 전주"/></span>
 						    <p>라한호텔 전주<!-- 라한호텔 전주 --></p>
                         </a>
 					</div>
 					<div class="lahan-item lahan-item4">
                         <a href="https://www.lahanhotels.com/pohang/ko/main.do" title="라한호텔 포항" target="_blank">
     						<span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 포항"/></span>
-	    					<span><img src="/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 포항"/></span>
+	    					<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 포항"/></span>
 		    				<p>라한호텔 포항<!-- 라한호텔 포항 --></p>
                         </a>
 					</div>
 					<div class="lahan-item lahan-item5">
                         <a href="https://www.lahanhotels.com/ulsan/ko/main.do" title="호텔현대 바이 라한 울산" target="_blank">
    						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 울산"/></span>
-						    <span><img src="/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 울산"/></span>
+						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 울산"/></span>
 						    <p>호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></p>
                         </a>
 					</div>
 					<div class="lahan-item lahan-item6">
                         <a href="https://www.lahanhotels.com/mokpo/ko/main.do" title="호텔현대 바이 라한 목포" target="_blank">
 						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 목포"/></span>
-						    <span><img src="/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 목포"/></span>
+						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 목포"/></span>
 						    <p>호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></p>
                         </a>
 					</div>

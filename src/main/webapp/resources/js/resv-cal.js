@@ -13,12 +13,12 @@ $(window).on('load', function () {
 })
 
 /***********************************************************************************************************
- * document.Ready     몄텧
+ * document.Ready 시 호출
  **********************************************************************************************************/
 
 /**
  * HUMY4200T.html
- * 湲곌컙議고쉶 罹섎┛  
+ * 기간조회 캘린더
  *
  * @param from (Element)
  * @param to (Element)
@@ -36,9 +36,9 @@ commonJs.initFromToCalendar = function (_from, _to) {
 	var minDate = new Date();
 	var maxDate = new Date();
 
-	//1 꾩쟾
+	//1년전
 	minDate.setMonth(monthOfYear - 12);
-	//1 꾪썑
+	//1년후
 	maxDate.setMonth(monthOfYear + 12);
 	from = _from
 		.datepicker({
@@ -72,7 +72,7 @@ commonJs.initFromToCalendar = function (_from, _to) {
 			minDate: minDate,
 			maxDate: maxDate,
 			onDayCreate: function (dObj, dStr, fp, dayElem) {
-				  //  쇱슂    쒖떆
+				  // 일요일 표시
 				    if (dayElem.dateObj.getDay() === 0) {
 				      dayElem.classList.add("sun");
 				    }
@@ -155,7 +155,7 @@ commonJs.initFromToCalendar = function (_from, _to) {
 	}
 }
 
-//硫붿씤  덉빟罹섎┛    좎쭨愿    留ㅻ땲吏뺥븿  
+//메인 예약캘린더 날짜관련 매니징함수
 commonJs.calendarMgr = {
 	chkInDate: '',
 	chkOutDate: '',
@@ -185,7 +185,7 @@ commonJs.calendarMgr = {
 
 /**
  * HURE1000M.html
- *  덉빟 罹섎┛  
+ * 예약 캘린더
  * https://api.jqueryui.com/datepicker/
  *
  * @param calendarEl (Element)
@@ -224,9 +224,9 @@ var endDate = new Date(startDate.getFullYear(), startDate.getMonth() + 12, 0);
 //checkInOut calendar
 option = {
 	defaultDate: startDate,
-	tDay: startDate, // .ui-datepicker-today  곸슜  좎쭨
-	chkInTitle: '泥댄겕  ',
-	chkOutTitle: '泥댄겕 꾩썐',
+	tDay: startDate, // .ui-datepicker-today 적용 날짜
+	chkInTitle: '체크인',
+	chkOutTitle: '체크아웃',
 	numberOfMonths: 2,
 	showOtherMonths: false,
     selectOtherMonths: false,
@@ -247,13 +247,13 @@ option = {
 	],
 	dayNamesMin: (lang == 'ko') ?
 		[
-			"  ",
-			"  ",
-			"  ",
-			"  ",
-			"紐 ",
-			"湲 ",
-			"  "
+			"일",
+			"월",
+			"화",
+			"수",
+			"목",
+			"금",
+			"토"
 		] :
 		[
 			"SUN",
@@ -269,7 +269,7 @@ option = {
 	maxDate: endDate,
 	dateFormat: 'yy.mm.dd',
 	onChangeMonthYear: function (year, month, inst) {
-		// 좎쭨 좏깮 諛   щ젰     대룞    몄텧 setUnselectableDate(year, month);
+		//날짜선택 및 달력 월 이동시 호출 setUnselectableDate(year, month);
 		$("#searchMonth").val(month);
 		$("#searchYear").val(year);
 		hotlCalendar();
@@ -301,17 +301,17 @@ option = {
 			}
 		}
 
-		// 泥댄겕  
+		// 체크인
 		if (chkInDate == calDate) {
 			return [true, 'sel revOn ui-datepicker-unselectable ui-state-disabled'];
 		}
 
-		// 泥댄겕 꾩썐
+		// 체크아웃
 		if (chkOutDate == calDate) {
 			return [true, 'sel revOff'];
 		}
 
-		//  좏깮 쒗븳  좎쭨
+		// 선택제한 날짜
 		if (unSelectableDate.indexOf(calDate) != -1) {
 			if (clickCnt == 0 || resved) {
 				return [true, 'tdDefault'];
@@ -321,7 +321,7 @@ option = {
 			}
 		}
 
-		// 以묎컙  좎쭨  좏깮
+		// 중간 날짜 선택
 		return [
 			true,
 			(calDate > chkInDate && calDate < chkOutDate) ?
@@ -368,21 +368,21 @@ option = {
 			var nightCnt = dUtils.dateDiff(chkInDate, chkOutDate);
 			$("#cntDay").html(nightCnt);
 			if ($("#night").length) {
-				$("#nightText").text(nightCnt); // 泥댄겕    좎쭨
+				$("#nightText").text(nightCnt); // 체크인 날짜
 				$("#chkInDate").text(chkInDate);
 				$("#chkOutDate").text(chkOutDate);
 				$("#ckinDay").text("("+ckinDay+")");
 				$("#ckoutDay").text("("+ckoutDay+")");
-				$("#night").val(nightCnt); // 泥댄겕    좎쭨
-				$("#resveCheckIn").val(chkInDate); // 泥댄겕    좎쭨
-				$("#resveCheckOut").val(chkOutDate); // 泥댄겕 꾩썐  좎쭨
+				$("#night").val(nightCnt); // 체크인 날짜
+				$("#resveCheckIn").val(chkInDate); // 체크인 날짜
+				$("#resveCheckOut").val(chkOutDate); // 체크아웃 날짜
 				if (window.location.href.indexOf("main") > -1) {
-					$("#check_in").val(chkInDate.replace(/\./gi, "-")); // 泥댄겕    좎쭨
-					$("#check_out").val(chkOutDate.replace(/\./gi, "-")); // 泥댄겕 꾩썐  좎쭨
+					$("#check_in").val(chkInDate.replace(/\./gi, "-")); // 체크인 날짜
+					$("#check_out").val(chkOutDate.replace(/\./gi, "-")); // 체크아웃 날짜
 				}
 				if (window.location.href.indexOf("resv/step1") > -1) {
-					$("#check_in").val(chkInDate.replace(/\./gi, "-")); // 泥댄겕    좎쭨
-					$("#check_out").val(chkOutDate.replace(/\./gi, "-")); // 泥댄겕 꾩썐  좎쭨
+					$("#check_in").val(chkInDate.replace(/\./gi, "-")); // 체크인 날짜
+					$("#check_out").val(chkOutDate.replace(/\./gi, "-")); // 체크아웃 날짜
 				}
 
 			}
@@ -402,7 +402,7 @@ option = {
 					'maxDate',
 					new Date(calendarEl.datepicker('option', 'maxDate'))
 				);
-				//媛앹떎 諛   몄썝 좏깮  꾩퐫 붿뼵 open
+				//객실 및 인원선택 아코디언 open
 				if (calendarEl.closest('.checkDate').length) {
 					calendarEl
 						.closest('li')
@@ -455,7 +455,7 @@ option = {
 
 calendarEl.datepicker(option);
 /**
- *  좏깮 쒗븳  붾  곗씠  
+ * 선택제한 더미데이터
  */
 function setUnselectableDate(year, month) {
 	//date push
@@ -682,11 +682,11 @@ commonJs.gotoDate = function ($j, month, year) {
 }
 
 /**
- *  щ젰  좎쭨  명똿
+ * 달력 날짜 세팅
  *
- * @param calendarEl ( 붿냼)
- * @param minDate ( 쒖옉  )
- * @param maxDate (醫낅즺  )
+ * @param calendarEl (요소)
+ * @param minDate (시작일)
+ * @param maxDate (종료일)
  *
  */
 commonJs.setCalendarChkInOutDate = function (calendarEl, minDate, maxDate) {
@@ -697,11 +697,11 @@ commonJs.setCalendarChkInOutDate = function (calendarEl, minDate, maxDate) {
 }
 
 /**
- *  щ젰  좎쭨  명똿
+ * 달력 날짜 세팅
  *
- * @param calendarEl ( 붿냼)
- * @param ckinDate (泥댄겕  )
- * @param ckoutDate (泥댄겕  )
+ * @param calendarEl (요소)
+ * @param ckinDate (체크인)
+ * @param ckoutDate (체크인)
  *
  */
 commonJs.setCalendarChkInOutDate = function (calendarEl, ckinDate, ckoutDate) {
@@ -710,7 +710,7 @@ commonJs.setCalendarChkInOutDate = function (calendarEl, ckinDate, ckoutDate) {
 }
 
 /**
- *  앹뾽  깃 罹섎┛  
+ * 팝업 싱글캘린더
  * BSBM1100T.html
  *
  * @param calendarEl (Element)
@@ -755,10 +755,10 @@ commonJs.initPopSingleCalendar = function (calendarEl) {
 
 
 /*********************************************************************************************************
- *  window.onLoad     몄텧
+ *  window.onLoad 시 호출
  *********************************************************************************************************/
 /**
- * 硫붿씤  덉빟 곸뿭
+ * 메인 예약영역
  * BSMA1000M.html
  *
  * @param revArea(String)
@@ -810,7 +810,7 @@ commonJs.setRevArea = function (revArea) {
 	//open
 	var openRevArea = function (e) {
 		if($("#hotelCode").val() == "" && window.location.href.indexOf("hub") > -1){
-			alert(hotlAlert);//<!--  명뀛    좏깮 댁＜ 몄슂. -->
+			alert(hotlAlert);//<!-- 호텔을 선택해주세요. -->
 			return false;
 		}
 
@@ -938,11 +938,11 @@ commonJs.setRevArea = function (revArea) {
 }
 
 var dUtils = {
-	sep: '.', //援щ텇  
-	format: 'yy.mm.dd', // щ㎎
+	sep: '.', //구분자
+	format: 'yy.mm.dd', //포맷
 
 	/**
-	 *  꾩옱 議고쉶 꾩썡 媛  몄삤湲  (YYYYMM)
+	 * 현재 조회년월 가져오기 (YYYYMM)
 	 * @returns {number}
 	 */
 	getToYearMonth: function () {
@@ -959,7 +959,7 @@ var dUtils = {
 	},
 
 	/**
-	 * yyyy-mm-dd  뺤떇 蹂   
+	 * yyyy-mm-dd 형식 변환
 	 * @param date (Date)
 	 * @return {string}
 	 */
@@ -983,7 +983,7 @@ var dUtils = {
 	},
 
 	/**
-	 *  좎쭨 ъ씠 媛꾧꺽 (1, 2, 3  )
+	 * 날짜사이 간격 (1, 2, 3일)
 	 * @param startDate
 	 * @param endDate
 	 * @returns {number}
@@ -996,7 +996,7 @@ var dUtils = {
 	},
 
 	/**
-	 *     뷀븯湲 
+	 * 날 더하기
 	 * @param strDate (string)
 	 * @param days (number)
 	 * @returns {string}
@@ -1008,7 +1008,7 @@ var dUtils = {
 	},
 
 	/**
-	 * Date 蹂   
+	 * Date 변환
 	 * @param format
 	 * @param date
 	 * @returns {Date}
@@ -1024,7 +1024,7 @@ var dUtils = {
 	},
 
 	/**
-	 *  붿씪 援ы븯湲 
+	 * 요일 구하기
 	 * @param date
 	 * @returns (string)
 	 */
@@ -1036,13 +1036,13 @@ var dUtils = {
         var krDate = new Date(utc + (krTimeDiff));
 
 		var week = lang == 'ko' ? [
-			'  ',
-			'  ',
-			'  ',
-			'  ',
-			'紐 ',
-			'湲 ',
-			'  '
+			'일',
+			'월',
+			'화',
+			'수',
+			'목',
+			'금',
+			'토'
 		] :
 		[
 			"SUN",
@@ -1059,7 +1059,7 @@ var dUtils = {
 	},
 
 	/**
-	 *  뚯닽   吏  뺤옄由  諛섏삱由  (媛 ,  먮┸  )
+	 * 소숫점 지정자리 반올림 (값, 자릿수)
 	 */
 	Round: function (n, pos) {
 		var digits = Math.pow(10, pos);
@@ -1086,7 +1086,7 @@ function Jessture(target) {
 
 	target.on('touchstart , mousedown', function (e) {
 		if (e.type == 'mousedown') {
-			// input  꾨뱶 泥댄겕
+			// input 필드 체크
 			if ($(e.target).filter('input').length == 0) {
 				e.preventDefault();
 			}

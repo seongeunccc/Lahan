@@ -45,7 +45,7 @@
 }
 
 .header.fixedd .h-box-right .btn-search-lahan::before {
-	background-image: url('../../../images/common/icon_search_bl_14x14.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/common/icon_search_bl_14x14.png');
 }
 
 .header.fixedd .h-box-right .lang-wrap>li,
@@ -54,11 +54,11 @@
 }
 
 .header.fixedd .h-box-right .lang-box::before {
-	background-image: url('../../../images/common/icon_lang_bl_15x15.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/common/icon_lang_bl_15x15.png');
 }
 
 .header.fixedd .h-box-right .lang-box::after {
-	background-image: url('../../../images/hub/select_arrow_bl_8x4.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/hub/select_arrow_bl_8x4.png');
 }
 
 .header.fixedd .h-box-right a.btn-all span {
@@ -66,58 +66,6 @@
 }
 
 
-/* 기존 header css 주석 처리, 추후 반영될 수 있음 */
-/*
-.main .header.open {
-	background-color: #fff;
-}
-
-.main .header.on {
-	height: 230px;
-}
-
-.main .header.open .h-wrap {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.main .header.open .nav-list>li>a {
-	color: #101010
-}
-
-.main .header.open .nav-inner-list a,
-.main .header.open .h-box-right a:not(a.btn-rev) {
-	color: #333;
-}
-
-.main .header.open .nav-inner-list a:hover {
-	color: #a68164;
-}
-
-.main .header.open .h-box-right .set-wrap li:nth-child(2) {
-	border-color: rgba(0, 0, 0, 0.2);
-}
-
-.main .header.open .h-box-right .btn-search-lahan::before {
-	background-image: url('../../../images/common/icon_search_bl_14x14.png');
-}
-
-.main .header.open .h-box-right .lang-wrap>li,
-.header.open .select-lang {
-	color: #333;
-}
-
-.main .header.open .h-box-right .lang-box::before {
-	background-image: url('../../../images/common/icon_lang_bl_15x15.png');
-}
-
-.main .header.open .h-box-right .lang-box::after {
-	background-image: url('../../../images/hub/select_arrow_bl_8x4.png');
-}
-
-.main .header.open .h-box-right a.btn-all span {
-	background-color: #000;
-}
-*/
 
 /*visual*/
 .main-visual {
@@ -323,7 +271,7 @@
 	margin-left: -6px;
 	width: 12px;
 	height: 12px;
-	background-image: url('../../../images/hub/icon_night_wh_12x12.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/hub/icon_night_wh_12x12.png');
 	background-repeat: no-repeat;
 }
 
@@ -529,19 +477,19 @@
 }
 
 .numPeople .ppBtn.btnDown:before {
-	background: url('../../../images/hub/main_poeple_minus.png')no-repeat center;
+	background: url('https://www.lahanhotels.com/static/pc/images/hub/main_poeple_minus.png')no-repeat center;
 }
 
 .numPeople .ppBtn.btnDown.blank:before {
-	background: url('../../../images/hub/main_poeple_minus_dis.png')no-repeat center;
+	background: url('https://www.lahanhotels.com/static/pc/images/hub/main_poeple_minus_dis.png')no-repeat center;
 }
 
 .numPeople .ppBtn.btnUp:before {
-	background: url('../../../images/hub/main_poeple_plus.png')no-repeat center;
+	background: url('https://www.lahanhotels.com/static/pc/images/hub/main_poeple_plus.png')no-repeat center;
 }
 
 .numPeople .ppBtn.btnUp.blank:before {
-	background: url('../../../images/hub/main_poeple_plus_dis.png')no-repeat center;
+	background: url('https://www.lahanhotels.com/static/pc/images/hub/main_poeple_plus_dis.png')no-repeat center;
 }
 
 
@@ -566,7 +514,7 @@
 	left: 0;
 	width: 18px;
 	height: 18px;
-	background-image: url('../../../images/common/icon_procode_wh.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/common/icon_procode_wh.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -593,7 +541,7 @@
 	width: 22px;
 	height: 22px;
 	color: #fff;
-	background-image: url("../../../images/hub/icon/icon_pop_close.png");
+	background-image: url("https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pop_close.png");
 	background-repeat: no-repeat;
 	background-size: 22px;
 }
@@ -625,7 +573,7 @@
 	right: 0;
 	width: 10px;
 	height: 5px;
-	background-image: url('../../../images/hub/select_arrow_bl_10x5.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/hub/select_arrow_bl_10x5.png');
 	background-repeat: no-repeat;
 }
 
@@ -977,6 +925,19 @@ a.m-btn-resv {
 	padding: 34px 0;
 }
 
+.test_introLahan{
+	height: 468px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: -webkit-calc(100% - 832px);
+	width: calc(100% - 832px);
+	padding: 34px 0;
+	font-family: 'Noto Sans KR 800', sans-serif;
+}
+
+
+
 .main-aboutlahan .right {
 	width: 832px;
 }
@@ -1076,7 +1037,7 @@ a.m-btn-resv {
 	left: 0;
 	width: 24px;
 	height: 24px;
-	background-image: url('../../../images/hub/icon/icon_instagram_bl_24x24.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/hub/icon/icon_instagram_bl_24x24.png');
 	background-repeat: no-repeat;
 }
 
@@ -1146,7 +1107,7 @@ a.m-btn-resv {
 	margin-left: 132px;
 	width: 43px;
 	height: 43px;
-	background-image: url('../../../images/hub/icon/icon-cover-insta.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/hub/icon/icon-cover-insta.png');
 	background-repeat: no-repeat;
 	z-index: 9;
 }
@@ -1327,17 +1288,17 @@ a.m-btn-resv {
 	margin-right: 14px;
 	width: 26px;
 	height: 26px;
-	background: url("../../../images/hub/icon/icon_check_32x32.png") no-repeat;
+	background: url("https://www.lahanhotels.com/static/pc/images/hub/icon/icon_check_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 #mainPopLayer .fncArea .frm input[type=checkbox]:checked+label::before {
-	background: url("../../../images/hub/icon/icon_checked_26x26.png") no-repeat;
+	background: url("https://www.lahanhotels.com/static/pc/images/hub/icon/icon_checked_26x26.png") no-repeat;
 	background-size: cover;
 }
 
 #mainPopLayer .fncArea .frm label:hover::before {
-	background: url("../../../images/hub/icon/icon_check_hover_32x32.png") no-repeat;
+	background: url("https://www.lahanhotels.com/static/pc/images/hub/icon/icon_check_hover_32x32.png") no-repeat;
 	background-size: cover;
 }
 
@@ -1354,7 +1315,7 @@ a.m-btn-resv {
 	display: inline-block;
 	width: 12px;
 	height: 12px;
-	background: url(../../../images/hub/mainPopClose.png) no-repeat center;
+	background: url(https://www.lahanhotels.com/static/pc/images/hub/mainPopClose.png) no-repeat center;
 	margin-right: 10px;
 	vertical-align: middle;
 }
@@ -1485,12 +1446,12 @@ a.m-btn-resv {
 
 .about-slider .swiper-button-prev {
 	margin-left: -48px;
-	background-image: url('../../../images/property/icon/left_arrow_active_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/property/icon/left_arrow_active_27x15.png');
 }
 
 .about-slider .swiper-button-next {
 	margin-left: 48px;
-	background-image: url('../../../images/property/icon/right_arrow_active_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/pc/images/property/icon/right_arrow_active_27x15.png');
 }
 
 /*2023-04-18 추가 + 2023-05-17 추가*/
@@ -1510,7 +1471,7 @@ a.m-btn-resv {
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-image: url(../../../images/hub/icon/ico_notice_q.png);
+	background-image: url(https://www.lahanhotels.com/static/pc/images/hub/icon/ico_notice_q.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -1541,7 +1502,7 @@ a.m-btn-resv {
 	position: absolute;
 	bottom: -8px;
 	left: 18px;
-	background-image: url(../../../images/hub/icon/ico_bottom_arrow.png);
+	background-image: url(https://www.lahanhotels.com/static/pc/images/hub/icon/ico_bottom_arrow.png);
 	height: 8px;
 	width: 8px;
 }
@@ -1554,3 +1515,27 @@ a.m-btn-resv {
 .m-resv-list.step3 .step3-list:last-child .resv-tit:hover .tooltip-text {
 	display: inline-block;
 }
+
+
+	.icon_mid{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    font-size: inherit;
+    font-family: 'Gotham-Book', 'Yoon730', sans-serif;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    background-position: 0 0;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    background-image: url('https://www.lahanhotels.com/static/pc/images/common/icon_point_W.svg');
+	}
+    

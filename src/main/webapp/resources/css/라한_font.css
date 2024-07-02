@@ -1,76 +1,15 @@
 @charset "utf-8";
 
-/* Noto Sans Korean */
-@font-face {
-  font-family: "Noto Sans KR 200", sans-serif;
-  font-optical-sizing: auto;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200&display=swap");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Noto Sans KR 300", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: "Noto Sans KR 400", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Noto Sans KR 500", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Noto Sans KR 600", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Noto Sans KR 700', sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Noto Sans KR 800", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@800&display=swap");
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
-
-
-
-
-
-
 
 /*YoonGothicPro700 윤고딕폰트*/
 @font-face {
 	font-family: 'Yoon730';
 	font-weight: 300;
 	font-display: swap;
-	src: local('Yoon730'),
-				url('../../font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');
+	src: local('Yoon730'),/* Yoon® 민국 */
+				url('../font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');
 }
 
 @font-face {
@@ -78,9 +17,9 @@
 	font-weight: 400;
 	font-display: swap;
 	src: local('Yoon740'),
-				url('../../font/YoonGothicPro700/YoonGothicPro740.eot') format('embedded-opentype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro740.ttf') format('truetype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro740.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro740.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro740.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro740.woff') format('woff');
 }
 
 @font-face {
@@ -88,9 +27,9 @@
 	font-weight: 600;
 	font-display: swap;
 	src: local('Yoon770'),
-				url('https://www.lahanhotels.com/font/YoonGothicPro700/YoonGothicPro770.eot') format('embedded-opentype'),
-				url('https://www.lahanhotels.com/font/YoonGothicPro700/YoonGothicPro770.ttf') format('truetype'),
-				url('https://www.lahanhotels.com/font/YoonGothicPro700/YoonGothicPro770.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro770.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro770.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro770.woff') format('woff');
 }
 
 @font-face {
@@ -98,40 +37,41 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local('Yoon780'),
-				url('../../font/YoonGothicPro700/YoonGothicPro780.eot') format('embedded-opentype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro780.ttf') format('truetype'),
-				url('../../font/YoonGothicPro700/YoonGothicPro780.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro780.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro780.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro780.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Perpetua Bold';
 	font-weight: bold;
-	src: local('Perpetua-Bold'), url('../../font/Perpetua/PerpetuaMTPro-Bold.otf') format('otf'),
-	url('../../font/Perpetua/Perpetua-Bold.woff') format('woff');
+	src: local('Perpetua-Bold'),  url('../font/Perpetua/PerpetuaMTPro-Bold.otf') format('otf'),
+	url('../font/Perpetua/Perpetua-Bold.woff') format('woff');
 }
-
 @font-face {
 	font-family: 'Gotham';
 	font-weight: 700;
-	src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap') format('truetype');
+	src: local('Gotham-Bold'),  url('../font/Gotham/Gotham-Bold.otf') format('otf'),
+	url('../font/Gotham/Gotham-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Medium';
 	font-weight: 500;
-	src: url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap') format('truetype');
-
+	src: local('Gotham-Medium'), url('../font/Gotham/Gotham-Medium.otf') format('otf'),
+	url('../font/Gotham/Gotham-Medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Book';
 	font-weight: 400;
-	src: url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap') format('truetype');
+	src: local('Gotham-Book'), url('../font/Gotham/Gotham-Book.otf') format('otf'),
+	url('../font/Gotham/Gotham-Book.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Light';
 	font-weight: 300;
-	src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap') format('truetype');
-
+	src: local('Gotham-Light'), url('../font/Gotham/Gotham-Light.otf') format('otf'),
+	url('../font/Gotham/Gotham-Light.woff') format('woff');
 }

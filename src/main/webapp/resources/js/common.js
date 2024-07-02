@@ -1,4 +1,4 @@
-//怨듯넻
+//공통
 $(document).ready(function(){
 	
 	const selectBoxElements = document.querySelectorAll(".select");
@@ -50,7 +50,7 @@ $(document).ready(function(){
 			$('.layerPop[layer-data='+target+']').fadeIn();
 			$(".dimmed2").fadeIn();
 
-			// 덉씠 댄뙘    ㅽ뵂   body  ㅽ겕濡  X
+			//레이어팝업 오픈시 body 스크롤 X
 			if ($(".layerPop").is(':visible')) {
 				$('body').addClass('scrollLock');
 			}
@@ -59,13 +59,13 @@ $(document).ready(function(){
 				$(".layerPop").fadeOut();
 				$(".dimmed2").fadeOut();
 
-				// 덉씠 댄뙘    レ쓣   body  ㅽ겕濡  O
+				//레이어팝업 닫을시 body 스크롤 O
 				$('body').removeClass('scrollLock');
 			});
 			
 	});
 
-		//header nav:hover   bg  щ 
+		//header nav:hover시 bg 여부
 		$(".nav-list > li").on("mouseenter", function(){
 			$(this).parents(".header").addClass("open");
 		});
@@ -84,7 +84,7 @@ $(document).ready(function(){
 			$(".logo > img").eq(1).removeClass("on").addClass("off");
 		});
 
-		// 몄뼱
+		//언어
 		$(".lang-box").on("click", function(){
 			var langTarget = $(".lang-box .selected-value").text();
 			var valueTarget1 = $(".lang-wrap > li:eq(0)").text();
@@ -99,7 +99,7 @@ $(document).ready(function(){
 			}
 		});
 
-		//header > fixedd , dimmed 異붽 
+		//header > fixedd , dimmed 추가
 		$(window).scroll(function(){
 			var hScroll = $(this).scrollTop();
 			if( hScroll > 42 ){
@@ -117,16 +117,16 @@ $(document).ready(function(){
 });
 
 
-// щ젰
+//달력
 $.datepicker.setDefaults({
 	dateFormat: 'yy.mm.dd',
-	prevText: ' 댁쟾   ',
-	nextText: ' ㅼ쓬   ',
+	prevText: '이전 달',
+	nextText: '다음 달',
 	monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
-	monthNamesShort: ['1  ', '2  ', '3  ', '4  ', '5  ', '6  ', '7  ', '8  ', '9  ', '10  ', '11  ', '12  '],
-	dayNames: ['  ', '  ', '  ', '  ', '紐 ', '湲 ', '  '],
-	dayNamesShort: ['  ', '  ', '  ', '  ', '紐 ', '湲 ', '  '],
-	dayNamesMin: ['  ', '  ', '  ', '  ', '紐 ', '湲 ', '  '],
+	monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+	dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+	dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 	showMonthAfterYear: true,
 	showButtonPane: false,
 	yearSuffix: '.',

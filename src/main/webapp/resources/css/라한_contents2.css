@@ -197,7 +197,7 @@
 	display: block;
 	width: 35px;
 	height: 18px;
-	background: url('../../../images/hub/icon/ico_arrow_down_34x18.png') no-repeat center;
+	background: url('https://www.lahanhotels.com/static/images/hub/icon/ico_arrow_down_34x18.png') no-repeat center;
 	opacity: .7;
 }
 
@@ -1612,20 +1612,20 @@
 
 .hotelDetail_wrap .swiper-button-prev {
 	right: 120px;
-	background-image: url('../../../images/property/icon/left_arrow_active_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/images/property/icon/left_arrow_active_27x15.png');
 }
 
 .hotelDetail_wrap .swiper-button-next {
 	right: 30px;
-	background-image: url('../../../images/property/icon/right_arrow_active_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/images/property/icon/right_arrow_active_27x15.png');
 }
 
 .hotelDetail_wrap .swiper-button-prev.swiper-button-disabled {
-	background-image: url('../../../images/property/icon/left_arrow_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/images/property/icon/left_arrow_27x15.png');
 }
 
 .hotelDetail_wrap .swiper-button-next.swiper-button-disabled {
-	background-image: url('../../../images/property/icon/right_arrow_27x15.png');
+	background-image: url('https://www.lahanhotels.com/static/images/property/icon/right_arrow_27x15.png');
 }
 
 .contents-slider .swiper-button-next.swiper-button-disabled,
@@ -3388,5 +3388,5 @@
 	margin-top: 2px;
 	width: 17px;
 	height: 16px;
-	background-image: url('../../../images/hub/mypage/icon_link.png');
+	background-image: url('https://www.lahanhotels.com/static/images/hub/mypage/icon_link.png');
 }
