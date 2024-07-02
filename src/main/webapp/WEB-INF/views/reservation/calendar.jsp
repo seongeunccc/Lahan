@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>예약을 원하시는 날짜를 선택해 주세요</title>
-</head>
+
 <script type="text/javascript">
 
 var today = new Date();
@@ -22,7 +22,8 @@ function setCalendar(){
 	document.getElementById('checkOutDate').value = nextDay.toISOString().substring(0, 10);	
 	const day = dayNames[today.getDay()];
 	console.log("체크인하는 날의 요일~ : "+day);
-	document.getElementById('checkInDay').innerHTML = '<span >'+day +'</span>';
+	document.getElementById('checkInDay').innerHTML = '<span >'+ day +'</span>';
+	document.getElementById('checkOutDay').innerHTML = '<span >'+dayNames[nextDay.getDay()] +'</span>';
 	
 }
 
@@ -42,6 +43,7 @@ function setCheckOutDate() {
 
 window.onload = function() {
 setCalendar();
+
 };
 
 </script>
@@ -52,15 +54,19 @@ font-family : Gotham-Medium, Yoon730 ;
 margin: 0;
 border: none;
 color: black; 
-font-size: 22px;
- width:160px; 
+font-size: 14px;
+width: 140px;
 }
+
 </style>
+</head>
+
 
 <body>
 	<div align="center">
 	<form action="/nextPage" name="resv" id="resv"  >
-		체크인 <input type="date"  id="checkInDate"  min="2024-07-01" value="2024-07-01"  onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 체크아웃 <input type="date"  id="checkOutDate" min="2024-07-02" value="2024-07-05" class="calenderSet">
+		체크인 <input type="date"  id="checkInDate"  min="2024-07-01" value="2024-07-01"  onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 
+		체크아웃 <input type="date"  id="checkOutDate" min="2024-07-02" value="2024-07-05" class="calenderSet"><span id="checkOutDay"></span> 
 
 	
 	
