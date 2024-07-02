@@ -35,4 +35,9 @@ public class ReservationController {
 		
 		return "reservation/step4";
 	}
+	@RequestMapping(value = "clublahan/membership")
+	public String membership(Model model) {
+		
+		return "clublahan/membership";
+	}
 }

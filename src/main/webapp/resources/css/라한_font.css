@@ -67,7 +67,7 @@
 	font-family: 'Yoon730';
 	font-weight: 300;
 	font-display: swap;
-	src: local('Yoon® 민국'),
+	src: local('Yoon730'),/* Yoon® 민국 */
 				url('../font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
 				url('../font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
 				url('../font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');

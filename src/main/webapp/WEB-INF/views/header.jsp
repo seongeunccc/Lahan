@@ -8,7 +8,7 @@
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동">
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
 							<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN"/>
 							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>
 							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN3"/></span>
@@ -23,7 +23,7 @@
 							<a href="/hub/ko/package/list.do">스페셜 오퍼</a>
 						</li>
 						<li>
-							<a href="/hub/ko/clublahan/membership.do">클럽라한</a>
+							<a href="${pageContext.request.contextPath}/clublahan/membership">클럽라한</a>
 						</li>
 						<li>
 							<a href="/hub/ko/onlineshop/subMain.do">온라인샵</a>
