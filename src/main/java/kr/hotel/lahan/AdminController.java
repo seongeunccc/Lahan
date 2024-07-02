@@ -1,5 +1,7 @@
 package kr.hotel.lahan;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -11,23 +13,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.javalec.springMVCBoard.HomeController;
-import com.javalec.springMVCBoard.command.BCommand;
-import com.javalec.springMVCBoard.command.BWriteCommand;
-import com.javalec.springMVCBoard.dao.MybatisDao;
-import com.javalec.springMVCBoard.util.Constant;
-
-import kr.hotel.lahan.command.AdminCommand;
+import kr.hotel.lahan.command.HotelAddCommand;
+import kr.hotel.lahan.command.HotelListCommand;
 import kr.hotel.lahan.command.JCommand;
+import kr.hotel.lahan.command.LCommand;
+import kr.hotel.lahan.dao.HotelDao;
+import kr.hotel.lahan.dto.HotelDto;
+import kr.hotel.lahan.util.Constant;
 
 @Controller
 public class AdminController {
 	
-	AdminCommand command = null;
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	LCommand command = null;
+	
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 public SqlSession sqlSession;
 	
+
 	@Autowired
 	public AdminController(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
@@ -54,7 +57,9 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
+	
 		System.out.println("호텔관리 화면");
+		
 		return "/admin/admin_hotel";
 	}
 	@RequestMapping("/admin/hoteladd.do")
@@ -63,16 +68,17 @@ public SqlSession sqlSession;
 		return "/admin/admin_hotel_add";
 	}
 	
-	@RequestMapping("/admin/hoteladding.do")
-	public String adminhoteladding(HttpServletRequest request, Model model) {
-		System.out.println("호텔추가_DB");
-		model.addAttribute("request",request);
-		command = new AdminCommand();
-	    command.execute(model);
-	     
-	     return "redirect:/admin/hotel.do"; 
-	}
 	
+	 @RequestMapping("/admin/hoteladding.do") 
+	 public String hoteladd(HttpServletRequest request, Model model) {
+	  System.out.println("호텔추가_DB"); 
+	  model.addAttribute("request",request); 
+	  command = new HotelAddCommand();
+	  System.out.println("호텔추가_DB2"); 
+	  command.execute(model);
+	 
+	 return "redirect:/admin/hotel.do"; }
+	 
 	
 	@RequestMapping("/admin/product.do")
 	public String adminproduct(Model model) {
@@ -80,7 +86,7 @@ public SqlSession sqlSession;
 		return "/admin/admin_product";
 	}
 	
-	@RequestMapping("/admin/board.do")
+	@RequestMapping("/admin/notice.do")
 	public String adminmember(Model model) {
 		System.out.println("어드민 게시판 화면");
 		return "/admin/admin_notice";

@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         INSERT INTO hotel
         (name, room_name, room_size, room_number, room_min, room_max, info, amenity, address, callnum, url) 
         VALUES 
-        (#{name}, #{roomName}, #{roomSize}, #{roomNumber}, #{roomMin}, #{roomMax}, #{info}, #{amenity}, #{address}, #{callnum}, #{url})
+        (#{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8}, #{param9}, #{param10}, #{param11})
     </insert>
 
 

@@ -237,7 +237,7 @@
         <div class="login-box">
             <div class="input-login-wrap">
                 <div class="input-wrap">
-                    <input type="text" id="hotelname" name="hotelname" placeholder="호텔명을 입력해 주세요." maxlength="50">
+                    <input type="text" id="name" name="name" placeholder="호텔명을 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>호텔명을 입력해 주세요.</p></li>
@@ -245,15 +245,23 @@
                     </div>
                 </div>
                 <div class="input-wrap">
-                    <input type="text" id="hotelinfo" name="hotelinfo" placeholder="호텔정보를 입력해 주세요." maxlength="50">
+                    <input type="text" id="room_name" name="room_name" placeholder="객실명을 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
-                            <li class="error"><p>호텔정보를 입력해 주세요.</p></li>
+                            <li class="error"><p>객실명을 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="input-wrap">
+                    <input type="number" id="room_size" name="room_size" placeholder="객실 사이즈를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>객실 사이즈를 입력해 주세요.</p></li>
                         </ul>
                     </div>
                 </div>
                 <div class="input-wrap">
-                    <input type="text" id="hotelroomct" name="hotelroomct" placeholder="객실 수를 입력해 주세요." maxlength="50">
+                    <input type="number" id="room_number" name="room_number" placeholder="객실 수를 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>객실 수를 입력해 주세요.</p></li>
@@ -261,15 +269,40 @@
                     </div>
                 </div>
                 <div class="input-wrap">
-                    <input type="text" id="hotelsub" name="hotelsub" placeholder="부대시설 정보를 입력해 주세요." maxlength="50">
+                    <input type="number" id="room_min" name="room_min" placeholder="숙박가능 최소 인원을 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>숙박가능 최소 인원을 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="number" id="room_max" name="room_max" placeholder="숙박가능 최대 인원을 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>숙박가능 최대 인원을 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="info" name="info" placeholder="호텔정보를 입력해 주세요." maxlength="50">
+                    <div class="txtGuideWrap">
+                        <ul class="txtGuide">
+                            <li class="error"><p>호텔정보를 입력해 주세요.</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="amenity" name="amenity" placeholder="부대시설 정보를 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>부대시설 정보를 입력해 주세요.</p></li>
                         </ul>
                     </div>
                 </div>
+               
                 <div class="input-wrap">
-                    <input type="text" id="hoteladd" name="hoteladd" placeholder="호텔주소를 입력해 주세요." maxlength="50">
+                    <input type="text" id="address" name="address" placeholder="호텔주소를 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>호텔주소를 입력해 주세요.</p></li>
@@ -277,7 +310,7 @@
                     </div>
                 </div>
                 <div class="input-wrap">
-                    <input type="text" id="hotelcall" name="hotelcall" placeholder="대표전화를 입력해 주세요." maxlength="50">
+                    <input type="text" id="callnum" name="callnum" placeholder="대표전화를 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>대표전화를 입력해 주세요.</p></li>
@@ -285,7 +318,7 @@
                     </div>
                 </div>
                 <div class="input-wrap">
-                    <input type="text" id="hotelurl" name="hotelurl" placeholder="홈페이지 주소를 입력해 주세요." maxlength="50">
+                    <input type="text" id="url" name="url" placeholder="홈페이지 주소를 입력해 주세요." maxlength="50">
                     <div class="txtGuideWrap">
                         <ul class="txtGuide">
                             <li class="error"><p>홈페이지 주소를 입력해 주세요.</p></li>
