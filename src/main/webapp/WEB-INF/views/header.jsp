@@ -64,12 +64,12 @@
 						<li>
 							<a href="${pageContext.request.contextPath}/hotel/hotelIntroduce" title="호텔 소개">호텔 소개<!-- 호텔 소개 --></a>
 							<ul class="all-2depth">
-								<li><a href="/hub/ko/hotel/hotelIntroduce.do" title="전체보기">전체보기<!-- 전체보기 --></a></li>
-								<li><a href="/hub/ko/hotel/gyeongjuDc.do" title="라한셀렉트 경주">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
-								<li><a href="/hub/ko/hotel/jeonjuDc.do" title="라한호텔 전주">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
-								<li><a href="/hub/ko/hotel/pohangDc.do" title="라한호텔 포항">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
-								<li><a href="/hub/ko/hotel/ulsanDc.do" title="호텔현대 바이 라한 울산">호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></a></li>
-								<li><a href="/hub/ko/hotel/mokpoDc.do" title="호텔현대 바이 라한 목포">호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/hotelIntroduce" title="전체보기">전체보기<!-- 전체보기 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/gyeongjuDc" title="라한셀렉트 경주">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/jeonjuDc" title="라한호텔 전주">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/pohangDc" title="라한호텔 포항">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/ulsanDc" title="호텔현대 바이 라한 울산">호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></a></li>
+								<li><a href="${pageContext.request.contextPath}/hotel/mokpoDc" title="호텔현대 바이 라한 목포">호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -80,8 +80,8 @@
 						<li><a href="/hub/ko/spclguide/list.do" title="프로모션">스페셜 가이드<!-- 스페셜 가이드 --></a></li>
 					</ul>
 					<ul class="all-1depth">
-						<li><a href="/hub/ko/clublahan/membership.do" title="클럽라한">클럽라한<!-- 클럽라한--></a></li>
-						<li><a href="/hub/ko/clublahan/membership.do" title="멤버십 소개">멤버십 소개<!-- 멤버십 소개--></a></li>
+						<li><a href="${pageContext.request.contextPath}/clublahan/membership" title="클럽라한">클럽라한<!-- 클럽라한--></a></li>
+						<li><a href="${pageContext.request.contextPath}/clublahan/membership" title="멤버십 소개">멤버십 소개<!-- 멤버십 소개--></a></li>
 						<li>
 							<a href="/hub/ko/clublahan/list.do" title="회원 전용 상품">회원 전용 상품<!-- 회원 전용상품 --></a>
 							<ul class="all-2depth">
