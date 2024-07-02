@@ -30,4 +30,9 @@ public class ReservationController {
 		
 		return "reservation/step1";
 	}
+	@RequestMapping(value = "resv/step4")
+	public String step4(Model model) {
+		
+		return "reservation/step4";
+	}
 }
