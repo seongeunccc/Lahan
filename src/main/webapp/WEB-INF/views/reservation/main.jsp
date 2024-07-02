@@ -35,14 +35,17 @@
     <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/bluewaves_common.js"></script>
     <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/paging_util.js"></script>
 	
-	
+	<script>
+	function removeOffClass() {
+		  document.getElementById('header_icon').classList.remove('off');
+		  console.log('removeOffClass 실행됨.')
+		};
+	</script>
 
 	
 	
 	<style>
-		body {
-  		font-family: "Noto Sans KR 300", sans-serif;
-		}
+	
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -153,6 +156,11 @@
 	
 		$(".btn-bell-wrap").hide();	
 	
+	
+		removeOffClass();
+
+		
+		
 	</script>
 	
                 <!-- //메인팝업 include -->
