@@ -16,7 +16,7 @@
 	회원가입 및 db 연결
 	로그인
 	회원가입 css 적용
-	
+	admin 로그인 시 admin_main으로 가게 적용
 	
 
 </body>
