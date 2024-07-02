@@ -40,4 +40,14 @@ public class ReservationController {
 		
 		return "clublahan/membership";
 	}
+	@RequestMapping(value = "hotel/brandIntroduce")
+	public String brandIntroduce(Model model) {
+		
+		return "hotel/brandIntroduce";
+	}
+	@RequestMapping(value = "hotel/hotelIntroduce")
+	public String hotelIntroduce(Model model) {
+		
+		return "hotel/hotelIntroduce";
+	}
 }
