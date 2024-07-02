@@ -68,6 +68,10 @@ public class JCommand {
 				System.out.println(loginOX);
 				HttpSession session = request.getSession(); 
 				session.setAttribute("id", id);
+				if(id.equals("admin")) {  //아이디가 어드민이면 3을 반환
+					loginOX=3;
+					return loginOX;
+				}
 				return loginOX; }
 			else loginOX = 0; //  비밀번호 틀림
 			System.out.println(loginOX);	

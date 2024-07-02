@@ -211,7 +211,7 @@
                 </div>
                 
                 <div class="mbfrm necessary">
-                    <input type="text" id="email" name="email" data-valid='Y' placeholder="이메일을 입력해주세요.  ex)leeseulki@kimseungeun.com" maxlength="11" aria-required="true" >
+                    <input type="text" id="email" name="email" data-valid='Y' placeholder="이메일을 입력해주세요.  ex)leeseulki@kimseungeun.com" maxlength="30" aria-required="true" >
                     <div class="alert_red" style="display: none;">이메일을 입력해 주세요.</div>
                 </div>
                
