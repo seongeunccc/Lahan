@@ -68,19 +68,19 @@
 	font-weight: 300;
 	font-display: swap;
 	src: local('Yoon® 민국'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro730.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro730.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro730.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Yoon740';
 	font-weight: 400;
 	font-display: swap;
-	src: local('YoonGothicPro740'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro740.eot') format('embedded-opentype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro740.ttf') format('truetype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro740.woff') format('woff');
+	src: local('Yoon740'),
+				url('../font/YoonGothicPro700/YoonGothicPro740.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro740.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro740.woff') format('woff');
 }
 
 @font-face {
@@ -88,9 +88,9 @@
 	font-weight: 600;
 	font-display: swap;
 	src: local('Yoon770'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro770.eot') format('embedded-opentype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro770.ttf') format('truetype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro770.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro770.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro770.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro770.woff') format('woff');
 }
 
 @font-face {
@@ -98,41 +98,41 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local('Yoon780'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro780.eot') format('embedded-opentype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro780.ttf') format('truetype'),
-				url('https://www.lahanhotels.com/static/pc/font/YoonGothicPro700/YoonGothicPro780.woff') format('woff');
+				url('../font/YoonGothicPro700/YoonGothicPro780.eot') format('embedded-opentype'),
+				url('../font/YoonGothicPro700/YoonGothicPro780.ttf') format('truetype'),
+				url('../font/YoonGothicPro700/YoonGothicPro780.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Perpetua Bold';
 	font-weight: bold;
-	src: local('Perpetua-Bold'), url('https://www.lahanhotels.com/static/pc/font/Perpetua/PerpetuaMTPro-Bold.otf') format('otf'),
-	url('https://www.lahanhotels.com/static/pc/font/Perpetua/Perpetua-Bold.woff') format('woff');
+	src: local('Perpetua-Bold'),  url('../font/Perpetua/PerpetuaMTPro-Bold.otf') format('otf'),
+	url('../font/Perpetua/Perpetua-Bold.woff') format('woff');
 }
 @font-face {
 	font-family: 'Gotham';
 	font-weight: 700;
-	src: local('Gotham-Bold'), url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Bold.otf') format('otf'),
-	url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Bold.woff') format('woff');
+	src: local('Gotham-Bold'),  url('../font/Gotham/Gotham-Bold.otf') format('otf'),
+	url('../font/Gotham/Gotham-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Medium';
 	font-weight: 500;
-	src: local('Gotham-Medium'), url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Medium.otf') format('otf'),
-	url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Medium.woff') format('woff');
+	src: local('Gotham-Medium'), url('../font/Gotham/Gotham-Medium.otf') format('otf'),
+	url('../font/Gotham/Gotham-Medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Book';
 	font-weight: 400;
-	src: local('Gotham-Book'), url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Book.otf') format('otf'),
-	url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Book.woff') format('woff');
+	src: local('Gotham-Book'), url('../font/Gotham/Gotham-Book.otf') format('otf'),
+	url('../font/Gotham/Gotham-Book.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Gotham-Light';
 	font-weight: 300;
-	src: local('Gotham-Light'), url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Light.otf') format('otf'),
-	url('https://www.lahanhotels.com/static/pc/font/Gotham/Gotham-Light.woff') format('woff');
+	src: local('Gotham-Light'), url('../font/Gotham/Gotham-Light.otf') format('otf'),
+	url('../font/Gotham/Gotham-Light.woff') format('woff');
 }
