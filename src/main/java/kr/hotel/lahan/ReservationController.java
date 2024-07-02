@@ -50,4 +50,29 @@ public class ReservationController {
 		
 		return "hotel/hotelIntroduce";
 	}
+	@RequestMapping(value = "hotel/gyeongjuDc")
+	public String gyeongjuDc(Model model) {
+		
+		return "hotel/gyeongjuDc";
+	}
+	@RequestMapping(value = "hotel/jeonjuDc")
+	public String jeonjuDc(Model model) {
+		
+		return "hotel/jeonjuDc";
+	}
+	@RequestMapping(value = "hotel/pohangDc")
+	public String pohangDc(Model model) {
+		
+		return "hotel/pohangDc";
+	}
+	@RequestMapping(value = "hotel/ulsanDc")
+	public String ulsanDc(Model model) {
+		
+		return "hotel/ulsanDc";
+	}
+	@RequestMapping(value = "hotel/mokpoDc")
+	public String mokpoDc(Model model) {
+		
+		return "hotel/mokpoDc";
+	}
 }
