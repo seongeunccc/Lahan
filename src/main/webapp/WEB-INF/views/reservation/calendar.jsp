@@ -11,6 +11,8 @@
 var today = new Date();
 const dayNames = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
 
+
+
 function setCalendar(){
 	var setNextDate = today.toISOString().substring(0, 10);
 	var nextDay = new Date(today);
@@ -19,7 +21,9 @@ function setCalendar(){
 	document.getElementById('checkInDate').min = new Date().toISOString().substring(0, 10);
 	document.getElementById('checkOutDate').value = nextDay.toISOString().substring(0, 10);	
 	const day = dayNames[today.getDay()];
-	console.log("체크인하는 날의 요일~ : "+day)
+	console.log("체크인하는 날의 요일~ : "+day);
+	document.getElementById('checkInDay').innerHTML = '<span >'+day +'</span>';
+	
 }
 
 function setCheckOutDate() {
@@ -56,7 +60,7 @@ font-size: 22px;
 <body>
 	<div align="center">
 	<form action="/nextPage" name="resv" id="resv"  >
-		체크인 <input type="date"  id="checkInDate"  min="2024-07-01" value="2024-07-01"  onchange="setCheckOutDate()" class="calenderSet"> 체크아웃 <input type="date"  id="checkOutDate" min="2024-07-02" value="2024-07-05" class="calenderSet">
+		체크인 <input type="date"  id="checkInDate"  min="2024-07-01" value="2024-07-01"  onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 체크아웃 <input type="date"  id="checkOutDate" min="2024-07-02" value="2024-07-05" class="calenderSet">
 
 	
 	
