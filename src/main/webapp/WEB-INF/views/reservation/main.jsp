@@ -105,14 +105,102 @@
 		
 	
      </style>
+<script type="text/javascript">
 
+var today = new Date();
+const dayNames = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
+
+
+
+function setCalendar(){
+	var setNextDate = today.toISOString().substring(0, 10);
+	var nextDay = new Date(today);
+	nextDay.setDate(today.getDate()+1);	
+	document.getElementById('checkInDate').value = new Date().toISOString().substring(0, 10);
+	document.getElementById('checkInDate').min = new Date().toISOString().substring(0, 10);
+	document.getElementById('checkOutDate').value = nextDay.toISOString().substring(0, 10);	
+	const day = dayNames[today.getDay()];
+	console.log("체크인하는 날의 요일~ : "+day);
+	document.getElementById('checkInDay').innerHTML = '<span >'+ day +'</span>';
+	document.getElementById('checkOutDay').innerHTML = '<span >'+dayNames[nextDay.getDay()] +'</span>';
+	calculateDateDifference();
+}
+
+function setCheckOutDate() {
+    var checkInDateValue = document.getElementById('checkInDate').value;
+    document.getElementById('checkInDay').innerHTML = '<span >'+ dayNames[new Date(checkInDateValue).getDay()] +'</span>';
+    var checkInDate = new Date(checkInDateValue);
+    var nextDay = new Date(checkInDate);
+    nextDay.setDate(checkInDate.getDate() + 1);
+	console.log("체크아웃 : "+nextDay.toISOString().substring(0, 10));
+    
+    document.getElementById('checkOutDate').min = nextDay.toISOString().substring(0, 10);
+    if (new Date(document.getElementById('checkOutDate').value) <= nextDay) {
+        document.getElementById('checkOutDate').value = nextDay.toISOString().substring(0, 10);
+        document.getElementById('checkOutDay').innerHTML = '<span >'+dayNames[nextDay.getDay()] +'</span>';
+    }
+    calculateDateDifference();
+};
+
+function calculateDateDifference() {
+	//숙박일수 계산
+	console.log('calculateDateDifference()')
+    var checkInDateValue = document.getElementById('checkInDate').value;
+    var checkOutDateValue = document.getElementById('checkOutDate').value;
+
+    if (checkInDateValue && checkOutDateValue) {
+        var checkInDate = new Date(checkInDateValue);
+        var checkOutDate = new Date(checkOutDateValue);
+
+        var timeDifference = checkOutDate - checkInDate;
+        var dayDifference = timeDifference / (1000 * 3600 * 24);
+
+        console.log("체크인 날짜: " + checkInDateValue);
+        console.log("체크아웃 날짜: " + checkOutDateValue);
+        console.log("차이 일수: " + dayDifference + "일");
+
+        // 차이 일수를 UI에 표시하는 예시
+        document.getElementById('nightText').innerText = dayDifference ;
+    }
+};
+
+
+window.onload = function() {
+setCalendar();
+removeOffClass();
+};
+
+
+function resvStart1(){
+	document.getElementById('adult').value = document.getElementById('num1').value;
+	document.getElementById('children').value = document.getElementById('num2').value;
+	document.getElementById('night').value = document.getElementById('nightText').value;
+	alert("nightText"+document.getElementById('nightText').value);
+	
+	document.getElementById('reservation_Main').submit();
+};
+
+
+
+</script>
+<style>
+.calenderSet{
+background-color : none;
+font-family : Gotham-Medium, Yoon730 ;
+margin: 0;
+border: none;
+color: black; 
+font-size: 14px;
+width: 170px;
+}
+
+</style>
 </head>
 <body>
 
 
 
 <div class="wrap main">
-    
     
 		<div class="skip-nav">
 			<a href="#header">푸터 영역 바로가기</a>
@@ -157,7 +245,7 @@
 		$(".btn-bell-wrap").hide();	
 	
 	
-		removeOffClass();
+
 
 		
 		
@@ -168,48 +256,57 @@
 				<div class="m-resv-wrap ver1"><!-- 1차오픈 class ver1/ 2차 오픈때는 ver1 삭제 -->
 					<div class="m-resv-inner">
 						<!-- 1. 호텔 선택 -->
-						<div class="m-resv-list step1">
+						<div class="m-resv-list step1" >
 							<div class="resv-step1-select select">
-								<span class="badge resv-tit">호텔선택<!--호텔--></span>
-								<div class="resv-selected-txt selected">
-									<span id="htNmText" class="selected-value">호텔을 선택해주세요.<!-- 호텔을 선택해주세요. --></span>
-								</div>
-								<ul class="hotel-select-box">
-									<li class="option" onclick="selHotel('LHMOP');">호텔현대 바이 라한 목포<!--호텔현대 바이 라한 목포--></li>
-									<li class="option" onclick="selHotel('LHULS');">호텔현대 바이 라한 울산<!--호텔현대 바이 라한 울산--></li>
-									<li class="option" onclick="selHotel('LHPOH');">라한호텔 포항<!--라한호텔 포항--></li>
-									<li class="option" onclick="selHotel('LHJEJ');">라한호텔 전주<!--라한호텔 전주--></li>									
-									<li class="option" onclick="selHotel('LHGYJ');">라한셀렉트 경주<!--라한셀렉트 경주--></li>
-								</ul>
+								<span class="badge resv-tit" style="margin-top: 20px;">호텔선택<!--호텔--></span>
+								<form action="./test" method="post" id="reservation_Main" >
+								<select id="hotel" name="hotel" class="hotel-select-box" style=" --swiper-theme-color: #007aff; background-color : transparent;
+    --swiper-navigation-size: 44px; color: #222; cursor: pointer;  padding: 0;    margin: 0;    box-sizing: border-box;    outline: none;    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;    word-break: keep-all;    -webkit-font-smoothing: antialiased;    display: inline-block;    border : none;    font-size: 20px;    font-family: 'Yoon770';    letter-spacing: -0.8px;" >
+								 	<option class="option"  value="" selected disabled hidden>호텔을 선택해주세요.</option>
+									<option  class="option" value="LHMOP">호텔현대 바이 라한 목포<!--호텔현대 바이 라한 목포--></option>
+									<option  class="option" value="LHULS">호텔현대 바이 라한 울산<!--호텔현대 바이 라한 울산--></option>
+									<option  class="option" value="LHPOH">라한호텔 포항<!--라한호텔 포항--></option>
+									<option  class="option" value="LHJEJ">라한호텔 전주<!--라한호텔 전주--></option>									
+									<option  class="option" value="LHGYJ">라한셀렉트 경주<!--라한셀렉트 경주--></option>
+								</select>
+								<input type="submit" value="값 넘어가는지 테스트~~" style="display: none;"><!-- 값 넘어가는지 테스트~~ --><!-- style="display: none;" -->
+								
+								
+								<input type="hidden" name="adult" id="adult" value="">
+								<input type="hidden" name="children" id="children" value="">
+								<input type="hidden" name="night" id="night" value="">
+								</form>
 							</div>
 						</div>
+
+
 						<!-- 2. 날짜 선택 -->
-						<div class="m-resv-list step2 revArea">
+						<div class="m-resv-list step2 "><!-- revArea -->
+						<form action="/nextPage" name="resv" id="resv"  >
 							<div class="chkInout">
 								<div class="resv-step2-box">
 									<div>
 									<span class="badge resv-tit">체크인<!--체크인--></span>
 									<div class="resv-selected-txt checkDate" id="ChekinDate">
-										<span id="chkInDate"></span>
-										<span class="mini-date" id="ckinDay"></span>
+										<input type="date"  id="checkInDate"  min="2024-07-02" value="2024-07-02"  onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 
+									
 									</div>
 								</div>
 								<div class="night-wrap">
-									<span><b id="nightText">1</b>박<!-- 박 --></span>
+									<span><b id="nightText">2</b>박<!-- 박 --></span>
 								</div>
 								<div>
 									<span class="badge resv-tit">체크아웃<!--체크아웃--></span>
 									<div class="resv-selected-txt checkDate" id="ChekoutDate">
-										<span id="chkOutDate"></span>
-										<span class="mini-date" id="ckoutDay"></span>
+								<input type="date"  id="checkOutDate" min="2024-07-03" value="2024-07-03" class="calenderSet" onchange="calculateDateDifference()"><span id="checkOutDay"></span> 
+								
 									</div>
 								</div>
 							</div>
-						<!-- 달력 -->
-								<div class="mainCalendar clearCont">
-									<div class="calContainer calendarS"></div>
-								</div>
+	
 							</div>
+							</form>
 						</div>
 						<!-- 3. 인원 선택 -->
 						<div class="m-resv-list step3">
@@ -251,7 +348,7 @@
 							</div>
 						</div>
 						<!-- 5. 예약하기 -->
-						<a href="javascript:;" id="resveBtn" onclick="resvStart()" title="예약하기" class="m-btn-resv btn-gold">예약하기<!--예약하기--></a>
+						<a href="javascript:;" id="resveBtn" onclick="resvStart1()" title="예약하기" class="m-btn-resv btn-gold">예약하기<!--예약하기--></a>
 					</div>
 				</div>
 				<div class="m-visual-wrap">
@@ -322,7 +419,7 @@
 							</a>
 						</div>
 						<div class="m-img-list">
-							<a href="https://www.lahanhotels.com/hub/ko/hotel/brandIntroduce.do">
+							<a href="${pageContext.request.contextPath}/hotel/brandIntroduce">
 								<div class="m--lahan hotel-label">
 									<img src="https://www.lahanhotels.com/revolution/content/fileImage.do?fileId=16860&cntntsSn=16384" alt=""/>
 									<i>여행이 더 즐거운 곳, 라한</i>
@@ -360,7 +457,7 @@
 객실, 다이닝, 부대시설 그리고 다채로운 라이프스타일 프로그램 등<br/>
 호텔에 대한 틀에 박힌 기준에서 벗어나 '스테이 그 이상의 경험'을 제공하는<br/>
 전국 라한호텔에서 즐거운 국내여행을 시작하세요.<br/><br/>
-<a href="/hub/ko/hotel/brandIntroduce.do" target="_blank"> [더보기] </a>
+<a href="${pageContext.request.contextPath}/hotel/brandIntroduce" target="_blank"> [더보기] </a>
 </p>
 						</div>
 					</div>
@@ -402,8 +499,8 @@
 						</ul>
 					</div>
 					<div class="btn-box btn-inline-box mt80">
-						<a href="/hub/ko/clublahan/membership.do" title="혜택보기" class="btn btn-wh">혜택보기</a>
-						<a href="/hub/ko/clublahan/list.do" title="회원전용 상품" class="btn btn-gold">회원전용 상품</a>
+						<a href="${pageContext.request.contextPath}/clublahan/membership" title="혜택보기" class="btn btn-wh">혜택보기</a>
+						<a href="${pageContext.request.contextPath}/clublahan/list" title="회원전용 상품" class="btn btn-gold">회원전용 상품</a>
 					</div>
 				</div>
 			</section>
@@ -511,71 +608,17 @@
 	    </div>
 		<div class="dimmed"></div>
 		<div class="dimmed2"></div>
-    <!-- 호텔 찾기 popup -->
-	<div id="layerPopup">
-		<div id="searchLahan" class="layerPop" layer-data="search1">
-			<div class="layer-head">
-				<h3 class="tit">호텔찾기<!-- 호텔찾기 --></h3>
-				<button type="button" class="layer-close">Close</button>			
-			</div>
-			<div class="layer-cont">
-				<div class="search-lahan">
-					<div class="lahan-item lahan-item1">
-                        <a href="https://www.lahanhotels.com/hub/ko/main.do" title="라한" target="_blank">
-						<span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_wh.png" alt="라한"/></span>
-						<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_bl.png" alt="라한"/></span>
-						<p>라한<!-- 라한 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item2">
-                        <a href="https://www.lahanhotels.com/gyeongju/ko/main.do" title="라한셀렉트 경주" target="_blank">
-						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_select_wh.png" alt="라한셀렉트 경주"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_select_bl.png" alt="라한셀렉트 경주"/></span>
-						    <p>라한셀렉트 경주<!-- 라한셀렉트 경주 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item3">
-                        <a href="https://www.lahanhotels.com/jeonju/ko/main.do" title="라한호텔 전주" target="_blank">
-						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 전주"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 전주"/></span>
-						    <p>라한호텔 전주<!-- 라한호텔 전주 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item4">
-                        <a href="https://www.lahanhotels.com/pohang/ko/main.do" title="라한호텔 포항" target="_blank">
-    						<span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 포항"/></span>
-	    					<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 포항"/></span>
-		    				<p>라한호텔 포항<!-- 라한호텔 포항 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item5">
-                        <a href="https://www.lahanhotels.com/ulsan/ko/main.do" title="호텔현대 바이 라한 울산" target="_blank">
-   						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 울산"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 울산"/></span>
-						    <p>호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item6">
-                        <a href="https://www.lahanhotels.com/mokpo/ko/main.do" title="호텔현대 바이 라한 목포" target="_blank">
-						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 목포"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 목포"/></span>
-						    <p>호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></p>
-                        </a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-<form id="form" method="post" action="https://www.lahanhotels.com/hub/ko/resv/step2.do">
-    <input type="hidden" name="adult" id="adult" value="">
+
+<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step2">
+<!--     <input type="hidden" name="adult" id="adult" value="">
 	<input type="hidden" name="children" id="children" value="">
-	<input type="hidden" name="night" id="night" value="">
+	<input type="hidden" name="night" id="night" value=""> -->
 	<input type="hidden" name="check_in_text" id="check_in_text" value="">
 	<input type="hidden" name="check_out_text" id="check_out_text" value="">
 	<input type="hidden" name="check_in" id="check_in" value="">
 	<input type="hidden" name="check_out" id="check_out"value="">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
+	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value=""><!-- 호텔선택 -->
 	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
 	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
 	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">

@@ -1,9 +1,13 @@
 package kr.hotel.lahan;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ReservationController {
@@ -29,6 +33,16 @@ public class ReservationController {
 	public String step1(Model model) {
 		
 		return "reservation/step1";
+	}
+	@RequestMapping(value = "resv/step2")
+	public String step2(Model model) {
+		
+		return "reservation/step2";
+	}
+	@RequestMapping(value = "resv/step3")
+	public String step3(Model model) {
+		
+		return "reservation/step3";
 	}
 	@RequestMapping(value = "resv/step4")
 	public String step4(Model model) {
@@ -74,5 +88,19 @@ public class ReservationController {
 	public String mokpoDc(Model model) {
 		
 		return "hotel/mokpoDc";
+	}
+	@RequestMapping(value = "test", method = RequestMethod.POST)
+	public String test(HttpServletRequest request, Model model) {
+	//	model.addAttribute("request",request);
+		String hotel = request.getParameter("hotel");
+		String adult = request.getParameter("adult");
+		String children = request.getParameter("children");
+		String night = request.getParameter("night");
+		
+		model.addAttribute("hotel", hotel);
+		model.addAttribute("adult", adult);
+		model.addAttribute("children", children);
+		model.addAttribute("night", night);
+		return "testPage";
 	}
 }
