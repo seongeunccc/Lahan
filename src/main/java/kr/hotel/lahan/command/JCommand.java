@@ -36,21 +36,57 @@ public class JCommand {
 		
 		String agreeEmail = request.getParameter("agreeEmail");
 		String recomId = request.getParameter("recomId");
-		String proCode = request.getParameter("proCode");
-		
-		System.out.println("ÃßÃµ¾ÆÀÌµğ ¹¹°¡µé¾î¿À³ª È®ÀÎ : ");
-		System.out.println(recomId);
+		String proCode = request.getParameter("proCode");	
 		
 		  if (!agreeEmail.equals("on")) {
 	            agreeEmail = "off"; }
-	
-		
+			
 		JoinDao jdao=sqlSession.getMapper(JoinDao.class);
 		jdao.joinCommand(id, pw, name, en_name, birth, phone, email, adrs, agreeEmail, recomId, proCode);
 		
-		HttpSession session = request.getSession(); //¼¼¼±ÀÌ µÇ³ª È®ÀÎÇØ ºÁ¾ß ÇÔ
+		HttpSession session = request.getSession(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		session.setAttribute("userid", id);
 		
 	}
+	
+	public int login(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		String id = request.getParameter("id");
+		System.out.println(id);
+		String pw = request.getParameter("pw");
+		System.out.println(pw);
+		int loginOX = -1;
+		
+		try {
+		JoinDao jdao = sqlSession.getMapper(JoinDao.class);
+		String conPw = jdao.loginCommand(id);
+		
+		if(conPw!=null) {
+			if(conPw.equals(pw)) {
+				loginOX = 1; // ë¡œê·¸ì¸ ì„±ê³µ
+				System.out.println(loginOX);
+				HttpSession session = request.getSession(); 
+				session.setAttribute("id", id);
+				return loginOX; }
+			else loginOX = 0; //  ë¹„ë°€ë²ˆí˜¸ í‹€ë¦¼
+			System.out.println(loginOX);	
+				return loginOX;
+			} else {
+				loginOX = -1; // ì•„ì´ë”” ì—†ìŒ
+				System.out.println(loginOX);
+				return loginOX;
+			} 
+			} catch (Exception e) {
+				System.out.println("<h3>ë””ë¹„ ì—°ê²° ì‹¤íŒ¨ <h3>");
+				e.printStackTrace();
+				loginOX = 2; // ë””ë¹„ì—°ê²° ì‹¤íŒ¨
+				System.out.println(loginOX);
+				return loginOX;
+			}
+				
+		
+	}
+	
 
 }

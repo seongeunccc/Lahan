@@ -1,6 +1,7 @@
 package kr.hotel.lahan;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +45,36 @@ public class LoginJoinController {
 		return "/join/step3";
 	}
 	
-	@RequestMapping("/login/loginform")
+	@RequestMapping("/login/loginForm")
 	public String loginForm(Model model) {
 		
 		return "/login/loginForm";
+	}
+	
+	@RequestMapping("/login/loginNonMemForm")
+	public String loginNonMemForm(Model model) {
+		
+		return "/login/loginNonMemForm";
+	}
+	
+	@RequestMapping("/login/loginCommand")
+	public String login(HttpServletRequest request, Model model) {
+		model.addAttribute("request",request);
+		int result = jCommand.login(model);
+		
+		if(result==1) {
+			System.out.println("로그인 성공");			
+			return "redirect:/main";
+		}
+		if(result==0) {  
+			System.out.println("비밀번호 틀림");
+			return "/login/loginForm";	
+		}
+		if(result==-1) {							//template ������� �ٲٴ� ���̵� ������ �Ȱɷ��� (���̵� ���� != ��� ���� �ȵ� �̾��µ�)
+			System.out.println("아이디 없음");
+			return "/join/step1";
+		}
+		return null;
 	}
 	
 
