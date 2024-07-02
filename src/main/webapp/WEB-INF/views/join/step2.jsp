@@ -334,14 +334,15 @@
         </div>
         <div class="joinBtnArea btn-inline-box">
             <a href="#none" onclick="cancel();" title="취소" class="btn btn-navy-line">취소</a>
-             <button type="submit" class="btn btn-primary">가입하기</button>
+             <button type="submit" class="btn btn-navy-line" style="font-family: 'Yoon740', sans-serif;
+               font-size: 18px; width: 200px; height: 56px; margin: 0px 20px 0px 0px; padding: 0px 5px;">가입하기</button>
             <!-- <a href="#none" id="nextBtn" onclick="join(); return false;" title="가입완료" class="btn btn-inactive">가입완료</a> --> <!--모든정보입력 시 btn-active 클래스변경 -->
         </div>
     </div>
 </div>
 </form>
 
-
+<%@ include file="/WEB-INF/views/footer.jsp" %> 
 
 </body>
 </html>
