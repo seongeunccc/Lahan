@@ -25,4 +25,9 @@ public class ReservationController {
 		
 		return "reservation/calendar";
 	}
+	@RequestMapping(value = "resv/step1")
+	public String step1(Model model) {
+		
+		return "reservation/step1";
+	}
 }
