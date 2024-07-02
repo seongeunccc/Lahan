@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+
 <header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
@@ -32,11 +34,29 @@
 				</div>
 				<div class="h-box-right">
 					<ul class="set-wrap">
-						
+					 내가 보려고 써놨어 userid : ${sessionScope.id}     /
+					<c:choose>	
+						<c:when test="${sessionScope.id eq null}">
 						<li><a href="${pageContext.request.contextPath}/join/step1" title="회원가입">회원가입<!-- 회원가입 --></a></li>
 						<li><a href="${pageContext.request.contextPath}/login/loginForm" title="로그인">로그인<!-- 로그인 --></a></li>
-                        <li><a href="${pageContext.request.contextPath}/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li>   
+                        <li><a href="${pageContext.request.contextPath}/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li> 
+	                        <!-- <a href="./agreement.ho" class="text-dark mr-3" >회원가입(구현)</a>
+	                        <a href="./loginForm.ho" class="text-dark mr-3" >로그인(구현)</a> -->
+	                    </c:when>
+	                    <c:otherwise>
+	                    <li><a href="${pageContext.request.contextPath}/member/memberinfo" title="마이페이지">마이페이지<!-- 회원가입 --></a></li>
+						<li><a href="${pageContext.request.contextPath}/login/logout" title="로그아웃">로그아웃<!-- 로그인 --></a></li>
+                        <li><a href="${pageContext.request.contextPath}/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li> 
+	                    </c:otherwise>
+					</c:choose>
+					
+					<%-- 
+						<li><a href="${pageContext.request.contextPath}/join/step1" title="회원가입">회원가입<!-- 회원가입 --></a></li>
+						<li><a href="${pageContext.request.contextPath}/login/loginForm" title="로그인">로그인<!-- 로그인 --></a></li>
+                        <li><a href="${pageContext.request.contextPath}/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li>    --%>
+					
 					</ul>
+					
 					<a href="javascript:;" title="호텔찾기" class="btn-search-lahan open_layer" layer-data="search1"><span>호텔찾기<!-- 호텔찾기 --></span></a>
 					<div class="lang-box select">
 						<div class="as-select selected">
