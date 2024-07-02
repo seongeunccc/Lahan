@@ -11,13 +11,13 @@
 						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
 							<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN"/>
 							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>
-							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN3"/></span>
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
 					</h1> 
 					
 					<ul class="nav-list">
 						<li>
-							<a href="/hub/ko/hotel/brandIntroduce.do">라한</a>
+							<a href="${pageContext.request.contextPath}/hotel/brandIntroduce">라한</a>
 						</li>
 						<li>
 							<a href="/hub/ko/package/list.do">스페셜 오퍼</a>
@@ -52,16 +52,16 @@
 						<span></span>
 						<span></span>
 					</a>
-					<a href="/hub/ko/resv/step1.do" title="예약하기" class="btn-rev btn-gold" layer-data="select1">예약하기<!-- 예약하기 --></a>
+					<a href="${pageContext.request.contextPath}/resv/step1" title="예약하기" class="btn-rev btn-gold" layer-data="select1">예약하기<!-- 예약하기 --></a>
 				</div>
 			</div>
             <div class="all-menulist">
 				<div class="all-menulist-wrap">
 					<ul class="all-1depth">
-						<li><a href="/hub/ko/hotel/brandIntroduce.do" title="라한">라한<!-- 라한--></a></li>
-						<li><a href="/hub/ko/hotel/brandIntroduce.do" title="브랜드 소개">브랜드 소개<!-- 브랜드 소개--></a></li>
+						<li><a href="${pageContext.request.contextPath}/hotel/brandIntroduce" title="라한">라한<!-- 라한--></a></li>
+						<li><a href="${pageContext.request.contextPath}/hotel/brandIntroduce" title="브랜드 소개">브랜드 소개<!-- 브랜드 소개--></a></li>
 						<li>
-							<a href="/hub/ko/hotel/hotelIntroduce.do" title="호텔 소개">호텔 소개<!-- 호텔 소개 --></a>
+							<a href="${pageContext.request.contextPath}/hotel/hotelIntroduce" title="호텔 소개">호텔 소개<!-- 호텔 소개 --></a>
 							<ul class="all-2depth">
 								<li><a href="/hub/ko/hotel/hotelIntroduce.do" title="전체보기">전체보기<!-- 전체보기 --></a></li>
 								<li><a href="/hub/ko/hotel/gyeongjuDc.do" title="라한셀렉트 경주">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
