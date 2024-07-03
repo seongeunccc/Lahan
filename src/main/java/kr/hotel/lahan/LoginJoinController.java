@@ -1,13 +1,18 @@
 package kr.hotel.lahan;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.hotel.lahan.command.JCommand;
@@ -93,6 +98,26 @@ public class LoginJoinController {
 		jCommand.memberinfo(model,id);
 		return "/member/memberinfo";
 	}
+	
+	@RequestMapping("/api/check-id-duplicate")
+	@ResponseBody
+	 public ResponseEntity<String> checkIdDuplicate(@RequestParam String id) {
+		System.out.println("레스트 컨트롤러");
+		System.out.println(id);
+//		Map<String, Boolean> response = new HashMap<String, Boolean>();
+        String data = checkIdInDatabase(id); // 실제 데이터베이스 확인 로직  
+        return new ResponseEntity<String>(data, HttpStatus.OK);
+    } 
+	
+	private String checkIdInDatabase(String id) {
+        // 데이터베이스에서 아이디 중복 여부 확인 로직
+		if("qwerqwer".equals(id)) {
+			return "true";
+		} else {
+			return "false";
+		}
+	}
+	
 	
 //	@RequestMapping("/hub/api/member/mypage/memberInquiry.json")
 //	@ResponseBody
