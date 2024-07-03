@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>라한  : 예약하기</title>
 
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
@@ -155,7 +155,7 @@
 										<div class="resv-step2-box">
 											<div>
 												<div class="resv-selected-txt checkDate" id="ChekinDate">
-													<span id="chkInDate">2024.07.16 </span>
+													<span id="chkInDate">${ } </span>
 													<span class="mini-date" id="ckinDay">(화)</span>
 												</div>
 											</div>

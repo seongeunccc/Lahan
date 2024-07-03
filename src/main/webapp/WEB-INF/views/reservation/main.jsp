@@ -186,32 +186,32 @@ function setPromo(){
 }
  */
 function setPromo() {
-    var promoCode = $("#prtmCode").val();
-    console.log("promoCode : " + promoCode);
-    $.support.cors = true;	
-    $.ajax({
-        url: 'http://localhost:8080/lahan/serchProcode',  // 서버 측 URL 설정
-        type: 'GET',
-        data: { promoCode: promoCode },
-        success: function(response) {
-        	console.log(response);
-            if(response.procode!=null) {
-                alert("유효한 프로모션 코드입니다.");
-                $('#Prm_code').val($('#prtmCode').val());
-            } else {
-                alert("유효하지 않은 프로모션 코드입니다.");
-            }
-        },
-        error: function(status, error) {
-            console.error("오류 발생:", status);
-        }
-    });
+  	 var promoCode = $("#prtmCode").val();
+  	 console.log(promoCode)
+  	 console.log(typeof(promoCode))
+  	 	fetch('/lahan/searchProcode?promoCode=' + encodeURIComponent(promoCode))
+	    .then(response => {
+	        if (!response.ok) {
+	            throw new Error('Network response was not ok');
+	        }
+	        return response.json();
+	    })
+	    .then(result => {
+	        console.log(result);
+	        // 여기서 가져온 데이터를 처리할 수 있습니다.
+	        if(result.procode!=null){
+	        	alert("유효한 프로모션 코드입니다.");
+	        	$("#Prm_code").val($("#prtmCode").val());
+	        }else{
+	        	alert("유효하지 않은 프로모션 코드입니다.");
+	        }
+	    })
+	    .catch(error => {
+	        console.error('Fetch Error:', error);
+	        // 에러 처리 로직을 추가할 수 있습니다.
+	    });
 }
-
-
-
-
-
+    
 
 
 
@@ -224,7 +224,8 @@ function resvStart1(){
 	$("#check_out_text").val($("#checkOutDate").val() +" "+$("#checkOutDay").text()); // 체크아웃 텍스트
     $("#check_in").val($("#checkInDate").val().replace(/\./gi, "-").trim()); // 체크인 날짜
     $("#check_out").val($("#checkOutDate").val().replace(/\./gi, "-").trim()); // 체크아웃 날짜
-
+    $("#check_In_Day").val($("#checkInDay").text());
+    $("#check_Out_Day").val($("#checkOutDay").text());
     
     
 	$("#htNm").val($("#htNmText").text());
@@ -334,6 +335,8 @@ width: 170px;
 								<input type="hidden" name="check_in" id="check_in" value="">
 								<input type="hidden" name="check_out" id="check_out"value="">
 								<input type="hidden" name="Prm_code" id="Prm_code" value="">
+								<input type="hidden" name="check_In_Day" id="check_In_Day" value="">
+								<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="">
 								</form>
 							</div>
 						</div>
