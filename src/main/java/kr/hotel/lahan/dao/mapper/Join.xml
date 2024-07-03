@@ -17,6 +17,11 @@ email, adrs, agreeEmail, recomId, proCode, joindate) values
 select pw from member_table where id = #{param1}
 </select>
 
+
+<select id="memberinfo" resultType="kr.hotel.lahan.dto.JoinDto">
+select * from member_table where id = #{param1}
+</select>
+
 <!-- <select id="list" resultType="kr.co.bbs.dto.BDto">
 select bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent from mvc_board order by bGroup desc, bStep asc
 </select>

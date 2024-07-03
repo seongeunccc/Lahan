@@ -89,6 +89,12 @@ public class JCommand {
 				return loginOX;
 			}
 				
+	}
+	
+	public void memberinfo(Model model, String id) {
+		
+		JoinDao dao = sqlSession.getMapper(JoinDao.class);
+		model.addAttribute("memberinfo", dao.memberinfo(id));
 		
 	}
 	

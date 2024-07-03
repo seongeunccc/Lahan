@@ -34,7 +34,7 @@
 				</div>
 				<div class="h-box-right">
 					<ul class="set-wrap">
-					 내가 보려고 써놨어 userid : ${sessionScope.id}     /
+					  내가 보려고 써놨어 userid : ${sessionScope.id}    ////
 					<c:choose>	
 						<c:when test="${sessionScope.id eq null}">
 						<li><a href="${pageContext.request.contextPath}/join/step1" title="회원가입">회원가입<!-- 회원가입 --></a></li>

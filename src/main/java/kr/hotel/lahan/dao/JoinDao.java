@@ -1,6 +1,6 @@
 package kr.hotel.lahan.dao;
 
-import java.sql.Date;
+import kr.hotel.lahan.dto.JoinDto;
 
 public interface JoinDao {
 	
@@ -8,5 +8,7 @@ public interface JoinDao {
 			String email, String adrs, String agreeEmail, String recomId, String proCode);
 	
 	public String loginCommand(String id);
+	
+	public JoinDto memberinfo(String id);
 
 }
