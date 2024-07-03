@@ -1,24 +1,32 @@
 package kr.hotel.lahan;
-
-
-import java.util.*;
+import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.hotel.lahan.command.*;
+import kr.hotel.lahan.dao.ReservationDao;
 import kr.hotel.lahan.dto.*;
 
 @Controller
 public class ReservationController {
 	
+	@Autowired
 	public SqlSession sqlSession;
+	RCommand command = null;
 	
 	@RequestMapping(value = "/main")
 	public String home(Model model) {
@@ -96,12 +104,41 @@ public class ReservationController {
 		
 		return "hotel/mokpoDc";
 	}
-	@RequestMapping(value = "hotel/serchProcode")
-	public ProCodeDto serchProcode(@RequestBody Map<String, String> requestData) {
+	
+	@RequestMapping(value = "/serchProcode")//, method = RequestMethod.POST
+	@ResponseBody
+	public ResponseEntity<Map<String, Object>> serchProcode(@RequestParam ("promoCode") String promoCode) {
+		System.out.println("serchProcode ½ÇÇà");
+		System.out.println("promoCode : "+promoCode);
+		Map<String, Object> response = new HashMap<String, Object>();
+		
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		dao.serchProcode(promoCode);
 		
 		return null;
-	}
+		
+//		Map<String, Object> response = new HashMap<String, Object>();
+//		ProCodeDto procode = new ProCodeDto();
+//		procode.setProcode("1111");
+//		procode.setRate(0.1);
+//		procode.setStart_date(new Date(2024,01,01));
+//		procode.setEnd_date(new Date(2024,12,31));
+//		response.put("procode", procode);
+		
+//		String promoCode = requestData.get("promoCode");
+//		System.out.println(promoCode);
+//		
+//		model.addAttribute("request", requestData);
+//		command = new PromoCheckCommand(sqlSession, promoCode);
+//
 	
+//		command.execute(model);
+//		ProCodeDto exists =  
+//		response.put("exists", exists);
+		
+
+	} 
+
 	
 	@RequestMapping(value = "test", method = RequestMethod.POST)
 	public String test(HttpServletRequest request, Model model) {

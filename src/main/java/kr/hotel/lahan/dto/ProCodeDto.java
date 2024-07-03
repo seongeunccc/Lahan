@@ -4,7 +4,7 @@ import java.sql.Date;
 public class ProCodeDto {
 	
 	private String procode;
-	private float rate;
+	private double rate;
 	private Date start_date;
 	private Date end_date;
 	
@@ -15,17 +15,17 @@ public class ProCodeDto {
 	public void setProcode(String procode) {
 		this.procode = procode;
 	}
-	public float getRate() {
+	public double getRate() {
 		return rate;
 	}
-	public void setRate(float rate) {
+	public void setRate(double rate) {
 		this.rate = rate;
 	}
 	public Date getStart_date() {
 		return start_date;
 	}
-	public void setStart_date(Date start_date) {
-		this.start_date = start_date;
+	public void setStart_date(java.sql.Date date) {
+		this.start_date = date;
 	}
 	public Date getEnd_date() {
 		return end_date;

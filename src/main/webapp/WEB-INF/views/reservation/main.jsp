@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
 	
 	<!-- js -->
-	<script src="https://www.lahanhotels.com/static/pc/js/jquery-3.5.1.js"></script>
+ 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script> 
 	<script src="https://www.lahanhotels.com/static/pc/js/swiper-bundle.min.js"></script>
 	<script src="https://www.lahanhotels.com/static/pc/js/jquery-ui.min.js"></script>
 	<script src="https://www.lahanhotels.com/static/pc/js/common.js"></script>
@@ -176,7 +176,7 @@ window.onload = function() {
 setCalendar();
 removeOffClass();
 };
-
+/* 
 //프로모션 코드 검색해서 결과 찾으면 폼에 등록
 function setPromo(){
 	//여기서 DB에서 유효한 코드인지 확인하는 작업 필요 (아이디 중복확인처럼~)
@@ -184,25 +184,26 @@ function setPromo(){
 	$('#Prm_code').val($('#prtmCode').val());
 
 }
-
+ */
 function setPromo() {
     var promoCode = $("#prtmCode").val();
-    
-    // AJAX 요청을 통해 서버에 값 전송
+    console.log("promoCode : " + promoCode);
+    $.support.cors = true;	
     $.ajax({
-        url: '/serchProcode',  // 서버 측 URL 설정
-        method: 'POST',
+        url: 'http://localhost:8080/lahan/serchProcode',  // 서버 측 URL 설정
+        type: 'GET',
         data: { promoCode: promoCode },
         success: function(response) {
-            if(response.exists) {
+        	console.log(response);
+            if(response.procode!=null) {
                 alert("유효한 프로모션 코드입니다.");
                 $('#Prm_code').val($('#prtmCode').val());
             } else {
                 alert("유효하지 않은 프로모션 코드입니다.");
             }
         },
-        error: function(xhr, status, error) {
-            console.error("오류 발생:", status, error);
+        error: function(status, error) {
+            console.error("오류 발생:", status);
         }
     });
 }
@@ -402,7 +403,7 @@ width: 170px;
 								<button type="button" class="btn-prcode-close" onclick='$(".resv-step4-prcode").removeClass("open");'><span>닫기</span></button>
 								<div class="prcode-box">
 									<input type="text" id="prtmCode" class="prcode-input" maxlength="8" autocomplete="off" placeholder="프로모션 코드" /><!-- 프로모션 코드 8자리 -->
-									<a href="#none" onclick="setPromo()" title="확인" class="btn btn-black-line btn-com">확인<!-- 확인 --></a>
+									<a href="#" onclick="setPromo()" title="확인" class="btn btn-black-line btn-com">확인<!-- 확인 --></a>
 								</div>
 							</div>
 						</div>
