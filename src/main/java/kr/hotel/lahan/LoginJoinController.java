@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.hotel.lahan.command.JCommand;
 
@@ -87,9 +88,16 @@ public class LoginJoinController {
 	}
 	
 	@RequestMapping("/member/memberinfo")
-	public String memberInfo(Model model) {
+	public String memberInfo(HttpServletRequest request, Model model) {
+		String id = (String) request.getSession().getAttribute("id");
+		jCommand.memberinfo(model,id);
 		return "/member/memberinfo";
 	}
 	
+//	@RequestMapping("/hub/api/member/mypage/memberInquiry.json")
+//	@ResponseBody
+//	public String getData() {
+//		return "안녕하세요";
+//	}
 
 }

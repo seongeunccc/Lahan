@@ -1,5 +1,7 @@
 package kr.hotel.lahan.dto;
 
+import java.sql.Date;
+
 public class JoinDto {
 	
 	String id;
@@ -13,10 +15,10 @@ public class JoinDto {
 	String agreeEmail;
 	String recomId;
 	String proCode;
-//	String membership;
-//	int point;
-//	Date joindate;
-//	Date withdraw;
+	String membership;
+	int point;
+	Date joindate;
+	Date withdraw;
 	
 	public JoinDto() {
 	}
@@ -108,29 +110,29 @@ public class JoinDto {
 	public void setProCode(String proCode) {
 		this.proCode = proCode;
 	}
-//	public String getMembership() {
-//		return membership;
-//	}
-//	public void setMembership(String membership) {
-//		this.membership = membership;
-//	}
-//	public int getPoint() {
-//		return point;
-//	}
-//	public void setPoint(int point) {
-//		this.point = point;
-//	}
-//	public Date getJoindate() {
-//		return joindate;
-//	}
-//	public void setJoindate(Date joindate) {
-//		this.joindate = joindate;
-//	}
-//	public Date getWithdraw() {
-//		return withdraw;
-//	}
-//	public void setWithdraw(Date withdraw) {
-//		this.withdraw = withdraw;
-//	}
+	public String getMembership() {
+		return membership;
+	}
+	public void setMembership(String membership) {
+		this.membership = membership;
+	}
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	public Date getJoindate() {
+		return joindate;
+	}
+	public void setJoindate(Date joindate) {
+		this.joindate = joindate;
+	}
+	public Date getWithdraw() {
+		return withdraw;
+	}
+	public void setWithdraw(Date withdraw) {
+		this.withdraw = withdraw;
+	}
 
 }
