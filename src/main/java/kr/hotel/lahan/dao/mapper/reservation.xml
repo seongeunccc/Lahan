@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hotel.lahan.dao.ReservationDao">
 
-<mapper namespace = "kr.hotel.lahan.dao.ReservationDao">
-
-  <select id="serchProcode">
+  <select id="serchProcode" resultType="kr.hotel.lahan.dto.ProCodeDto">
        select * from procode where procode = #{param1}
     </select>
 </mapper>

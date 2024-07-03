@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import kr.hotel.lahan.dao.ReservationDao;
+import kr.hotel.lahan.dto.ProCodeDto;
 
 
 public class PromoCheckCommand implements RCommand{
@@ -38,7 +39,10 @@ public class PromoCheckCommand implements RCommand{
 		
 		
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
-		dao.serchProcode(promoCode);
+		/*
+		 * ProCodeDto proCodeDto = dao.serchProcode(promoCode); if(proCodeDto==null)
+		 */
+			
 	}
 	/*
 	 * public ProCodeDto SerchPromo(String promoCode) {
