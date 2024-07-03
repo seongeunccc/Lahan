@@ -1,17 +1,24 @@
 package kr.hotel.lahan;
 
 
+import java.util.*;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.hotel.lahan.dto.*;
 
 @Controller
 public class ReservationController {
 	
+	public SqlSession sqlSession;
 	
 	@RequestMapping(value = "/main")
 	public String home(Model model) {
@@ -89,6 +96,13 @@ public class ReservationController {
 		
 		return "hotel/mokpoDc";
 	}
+	@RequestMapping(value = "hotel/serchProcode")
+	public ProCodeDto serchProcode(@RequestBody Map<String, String> requestData) {
+		
+		return null;
+	}
+	
+	
 	@RequestMapping(value = "test", method = RequestMethod.POST)
 	public String test(HttpServletRequest request, Model model) {
 	//	model.addAttribute("request",request);
@@ -96,11 +110,21 @@ public class ReservationController {
 		String adult = request.getParameter("adult");
 		String children = request.getParameter("children");
 		String night = request.getParameter("night");
+		String check_in_text = request.getParameter("check_in_text");
+		String check_out_text = request.getParameter("check_out_text");
+		String check_in = request.getParameter("check_in");
+		String check_out = request.getParameter("check_out");
+		String Prm_code = request.getParameter("Prm_code");
 		
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("adult", adult);
 		model.addAttribute("children", children);
 		model.addAttribute("night", night);
+		model.addAttribute("check_in_text", check_in_text);
+		model.addAttribute("check_out_text", check_out_text);
+		model.addAttribute("check_in", check_in);
+		model.addAttribute("check_out", check_out);
+		model.addAttribute("Prm_code", Prm_code);
 		return "testPage";
 	}
 }

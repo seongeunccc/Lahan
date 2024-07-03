@@ -153,7 +153,7 @@ function calculateDateDifference() {
         var checkOutDate = new Date(checkOutDateValue);
 
         var timeDifference = checkOutDate - checkInDate;
-        var dayDifference = timeDifference / (1000 * 3600 * 24);
+        var dayDifference = timeDifference / (1000 * 3600 * 24); /* 1일 계산해서 나눔 */
 
         console.log("체크인 날짜: " + checkInDateValue);
         console.log("체크아웃 날짜: " + checkOutDateValue);
@@ -164,21 +164,73 @@ function calculateDateDifference() {
     }
 };
 
+//요일 세팅하기(date는 8자리 날짜. day는 값을 바꿀 곳의 id)
+function setDay(date, day){
+	var checkDay = new Date(document.getElementById(date).value);
+	console.log(checkDay);
+	document.getElementById(day).innerHTML = '<span >'+dayNames[checkDay.getDay()] +'</span>';
+}
 
+//처음에 실행할 것.
 window.onload = function() {
 setCalendar();
 removeOffClass();
 };
 
+//프로모션 코드 검색해서 결과 찾으면 폼에 등록
+function setPromo(){
+	//여기서 DB에서 유효한 코드인지 확인하는 작업 필요 (아이디 중복확인처럼~)
+	
+	$('#Prm_code').val($('#prtmCode').val());
 
+}
+
+function setPromo() {
+    var promoCode = $("#prtmCode").val();
+    
+    // AJAX 요청을 통해 서버에 값 전송
+    $.ajax({
+        url: '/serchProcode',  // 서버 측 URL 설정
+        method: 'POST',
+        data: { promoCode: promoCode },
+        success: function(response) {
+            if(response.exists) {
+                alert("유효한 프로모션 코드입니다.");
+                $('#Prm_code').val($('#prtmCode').val());
+            } else {
+                alert("유효하지 않은 프로모션 코드입니다.");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error("오류 발생:", status, error);
+        }
+    });
+}
+
+
+
+
+
+
+
+
+//예약하기 누르면 값 넘기기~
 function resvStart1(){
 	document.getElementById('adult').value = document.getElementById('num1').value;
 	document.getElementById('children').value = document.getElementById('num2').value;
-	document.getElementById('night').value = document.getElementById('nightText').value;
-	alert("nightText"+document.getElementById('nightText').value);
-	
+	$('#night').val($('#nightText').text());
+ 	$("#check_in_text").val($("#checkInDate").val() +" "+$("#checkInDay").text()); // 체크인 텍스트 
+	$("#check_out_text").val($("#checkOutDate").val() +" "+$("#checkOutDay").text()); // 체크아웃 텍스트
+    $("#check_in").val($("#checkInDate").val().replace(/\./gi, "-").trim()); // 체크인 날짜
+    $("#check_out").val($("#checkOutDate").val().replace(/\./gi, "-").trim()); // 체크아웃 날짜
+
+    
+    
+	$("#htNm").val($("#htNmText").text());
+    
 	document.getElementById('reservation_Main').submit();
 };
+
 
 
 
@@ -211,7 +263,7 @@ width: 170px;
 
 
 	
-        <div id="banner" class="banner-wrap show-banner">
+    <div id="banner" class="banner-wrap show-banner">
 			<div class="banner-btn-box">
 				<a href="javascript:;" id="btnBannerClose">오늘 하루 보지않기</a>
 				<a href="javascript:;" class="banner-close"><span>닫기</span></a>
@@ -264,11 +316,11 @@ width: 170px;
     --swiper-navigation-size: 44px; color: #222; cursor: pointer;  padding: 0;    margin: 0;    box-sizing: border-box;    outline: none;    -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;    word-break: keep-all;    -webkit-font-smoothing: antialiased;    display: inline-block;    border : none;    font-size: 20px;    font-family: 'Yoon770';    letter-spacing: -0.8px;" >
 								 	<option class="option"  value="" selected disabled hidden>호텔을 선택해주세요.</option>
-									<option  class="option" value="LHMOP">호텔현대 바이 라한 목포<!--호텔현대 바이 라한 목포--></option>
-									<option  class="option" value="LHULS">호텔현대 바이 라한 울산<!--호텔현대 바이 라한 울산--></option>
-									<option  class="option" value="LHPOH">라한호텔 포항<!--라한호텔 포항--></option>
-									<option  class="option" value="LHJEJ">라한호텔 전주<!--라한호텔 전주--></option>									
-									<option  class="option" value="LHGYJ">라한셀렉트 경주<!--라한셀렉트 경주--></option>
+									<option  class="option" value='호텔현대 바이 라한 목포'>호텔현대 바이 라한 목포<!--호텔현대 바이 라한 목포--></option>
+									<option  class="option" value='호텔현대 바이 라한 울산'>호텔현대 바이 라한 울산<!--호텔현대 바이 라한 울산--></option>
+									<option  class="option" value='라한호텔 포항'>라한호텔 포항<!--라한호텔 포항--></option>
+									<option  class="option" value='라한호텔 전주'>라한호텔 전주<!--라한호텔 전주--></option>									
+									<option  class="option" value='라한셀렉트 경주'>라한셀렉트 경주<!--라한셀렉트 경주--></option>
 								</select>
 								<input type="submit" value="값 넘어가는지 테스트~~" style="display: none;"><!-- 값 넘어가는지 테스트~~ --><!-- style="display: none;" -->
 								
@@ -276,6 +328,11 @@ width: 170px;
 								<input type="hidden" name="adult" id="adult" value="">
 								<input type="hidden" name="children" id="children" value="">
 								<input type="hidden" name="night" id="night" value="">
+								<input type="hidden" name="check_in_text" id="check_in_text" value="">
+								<input type="hidden" name="check_out_text" id="check_out_text" value="">
+								<input type="hidden" name="check_in" id="check_in" value="">
+								<input type="hidden" name="check_out" id="check_out"value="">
+								<input type="hidden" name="Prm_code" id="Prm_code" value="">
 								</form>
 							</div>
 						</div>
@@ -289,7 +346,8 @@ width: 170px;
 									<div>
 									<span class="badge resv-tit">체크인<!--체크인--></span>
 									<div class="resv-selected-txt checkDate" id="ChekinDate">
-										<input type="date"  id="checkInDate"  min="2024-07-02" value="2024-07-02"  onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 
+										<input type="date"  id="checkInDate"  min="2024-07-02" value="2024-07-02"  
+										onchange="setCheckOutDate()" class="calenderSet"><span id="checkInDay"></span> 
 									
 									</div>
 								</div>
@@ -299,7 +357,8 @@ width: 170px;
 								<div>
 									<span class="badge resv-tit">체크아웃<!--체크아웃--></span>
 									<div class="resv-selected-txt checkDate" id="ChekoutDate">
-								<input type="date"  id="checkOutDate" min="2024-07-03" value="2024-07-03" class="calenderSet" onchange="calculateDateDifference()"><span id="checkOutDay"></span> 
+								<input type="date"  id="checkOutDate" min="2024-07-03" value="2024-07-03" class="calenderSet" 
+								onchange="calculateDateDifference(); setDay('checkOutDate','checkOutDay')"><span id="checkOutDay"></span> 
 								
 									</div>
 								</div>
@@ -343,7 +402,7 @@ width: 170px;
 								<button type="button" class="btn-prcode-close" onclick='$(".resv-step4-prcode").removeClass("open");'><span>닫기</span></button>
 								<div class="prcode-box">
 									<input type="text" id="prtmCode" class="prcode-input" maxlength="8" autocomplete="off" placeholder="프로모션 코드" /><!-- 프로모션 코드 8자리 -->
-									<a href="#none" onclick="prmtnSeach()" title="확인" class="btn btn-black-line btn-com">확인<!-- 확인 --></a>
+									<a href="#none" onclick="setPromo()" title="확인" class="btn btn-black-line btn-com">확인<!-- 확인 --></a>
 								</div>
 							</div>
 						</div>
@@ -614,16 +673,14 @@ width: 170px;
 <!--     <input type="hidden" name="adult" id="adult" value="">
 	<input type="hidden" name="children" id="children" value="">
 	<input type="hidden" name="night" id="night" value=""> -->
-	<input type="hidden" name="check_in_text" id="check_in_text" value="">
+	<!-- <input type="hidden" name="check_in_text" id="check_in_text" value="">
 	<input type="hidden" name="check_out_text" id="check_out_text" value="">
 	<input type="hidden" name="check_in" id="check_in" value="">
-	<input type="hidden" name="check_out" id="check_out"value="">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value=""><!-- 호텔선택 -->
+	<input type="hidden" name="check_out" id="check_out"value=""> -->
 	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
 	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
 	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">
-	<input type="hidden" name="Prm_code" id="Prm_code" value="">
-	<input type="hidden" name="htNm" id="htNm" value="">
+<!-- 	<input type="hidden" name="Prm_code" id="Prm_code" value=""> -->
 	<input type="hidden" name="sysCode" id="sysCode" value="">
 	<input type="hidden" name="hotelCode" id="hotelCode" value="">
 	<input type="hidden" name="step1Param" id="step1Param" value="">

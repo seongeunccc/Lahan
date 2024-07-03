@@ -11,8 +11,13 @@
 hotel 이름 : ${hotel} <br>
 성인 : ${adult}명  <br>
 소인 : ${children}명  <br>
-숙박일수 : ${night}명  <br>
-
+총 숙박인원  : ${adult+children }명 <br>
+숙박일수 : ${night}일  <br>
+체크인 일시 + 요일 : ${check_in_text} <br> 
+체크아웃 일시 + 요일 : ${check_out_text} <br> 
+체크인 일시 (. 대신 -) : ${check_in} <br> 
+체크아웃 일시 (. 대신 -) : ${check_out} <br>
+프로모션 코드 : ${Prm_code } 
 
 
 
