@@ -325,15 +325,21 @@
                         </ul>
                     </div>
                 </div>
-               <!--  <div class="input-wrap">
-                    <input type="file" id="hotelImage" name="hotelImage" accept="image/*">
-                    <div class="txtGuideWrap">
-                        <ul class="txtGuide">
-                            <li class="error"><p>호텔 이미지를 업로드해 주세요.</p></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
+          <div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 첨부파일 -->첨부파일</span>
+										<div class="txt-wrap">
+											<div class="fileUpload">
+												<div class="intDel">
+													<input type="text" id="fileName" placeholder='첨부파일( 파일형식 png, jpg , pdf /10MB 이하)' class="fileName" placeholder="" readonly="">
+													<button type="button" class="btnDel">삭제</button>
+												</div>
+												<label for="uploadBtn03" class="fileBtn"><!-- 파일첨부 -->파일첨부</label>
+												<input type="file" name="attachment"  id="uploadBtn03" class="uploadBtn">
+											</div>
+										</div>
+									</div>
+								</div>
             <div class="btn-inline-box">
                 <button type="submit" class="loginbtn">등록</button>
             </div>
