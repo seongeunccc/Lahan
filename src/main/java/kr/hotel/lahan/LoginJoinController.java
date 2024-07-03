@@ -105,24 +105,31 @@ public class LoginJoinController {
 		System.out.println("레스트 컨트롤러");
 		System.out.println(id);
 //		Map<String, Boolean> response = new HashMap<String, Boolean>();
-        String data = checkIdInDatabase(id); // 실제 데이터베이스 확인 로직  
+        String data = checkIdInDatabase(id); // 실제 데이터베이스 확인 로직
+        System.out.println(data);
         return new ResponseEntity<String>(data, HttpStatus.OK);
     } 
 	
 	private String checkIdInDatabase(String id) {
         // 데이터베이스에서 아이디 중복 여부 확인 로직
-		if("qwerqwer".equals(id)) {
-			return "true";
-		} else {
-			return "false";
-		}
+		System.out.println("체크아이디인데이타베이스" + id);
+		String foundId= jCommand.findId(id);
+		System.out.println(foundId);
+		
+		if (foundId == null) {
+	        return "false"; 
+	    }
+	    if (foundId.equals(id)) {
+	        return "true";
+	    } else if (foundId.isEmpty()) {
+	        return "false";
+	    }
+	    return "error";
+//		if(foundId.equals(id)) {
+//			return "true";
+//		} else if(foundId.equals("")) {
+//			return "false";
+//		} return "error";
 	}
 	
-	
-//	@RequestMapping("/hub/api/member/mypage/memberInquiry.json")
-//	@ResponseBody
-//	public String getData() {
-//		return "안녕하세요";
-//	}
-
 }

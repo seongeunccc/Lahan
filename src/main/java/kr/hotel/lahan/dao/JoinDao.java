@@ -10,5 +10,7 @@ public interface JoinDao {
 	public String loginCommand(String id);
 	
 	public JoinDto memberinfo(String id);
+	
+	public String findId(String id);
 
 }
