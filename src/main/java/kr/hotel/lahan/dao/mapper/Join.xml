@@ -30,8 +30,8 @@ select id from member_table where id = #{param1}
         SELECT * from member_table
     </select>
     
-    <update id="delete">
-        UPDATE member_table SET title = #{param15} WHERE id = #{id}
+    <update id="withdraw">
+        UPDATE member_table SET withdraw = #{param2} WHERE id = #{param1}
     </update>
 
 <!-- <select id="list" resultType="kr.co.bbs.dto.BDto">

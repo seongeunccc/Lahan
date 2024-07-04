@@ -195,15 +195,12 @@ rotate(
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동"> <img
-							src="${pageContext.request.contextPath}/resources/images/main_logo.png"
-							alt="LAHAN" /> <img
-							src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png"
-							alt="LAHAN" class="off" /> <span class="fixedd_logo"><img
-								src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png"
-								alt="LAHAN3" /></span>
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
+						 	<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN" id="header_icon" class="off"/>
+							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>  
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
-					</h1>
+					</h1> 
 
 					<ul class="nav-list">
 						<li><a href="/lahan/admin/member.do">회원관리</a></li>
@@ -263,10 +260,11 @@ rotate(
 					</div>
 
 
-					<div class="hotel_cont_wrap">
+					
 						<form id="myForm"
-							action="noticemodifing.do"
+							action="/lahan/admin/noticemodifing.do"
 							method="post">
+							<div class="hotel_cont_wrap">
 							<input type="hidden" name="board_num" value="${board_num}">
 
 							<div class="intList-wrap">
@@ -299,15 +297,17 @@ rotate(
 										</div>
 									</li>
 								</ul>
-							</div>
-
 							
-						</form>
 
-					</div><br><br><br>
+						</div>
+							<br><br><div></div>
+							
 
+					</div><br><br><br><button style="width:150px; position:absolute; left:50%; transform: translate(-50%, -50%);" type="submit" class="btn btn-gold">수정하기</button>
+					
+</form>
 <div class="btn-inline-box">
-								<button style="width:150px;" type="submit" class="btn btn-gold">수정하기</button>
+								
 							</div>
 					<!-- 컨텐츠 끝 -->
 				</div>

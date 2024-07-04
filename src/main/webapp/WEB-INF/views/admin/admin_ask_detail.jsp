@@ -198,45 +198,7 @@ rotate(
             }
         }
         
-     // 모달 창 열기
-        function openReplyModal(board_num, title, contents) {
-            document.getElementById('board_num').value = board_num;
-            document.getElementById('replyTitle').value = title;
-            document.getElementById('replyContents').value = contents;
-            document.getElementById('replyModal').style.display = "block";
-        }
-
-        // 모달 창 닫기
-        var modal = document.getElementById("replyModal");
-        var span = document.getElementsByClassName("close")[0];
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // 답변 전송
-        function submitReply() {
-            var board_num = document.getElementById('board_num').value;
-            var reply = document.getElementById('reply').value;
-
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/lahan/admin/askreply.do", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    alert('답변이 등록되었습니다.');
-                    modal.style.display = "none";
-                    location.reload(); // 페이지 새로고침
-                }
-            };
-            xhr.send("board_num=" + board_num + "&reply=" + encodeURIComponent(reply));
-        }
+     
 
         
         
@@ -267,15 +229,12 @@ rotate(
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동"> <img
-							src="${pageContext.request.contextPath}/resources/images/main_logo.png"
-							alt="LAHAN" /> <img
-							src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png"
-							alt="LAHAN" class="off" /> <span class="fixedd_logo"><img
-								src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png"
-								alt="LAHAN3" /></span>
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
+						 	<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN" id="header_icon" class="off"/>
+							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>  
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
-					</h1>
+					</h1> 
 
 					<ul class="nav-list">
 						<li><a href="/lahan/admin/member.do">회원관리</a></li>
@@ -317,8 +276,8 @@ rotate(
 							</ul>
 						</div>
 						<div class="sub-visual-txt brand-lahan">
-							<h3 class="sub-tit02">NOTICE</h3>
-							<p>Lahan hotel의 공지사항을 관리하세요.</p>
+							<h3 class="sub-tit02">Q and A</h3>
+							<p>Lahan hotel 고객님들의 의견을 확인하세요.</p>
 						</div>
 						<img
 							src="${pageContext.request.contextPath}/resources/images/admin_notice_topimg.jpg"
@@ -379,15 +338,15 @@ rotate(
 										
 										<div class="txt-wrap">
 											<div class="input-wrap"><!-- 내용을 입력해 주세요.  최대 2,000byte 까지 입력이 가능합니다. -->
-											  <textarea name="contents" id="contents" cols="40" rows="10" placeholder="답변 내용을 입력해 주세요." ></textarea>
+											   <input type="text" name="reply" id="reply" style="height: 200px;"
+               placeholder="답변 내용을 입력해 주세요." value="${askcontentView.reply != null ? askcontentView.reply : ''}">
 											</div>
 										</div>
 									</div>
 								</div>
 			</form>
 			<div class="brd-detailView-btn">
-				<a
-					href="/lahan/admin/askreply.do" class="btn-list btn-navy-line" style="background-color: #B1B0AC;">답변하기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+				<a href="#" class="btn-list btn-navy-line" style="background-color: #B1B0AC;" onclick="submitReply(${askcontentView.board_num})">답변하기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 					href="/lahan/admin/ask.do" class="btn-list btn-navy-line">목록보기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 					href="javascript:void(0);" onclick="confirmDelete(${askcontentView.board_num})"
    class="btn-list btn-navy-line" style="background-color: #ffcece">삭제하기</a>
@@ -400,7 +359,26 @@ rotate(
 
 <!-- 	</form> -->
 	</div>
+	<script>
+function submitReply(board_num) {
+    var reply = document.getElementById('reply').value;
 
+    if (reply.trim() === '') {
+        alert('답변 내용을 입력해 주세요.');
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/lahan/admin/askreply.do", true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert('답변이 등록되었습니다.');
+            window.location.href = '/lahan/admin/ask.do';
+        }
+    };
+    xhr.send("board_num=" + board_num + "&reply=" + reply);
+}</script>
 	<footer id="footer" class="footer">
 		<!--(FOOTER 최종수정일 : 2023-02-28 08:19)-->
 

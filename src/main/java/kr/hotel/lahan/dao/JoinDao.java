@@ -17,5 +17,5 @@ public interface JoinDao {
 
 	
 	public ArrayList<JoinDto> list();
-    public void delete(String id);
+    public void withdraw(String id, String withdraw);
 }

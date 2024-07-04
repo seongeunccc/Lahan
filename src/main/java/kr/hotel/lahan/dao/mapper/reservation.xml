@@ -12,6 +12,11 @@
     resultType="kr.hotel.lahan.dto.RoomDto">
     	select * from hotel where name = #{hotel} and room_max >= #{total}
     </select>
+    
+     <select id="list" resultType="kr.hotel.lahan.dto.ResvDto">
+        SELECT * from reservation
+    </select>
+    
 </mapper>
 
 <!--  INSERT INTO hotel

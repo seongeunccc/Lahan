@@ -222,15 +222,12 @@ rotate(
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동"> <img
-							src="${pageContext.request.contextPath}/resources/images/main_logo.png"
-							alt="LAHAN" /> <img
-							src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png"
-							alt="LAHAN" class="off" /> <span class="fixedd_logo"><img
-								src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png"
-								alt="LAHAN3" /></span>
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
+						 	<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN" id="header_icon" class="off"/>
+							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>  
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
-					</h1>
+					</h1> 
 
 					<ul class="nav-list">
 						<li><a href="/lahan/admin/member.do">회원관리</a></li>
