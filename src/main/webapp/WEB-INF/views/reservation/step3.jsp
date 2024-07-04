@@ -95,7 +95,19 @@
 			z-index: 9999;
 		}
      </style>
+<script>
+function discount(){	
+	var currentPrice = $("#totalPrice").text()
+	var discountRate = parseFloat($("#discountRate").text())/100;;
+	 var newPrice = currentPrice * (1-discountRate);
+	  $("#totalPrice").text(newPrice.toFixed(0) + " 원");
+}
 
+window.onload = function() {
+	if( $("#discountRate").text()!=null && $("#discountRate").text()!="")
+	discount();
+	};
+</script>
 </head>
 <body>
     <div class="wrap sub">
@@ -147,16 +159,16 @@
 							<div class="resvbox-wrap-left">
 								
 								<!-- 옵션, 스페셜 이벤트 옵션, 회원 제공 혜택(회원일때), 요청사항 -->
-								<strong>스페셜 옵션<!-- 스페셜 옵션 --></strong>
+			<!-- 					<strong>스페셜 옵션스페셜 옵션</strong>
 								<div class="resvbox-wrap-list conseNights">
 									
 										<span class="conseNights-tit"> 07/23 (화)</span>
 										<ul class="optionWrap last" >
-											<!-- 여기 li 속성에 DB에서 불러온 값 for 문 돌리면 될듯-->
+											여기 li 속성에 DB에서 불러온 값 for 문 돌리면 될듯
 													<li>
 														<div class="optionList">
 															<span>성인 조식</span>
-															<span>22,000</b>원<!-- 원 ~ --></span>
+															<span>22,000</b>원원 ~</span>
 														</div>
 														<div class="numPeople numPeopleTy02">
 															<button type="button" onclick="minusBtn(this,'22000.0','성인 조식','option','0','0')" count_range="minus" class="ppBtn btnDown blank"></button>
@@ -168,7 +180,7 @@
 													<li>
 														<div class="optionList">
 															<span>소인 조식</span>
-															<span>15,000</b>원<!-- 원 ~ --></span>
+															<span>15,000</b>원원 ~</span>
 														</div>
 														<div class="numPeople numPeopleTy02">
 															<button type="button" onclick="minusBtn(this,'15000.0','소인 조식','option','1','0')" count_range="minus" class="ppBtn btnDown blank"></button>
@@ -179,13 +191,13 @@
 											
 										</ul>
 									
-								</div>
-								<div class="conseNights-guide">
+								</div> -->
+							<!-- 	<div class="conseNights-guide">
 									<ul>
-										<li>소인조식 적용 대상은 48개월 ~ 초등학생 이하입니다.<!-- 어린이 조식 추가 비용 적용 대상은 37개월 이상 만 12세 이하입니다. --></li>
-										<li>사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.<!-- 사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다. --></li>
+										<li>소인조식 적용 대상은 48개월 ~ 초등학생 이하입니다.어린이 조식 추가 비용 적용 대상은 37개월 이상 만 12세 이하입니다.</li>
+										<li>사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.</li>
 									</ul>
-								</div>
+								</div> -->
 								
 								
 								
@@ -224,9 +236,10 @@
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>프로모션</span>
-											<p>프로모션 코드<!-- 성인 --> ${proCodeDto.procode} / 할인율<!-- 소인 --> ${proCodeDto.rate*100}%</p>
+											<p>프로모션 코드<!-- 성인 --> ${proCodeDto.procode} / 할인율<!-- 소인 --></p><p id="discountRate">${proCodeDto.rate*100}%</p>
 										</div>
 									</div>
+									<script>discount();</script>
 									</c:if>
 								</div>
 								<div class="resvbox-wrap-right-inner last">
@@ -266,11 +279,6 @@
 											
 										
 									</div>
-									<div class="resvbox-wrap-list ty-03" id="spclOptionDiv" style="display: none;">
-										<span>기간한정 옵션<!-- 기간한정 옵션 --></span>
-										
-									</div>
-									
 								</div>
 								<!-- 회원가입 바로가기 안내 영역 // 비회원일 때 -->
 								
@@ -282,7 +290,41 @@
 									<a href="${pageContext.request.contextPath}/join/step1" title="회원가입 바로가기" class="btn-more link-txt">회원가입 바로가기<!-- 회원가입 바로가기 --></a>
 								</div>
 								
-
+	<!-- 								<div class="resvbox-wrap-list ty-03" style="display: none;" id="memBeneDiv">회원일 때 노출 // non e
+										<span>클럽라한 회원혜택클럽라한 회원혜택</span>
+										<div class="resvbox-wrap-list-inner" id="memBeneDivContents">
+											<div class="resvbox-option-left">
+												<p id="memBeneText"></p>
+											</div>
+										</div>
+									</div>
+									<div class="resvbox-wrap-list ty-03 couponBox">회원일 때, 쿠폰 영역 // 비회원일 때 none 추가
+										<div class="resvbox-option-checkbox">
+											<span>클럽라한 전용쿠폰클럽라한 전용 쿠폰</span>
+											<span class="frm frm-chk type02">
+												<input type="checkbox" id="coupon01" onclick="ckcoupon(this)"><label for="coupon01">쿠폰사용쿠폰사용</label>
+											</span>
+										</div>
+										<div class="coupon-selectbox">
+											<div class="coupon-selectbox-wrap select-wrap disabled" id="couponDiv">사용가능한 쿠폰이 없을 때 class disabled 추가
+												<div class="select-coupon selected">
+													
+														<span class="selected-value">사용가능한 쿠폰이 없습니다.사용가능한 쿠폰이 없습니다.</span>
+													
+													
+												</div>
+												<ul class="select-box">
+													
+														<li class="option">사용가능한 쿠폰이 없습니다.사용가능한 쿠폰이 없습니다.</li>
+													
+													
+												</ul>
+											</div>
+										</div> -->
+										
+										
+										
+										
 								<div class="resvbox-charge">
 									<span>VAT 포함<!-- VAT 포함 --></span>
 									<div class="resvbox-charge-table">
@@ -330,7 +372,6 @@
 	const loignUrl = window.location.origin+"/hub/"+langCode+"/login/loginForm.do?nextURL="+window.location.href+"?"+$('#form').serialize();
 	const pckrmPriceOnly = $(#price).val();
 	let pckrmPrice = $(#price).val();
-	let initIdxOpt = 0; //옵션인풋 생성 인덱스
 	let optPrice = 0; // 옵션값
 	let couponPrice = 0;//쿠폰값
 	let optAsync = false;
@@ -485,108 +526,9 @@
 
 
 
-	//쿠폰적용 (쿠폰번호,타입,할인가격,할인율)
-	function selCoupon(seq,type,price,rate,text,enumCode){
-		if(type==""){
-			couponPrice=0;
-			setTotalPrice();
-			$("#memberCouponSeq").val("");
-			$("#couponUpgDiv").addClass("none");
-			$("#coponPriceDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-		}else if(type=="DISCOUNT_AMOUNT" && enumCode =="ROOM"){
-			//가격할인
-			couponPrice = Number(price);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="DISCOUNT_RATE" && enumCode =="ROOM"){
-			//할인율
-			couponPrice = Number(pckrmPriceOnly*rate/100);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="ROOM_PASS"){
-			//숙박권
-			couponPrice = Number(pckrmPriceOnly);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="ROOM_VIEW_UPGRADE"){
-			//뷰업그레이드
-			upgCouponApply(type,seq);
-		}else if(type=="ROOM_TYPE_UPGRADE"){
-			//객실업그레이드
-			upgCouponApply(type,seq);
-		}else{
-			couponPrice = 0;
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#couponUpgDiv").addClass("none");
-			$("#coponPriceDiv").addClass("none");
-			$("#couponTextDiv").removeClass("none");
-			$("#couponText").text(text);
-		}
-	}
+	
 
 
-	//쿠폰적용(객실,뷰)
-	function upgCouponApply(type,seq){
-		//쿠폰 사용 시 예약 가능 객실 조회
-		jQuery.ajax({
-            type : "POST",
-            url : "/api/resv/urpCouponApply.json",
-            dataType : "json",
-            data : $("#form").serialize()+"&type="+type,
-            async : true,
-            global : false,
-            success : function(data){
-            	if (data.re == "success") {
-        			$("#coponPriceDiv").addClass("none");
-        			$("#couponUpgDiv").removeClass("none");
-        			$("#couponTextDiv").addClass("none");
-        			$("#couponUpg").text(data.roomNm);
-        			$("#memberCouponSeq").val(seq);
-        			couponPrice = 0;
-        			setTotalPrice();
-                }else if(data.re == "empty"){
-                	alert("업그레이드 가능한 객실이 없습니다.")
-                	couponPrice=0;
-        			setTotalPrice();
-        			$("#memberCouponSeq").val("");
-        			$("#couponUpgDiv").addClass("none");
-        			$("#coponPriceDiv").addClass("none");
-        			$("#couponTextDiv").addClass("none");
-                }
-            },
-            error:function(r, s, e){
-                alert("API 통신중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
-                return false;
-            },
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-	}
-
-	//총 가격 표시
-	function setTotalPrice(){
-		var totalPrice =  Number(pckrmPrice)-Number(couponPrice);
-		let totalPriceText = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //소수점버림, 3자리수 콤마 찍어주기
-		$("#totalPrice").text(totalPriceText);
-	}
 
 	function addReqmatter(e,msg){
 		if($(e).prop("checked")){
