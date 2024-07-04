@@ -46,7 +46,7 @@
 	                    <c:otherwise>
 	                    <li><a href="${pageContext.request.contextPath}/member/memberinfo" title="마이페이지">마이페이지<!-- 회원가입 --></a></li>
 						<li><a href="${pageContext.request.contextPath}/login/logout" title="로그아웃">로그아웃<!-- 로그인 --></a></li>
-                        <li><a href="${pageContext.request.contextPath}/login/loginNonMemForm" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li> 
+                        <li><a href="${pageContext.request.contextPath}/mypage/myResv" title="예약확인" class="" layer-data="select1">예약확인<!-- 예약확인 --></a></li> 
 	                    </c:otherwise>
 					</c:choose>
 					
