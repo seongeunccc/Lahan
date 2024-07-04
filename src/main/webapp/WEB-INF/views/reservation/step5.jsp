@@ -142,7 +142,7 @@
                 </p>
                 <div class="completeTxt">예약이 정상적으로 완료되었습니다.<Br/>회원 전용 혜택과 특별한 서비스를 만나보세요.</div>
                 <div class="numBox">
-                    예약번호 <strong>1111 </strong>
+                    예약번호 <strong>${resvNo}</strong>
                 </div>
             </div>
             <p class="txtguide">※ 예약 내역 확인 및 수정은 <span class="gold_txt">마이페이지 > 예약조회/확인</span>에서 가능합니다.</p>

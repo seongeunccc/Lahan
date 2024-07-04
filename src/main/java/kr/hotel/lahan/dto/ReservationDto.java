@@ -7,6 +7,7 @@ public class ReservationDto {
 	private int reservation_id;
 	private String id;
 	private String hotel;
+	private String room_name;
 	private Date reserv_date;
 	private Date checkin;
 	private Date checkout;
@@ -113,6 +114,12 @@ public class ReservationDto {
 	}
 	public void setRequestMessage(String requestMessage) {
 		this.requestMessage = requestMessage;
+	}
+	public String getRoom_name() {
+		return room_name;
+	}
+	public void setRoom_name(String room_name) {
+		this.room_name = room_name;
 	}
 	
 }
