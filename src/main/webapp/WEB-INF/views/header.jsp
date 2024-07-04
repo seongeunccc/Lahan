@@ -28,13 +28,13 @@
 							<a href="${pageContext.request.contextPath}/clublahan/membership">클럽라한</a>
 						</li>
 						<li>
-							<a href="/hub/ko/onlineshop/subMain.do">온라인샵</a>
+							<a href="${pageContext.request.contextPath}/clublahan/viewproduct">온라인샵</a>
 						</li>
 					</ul>
 				</div>
 				<div class="h-box-right">
 					<ul class="set-wrap">
-			<%-- 		  내가 보려고 써놨어 userid : ${sessionScope.id}    //// --%>
+
 					<c:choose>	
 						<c:when test="${sessionScope.id eq null}">
 						<li><a href="${pageContext.request.contextPath}/join/step1" title="회원가입">회원가입<!-- 회원가입 --></a></li>

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
+	<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css"> --%>
 	
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
 	
@@ -133,16 +133,16 @@
 					
 					<ul class="nav-list">
 						<li>
-							<a href="/lahan/admin/member.do">회원관리</a>
+							<a href="${pageContext.request.contextPath}/admin/member.do">회원관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/reservation.do">예약관리</a>
+							<a href="${pageContext.request.contextPath}/admin/reservation.do">예약관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/hotel.do">호텔/상품 관리</a>
+							<a href="${pageContext.request.contextPath}/admin/hotel.do">호텔/상품 관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/notice.do">공지/문의 관리</a>
+							<a href="${pageContext.request.contextPath}/admin/notice.do">공지/문의 관리</a>
 						</li>
 					</ul>
 				</div>

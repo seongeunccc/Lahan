@@ -204,9 +204,9 @@
 	               <div class="sub-visual-list">	                  
 	                  <div class="sub-nav-wrap bgType dotColor1">
 	                     	                     <ul class="sub-nav">
-	                        <li><a href="/lahan/admin/hotel.do" class="on">호텔관리</a></li>
+	                        <li><a href="${pageContext.request.contextPath}/admin/hotel.do" class="on">호텔관리</a></li>
 	                        <li>
-	                           <a href="/lahan/admin/product.do">상품관리</a>	                           
+	                           <a href="${pageContext.request.contextPath}/admin/product.do">상품관리</a>	                           
 	                        </li>
 	                     </ul>
 	                  </div>	                  

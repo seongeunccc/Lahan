@@ -10,5 +10,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         values(#{proId},#{proName},#{proTitle},#{proScript},#{proQuant},#{proPrice},#{proPriceDis},#{proFile},#{proCate})     
    </insert>
 
+<select id="list" resultType="kr.hotel.lahan.dto.ProductDto">
+select proId,proName,proTitle,proScript,proQuant,proPrice,proPriceDis,proFile,proCate from products
+</select>
+
+
 
 </mapper>
