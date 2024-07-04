@@ -96,10 +96,29 @@
 		}
      </style>
  
- <script>
- 
- 
- </script>
+<script>
+        window.onload = function() {
+            const currentMembership = '${memberinfo.membership}'.trim();
+            const nextGradeElement = document.getElementById('nextGrade');
+
+            let nextGrade;
+            switch(currentMembership) {
+                case 'SILVER':
+                    nextGrade = 'GOLD';
+                    break;
+                case 'GOLD':
+                    nextGrade = 'DIAMOND';
+                    break;
+                case 'DIAMOND':
+                    nextGrade = '최고 등급입니다';
+                    break;
+                default:
+                    nextGrade = '등급 없음';
+            }
+
+            nextGradeElement.innerText = nextGrade;
+        };
+    </script>
 
      
      
@@ -191,14 +210,16 @@
 												<!--w10 ~ w100 10단위로 클래스 생성  -->
 												<div class="mygrade">
 													<div class="gradeList">
-														<p>현재등급</p>
-														<span class="grade" id="circleCurrentGrade"></span>
-														<div class="occupy" id="totalPaymentAmount"></div>
+														<p>현재등급</p>							
+														<span class="grade" id="circleCurrentGrade">${memberinfo.membership }</span>														
+														<div class="occupy" id="totalPaymentAmount">지금까지 결재금액(포인트 아님, 칼럼 추가)</div>
 													</div>
 												</div>
 												<div class="slice1 slice-list"></div>
-												<div class="slice2 slice-list"></div>
+												<div class="slice2 slice-list"></div>											
 											</div>
+											<div>Next Grade : <span id="nextGrade"></span></div>
+											<div>필요 결제 금액 : <span id="nextGrade"></span></div> 
 										</div>
 									</div>
 									<div id="upgradeInfo" class="bottomTxt">

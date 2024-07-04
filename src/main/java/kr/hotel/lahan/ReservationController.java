@@ -4,8 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import kr.hotel.lahan.command.RCommand;
-import kr.hotel.lahan.dao.ReservationDao;
-import kr.hotel.lahan.dto.ProCodeDto;
+import kr.hotel.lahan.command.*;
+import kr.hotel.lahan.dao.*;
+import kr.hotel.lahan.dto.*;
 
 @Controller
 public class ReservationController {
@@ -51,7 +50,7 @@ public class ReservationController {
 		return "reservation/step1";
 	}
 
-	@RequestMapping(value = "resv/step2")
+//	@RequestMapping(value = "resv/step2")
 	public String step2(Model model) {
 
 		return "reservation/step2";
@@ -140,7 +139,7 @@ public class ReservationController {
 			return json;
 	
 	}
-	
+// JSON 쓰는 방법	
 //	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	@ResponseBody
 	public  String serchProcode2() throws Exception {
@@ -159,36 +158,36 @@ public class ReservationController {
 		
 	
 	}
+	@RequestMapping(value = "resv/step2", method = RequestMethod.POST)
+	public String test(HttpServletRequest request, Model model, ResvDto dto) {
+		dto.setTotal(dto.getAdult()+dto.getChildren());
+		System.out.println(dto.getCheck_In_Day());
+		model.addAttribute("dto", dto);
+		model.addAttribute("request", request);
+		
+		
+		System.out.println("adult : "+ dto.getAdult());
+		System.out.println("total : "+ dto.getTotal());
+		System.out.println("호텔이름 : "+ (dto.getHotel()));
+		
+		
+		command = new FindRoomCommand(sqlSession);
+		command.execute(model);
+		
+		return "reservation/step2";
+	}
+	@RequestMapping(value = "resv/test", method = RequestMethod.POST)
+	public String test1(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
+		dto.setTotal(dto.getAdult()+dto.getChildren());
+		System.out.println(dto.getCheck_In_Day());
+		
+		model.addAttribute("dto", dto);
+		model.addAttribute("roomdto", roomdto);
+		model.addAttribute("request", request);
 
-	@RequestMapping(value = "test", method = RequestMethod.POST)
-	public String test(HttpServletRequest request, Model model) {
-		// model.addAttribute("request",request);
-		String hotel = request.getParameter("hotel");
-		String adult = request.getParameter("adult");
-		String children = request.getParameter("children");
-		String night = request.getParameter("night");
-		String check_in_text = request.getParameter("check_in_text");
-		String check_out_text = request.getParameter("check_out_text");
-		String check_in = request.getParameter("check_in");
-		String check_out = request.getParameter("check_out");
-		String Prm_code = request.getParameter("Prm_code");
-		String check_Out_Day = request.getParameter("check_Out_Day");
-		String check_In_Day = request.getParameter("check_In_Day");
 		
-		System.out.println("Prm_code : "+Prm_code);
+	
 		
-		model.addAttribute("hotel", hotel);
-		model.addAttribute("adult", adult);
-		model.addAttribute("children", children);
-		model.addAttribute("night", night);
-		model.addAttribute("check_in_text", check_in_text);
-		model.addAttribute("check_out_text", check_out_text);
-		model.addAttribute("check_in", check_in);
-		model.addAttribute("check_out", check_out);
-		model.addAttribute("Prm_code", Prm_code);
-		model.addAttribute("check_Out_Day", check_Out_Day);
-		model.addAttribute("check_In_Day", check_In_Day);
-		
-		return "testPage";
+		return "reservation/step3";
 	}
 }

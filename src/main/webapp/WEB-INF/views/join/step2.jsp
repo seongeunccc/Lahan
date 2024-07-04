@@ -122,6 +122,8 @@
 			transform: translate(-50%, -50%);
 			z-index: 9999;
 		}
+		
+		  .alert_red { color: red; display: none; }
      </style>
      
      <script>
@@ -139,10 +141,10 @@
     	    }
 
     	    idRangeAlert.hide();
-
+    	   
     	    // 서버에 중복 확인 요청
     	    $.ajax({
-    	      url: '/lahan/api/check-id-duplicate',
+    	      url: '${pageContext.request.contextPath}/api/check-id-duplicate',
     	      type: 'GET',
     	      data: { id: idInput },
     	      success: function(data) {
@@ -162,9 +164,120 @@
     	    });
     	  });
     	});
-     
-     
      </script>
+     
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // 비밀번호 유효성 검증
+            const pw1 = document.getElementById('pw1');
+            const pw2 = document.getElementById('pw2');
+            const pw1Alert = pw1.nextElementSibling;
+            const pw2Alert = pw2.nextElementSibling;
+            const pwPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,20}$/;
+
+            if (!pwPattern.test(pw1.value)) {
+                pw1Alert.textContent = '8~20자의 영문과 숫자, 특수문자(!@#$%^&*)를 혼용하여 입력해주세요.';
+                pw1Alert.style.display = 'block';
+                isValid = false;
+            } else {
+                pw1Alert.style.display = 'none';
+            }
+
+            if (pw1.value !== pw2.value || pw2.value === '') {
+                pw2Alert.textContent = '한번 더 같은 비밀번호를 입력해 주세요.';
+                pw2Alert.style.display = 'block';
+                isValid = false;
+            } else {
+                pw2Alert.style.display = 'none';
+            }
+
+            // 한글 이름 유효성 검증
+            const name = document.getElementById('mbrName');
+            const nameAlert = name.nextElementSibling;
+            const namePattern = /^[가-힣]+$/;
+
+            if (!namePattern.test(name.value)) {
+                nameAlert.textContent = '이름을 한글로 입력해 주세요.';
+                nameAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                nameAlert.style.display = 'none';
+            }
+
+            // 영문 이름 유효성 검증
+            const enName = document.getElementById('mbrNameEnglish');
+            const enNameAlert = enName.nextElementSibling;
+            const enNamePattern = /^[a-zA-Z\s]+$/;
+
+            if (!enNamePattern.test(enName.value)) {
+                enNameAlert.textContent = '이름을 영어로 입력해 주세요.';
+                enNameAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                enNameAlert.style.display = 'none';
+            }
+
+            // 생년월일 유효성 검증
+            const birth = document.getElementById('mbrBirthday');
+            const birthAlert = birth.nextElementSibling;
+            const birthPattern = /^\d{8}$/;
+
+            if (!birthPattern.test(birth.value)) {
+                birthAlert.textContent = '생년월일을 8자리 숫자로 입력해 주세요. ex)19910909';
+                birthAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                birthAlert.style.display = 'none';
+            }
+
+            // 휴대폰 번호 유효성 검증
+            const phone = document.getElementById('mobileNo');
+            const phoneAlert = phone.nextElementSibling;
+            const phonePattern = /^010\d{8}$/;
+
+            if (!phonePattern.test(phone.value)) {
+                phoneAlert.textContent = '휴대폰 번호를 11자리 숫자로 입력해 주세요. ex)01012345678';
+                phoneAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                phoneAlert.style.display = 'none';
+            }
+
+            // 이메일 유효성 검증
+            const email = document.getElementById('email');
+            const emailAlert = email.nextElementSibling;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email.value)) {
+                emailAlert.textContent = '유효한 이메일 주소를 입력해 주세요. ex)example@example.com';
+                emailAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                emailAlert.style.display = 'none';
+            }
+
+            // 주소 유효성 검증
+            const adrs = document.getElementById('adrs');
+            const adrsAlert = adrs.nextElementSibling;
+            if (adrs.value.trim() === '') {
+                adrsAlert.textContent = '주소를 입력해 주세요.';
+                adrsAlert.style.display = 'block';
+                isValid = false;
+            } else {
+                adrsAlert.style.display = 'none';
+            }
+
+            if (isValid) {
+                alert('회원이 되신 것을 축하합니다.');
+            } else {
+                alert('입력값을 확인해 주세요.');
+            }
+            
+            return isValid;
+        }
+    </script>
      
      
 <body>
@@ -260,109 +373,9 @@
                 </div>
                
                
-                <!-- <div id="emailArea" class="mbfrm necessary">
-                    <div class="floatInput">
-                        <div class="emailWrap">
-                            <input type="text" id="email1" placeholder="이메일을 입력해주세요. " aria-required="true" data-part-valid="Y">
-                            <span class="division">@</span>
-                            <input type="text" id="email2" aria-required="true" data-part-valid="Y">
-                        </div>
-                        <div class="emailSelect">
-                            <div class="select-wrap email">
-                                <div class="selected">
-                                    <span class="selected-value">직접입력 </span>
-                                    <em class="select-arrow"></em>
-                                </div>
-                                <ul id="emailList" class="select-box" data-part-valid="Y">
-                                    <li class="option" data-first="true">직접입력 </li>
-                                    
-                                        <li class="option">naver.com</li>
-                                    
-                                        <li class="option">hanmail.net</li>
-                                    
-                                        <li class="option">hotmail.com</li>
-                                    
-                                        <li class="option">nate.com</li>
-                                    
-                                        <li class="option">gmail.com</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="hidden" id="mbrEmail" name="mbrEmail" value="" data-valid='Y'/>
-                    <div class="alert_red" style="display: none;">이메일 주소 형식이 맞지 않습니다. 다시 확인해 주세요.</div>
-                </div> -->
-
-                <!-- <div class="mbfrm">
-                    <div class="jobSelect">
-                        <div class="select-wrap">
-                            <div class="selected">
-                                <span class="selected-value">거주 도시를 선택해 주세요.</span>
-                                <em class="select-arrow"></em>
-                            </div>
-                            <ul id="rCityList" class="select-box">
-	                            <li class="option" data-value="">거주 도시를 선택해 주세요.</li>
-                                
-                                    <li class="option" data-value="서울특별시">서울특별시</li>
-                                
-                                    <li class="option" data-value="부산광역시">부산광역시</li>
-                                
-                                    <li class="option" data-value="인천광역시">인천광역시</li>
-                                
-                                    <li class="option" data-value="대구광역시">대구광역시</li>
-                                
-                                    <li class="option" data-value="대전광역시">대전광역시</li>
-                                
-                                    <li class="option" data-value="광주광역시">광주광역시</li>
-                                
-                                    <li class="option" data-value="울산광역시">울산광역시</li>
-                                
-                                    <li class="option" data-value="세종특별자치시">세종특별자치시</li>
-                                
-                                    <li class="option" data-value="경기도">경기도</li>
-                                
-                                    <li class="option" data-value="강원도">강원도</li>
-                                
-                                    <li class="option" data-value="충청북도">충청북도</li>
-                                
-                                    <li class="option" data-value="충청남도">충청남도</li>
-                                
-                                    <li class="option" data-value="전라북도">전라북도</li>
-                                
-                                    <li class="option" data-value="전라남도">전라남도</li>
-                                
-                                    <li class="option" data-value="경상북도">경상북도</li>
-                                
-                                    <li class="option" data-value="경상남도">경상남도</li>
-                                
-                                    <li class="option" data-value="제주특별자치도">제주특별자치도</li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <input type="hidden" id="addrCityName" name="addrCityName" value="">
-                    <div class="alert_red" style="display: none;">거주 도시를 선택이 필요합니다.</div>
-                </div>
-
-	            <div class="mbfrm">
-					<div class="jobSelect">
-						<div class="select-wrap">
-							<div class="selected">
-								<span class="selected-value">(호텔 현장가입 시) 가입 진행호텔을 선택해 주세요.</span>
-								<em class="select-arrow"></em>
-							</div>
-							<ul id="hotelList" class="select-box">
-								
-							</ul>
-						</div>
-					</div>
-		            <input type="hidden" id="hotelCode" name="hotelCode" value="">
-				</div> -->
 				
 				   <div id="adrsArea" class="mbfrm necessary">
-                    <div class="floatInput">
-                        
+                    <div class="floatInput">                       
                         <input type="text" id="adrs" placeholder="주소를 입력해주세요 " name="adrs" aria-required="true" data-valid='Y'>
                         <div class="alert_red" style="display: none;">주소 입력이 필요합니다.</div>
                     </div>
@@ -376,6 +389,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="joinBtnArea btn-inline-box">
             <a href="#none" onclick="cancel();" title="취소" class="btn btn-navy-line">취소</a>
              <button type="submit" class="btn btn-navy-line" style="font-family: 'Yoon740', sans-serif;
