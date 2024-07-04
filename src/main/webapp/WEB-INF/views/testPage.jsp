@@ -46,6 +46,16 @@
 	<td>${dto.price } </td>
 	</tr>
 </c:forEach>
+<c:forEach var="resvDto" items="${resvDto}">
+	<tr>
+	<td>${resvDto.reservation_id } </td>
+	<td>${resvDto.hotel } </td>
+	<td>${resvDto.price } </td>
+	</tr>
+</c:forEach>
+
+
+
 </table>
 </body>
 </html>

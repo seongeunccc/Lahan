@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>라한 : 예약하기</title>
 
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
@@ -95,7 +95,26 @@
 			z-index: 9999;
 		}
      </style>
+<script>
+function discount(){	
+	var currentPrice = $("#totalPrice").text()
+	var discountRate = parseFloat($("#discountRate").text())/100;;
+	 var newPrice = currentPrice * (1-discountRate);
+	  $("#totalPrice").text(newPrice.toFixed(0));
+}
 
+function goToNextPage(){
+	$("#totalPrices").val($("#totalPrice").text());
+	$("#requestMessage").val( $("#requestOp").val());
+	document.getElementById('form').submit();
+	
+}
+
+window.onload = function() {
+	if( $("#discountRate").text()!=null && $("#discountRate").text()!="")
+	discount();
+	};
+</script>
 </head>
 <body>
     <div class="wrap sub">
@@ -113,6 +132,9 @@
 	<div id="container" class="container">
 			<!--(페이지 URL)-->
 			
+<c:set var="dto" value="${dto}"/>
+<c:set var="roomList" value="${roomList}"/>
+	
 
 	<link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/resv.css">
 		<div id="container" class="container">
@@ -123,11 +145,11 @@
 						<ul>
 							<li>
 								<span>Step1<!-- Step1 --></span>
-								<a href="/hub/ko/resv/step1.do"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
+								<a href="${pageContext.request.contextPath}/resv/step1"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
 							</li>
 							<li >
 								<span>Step2<!-- Step2 --></span>
-								<a href="/hub/ko/resv/step2.do?adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=231&SS_PMS_CODE=HLP1&SS_PMS_SEQ_NO=231&htNm=%EB%9D%BC%ED%95%9C%ED%98%B8%ED%85%94%20%ED%8F%AC%ED%95%AD&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHPOH&room_code=&rate_code=&rate_seq_no=&room_seq_no=&hotelCode=16&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D231%26SS_PMS_CODE%3DHLP1%26SS_PMS_SEQ_NO%3D231%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25ED%2598%25B8%25ED%2585%2594%2520%25ED%258F%25AC%25ED%2595%25AD%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHPOH%26room_code%3D%26rate_code%3D%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D16%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526prm_seq_no%253D%2526pms_seq_no%253D231%2526SS_PMS_CODE%253DHLP1%2526SS_PMS_SEQ_NO%253D231%2526Prm_code%253D%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525ED%252598%2525B8%2525ED%252585%252594%252520%2525ED%25258F%2525AC%2525ED%252595%2525AD%2526sysCode%253DLHPOH%2526hotelCode%253D16%2526step1Param%253D%2526step2Param%253D%2526step3Param%253D%2526step4Param%253D%2526month%253D%2526year%253D%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&step2Type=room&step2Sort=&month=&year=&searchRoomDivisArr="><p>객실 선택<!-- 객실 선택 --></p></a>
+								<p>객실 선택<!-- 객실 선택 --></p>
 							</li>
 							<li class="on">
 								<span>Step3<!-- Step3 --></span>
@@ -144,16 +166,16 @@
 							<div class="resvbox-wrap-left">
 								
 								<!-- 옵션, 스페셜 이벤트 옵션, 회원 제공 혜택(회원일때), 요청사항 -->
-								<strong>스페셜 옵션<!-- 스페셜 옵션 --></strong>
+			<!-- 					<strong>스페셜 옵션스페셜 옵션</strong>
 								<div class="resvbox-wrap-list conseNights">
 									
-										<span class="conseNights-tit">07/23 (화)</span>
+										<span class="conseNights-tit"> 07/23 (화)</span>
 										<ul class="optionWrap last" >
-											<!-- 여기 li 속성에 DB에서 불러온 값 for 문 돌리면 될듯-->
+											여기 li 속성에 DB에서 불러온 값 for 문 돌리면 될듯
 													<li>
 														<div class="optionList">
 															<span>성인 조식</span>
-															<span>22,000</b>원<!-- 원 ~ --></span>
+															<span>22,000</b>원원 ~</span>
 														</div>
 														<div class="numPeople numPeopleTy02">
 															<button type="button" onclick="minusBtn(this,'22000.0','성인 조식','option','0','0')" count_range="minus" class="ppBtn btnDown blank"></button>
@@ -165,7 +187,7 @@
 													<li>
 														<div class="optionList">
 															<span>소인 조식</span>
-															<span>15,000</b>원<!-- 원 ~ --></span>
+															<span>15,000</b>원원 ~</span>
 														</div>
 														<div class="numPeople numPeopleTy02">
 															<button type="button" onclick="minusBtn(this,'15000.0','소인 조식','option','1','0')" count_range="minus" class="ppBtn btnDown blank"></button>
@@ -176,13 +198,13 @@
 											
 										</ul>
 									
-								</div>
-								<div class="conseNights-guide">
+								</div> -->
+							<!-- 	<div class="conseNights-guide">
 									<ul>
-										<li>소인조식 적용 대상은 48개월 ~ 초등학생 이하입니다.<!-- 어린이 조식 추가 비용 적용 대상은 37개월 이상 만 12세 이하입니다. --></li>
-										<li>사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.<!-- 사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다. --></li>
+										<li>소인조식 적용 대상은 48개월 ~ 초등학생 이하입니다.어린이 조식 추가 비용 적용 대상은 37개월 이상 만 12세 이하입니다.</li>
+										<li>사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.사전 추가된 조식의 경우 특별요금이 적용된 혜택으로, 체크인 후 미사용 시 환불이 불가합니다.</li>
 									</ul>
-								</div>
+								</div> -->
 								
 								
 								
@@ -214,9 +236,18 @@
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>인원<!-- 인원 --></span>
-											<p>성인<!-- 성인 --> ${dto.audlt} / 소인<!-- 소인 --> ${dto.children}</p>
+											<p>성인<!-- 성인 --> ${dto.adult} / 소인<!-- 소인 --> ${dto.children}</p>
 										</div>
 									</div>
+									<c:if test="${not empty proCodeDto}">
+									<div class="resvbox-wrap-list ty-02">
+										<div class="resvbox-option-left">
+											<span>프로모션</span>
+											<p>프로모션 코드<!-- 성인 --> ${proCodeDto.procode} / 할인율<!-- 소인 --></p><p id="discountRate">${proCodeDto.rate*100}%</p>
+										</div>
+									</div>
+									<script>discount();</script>
+									</c:if>
 								</div>
 								<div class="resvbox-wrap-right-inner last">
 									<strong class="resvbox-option-tit">${roomdto.room_name}</strong>
@@ -255,11 +286,6 @@
 											
 										
 									</div>
-									<div class="resvbox-wrap-list ty-03" id="spclOptionDiv" style="display: none;">
-										<span>기간한정 옵션<!-- 기간한정 옵션 --></span>
-										
-									</div>
-									
 								</div>
 								<!-- 회원가입 바로가기 안내 영역 // 비회원일 때 -->
 								
@@ -271,17 +297,51 @@
 									<a href="${pageContext.request.contextPath}/join/step1" title="회원가입 바로가기" class="btn-more link-txt">회원가입 바로가기<!-- 회원가입 바로가기 --></a>
 								</div>
 								
-
+	<!-- 								<div class="resvbox-wrap-list ty-03" style="display: none;" id="memBeneDiv">회원일 때 노출 // non e
+										<span>클럽라한 회원혜택클럽라한 회원혜택</span>
+										<div class="resvbox-wrap-list-inner" id="memBeneDivContents">
+											<div class="resvbox-option-left">
+												<p id="memBeneText"></p>
+											</div>
+										</div>
+									</div>
+									<div class="resvbox-wrap-list ty-03 couponBox">회원일 때, 쿠폰 영역 // 비회원일 때 none 추가
+										<div class="resvbox-option-checkbox">
+											<span>클럽라한 전용쿠폰클럽라한 전용 쿠폰</span>
+											<span class="frm frm-chk type02">
+												<input type="checkbox" id="coupon01" onclick="ckcoupon(this)"><label for="coupon01">쿠폰사용쿠폰사용</label>
+											</span>
+										</div>
+										<div class="coupon-selectbox">
+											<div class="coupon-selectbox-wrap select-wrap disabled" id="couponDiv">사용가능한 쿠폰이 없을 때 class disabled 추가
+												<div class="select-coupon selected">
+													
+														<span class="selected-value">사용가능한 쿠폰이 없습니다.사용가능한 쿠폰이 없습니다.</span>
+													
+													
+												</div>
+												<ul class="select-box">
+													
+														<li class="option">사용가능한 쿠폰이 없습니다.사용가능한 쿠폰이 없습니다.</li>
+													
+													
+												</ul>
+											</div>
+										</div> -->
+										
+										
+										
+										
 								<div class="resvbox-charge">
 									<span>VAT 포함<!-- VAT 포함 --></span>
 									<div class="resvbox-charge-table">
 										<strong>최종 결제 예정 금액<!-- 최종 결제 예정 금액 --></strong>
-										<span><strong id="totalPrice">152,000</strong> 원<!-- 원 --></span>
+										<span><strong id="totalPrice">${roomdto.price}</strong> 원<!-- 원 --></span>
 									</div>
 									
 									
 										<div class="btn-inline-box"><!-- 기본 및 비회원일 때 -->
-											<a href="#none" title="비회원예약" onclick="next()" class="btn-memResv btn-gold-line">비회원예약<!-- 비회원예약 --></a>
+											<a href="#none" title="비회원예약" onclick="goToNextPage()" class="btn-memResv btn-gold-line">비회원예약<!-- 비회원예약 --></a>
 											<a href="#none" title="회원예약" onclick="loginPage()" class="btn-memResv btn-gold">회원예약<!-- 회원예약 --></a>
 										</div>
 									
@@ -294,7 +354,7 @@
 			</section>
 		</div>
 
-<form id="form" method="post" action="./test">
+<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step4" >
 	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
 	<input type="hidden" name="children" id="children" value="${dto.children}">
 	<input type="hidden" name="night" id="night" value="${dto.night}">
@@ -308,8 +368,10 @@
 	<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="${dto.check_Out_Day}">
 	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
 	<!-- RoomDto  -->
-	<input type="hidden" name="room_name" id="room_name" value="">
-	<input type="hidden" name="price" id="price" value="${dto.price}">
+	<input type="hidden" name="room_name" id="room_name" value="${roomdto.room_name}">
+	<input type="hidden" name="price" id="price" value="${roomdto.price}">
+	<input type="hidden" name="totalPrices" id="totalPrices" value="">
+	<input type="hidden" name="requestMessage" id="requestMessage" value="">
 	
 	</form>
 	</div>
@@ -317,9 +379,8 @@
 	<script>
 	const langCode = "ko";
 	const loignUrl = window.location.origin+"/hub/"+langCode+"/login/loginForm.do?nextURL="+window.location.href+"?"+$('#form').serialize();
-	const pckrmPriceOnly = "152000.0";
-	let pckrmPrice = "152000.0";
-	let initIdxOpt = 0; //옵션인풋 생성 인덱스
+	const pckrmPriceOnly = $(#price).val();
+	let pckrmPrice = $(#price).val();
 	let optPrice = 0; // 옵션값
 	let couponPrice = 0;//쿠폰값
 	let optAsync = false;
@@ -469,114 +530,7 @@
 			}
 			initIdxOpt++;
 		}
-
 	}
-
-
-
-	//쿠폰적용 (쿠폰번호,타입,할인가격,할인율)
-	function selCoupon(seq,type,price,rate,text,enumCode){
-		if(type==""){
-			couponPrice=0;
-			setTotalPrice();
-			$("#memberCouponSeq").val("");
-			$("#couponUpgDiv").addClass("none");
-			$("#coponPriceDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-		}else if(type=="DISCOUNT_AMOUNT" && enumCode =="ROOM"){
-			//가격할인
-			couponPrice = Number(price);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="DISCOUNT_RATE" && enumCode =="ROOM"){
-			//할인율
-			couponPrice = Number(pckrmPriceOnly*rate/100);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="ROOM_PASS"){
-			//숙박권
-			couponPrice = Number(pckrmPriceOnly);
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#coponPriceDiv").removeClass("none");
-			$("#couponUpgDiv").addClass("none");
-			$("#couponTextDiv").addClass("none");
-			$("#coponPrice").text("- "+couponPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-		}else if(type=="ROOM_VIEW_UPGRADE"){
-			//뷰업그레이드
-			upgCouponApply(type,seq);
-		}else if(type=="ROOM_TYPE_UPGRADE"){
-			//객실업그레이드
-			upgCouponApply(type,seq);
-		}else{
-			couponPrice = 0;
-			setTotalPrice();
-			$("#memberCouponSeq").val(seq);
-			$("#couponUpgDiv").addClass("none");
-			$("#coponPriceDiv").addClass("none");
-			$("#couponTextDiv").removeClass("none");
-			$("#couponText").text(text);
-		}
-	}
-
-
-	//쿠폰적용(객실,뷰)
-	function upgCouponApply(type,seq){
-		//쿠폰 사용 시 예약 가능 객실 조회
-		jQuery.ajax({
-            type : "POST",
-            url : "/api/resv/urpCouponApply.json",
-            dataType : "json",
-            data : $("#form").serialize()+"&type="+type,
-            async : true,
-            global : false,
-            success : function(data){
-            	if (data.re == "success") {
-        			$("#coponPriceDiv").addClass("none");
-        			$("#couponUpgDiv").removeClass("none");
-        			$("#couponTextDiv").addClass("none");
-        			$("#couponUpg").text(data.roomNm);
-        			$("#memberCouponSeq").val(seq);
-        			couponPrice = 0;
-        			setTotalPrice();
-                }else if(data.re == "empty"){
-                	alert("업그레이드 가능한 객실이 없습니다.")
-                	couponPrice=0;
-        			setTotalPrice();
-        			$("#memberCouponSeq").val("");
-        			$("#couponUpgDiv").addClass("none");
-        			$("#coponPriceDiv").addClass("none");
-        			$("#couponTextDiv").addClass("none");
-                }
-            },
-            error:function(r, s, e){
-                alert("API 통신중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
-                return false;
-            },
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-	}
-
-	//총 가격 표시
-	function setTotalPrice(){
-		var totalPrice =  Number(pckrmPrice)-Number(couponPrice);
-		let totalPriceText = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //소수점버림, 3자리수 콤마 찍어주기
-		$("#totalPrice").text(totalPriceText);
-	}
-
 	function addReqmatter(e,msg){
 		if($(e).prop("checked")){
 			$("#memBeneDiv").show();
@@ -606,34 +560,9 @@
 		}
 	}
 
-	//스텝4
-	function next(){
-		if(optAsync == false){
-			optAsync = true;
-			//스페셜옵션List 넘길값 세팅
-			$("[class*='spclInput']").each(function(index, item){
-				setOptionInput(item);
-			});
-			$("#spclHtml").val($("#spclOptionDiv")[0].outerHTML);
-			//옵션List 넘길값 세팅
-			$("[class*='optInput']").each(function(index, item){
-				setOptionInput(item);
-			});
-			$("#optHtml").val($("#optionDiv")[0].outerHTML);
-			//쿠폰값 세팅
 
-			//요청사항
-			$("#rsvn_reqmatter").val($("#requestOp").val());
-
-			const step4Param = $("#form").serialize();
-			$("#step4Param").val(step4Param);
-
-			$("#form").attr("action","/hub/ko/resv/step4.do");
-			showLoading();
-			$("#form").submit();
-		}
-	}
 	</script>
+	
 		</div>
 <%@ include file="/WEB-INF/views/footer.jsp" %> 
 </body>

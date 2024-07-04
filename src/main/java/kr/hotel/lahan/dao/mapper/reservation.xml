@@ -17,6 +17,16 @@
         SELECT * from reservation
     </select>
     
+    <insert id="insertResv" parameterType="kr.hotel.lahan.dto.ReservationDto"> 
+    	insert into reservation (id, hotel, reserv_date, checkin, checkout,	promotion, procode, adult, children, price, requestMessage, creditcardNo, room_name) values 
+    	(#{id}, #{hotel}, #{reserv_date}, #{checkin}, #{checkout},#{promotion}, #{procode}, #{adult}, #{children}, #{price}, #{requestMessage}, #{creditcardNo}, #{room_name})
+    </insert>
+    <select id="getResv" resultType="kr.hotel.lahan.dto.ReservationDto">
+    	select * from reservation where id = #{param1} order by reserv_date desc
+    </select>
+    <select id="findResvId" resultType="java.lang.Integer" >
+    	select max(reservation_id) from reservation where id = #{param1}
+    </select>
 </mapper>
 
 <!--  INSERT INTO hotel

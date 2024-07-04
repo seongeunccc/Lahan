@@ -89,7 +89,6 @@
 		z-index: 9999;
 	}
     </style>
-   
 </head>
 <body>
 
@@ -107,19 +106,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 	<link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/resv.css">
-		<form id="form" method="post" action="/hub/ko/resv/stepCom.do">
+		<form id="form" method="post" action="/resv/stepCom.do">
 		<div id="container" class="container">
 			<section class="sub-contents">
 				<div class="sub-contents-wrap resv-contents">
@@ -128,15 +116,15 @@
 						<ul>
 							<li>
 								<span>Step1<!-- Step1 --></span>
-								<a href="/hub/ko/resv/step1.do"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
+								<a href="${pageContext.request.contextPath}/resv/step1"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
 							</li>
 							<li >
 								<span>Step2<!-- Step2 --></span>
-								<a href="/hub/ko/resv/step2.do?adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=107&SS_PMS_CODE=HHG1&SS_PMS_SEQ_NO=107&htNm=%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%20%EA%B2%BD%EC%A3%BC&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHGYJ&room_code=&rate_code=RTT&rate_seq_no=&room_seq_no=&hotelCode=12&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3D%26rate_code%3DRTT%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.18%252520(%2525EB%2525AA%2525A9)%2526check_out_text%253D2024.07.19%252520(%2525EA%2525B8%252588)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-18%2526check_out%253D2024-07-19%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253D%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.18%25252520(%252525EB%252525AA%252525A9)%252526check_out_text%25253D2024.07.19%25252520(%252525EA%252525B8%25252588)%252526check_in%25253D2024-07-18%252526check_out%25253D2024-07-19%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526Prm_code%25253D%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526sysCode%25253DLHGYJ%252526hotelCode%25253D12%252526step1Param%25253D%252526step2Param%25253D%252526step3Param%25253D%252526step4Param%25253D%252526month%25253D%252526year%25253D%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&step2Type=package&step2Sort=&month=&year=&searchRoomDivisArr="><p>객실 선택<!-- 객실 선택 --></p></a>
+								<p>객실 선택<!-- 객실 선택 --></p>
 							</li>
 							<li >
 								<span>Step3<!-- Step3 --></span>
-								<a href="/hub/ko/resv/step3.do?adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=107&SS_PMS_CODE=HHG1&SS_PMS_SEQ_NO=107&htNm=%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%20%EA%B2%BD%EC%A3%BC&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHGYJ&room_code=HDT&rate_code=EB14&rate_seq_no=2101&room_seq_no=1222&hotelCode=12&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3D%26rate_code%3DRTT%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253DRTT%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.18%25252520(%252525EB%252525AA%252525A9)%252526check_out_text%25253D2024.07.19%25252520(%252525EA%252525B8%25252588)%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526check_in%25253D2024-07-18%252526check_out%25253D2024-07-19%252526sysCode%25253DLHGYJ%252526room_code%25253D%252526rate_code%25253D%252526rate_seq_no%25253D%252526room_seq_no%25253D%252526hotelCode%25253D12%252526rsvn_reqmatter%25253D%252526memberCouponSeq%25253D%252526memberBene%25253D%252526step1Param%25253D%252526step2Param%25253Dadult%2525253D2%25252526children%2525253D0%25252526night%2525253D1%25252526check_in_text%2525253D2024.07.18%2525252520(%25252525EB%25252525AA%25252525A9)%25252526check_out_text%2525253D2024.07.19%2525252520(%25252525EA%25252525B8%2525252588)%25252526check_in%2525253D2024-07-18%25252526check_out%2525253D2024-07-19%25252526prm_seq_no%2525253D%25252526pms_seq_no%2525253D107%25252526SS_PMS_CODE%2525253DHHG1%25252526SS_PMS_SEQ_NO%2525253D107%25252526Prm_code%2525253D%25252526htNm%2525253D%25252525EB%252525259D%25252525BC%25252525ED%2525252595%252525259C%25252525EC%2525252585%2525252580%25252525EB%25252525A0%2525252589%25252525ED%252525258A%25252525B8%2525252520%25252525EA%25252525B2%25252525BD%25252525EC%25252525A3%25252525BC%25252526sysCode%2525253DLHGYJ%25252526hotelCode%2525253D12%25252526step1Param%2525253D%25252526step2Param%2525253D%25252526step3Param%2525253D%25252526step4Param%2525253D%25252526month%2525253D%25252526year%2525253D%25252526searchRoomCode%2525253D%25252526searchRateCode%2525253D%25252526step2Type%2525253D%252526step3Param%25253D%252526step4Param%25253D%252526langCode%25253Dko%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253Dpackage%252526step2Sort%25253D%252526month%25253D%252526year%25253D%252526searchRoomDivisArr%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&spclHtml=&optHtml="><p>옵션 선택<!-- 옵션 선택 --></p></a>
+								<p>옵션 선택<!-- 옵션 선택 --></p>
 							</li>
 							<li class="on">
 								<span>Step4<!-- Step4 --></span>
@@ -160,43 +148,21 @@
 											<div class="info-input-box info-input-ty01">
 												
 												
-													<input type="text" style="text-transform: uppercase;" data-valid="Y" data-msg="성명(성)을 입력해주세요." onKeyup="this.value=this.value.replace(/[^ㄱ-ㅎ가-힣a-zA-Z]/g,'');" maxlength="35" id="rsvn_gest_lastname"  name="rsvn_gest_lastname" class="esse readInfo" placeholder="성" /><!-- 성 -->
-													<input type="text" style="text-transform: uppercase;" data-valid="Y" data-msg="성명(이름)을 입력해주세요." onKeyup="this.value=this.value.replace(/[^ㄱ-ㅎ가-힣a-zA-Z]/g,'');" maxlength="35" id="rsvn_gest_name"  name="rsvn_gest_name" class="esse readInfo" placeholder="이름" /><!-- 이름 -->
+													<input type="text" style="text-transform: uppercase;" data-valid="Y" data-msg="이름을 입력해주세요." onKeyup="this.value=this.value.replace(/[^ㄱ-ㅎ가-힣a-zA-Z]/g,'');" maxlength="35" id="rsvn_gest_lastname"  
+													name="rsvn_gest_lastname" class="esse readInfo" placeholder="이름" value="${memberinfo.name}" readonly /><!-- 성 -->
 												
 											</div>
 										</div>
 										<div class="info-input-list necessary" id="emailArea">
 											<span>이메일<!-- 이메일 --></span>
 											<div class="resv-emailbox">
-												<div class="emailWrap">
-													<input type="text" data-valid="Y" value="" data-msg="이메일을 입력해주세요." onKeyup="this.value=this.value.replace(/[^0-9a-zA-Z-_]/g,'');" maxlength="25" id="email1" class="esse readInfo" placeholder="이메일을 입력해주세요. " aria-required="true" >
-													<span class="division">@</span>
-													<input type="text" data-valid="Y" value="" data-msg="이메일을 입력해주세요." onKeyup="this.value=this.value.replace(/[^0-9a-zA-Z./_-]/g,'');" maxlength="25" id="email2" class="esse readInfo" aria-required="true">
-												</div>
-												<div class="emailSelect">
-													<div class="select-wrap email readInfo">
-														<div class="selected readInfo">
-															<span class="selected-value ">직접입력<!-- 직접입력 --></span>
-															<em class="select-arrow"></em>
-														</div>
-														<ul id="emailList" class="select-box" data-part-valid="Y">
-						                                    <li class="option" data-first="true">직접입력 </li>
-						                                    
-						                                        <li class="option">naver.com</li>
-						                                    
-						                                        <li class="option">hanmail.net</li>
-						                                    
-						                                        <li class="option">hotmail.com</li>
-						                                    
-						                                        <li class="option">nate.com</li>
-						                                    
-						                                        <li class="option">gmail.com</li>
-						                                    
-						                                </ul>
-													</div>
-												</div>
+												<!-- <div class="emailWrap"> -->
+													<input type="text"  data-msg="이메일을 입력해주세요."  id="email" class="esse readInfo" 
+													placeholder="이메일을 입력해주세요. "   value="${memberinfo.email}" readonly />
+												
+											<!-- 	</div> -->
+						
 											</div>
-											<div class="alert_red" style="display: none;color: red">이메일 주소 형식이 맞지 않습니다. 다시 확인해 주세요.</div>
 										</div>
 										<div class="info-input-list necessary">
 											<span>휴대폰번호<!-- 휴대폰번호 --></span>
@@ -591,7 +557,8 @@
 												</div>
 												<div class="info-input-box">
 													<input type="hidden" value="" name="rsvn_nation_code" id="rsvn_nation_code">
-													<input type="number" value="" name="phone" id="phone" class="esse readInfo" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"  oninput="this.value=this.value.slice(0, 11);"  data-valid="Y" data-msg="휴대폰번호를 입력해주세요."/>
+													<input type="text" name="phone" id="phone" class="esse readInfo" data-msg="휴대폰번호를 입력해주세요."
+													value="${memberinfo.phone}" readonly />
 												</div>
 											</div>
 										</div>
@@ -599,14 +566,9 @@
 											<span>생년월일<!-- 생년월일 --></span>
 											<div class="resv-monthbox">
 												<div class="info-input-box first">
-													<input type="number" value="" data-valid="Y" class="readInfo" data-msg="생년월일(연도)을 입력해주세요."   name="yearYYYY" id="yearYYYY" class="esse" placeholder="YYYY"  oninput="nextFocus(this,'4','yearMM')"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+													<input type="number" value="${memberinfo.birth}" data-valid="Y" class="readInfo" data-msg="생년월일(연도)을 입력해주세요."   name="yearYYYY" id="yearYYYY" class="esse" placeholder="YYYY"  oninput="nextFocus(this,'4','yearMM')"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" readonly />
 												</div>
-												<div class="info-input-box">
-													<input type="number" placeholder="MM" value="" class="readInfo" data-valid="Y" id="yearMM" name="yearMM" data-valid="Y"  data-msg="생년월일(월)을 입력해주세요." oninput="nextFocus(this,'2','yearDD')"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
-												</div>
-												<div class="info-input-box last">
-													<input type="number" data-valid="Y" value="" class="readInfo"  data-msg="생년월일(일)을 입력해주세요."  name="yearDD" id="yearDD" placeholder="DD"  oninput="this.value=this.value.slice(0, 2);"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
-												</div>
+												
 											</div>
 										</div>
 									</div>
@@ -744,9 +706,6 @@
 - 자세한 보유기간은 당사의 개인정보 처리방침 참고요망<br><br>
 
 ※더 나은 서비스를 위하여 고객님의 개인정보를 협력 업체 등과 공유할 필요가 있는 경우에는해당 내용 및 업체명을 개인정보처리방침에 수시로 업데이트하여 이용자에게 고지 합니다. </p>
-
-
-
 											</div>
 										</div>
 									</div>
@@ -784,83 +743,52 @@
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>호텔<!-- 호텔 --></span>
-											<p>라한셀렉트 경주</p>
+											<p>${dto.hotel }</p>
 										</div>
 									</div>
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>체크인 / 체크아웃<!-- 체크인 / 체크아웃 --></span>
-											<p><span>2024.07.23 (화) - 2024.07.24 (수)</span><span> 1박<!-- 박 --></span></p>
+											<p><span>${dto.check_in_text } - ${dto.check_out_text }</span><span> ${dto.night}박<!-- 박 --></span></p>
 										</div>
 									</div>
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>인원<!-- 인원 --></span>
-											<p>성인<!-- 성인 --> 2 / 소인<!-- 소인 --> 0</p>
+											<p>성인<!-- 성인 --> ${dto.adult} / 소인<!-- 소인 --> ${dto.children}</p>
 										</div>
 									</div>
 								</div>
 								<div class="resvbox-wrap-right-inner">
-									<strong class="resvbox-option-tit">얼리버드 D-14 / 마운틴뷰 디럭스 트윈</strong>
+									<strong class="resvbox-option-tit">${roomdto.room_name}</strong>
 									<div class="resvbox-wrap-list ty-03">
 										<div class="resvbox-wrap-list-inner">
 											<div class="resvbox-option-left">
 												<p>상품 / 객실<!-- 패키지/객실 --></p>
 											</div>
 											<div class="resvbox-option-right">
-												<p>229,500</strong> 원<!-- 원 --></p>
+												<p>${totalPrice}</strong> 원<!-- 원 --></p>
 											</div>
 										</div>
 									</div>
-									<div class="resvbox-wrap-list ty-03 conseNights-list" id="optionDiv" style="display: none;">
-										<span>스페셜 옵션<!-- 스페셜 옵션 --></span>
-										
-											<span class="conseNights-subtit" id="0dateSpan" style="display: none;">07/23 (화)</span>
-											
-										
-									</div>
-									<div class="resvbox-wrap-list ty-03" id="spclOptionDiv" style="display: none;">
-										<span>기간한정 옵션<!-- 기간한정 옵션 --></span>
-										
-											<div class="resvbox-wrap-list-inner" id="spclDiv0" style="display: none">
-												<div class="resvbox-option-left">
-													<p>웰컴셋업 1: 레드와인 1병 + 마카롱 3종 x <span id="spcl0count">0</span> </p>
-												</div>
-												<div class="resvbox-option-right">
-													<p><span id="spcl0price">0</span>원<!-- 원 ~ --></p>
-												</div>
-											</div>
-										
-											<div class="resvbox-wrap-list-inner" id="spclDiv1" style="display: none">
-												<div class="resvbox-option-left">
-													<p>웰컴셋업 2: 레드와인 1병 + 마카롱 3종 +과일 플래터 x <span id="spcl1count">0</span> </p>
-												</div>
-												<div class="resvbox-option-right">
-													<p><span id="spcl1price">0</span>원<!-- 원 ~ --></p>
-												</div>
-											</div>
-										
-									</div>
-									
-									
-									
-									<div class="resvbox-wrap-inner grey-bg"><!-- 기본 및 비회원일 때 // 회원일 때 none 삭제 -->
+						
+<!-- 									<div class="resvbox-wrap-inner grey-bg">기본 및 비회원일 때 // 회원일 때 none 삭제
 										<p>
-											지금 바로, 클럽라한에 가입하세요!<br/><br/>본 상품을 회원 가입 후 이용하시면 <br/><b>현금처럼 사용가능한 포인트<!-- 지금 바로, 클럽라한 가입 후 포인트 적립과 할인 혜택을 받으세요.<br/>본 상품을 회원 가입 후 이용하시면 <b>--></b>와 회원 혜택이 제공됩니다.<!-- </b>가 적립됩니다. -->
+											지금 바로, 클럽라한에 가입하세요!<br/><br/>본 상품을 회원 가입 후 이용하시면 <br/><b>현금처럼 사용가능한 포인트지금 바로, 클럽라한 가입 후 포인트 적립과 할인 혜택을 받으세요.<br/>본 상품을 회원 가입 후 이용하시면 <b></b>와 회원 혜택이 제공됩니다.</b>가 적립됩니다.
 											
 										</p>
-										<a href="/hub/ko/join/step1.do" title="회원가입 바로가기" class="btn-more link-txt">회원가입 바로가기<!-- 회원가입 바로가기 --></a>
-									</div>
+										<a href="/hub/ko/join/step1.do" title="회원가입 바로가기" class="btn-more link-txt">회원가입 바로가기회원가입 바로가기</a>
+									</div> -->
 									
 								</div>
 								<div class="resvbox-charge">
 									<span>VAT 포함<!-- VAT 포함 --></span><!-- 데이터값 받아오기 -->
 									<div class="resvbox-charge-table">
 										<strong>최종 결제 예정 금액<!-- 최종 결제 예정 금액 --></strong>
-										<span><strong id="totalPrice">229,500</strong>원<!-- 원 --></span><!-- 데이터값 받아오기 -->
+										<span><strong id="totalPrice">${totalPrice}</strong>원<!-- 원 --></span><!-- 데이터값 받아오기 -->
 									</div>
-									<div class="btn-block-box">
-										<a href="#none" title="예약완료" onclick="resv()" class="btn-comResv btn-gold">예약완료<!-- 예약하기 --></a>
+									<div class="btn-block-box 1">
+										<a href="#;" title="예약완료" onclick="letsgoresv()" class="btn-comResv btn-gold">예약완료<!-- 예약하기 --></a>
 									</div>
 								</div>
 							</div>
@@ -869,55 +797,34 @@
 					<!-- 컨텐츠 끝 -->
 				</div>
 			</section>
-		</div>
-			<input type="hidden" id="rsvn_gest_email" name="rsvn_gest_email">
-			<input type="hidden" id="rsvn_gest_cntc" name="rsvn_gest_cntc" >
-			<input type="hidden" id="rsvn_gest_card_no" name="rsvn_gest_card_no">
-			<input type="hidden" id="rsvn_gest_card_term" name="rsvn_gest_card_term">
-			<input type="hidden" name="memberCouponNm" id="memberCouponNm" value="">
-			<input type="hidden" id="birth" name="birth">
 			
 
+</div>
+</form>
 
-	<input type="hidden" name="adult" id="adult" value="2">
-	<input type="hidden" name="children" id="children" value="0">
-	<input type="hidden" name="night" id="night" value="1">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="2024.07.23 (화)">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="2024.07.24 (수)">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="107">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="HHG1">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="107">
-	<input type="hidden" name="htNm" id="htNm" value="라한셀렉트 경주">
-	<input type="hidden" name="check_in" id="check_in" value="2024-07-23">
-	<input type="hidden" name="check_out" id="check_out" value="2024-07-24">
-	<input type="hidden" name="sysCode" id="sysCode" value="LHGYJ">
-	<input type="hidden" name="room_code" id="room_code" value="HDT">
-	<input type="hidden" name="rate_code" id="rate_code" value="EB14">
-	<input type="hidden" name="rate_seq_no" id="rate_seq_no" value="2101">
-	<input type="hidden" name="room_seq_no" id="room_seq_no" value="1222">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="12">
-	<input type="hidden" name="rsvn_reqmatter" id="rsvn_reqmatter" value="">
-	<input type="hidden" name="memberCouponSeq" id="memberCouponSeq" value="">
-	<input type="hidden" name="memberBene" id="memberBene" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=107&SS_PMS_CODE=HHG1&SS_PMS_SEQ_NO=107&htNm=%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%20%EA%B2%BD%EC%A3%BC&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHGYJ&room_code=&rate_code=RTT&rate_seq_no=&room_seq_no=&hotelCode=12&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3D%26rate_code%3DRTT%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.18%252520(%2525EB%2525AA%2525A9)%2526check_out_text%253D2024.07.19%252520(%2525EA%2525B8%252588)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-18%2526check_out%253D2024-07-19%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253D%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.18%25252520(%252525EB%252525AA%252525A9)%252526check_out_text%25253D2024.07.19%25252520(%252525EA%252525B8%25252588)%252526check_in%25253D2024-07-18%252526check_out%25253D2024-07-19%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526Prm_code%25253D%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526sysCode%25253DLHGYJ%252526hotelCode%25253D12%252526step1Param%25253D%252526step2Param%25253D%252526step3Param%25253D%252526step4Param%25253D%252526month%25253D%252526year%25253D%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&step2Type=package&step2Sort=&month=&year=&searchRoomDivisArr=">
-	<input type="hidden" name="step3Param" id="step3Param" value="adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=107&SS_PMS_CODE=HHG1&SS_PMS_SEQ_NO=107&htNm=%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%20%EA%B2%BD%EC%A3%BC&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHGYJ&room_code=HDT&rate_code=EB14&rate_seq_no=2101&room_seq_no=1222&hotelCode=12&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3D%26rate_code%3DRTT%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253DRTT%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.18%25252520(%252525EB%252525AA%252525A9)%252526check_out_text%25253D2024.07.19%25252520(%252525EA%252525B8%25252588)%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526check_in%25253D2024-07-18%252526check_out%25253D2024-07-19%252526sysCode%25253DLHGYJ%252526room_code%25253D%252526rate_code%25253D%252526rate_seq_no%25253D%252526room_seq_no%25253D%252526hotelCode%25253D12%252526rsvn_reqmatter%25253D%252526memberCouponSeq%25253D%252526memberBene%25253D%252526step1Param%25253D%252526step2Param%25253Dadult%2525253D2%25252526children%2525253D0%25252526night%2525253D1%25252526check_in_text%2525253D2024.07.18%2525252520(%25252525EB%25252525AA%25252525A9)%25252526check_out_text%2525253D2024.07.19%2525252520(%25252525EA%25252525B8%2525252588)%25252526check_in%2525253D2024-07-18%25252526check_out%2525253D2024-07-19%25252526prm_seq_no%2525253D%25252526pms_seq_no%2525253D107%25252526SS_PMS_CODE%2525253DHHG1%25252526SS_PMS_SEQ_NO%2525253D107%25252526Prm_code%2525253D%25252526htNm%2525253D%25252525EB%252525259D%25252525BC%25252525ED%2525252595%252525259C%25252525EC%2525252585%2525252580%25252525EB%25252525A0%2525252589%25252525ED%252525258A%25252525B8%2525252520%25252525EA%25252525B2%25252525BD%25252525EC%25252525A3%25252525BC%25252526sysCode%2525253DLHGYJ%25252526hotelCode%2525253D12%25252526step1Param%2525253D%25252526step2Param%2525253D%25252526step3Param%2525253D%25252526step4Param%2525253D%25252526month%2525253D%25252526year%2525253D%25252526searchRoomCode%2525253D%25252526searchRateCode%2525253D%25252526step2Type%2525253D%252526step3Param%25253D%252526step4Param%25253D%252526langCode%25253Dko%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253Dpackage%252526step2Sort%25253D%252526month%25253D%252526year%25253D%252526searchRoomDivisArr%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&spclHtml=&optHtml=">
-	<input type="hidden" name="step4Param" id="step4Param" value="adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=107&SS_PMS_CODE=HHG1&SS_PMS_SEQ_NO=107&htNm=%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%20%EA%B2%BD%EC%A3%BC&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHGYJ&room_code=HDT&rate_code=EB14&rate_seq_no=2101&room_seq_no=1222&hotelCode=12&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3D%26rate_code%3DRTT%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253DRTT%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.18%25252520(%252525EB%252525AA%252525A9)%252526check_out_text%25253D2024.07.19%25252520(%252525EA%252525B8%25252588)%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526check_in%25253D2024-07-18%252526check_out%25253D2024-07-19%252526sysCode%25253DLHGYJ%252526room_code%25253D%252526rate_code%25253D%252526rate_seq_no%25253D%252526room_seq_no%25253D%252526hotelCode%25253D12%252526rsvn_reqmatter%25253D%252526memberCouponSeq%25253D%252526memberBene%25253D%252526step1Param%25253D%252526step2Param%25253Dadult%2525253D2%25252526children%2525253D0%25252526night%2525253D1%25252526check_in_text%2525253D2024.07.18%2525252520(%25252525EB%25252525AA%25252525A9)%25252526check_out_text%2525253D2024.07.19%2525252520(%25252525EA%25252525B8%2525252588)%25252526check_in%2525253D2024-07-18%25252526check_out%2525253D2024-07-19%25252526prm_seq_no%2525253D%25252526pms_seq_no%2525253D107%25252526SS_PMS_CODE%2525253DHHG1%25252526SS_PMS_SEQ_NO%2525253D107%25252526Prm_code%2525253D%25252526htNm%2525253D%25252525EB%252525259D%25252525BC%25252525ED%2525252595%252525259C%25252525EC%2525252585%2525252580%25252525EB%25252525A0%2525252589%25252525ED%252525258A%25252525B8%2525252520%25252525EA%25252525B2%25252525BD%25252525EC%25252525A3%25252525BC%25252526sysCode%2525253DLHGYJ%25252526hotelCode%2525253D12%25252526step1Param%2525253D%25252526step2Param%2525253D%25252526step3Param%2525253D%25252526step4Param%2525253D%25252526month%2525253D%25252526year%2525253D%25252526searchRoomCode%2525253D%25252526searchRateCode%2525253D%25252526step2Type%2525253D%252526step3Param%25253D%252526step4Param%25253D%252526langCode%25253Dko%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253Dpackage%252526step2Sort%25253D%252526month%25253D%252526year%25253D%252526searchRoomDivisArr%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D107%26SS_PMS_CODE%3DHHG1%26SS_PMS_SEQ_NO%3D107%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25EC%2585%2580%25EB%25A0%2589%25ED%258A%25B8%2520%25EA%25B2%25BD%25EC%25A3%25BC%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHGYJ%26room_code%3DHDT%26rate_code%3DEB14%26rate_seq_no%3D2101%26room_seq_no%3D1222%26hotelCode%3D12%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526prm_seq_no%253D%2526pms_seq_no%253D107%2526SS_PMS_CODE%253DHHG1%2526SS_PMS_SEQ_NO%253D107%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525EC%252585%252580%2525EB%2525A0%252589%2525ED%25258A%2525B8%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526sysCode%253DLHGYJ%2526room_code%253D%2526rate_code%253DRTT%2526rate_seq_no%253D%2526room_seq_no%253D%2526hotelCode%253D12%2526rsvn_reqmatter%253D%2526memberCouponSeq%253D%2526memberBene%253D%2526step1Param%253D%2526step2Param%253Dadult%25253D2%252526children%25253D0%252526night%25253D1%252526check_in_text%25253D2024.07.23%25252520(%252525ED%25252599%25252594)%252526check_out_text%25253D2024.07.24%25252520(%252525EC%25252588%25252598)%252526prm_seq_no%25253D%252526pms_seq_no%25253D107%252526SS_PMS_CODE%25253DHHG1%252526SS_PMS_SEQ_NO%25253D107%252526htNm%25253D%252525EB%2525259D%252525BC%252525ED%25252595%2525259C%252525EC%25252585%25252580%252525EB%252525A0%25252589%252525ED%2525258A%252525B8%25252520%252525EA%252525B2%252525BD%252525EC%252525A3%252525BC%252526check_in%25253D2024-07-23%252526check_out%25253D2024-07-24%252526sysCode%25253DLHGYJ%252526room_code%25253D%252526rate_code%25253DRTT%252526rate_seq_no%25253D%252526room_seq_no%25253D%252526hotelCode%25253D12%252526rsvn_reqmatter%25253D%252526memberCouponSeq%25253D%252526memberBene%25253D%252526step1Param%25253D%252526step2Param%25253Dadult%2525253D2%25252526children%2525253D0%25252526night%2525253D1%25252526check_in_text%2525253D2024.07.18%2525252520(%25252525EB%25252525AA%25252525A9)%25252526check_out_text%2525253D2024.07.19%2525252520(%25252525EA%25252525B8%2525252588)%25252526prm_seq_no%2525253D%25252526pms_seq_no%2525253D107%25252526SS_PMS_CODE%2525253DHHG1%25252526SS_PMS_SEQ_NO%2525253D107%25252526htNm%2525253D%25252525EB%252525259D%25252525BC%25252525ED%2525252595%252525259C%25252525EC%2525252585%2525252580%25252525EB%25252525A0%2525252589%25252525ED%252525258A%25252525B8%2525252520%25252525EA%25252525B2%25252525BD%25252525EC%25252525A3%25252525BC%25252526check_in%2525253D2024-07-18%25252526check_out%2525253D2024-07-19%25252526sysCode%2525253DLHGYJ%25252526room_code%2525253D%25252526rate_code%2525253D%25252526rate_seq_no%2525253D%25252526room_seq_no%2525253D%25252526hotelCode%2525253D12%25252526rsvn_reqmatter%2525253D%25252526memberCouponSeq%2525253D%25252526memberBene%2525253D%25252526step1Param%2525253D%25252526step2Param%2525253Dadult%252525253D2%2525252526children%252525253D0%2525252526night%252525253D1%2525252526check_in_text%252525253D2024.07.18%252525252520(%2525252525EB%2525252525AA%2525252525A9)%2525252526check_out_text%252525253D2024.07.19%252525252520(%2525252525EA%2525252525B8%252525252588)%2525252526check_in%252525253D2024-07-18%2525252526check_out%252525253D2024-07-19%2525252526prm_seq_no%252525253D%2525252526pms_seq_no%252525253D107%2525252526SS_PMS_CODE%252525253DHHG1%2525252526SS_PMS_SEQ_NO%252525253D107%2525252526Prm_code%252525253D%2525252526htNm%252525253D%2525252525EB%25252525259D%2525252525BC%2525252525ED%252525252595%25252525259C%2525252525EC%252525252585%252525252580%2525252525EB%2525252525A0%252525252589%2525252525ED%25252525258A%2525252525B8%252525252520%2525252525EA%2525252525B2%2525252525BD%2525252525EC%2525252525A3%2525252525BC%2525252526sysCode%252525253DLHGYJ%2525252526hotelCode%252525253D12%2525252526step1Param%252525253D%2525252526step2Param%252525253D%2525252526step3Param%252525253D%2525252526step4Param%252525253D%2525252526month%252525253D%2525252526year%252525253D%2525252526searchRoomCode%252525253D%2525252526searchRateCode%252525253D%2525252526step2Type%252525253D%25252526step3Param%2525253D%25252526step4Param%2525253D%25252526langCode%2525253Dko%25252526searchRoomCode%2525253D%25252526searchRateCode%2525253D%25252526step2Type%2525253Dpackage%25252526step2Sort%2525253D%25252526month%2525253D%25252526year%2525253D%25252526searchRoomDivisArr%2525253D%252526step3Param%25253D%252526step4Param%25253D%252526langCode%25253Dko%252526searchRoomCode%25253D%252526searchRateCode%25253D%252526step2Type%25253Dpackage%252526step2Sort%25253D%252526month%25253D%252526year%25253D%252526searchRoomDivisArr%25253D%2526step3Param%253D%2526step4Param%253D%2526langCode%253Dko%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253Dpackage%2526step2Sort%253D%2526month%253D%2526year%253D%2526searchRoomDivisArr%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26spclHtml%3D%26optHtml%3D&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&spclHtml=%3Cdiv%20class%3D%22resvbox-wrap-list%20ty-03%22%20id%3D%22spclOptionDiv%22%20style%3D%22display%3A%20none%3B%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%3Cspan%3E%EA%B8%B0%EA%B0%84%ED%95%9C%EC%A0%95%20%EC%98%B5%EC%85%98%3C!--%20%EA%B8%B0%EA%B0%84%ED%95%9C%EC%A0%95%20%EC%98%B5%EC%85%98%20--%3E%3C%2Fspan%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-wrap-list-inner%22%20id%3D%22spclDiv0%22%20style%3D%22display%3A%20none%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-option-left%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%09%3Cp%3E%EC%9B%B0%EC%BB%B4%EC%85%8B%EC%97%85%201%3A%20%EB%A0%88%EB%93%9C%EC%99%80%EC%9D%B8%201%EB%B3%91%20%2B%20%EB%A7%88%EC%B9%B4%EB%A1%B1%203%EC%A2%85%20x%20%3Cspan%20id%3D%22spcl0count%22%3E0%3C%2Fspan%3E%20%3C%2Fp%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-option-right%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%09%3Cp%3E%3Cspan%20id%3D%22spcl0price%22%3E0%3C%2Fspan%3E%EC%9B%90%3C!--%20%EC%9B%90%20~%20--%3E%3C%2Fp%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-wrap-list-inner%22%20id%3D%22spclDiv1%22%20style%3D%22display%3A%20none%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-option-left%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%09%3Cp%3E%EC%9B%B0%EC%BB%B4%EC%85%8B%EC%97%85%202%3A%20%EB%A0%88%EB%93%9C%EC%99%80%EC%9D%B8%201%EB%B3%91%20%2B%20%EB%A7%88%EC%B9%B4%EB%A1%B1%203%EC%A2%85%20%2B%EA%B3%BC%EC%9D%BC%20%ED%94%8C%EB%9E%98%ED%84%B0%20x%20%3Cspan%20id%3D%22spcl1count%22%3E0%3C%2Fspan%3E%20%3C%2Fp%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3Cdiv%20class%3D%22resvbox-option-right%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%09%3Cp%3E%3Cspan%20id%3D%22spcl1price%22%3E0%3C%2Fspan%3E%EC%9B%90%3C!--%20%EC%9B%90%20~%20--%3E%3C%2Fp%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E&optHtml=%3Cdiv%20class%3D%22resvbox-wrap-list%20ty-03%20conseNights-list%22%20id%3D%22optionDiv%22%20style%3D%22display%3A%20none%3B%22%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%3Cspan%3E%EC%8A%A4%ED%8E%98%EC%85%9C%20%EC%98%B5%EC%85%98%3C!--%20%EC%8A%A4%ED%8E%98%EC%85%9C%20%EC%98%B5%EC%85%98%20--%3E%3C%2Fspan%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%09%09%3Cspan%20class%3D%22conseNights-subtit%22%20id%3D%220dateSpan%22%20style%3D%22display%3A%20none%3B%22%3E07%2F23%20(%ED%99%94)%3C%2Fspan%3E%0D%0A%09%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%09%0D%0A%09%09%09%09%09%09%09%09%09%3C%2Fdiv%3E">
-	<input type="hidden" name="langCode" id="langCode" value="ko">
-	<input type="hidden" name="searchRoomCode" id="searchRoomCode" value="">
-	<input type="hidden" name="searchRateCode" id="searchRateCode" value="">
-
-
-
-	
-
-
-
-		</form>
-	</div>
-
+	<form id="form11" method="post" action="${pageContext.request.contextPath}/resv/step5">
+	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
+	<input type="hidden" name="children" id="children" value="${dto.children}">
+	<input type="hidden" name="night" id="night" value="${dto.night}">
+	<input type="hidden" name="check_in_text" id="check_in_text" value="${dto.check_in_text}">
+	<input type="hidden" name="check_out_text" id="check_out_text" value="${dto.check_out_text}">
+	<input type="hidden" name="hotel" id="hotel" value="${dto.hotel}">
+	<input type="hidden" name="check_in" id="check_in" value="${dto.check_in}">
+	<input type="hidden" name="check_out" id="check_out" value="${dto.check_out}">
+	<input type="hidden" name="total" id="total" value="${dto.total}">
+	<input type="hidden" name="prm_code" id="prm_code" value="${dto.prm_code}">
+	<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="${dto.check_Out_Day}">
+	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
+	<!-- RoomDto  -->
+	<input type="hidden" name="room_name" id="room_name" value="${roomdto.room_name}">
+	<input type="hidden" name="price" id="price" value="${roomdto.price}">
+	<input type="hidden" name="totalPrices" id="totalPrices" value="${totalPrice}">
+	<input type="hidden" name="requestMessage" id="requestMessage" value="${requestMessage}">
+	<input type="hidden" name="id" id="id" value="${memberinfo.id}">
+	<input type="hidden" name="creditcardNo" id="creditcardNo" value="">
+	</form>
 	<script>
+	
 	const langCode = "ko";
 	const loignUrl = window.location.origin+"/hub/"+langCode+"/login/loginForm.do?nextURL="+window.location.href+"?"+$('#form').serialize();
 	const totalPrice = "229500.0";
@@ -927,80 +834,6 @@
 	const rsvn_nation_tmpr1 = "+82(대한민국)";
 	const rsvn_nation_code = "KOR";
 	let resvToggle = false;
-
-	$(function(){
-		//로그인 상태일때
-		if(isLogin == "true"){
-			setloginInit(true);
-		}else{
-			$("#rsvn_nation_code").val("KOR");
-		}
-	});
-
-	//이메일 정규식 검증
-    jQuery(document).on("keyup", "#email1, #email2", function(){
-        const $this = jQuery(this);
-
-        //한글 입력 불가
-        $this.val($this.val().replace(/[ㄱ-ㅎ|가-힣]/g, ''));
-
-        setEmail();
-
-        if(!checkEmailRegex()){
-            jQuery("#emailArea").find(".alert_red").show();
-        }else {
-            jQuery("#emailArea").find(".alert_red").hide();
-        }
-
-
-    });
-
-  	//이메일 도메인 list 선택 이벤트
-    jQuery(document).on("click", "#emailList li", function () {
-        const $this = jQuery(this);
-
-
-        //직접 입력일 경우
-        if ($this.attr("data-first") == "true") {
-            jQuery("#email2").val("");
-        }else {
-            jQuery("#email2").val($this.text());
-        }
-
-        //hidden input에 email 세팅
-        setEmail();
-
-        if(!checkEmailRegex()){
-            jQuery("#emailArea").find(".alert_red").show();
-        }else {
-            jQuery("#emailArea").find(".alert_red").hide();
-        }
-
-    });
-
-  	//hidden input에 email 세팅
-    function setEmail() {
-        if (jQuery("#email1").val() == "" && jQuery("#email2").val() == "") {
-            jQuery("#rsvn_gest_email").val("");
-            // 값이 없을 경우 validation 검사 여부 N
-            jQuery("#rsvn_gest_email").attr("data-valid", "N");
-        }else {
-            jQuery("#rsvn_gest_email").val(jQuery("#email1").val() + "@" + jQuery("#email2").val());
-            // 값이 있을 경우 validation 검사 여부 Y
-            jQuery("#rsvn_gest_email").attr("data-valid", "Y");
-        }
-    }
-	//이메일 정규식 체크
-    function checkEmailRegex() {
-        const value = jQuery("#rsvn_gest_email").val();
-        const regExp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-
-        if(regExp.test(value)){
-            return true;
-        }else {
-            return false;
-        }
-    }
 
 	function setValue(e,target){
 		$("#"+target).val($(e).attr('code'));
@@ -1012,364 +845,38 @@
 			$("#"+id).focus();
 		}
 	}
-
-	//예약
-	function resv(){
+	function cardCheck(){
+		if($("#cardNum1").val()==null||$("#cardNum1").val()=="")
+			return true;
+		if($("#cardNum2").val()==null||$("#cardNum1").val()=="")
+			return true;
+		if($("#cardNum3").val()==null||$("#cardNum3").val()=="")
+			return true;
+		if($("#cardNum4").val()==null||$("#cardNum4").val()=="")
+			return true;
 		
-		//필수 값체크
-		var valid = groupValide(jQuery("#container"));
-		if(!valid.result){
-			alert(valid.msg);
-			return false;
-		}
-		//이메일 형식체크
-		if(!checkEmailRegex()){
-			 alert("이메일 형식을 확인해주세요.");
-			 return false;
-		}
-		
-		// 핸드폰 대한민국 패턴 체크
-		if($("#rsvn_nation_code").val() == "KOR") {			
-			if($.trim($("#phone").val()) != "") {
-				if($("#phone").val().substr(0,1) != "0") {
-					 alert("휴대폰번호는 010 부터 입력해주세요.");
-					 $("#phone").select();
-					 return false;
-				}
-			}
-		}
-		
-		//동의여부체크
-		const yn1 = $("#check-agree01").prop('checked');
-		if(!yn1){
-			alert("개인정보 수집 및 이용에 대한 동의는 필수 사항입니다.");
-			return false;
-		}
-		const yn2 = $("#check-agree02").prop('checked');
-		if(!yn2){
-			alert("취소규정에 대한 동의는 필수사항입니다.");
-			return false;
-		}
-		
-		if(resvToggle){
-			return false;
-		}
-		
-		resvToggle = true;
-
-		//값 세팅
-		//전화번호
-		$("#rsvn_gest_cntc").val($("#phone").val());
-		//카드유효기간
-		$("#rsvn_gest_card_term").val($("#cardYYYY").val()+"-"+$("#cardMM").val());
-		//카드번호
-		$("#rsvn_gest_card_no").val($("#cardNum1").val()+"-"+$("#cardNum2").val()+"-"+$("#cardNum3").val()+"-"+$("#cardNum4").val());
-		//생년월일
-		$("#birth").val($("#yearYYYY").val()+$("#yearMM").val()+$("#yearDD").val());
-		
-		// 공백제거
-		$("#rsvn_gest_name").val($.trim($("#rsvn_gest_name").val()));
-		$("#rsvn_gest_lastname").val($.trim($("#rsvn_gest_lastname").val()));
-
-		//api호출
-		jQuery.ajax({
-            type : "POST",
-            url : "/hub/api/resv/resvRegist.json",
-            data : $("#form").serialize(),
-            cache : false,
-            async : true,
-            success : function(data){
-            	if (data.re == "card") {
-                	//카드 유효성
-            		resvToggle = false;
-            		alert("유효하지 않은 카드 정보입니다.");
-                }else if(data.re == "fail"){
-                	//예약실패
-                	resvToggle = false;
-                	alert("예약에 실패하였습니다.");
-                }else if(data.re == "notCoupon"){
-                	//없는 쿠폰 사용 시 에러발생
-                	resvToggle = false;
-                	alert("존재하지 않은 쿠폰입니다.");
-                }else if(data.re == "notUpg"){
-                	//전망,객실 업그레이드 예약 가능 방 업음
-                	resvToggle = false;
-                	alert("업레이드 예약 가능한 방이 없습니다.");
-                }else if(data.re == "notBene"){
-                	//없는 혜택 사용 시 
-                	resvToggle = false;
-                	alert("존재하지 않은 혜택입니다.");
-                }else if(data.re == "memberPackageError"){
-                	//세션없을때 회원 상품 구매시
-                	resvToggle = false;
-                	alert("세션 정보가 만료되었습니다. \n다시 로그인해 주십시오.");
-                	location.href="/hub/ko/login/loginForm.do";
-                }else{
-                	
-                	var newForm = $('<form style="display:none;"></form>');
-                	//set attribute (form) 
-                	newForm.attr("name","newForm");
-                	newForm.attr("method","get");
-                	newForm.attr("action","/hub/ko/resv/stepCom.do");
-                	newForm.attr("target","_self");
-
-                	// create element & set attribute (input) 
-                	newForm.append($('<input/>', {type: 'hidden', name: 'rsvn_no', value:data.re }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_PMS_SEQ_NO', value:$("#SS_PMS_SEQ_NO").val() }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_PMS_CODE', value:$("#SS_PMS_CODE").val() }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_MEMB_TEL', value:$("#rsvn_gest_cntc").val() }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_MEMB_LASTNAME', value:$("#rsvn_gest_lastname").val() }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_MEMB_FIRSTNAME', value:$("#rsvn_gest_name").val() }));
-                	newForm.append($('<input/>', {type: 'hidden', name: 'SS_MEMB_EMAIL', value:$("#rsvn_gest_email").val() }));
-                	
-
-                	// append form (to body) 
-                	newForm.appendTo('body');
-
-                	// submit form
-                	showLoading();
-                	newForm.submit();
-                	
-                }
-            },
-            error:function(r, s, e){
-                alert("API 통신중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
-                return false;
-            },
-            beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-
+		return false;
 	}
-
-	//투숙객이 다른경오
-	function diffGst(e){
-		if($(e).prop("checked")){
-			setloginInit(false);
-			$("#diffAlert").show();
-			$("#couponDiv").hide();
-			$("#memBeneDiv").hide();
-			//총 가격 표시
-			var price =  Number(totalPrice)+Number(discount);
-			let priceText = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //소수점버림, 3자리수 콤마 찍어주기
-			$("#totalPrice").text(priceText);
+	
+	//예약가자! 
+	function letsgoresv(){
+		if(cardCheck()){
+			alert("유효한 카드번호를 입력하세요.");
+			return ;
 		}else{
-			setloginInit(true);
-			$("#diffAlert").hide();
-			$("#couponDiv").show();
-			$("#memBeneDiv").show();
-			//총 가격 표시
-			var price =  Number(totalPrice);
-			let priceText = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //소수점버림, 3자리수 콤마 찍어주기
-			$("#totalPrice").text(priceText);
-		}
+			$("#creditcardNo").val($("#cardNum1").val()+"-"+$("#cardNum1").val()+"-"+$("#cardNum1").val()+"-"+$("#cardNum1").val());  //카드번호 저장
+		}		
+		document.getElementById("form11").submit();
+	
+		
 	}
 
-	//로그인시 회원정보 세팅, 디시블처리
-	function setloginInit(setData){
-		if(setData == true){
-			$("#guestInfo").html(guestInfo);
-			$(".readInfo").each(function(index, item){
-				if($(item).prop('tagName') == "INPUT"){
-					$(item).attr("readonly",true);
-				}else{
-					$(item).addClass("disabled");
-				}
-			});
-			let email = "";
-			if(email==""){
-				$("#email1").attr("readonly",false);
-				$("#email2").attr("readonly",false);
-				$(".select-wrap.email").removeClass("disabled");
-			}else{
-				setEmail();
-			}
-		}else{
-			$("#guestInfo").html(guestInfo);
-			$(".readInfo").each(function(index, item){
-				if($(item).prop('tagName') == "INPUT"){
-					$(item).attr("readonly",false);
-					$(item).val("");
-				}else{
-					$(item).removeClass("disabled");
-					if($(item).hasClass("select-nationCode")){
-						var inHtml="";
-						inHtml += '<span class="selected-value">'+rsvn_nation_tmpr1+'</span>';
-						inHtml += '<em class="select-arrow"></em>';
-						$(item).html(inHtml);
-						$("#rsvn_nation_code").val(rsvn_nation_code);
-					}
-				}
-			});
-		}
-	}
-
-	/**
-	 * 해당 영역에 필수 값 체크
-	 *
-	 * @param target
-	 * @returns
-	 */
-	function groupValide(target){
-		 var resultArr = {
-			 result : '',
-			 msg : '',
-
-		 };
-
-		 if(target.length > 0){
-			 var resultFlag = true;
-
-			 target.find("input, select, textarea").each(function(){
-				 if(resultFlag){
-
-					 var valideYn = jQuery(this).attr("data-valid");
-					 var msg = jQuery(this).attr("data-msg");
-					 var type = jQuery(this).attr("type");
-
-					 if($(this).attr("disabled")){
-						 resultArr.result = true;
-					 }else{
-						 if((type == "radio" || type == "checkbox") && valideYn == "Y"){
-
-							 var name = $(this).attr("name");
-
-							 if($("input[name='"+name+"']:checked").length < 1){
-								 $("input[name='"+name+"']").eq(0).focus();
-								 resultArr.msg = msg;
-								 resultArr.result = false;
-								 resultFlag = false;
-							 }
-
-						 }else if(type == "file" && valideYn == "Y"){
-
-							 var fileLength = $(this)[0].files.length;
-
-							 if(fileLength === 0){
-								 jQuery(this).focus();
-								 resultArr.msg = msg;
-								 resultArr.result = false;
-								 resultFlag = false;
-							 }else{
-								 resultArr.result = true;
-							 }
-
-						 }else{
-
-							 if((jQuery(this).val() == "" || jQuery(this).val() == null) && valideYn == 'Y'){
-								 jQuery(this).focus();
-								 resultArr.msg = msg;
-								 resultArr.result = false;
-								 resultFlag = false;
-							 }else{
-								 resultArr.result = true;
-							 }
-						 }
-					 }
-				 }
-			 });
-		 }else{
-			 resultArr.result = true;
-		 }
-
-		 return resultArr;
-	}
+	
 	</script>
 		</div>
 
 		
 		<%@ include file="/WEB-INF/views/footer.jsp" %> 
-		
-		<div class="loading-box" style="display: none;">
-			<div class="loading"></div>
-			<p class="loading-txt">LOADING</p>
-	    </div>
-		<div class="dimmed"></div>
-		<div class="dimmed2"></div>
-    <!-- 호텔 찾기 popup -->
-	<div id="layerPopup">
-		<div id="searchLahan" class="layerPop" layer-data="search1">
-			<div class="layer-head">
-				<h3 class="tit">호텔찾기<!-- 호텔찾기 --></h3>
-				<button type="button" class="layer-close">Close</button>			
-			</div>
-			<div class="layer-cont">
-				<div class="search-lahan">
-					<div class="lahan-item lahan-item1">
-                        <a href="http://localhost:8080/lahan/main" title="라한" target="_blank">
-						<span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_wh.png" alt="라한"/></span>
-						<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_bl.png" alt="라한"/></span>
-						<p>라한<!-- 라한 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item2">
-                        <a href="https://www.lahanhotels.com/gyeongju/ko/main.do" title="라한셀렉트 경주" target="_blank">
-						    <span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_select_wh.png" alt="라한셀렉트 경주"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_select_bl.png" alt="라한셀렉트 경주"/></span>
-						    <p>라한셀렉트 경주<!-- 라한셀렉트 경주 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item3">
-                        <a href="https://www.lahanhotels.com/jeonju/ko/main.do" title="라한호텔 전주" target="_blank">
-						    <span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 전주"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 전주"/></span>
-						    <p>라한호텔 전주<!-- 라한호텔 전주 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item4">
-                        <a href="https://www.lahanhotels.com/pohang/ko/main.do" title="라한호텔 포항" target="_blank">
-    						<span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_wh.png" alt="라한호텔 포항"/></span>
-	    					<span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hotels_bl.png" alt="라한호텔 포항"/></span>
-		    				<p>라한호텔 포항<!-- 라한호텔 포항 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item5">
-                        <a href="https://www.lahanhotels.com/ulsan/ko/main.do" title="호텔현대 바이 라한 울산" target="_blank">
-   						    <span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 울산"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 울산"/></span>
-						    <p>호텔현대 바이 라한 울산<!-- 호텔현대 바이 라한 울산 --></p>
-                        </a>
-					</div>
-					<div class="lahan-item lahan-item6">
-                        <a href="https://www.lahanhotels.com/mokpo/ko/main.do" title="호텔현대 바이 라한 목포" target="_blank">
-						    <span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 목포"/></span>
-						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 목포"/></span>
-						    <p>호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></p>
-                        </a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<form id="form" method="post" action="https://www.lahanhotels.com/hub/ko/resv/step2.do">
-    <input type="hidden" name="adult" id="adult" value="">
-	<input type="hidden" name="children" id="children" value="">
-	<input type="hidden" name="night" id="night" value="">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="">
-	<input type="hidden" name="check_in" id="check_in" value="">
-	<input type="hidden" name="check_out" id="check_out"value="">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">
-	<input type="hidden" name="Prm_code" id="Prm_code" value="">
-	<input type="hidden" name="htNm" id="htNm" value="">
-	<input type="hidden" name="sysCode" id="sysCode" value="">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input id="searchMonth" name="month" value="" type="hidden">
-	<input id="searchYear" name="year" value="" type="hidden">
-
-</form>
 
     <script>
         $(document).ready(function() {

@@ -101,19 +101,10 @@
 		}
      </style>
 	<script>
-	function goToResvStep3(roomName){
-/* 		document.getElementById('adult').value = document.getElementById('num1').value;
-		document.getElementById('children').value = document.getElementById('num2').value;
-		$('#night').val($('#nightText').text());
-	 	$("#check_in_text").val($("#checkInDate").val() +" "+$("#checkInDay").text()); // 체크인 텍스트 
-		$("#check_out_text").val($("#checkOutDate").val() +" "+$("#checkOutDay").text()); // 체크아웃 텍스트
-	    $("#check_in").val($("#checkInDate").val().replace(/\./gi, "-").trim()); // 체크인 날짜
-	    $("#check_out").val($("#checkOutDate").val().replace(/\./gi, "-").trim()); // 체크아웃 날짜
-	    $("#check_In_Day").val($("#checkInDay").text());
-	    $("#check_Out_Day").val($("#checkOutDay").text());
-	     */
+	function goToResvStep3(roomName, price){
 	   
 	    $('#room_name').val(roomName);
+	    $('#price').val(price);
 		document.getElementById('form').submit();
 	}
 
@@ -140,7 +131,8 @@
 				<div class="sub-contents-wrap resv-contents">
 					<!-- 컨텐츠 시작 -->
 					
-					<c:set var="resv" value="${dto}"/>
+					<c:set var="dto" value="${dto}"/>
+					<c:set var="roomList" value="${roomList}"/>
 					<div class="resvStepWrap">
 						<ul>
 							<li>
@@ -178,7 +170,7 @@
 											<div>
 												<div class="resv-selected-txt checkDate" id="ChekinDate">
 													<span id="chkInDate">${dto.check_in} </span>
-													<span class="mini-date" id="ckinDay">${dto.check_In_Day}</span>
+													<span class="mini-date" id="ckinDay">${resv.check_In_Day}</span>
 												</div>
 											</div>
 											<span class="code-text">−</span>
@@ -245,7 +237,7 @@
 											</div>
 											<div class="contents-info-right">
 												<div class="info-bottom-inner ty-02">
-													<p class="cont-tit">${dto.room_name }</p>
+													<p class="cont-tit">${dto.room_name}</p>
 													<p class="cont-more">
 														<a href="#none" onclick="packageInfo(this,'DDB')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
 													</p><!-- 패키지설명 popup 불러오기 -->
@@ -269,7 +261,7 @@
 												</div>
 														
 												<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>${dto.price}</b>원 ~<!-- 원 ~ --></p>
-												<button type="button" onclick="goToResvStep3('${dto.room_name}')" class="btn-select btn-gold"><span>예약하기<!-- 객실 선택 --></span></button>
+												<button type="button" onclick="goToResvStep3('${dto.room_name}','${dto.price}')" class="btn-select btn-gold"><span>예약하기<!-- 객실 선택 --></span></button>
 												</div>
 											</div>
 										</div>
@@ -284,7 +276,7 @@
 					<!-- 컨텐츠 끝 -->
 				</div>
 			</section>
-	<form id="form" method="post" action="./test">
+	<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step3">
 	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
 	<input type="hidden" name="children" id="children" value="${dto.children}">
 	<input type="hidden" name="night" id="night" value="${dto.night}">
@@ -299,7 +291,7 @@
 	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
 	<!-- RoomDto  -->
 	<input type="hidden" name="room_name" id="room_name" value="">
-	<input type="hidden" name="price" id="price" value="${dto.price}">
+	<input type="hidden" name="price" id="price" value="">
 	
 	</form>
 	</div>
