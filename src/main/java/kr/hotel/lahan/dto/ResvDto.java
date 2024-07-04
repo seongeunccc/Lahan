@@ -8,8 +8,8 @@ public class ResvDto {
 	private int total; // 총인원
 	private String check_in_text;
 	private String check_out_text;
-	private String check_in;
-	private String check_out;
+	private String check_in; //숙박 시작일
+	private String check_out; // 숙박 종료일	
 	private String prm_code;
 	private String check_Out_Day;
 	private String check_In_Day;

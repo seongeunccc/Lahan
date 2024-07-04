@@ -675,29 +675,6 @@ width: 170px;
 		<div class="dimmed2"></div>
 
 
-<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step2">
-<!--     <input type="hidden" name="adult" id="adult" value="">
-	<input type="hidden" name="children" id="children" value="">
-	<input type="hidden" name="night" id="night" value=""> -->
-	<!-- <input type="hidden" name="check_in_text" id="check_in_text" value="">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="">
-	<input type="hidden" name="check_in" id="check_in" value="">
-	<input type="hidden" name="check_out" id="check_out"value=""> -->
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">
-<!-- 	<input type="hidden" name="Prm_code" id="Prm_code" value=""> -->
-	<input type="hidden" name="sysCode" id="sysCode" value="">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input id="searchMonth" name="month" value="" type="hidden">
-	<input id="searchYear" name="year" value="" type="hidden">
-
-</form>		
-		
 		
     <script>
         $(document).ready(function() {
