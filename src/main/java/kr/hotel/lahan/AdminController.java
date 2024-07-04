@@ -47,42 +47,42 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
-		System.out.println("¾îµå¹Î ¸ÞÀÎ È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_main";
 	}
 	
 	@RequestMapping("/admin/member.do")
 	public String adminmem(Model model) {
-		System.out.println("¾îµå¹Î È¸¿ø°ü¸® È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_member";
 	}
 
 	@RequestMapping("/admin/reservation.do")
 	public String adminreserv(Model model) {
-		System.out.println("¾îµå¹Î ¿¹¾à°ü¸® È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "./admin/admin_reservation";
 	}
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
 	
-		System.out.println("È£ÅÚ°ü¸® È­¸é");
+		System.out.println("È£ï¿½Ú°ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		
 		return "/admin/admin_hotel";
 	}
 	@RequestMapping("/admin/hoteladd.do")
 	public String adminhoteladd(Model model) {
-		System.out.println("È£ÅÚÃß°¡ È­¸é");
+		System.out.println("È£ï¿½ï¿½ï¿½ß°ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_hotel_add";
 	}
 	
 	
 	 @RequestMapping("/admin/hoteladding.do") 
 	 public String hoteladd(HttpServletRequest request, Model model) {
-	  System.out.println("È£ÅÚÃß°¡_DB"); 
+	  System.out.println("È£ï¿½ï¿½ï¿½ß°ï¿½_DB"); 
 	  model.addAttribute("request",request); 
 	  command = new HotelAddCommand();
-	  System.out.println("È£ÅÚÃß°¡_DB2"); 
+	  System.out.println("È£ï¿½ï¿½ï¿½ß°ï¿½_DB2"); 
 	  command.execute(model);
 	 
 	 return "redirect:/admin/hotel.do"; }
@@ -90,7 +90,7 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/product.do")
 	public String adminproduct(Model model) {
-		System.out.println("»óÇ°°ü¸® È­¸é");
+		System.out.println("ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_product";
 	}
 	
@@ -99,30 +99,30 @@ public SqlSession sqlSession;
 		command = new NoticeListCommand();
 		command.execute(model);
 
-		System.out.println("¾îµå¹Î °øÁö»çÇ× È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_notice";
 	}
 	@RequestMapping("/admin/noticeadd.do")
 	public String adminnoticeadd(Model model) {
-		System.out.println("¾îµå¹Î °øÁö»çÇ× µî·Ï È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_notice_add";
 	}
 	
 	@RequestMapping("/admin/noticeadding.do") 
 	 public String noticeadd(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× Ãß°¡_DB"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½_DB"); 
 	  model.addAttribute("request",request);
 	  command = new NoticeAddCommand();
-	  System.out.println("°øÁö»çÇ×_DB2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_DB2"); 
 	  command.execute(model); 
 	 return "redirect:/admin/notice.do"; }
 	
 	@RequestMapping("/admin/noticeview.do") 
 	 public String contentView(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× È®ÀÎ"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"); 
 	 model.addAttribute("request",request);
 	command = new NoticeViewCommand();
-	  System.out.println("°øÁö»çÇ× È®ÀÎ2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½2"); 
 	command.execute(model); 
 	 return "/admin/admin_notice_detail"; }
 	
@@ -159,23 +159,23 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/ask.do")
 	public String adminmqanda(Model model) {
-		System.out.println("¾îµå¹Î 1:1¹®ÀÇ È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ 1:1ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_ask";
 	}
 	
 	@RequestMapping("/admin/askview.do") 
 	 public String askcontentView(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× È®ÀÎ"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"); 
 	 model.addAttribute("request",request);
 	command = new AskViewCommand();
-	  System.out.println("°øÁö»çÇ× È®ÀÎ2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½2"); 
 	command.execute(model); 
 	 return "/admin/admin_ask_detail"; }
 	
 
 	@RequestMapping("/ask/add.do")
 	public String testaskadd(Model model) {
-		System.out.println("¾îµå¹Î °øÁö»çÇ× µî·Ï È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/test_ask_add";
 	}
 	
@@ -185,5 +185,13 @@ public SqlSession sqlSession;
 	  command = new AskAddCommand(); 
 	  command.execute(model); 
 	 return "redirect:/admin/ask.do"; }
+	
+	@RequestMapping("/admin/upproduct")
+	public String upProduct(Model model) {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
+		return "/admin/admin_up_product";
+	}
+	
+	
 
 }

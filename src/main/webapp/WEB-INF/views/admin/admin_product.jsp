@@ -132,10 +132,6 @@
      </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTWJWS8"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     
     
@@ -219,7 +215,12 @@
 	         </section>
 			
 			
+	<div class="sub-contents-wrap ty-01">
 			
+	<ul class="tab-contents-list" id="seList">
+	<li><a href="${pageContext.request.contextPath}/admin/upproduct" title="상품등록"> 상품등록</a></li>
+	</ul>
+	</div>
 			
 	<section class="sub-contents">
 		<div class="sub-contents-wrap ty-01">
@@ -411,47 +412,6 @@
 		</div>
 	</div>
 
-<form id="form" method="post" action="https://www.lahanhotels.com/hub/ko/resv/step2.do">
-    <input type="hidden" name="adult" id="adult" value="">
-	<input type="hidden" name="children" id="children" value="">
-	<input type="hidden" name="night" id="night" value="">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="">
-	<input type="hidden" name="check_in" id="check_in" value="">
-	<input type="hidden" name="check_out" id="check_out"value="">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">
-	<input type="hidden" name="Prm_code" id="Prm_code" value="">
-	<input type="hidden" name="htNm" id="htNm" value="">
-	<input type="hidden" name="sysCode" id="sysCode" value="">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input id="searchMonth" name="month" value="" type="hidden">
-	<input id="searchYear" name="year" value="" type="hidden">
-
-</form>
-
-    <script>
-        $(document).ready(function() {
-            <!-- 호텔찾기 클릭시 레이어창 닫기-->
-            $("#layerPopup [layer-data='search1']").find("a").click(function() {
-                $(".layer-close").click();
-            });
-        });
-        function closePop(url) {
-            $(".layer-close").click();
-        };
-        $("#btnBannerClose").click(function() {
-			setCookie("HUBSITE_ko_mainBanner","done",1);
-            $(".banner-close").click();
-		});
-
-    </script>
 	<script>
 		$(document).ready(function(){
 			$(".btn-bell").on("click", function(){
@@ -468,87 +428,10 @@
 			});
 		});
 	</script>
-	<script>
-    const hotlAlert = '호텔을 선택해주세요.';//<!-- 호텔을 선택해주세요. --> 
-		$(document).ready(function(){
-			//예약 > 인원 선택
-			$(".step3-list").on("click", function(){
-				$(".resv-step3-poeple").addClass("open").show();
-			});
-
-			$(".resv-com").on("click", function(){
-				$(".resv-step3-poeple").removeClass("open").hide();
-			});
-
-			//예약 > 프로모션 코드(2차 오픈)
-			$(".btn-prcode").on("click", function(){
-				$(".resv-step4-prcode").toggleClass("open");
-			});
-			$(".prcode-box .btn-com").on("click", function(){
-				$(".resv-step4-prcode").removeClass("open");
-			});
-            if (window.location.href.indexOf("main") > -1) {
-                setReservInit();
-            }
-		});
-
-		//ABOUT LAHAN //2023-01-09 추가
-		var aboutSlider = new Swiper (".about-slider", {
-			loop: $('.about-slider .swiper-slide').length === 1 ? false:true,
-			pagination: {
-				el: ".swiper-pagination",
-				type: "fraction"
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		});
-	</script>
+	
 
 
-	<!-- 221228 메인 타이틀 모션 추가 -->
-	<script>
-		//main motion
-		$(document).ready(function(){
-			var $win= $(window);
-			var contetns = $("#container > section");
-			var section1 = $(".main-visual").height() + 200;
-			var section2 = $(".main-ourhotel").height() + section1 +100;
-			var section3 = $(".main-aboutlahan").height() + section2 +200;
-			var removeSec = section1 - 1;			
-
-			$win.scroll(function(e){
-				var winScroll = $win.scrollTop();
-				var winHeight = $win.height();
-				var targetHeight = winScroll + winHeight;
-
-				if( targetHeight > section1 ){
-					$(".main-ourhotel").addClass("trans");
-				}
-				if( targetHeight > section2 ){
-					$(".main-aboutlahan").addClass("trans");
-				}
-				if( targetHeight > section3 ){
-					$(".main-clublahan").addClass("trans");
-				}
-				if( targetHeight < removeSec ) {
-					contetns.removeClass("trans")
-				}
-
-			});
-		});
-		
-		
-		var siteLang = 'ko';
-		var alertResv0001 = '객실 당 최대 5인까지 투숙가능 합니다.';
-		var alertResv0002 = 'resv.hub.validate.0002';
-		var alertResv0003 = '유효하지 않은 프로모션 코드입니다.';
-		var alertResv0031 = '날짜를 선택해주세요.';
-		var alertResv0011 = '호텔을 선택해주세요.';
-        var alertResv0038 = '체크인 날짜 기준, 예약 가능한 횟수를 초과하였습니다. 추가 문의사항은 통합예약실(1644-8005)로 연락 바랍니다.';
-		var alertAjaxError = 'Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"';
-	</script>
+	
 	<!-- // 221228 메인 타이틀 모션 추가 -->
 
 </body>

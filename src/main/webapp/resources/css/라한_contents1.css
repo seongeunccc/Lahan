@@ -167,17 +167,17 @@
 .frm-chk label::before {
 	width: 32px;
 	height: 32px;
-	background: url("/lahan/resources/images/hub/icon/icon_check_32x32.png") no-repeat;
+	background: url("./icon_check_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk input[type=checkbox]:checked+label::before {
-	background: url("/lahan/resources/images/hub/icon/icon_checked_32x32.png") no-repeat;
+	background: url("./icon_checked_32x32.png") no-repeat;
 	background-size: cover;
 }
 
 .frm-chk label:hover::before {
-	background: url("/lahan/resources/images/hub/icon/icon_check_hover_32x32.png") no-repeat;
+	background: url("./icon_check_hover_32x32.png") no-repeat;
 	background-size: cover;
 }
 
