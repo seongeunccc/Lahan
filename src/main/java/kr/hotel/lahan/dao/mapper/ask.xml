@@ -5,12 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace = "kr.hotel.lahan.dao.AskDao">
 
-  <insert id="write">
-        INSERT INTO askboard(title, contents, date)
-        VALUES (#{param1}, #{param2}, now())
+ 	 <insert id="write">
+        INSERT INTO askboard(id, hotel, sort, title, contents, date)
+        VALUES (#{param1}, #{param2},#{param3},#{param4}, #{param5}, now())
     </insert>
       <select id="list" resultType="kr.hotel.lahan.dto.AskDto">
-        SELECT board_num, title, date from askboard
+        SELECT board_num, title, date, id from askboard
     </select>
 	<select id="askcontentView" resultType="kr.hotel.lahan.dto.AskDto">
         SELECT * FROM askboard WHERE board_num = #{board_num}

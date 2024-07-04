@@ -194,7 +194,7 @@ rotate(
 <script>
         function confirmDelete(board_num) {
             if (confirm("정말 삭제하시겠습니까?")) {
-                window.location.href = "/lahan/admin/delete.do?board_num=" + board_num;
+                window.location.href = "/lahan/admin/askdelete.do?board_num=" + board_num;
             }
         }
     </script>
@@ -300,17 +300,17 @@ rotate(
 							<div class="sub-board-detail">
 								<div class="brd-detailView-head">
 									<div class="dvhead-left">
-										<form action="noticeview.do" method="get">
+										<form action="askview.do" method="get">
 											<input type="hidden" name="board_num"
-												value="${contentView.board_num}"> <input
-												type="hidden" name="title" value="${contentView.title}">
+												value="${askcontentView.board_num}"> <input
+												type="hidden" name="title" value="${askcontentView.title}">
 											<input type="hidden" name="contents"
-												value="${contentView.contents}">
-											<h1 class="dv-tit">${contentView.title}</h1>
+												value="${askcontentView.contents}">
+											<h1 class="dv-tit">${askcontentView.title}</h1>
 									</div>
 									<div class="dvhead-right">
 										<p class="dv-date">
-											게시일 <span class="date">${contentView.date}</span>
+											게시일 <span class="date">${askcontentView.date}</span>
 										</p>
 									</div>
 								</div>
@@ -319,7 +319,7 @@ rotate(
 										<div
 											style="font-family: Gulim, 굴림, sans-serif; font-size: 14px;">
 											<span style="font-size: 18px;"> <span
-												style="font-family: arial, helvetica, sans-serif;">${contentView.contents}<br>
+												style="font-family: arial, helvetica, sans-serif;">${askcontentView.contents}<br>
 											</span></span><br>
 										</div>
 
@@ -331,10 +331,10 @@ rotate(
 			</form>
 			<div class="brd-detailView-btn">
 				<a
-					href="/lahan/admin/noticemodify.do?board_num=${contentView.board_num}&title=${contentView.title}&contents=${contentView.contents}"
-					class="btn-list btn-navy-line" style="background-color: #B1B0AC;">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-					href="/lahan/admin/notice.do" class="btn-list btn-navy-line">목록보기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-					href="javascript:void(0);" onclick="confirmDelete(${contentView.board_num})"
+					href="#" class="btn-list btn-navy-line" style="background-color: #B1B0AC;"
+   onclick="openReplyModal(${askcontentView.board_num}, '${askcontentView.title}', '${askcontentView.contents}')">>답변히기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+					href="/lahan/admin/ask.do" class="btn-list btn-navy-line">목록보기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+					href="javascript:void(0);" onclick="confirmDelete(${askcontentView.board_num})"
    class="btn-list btn-navy-line" style="background-color: #ffcece">삭제하기</a>
 			</div>
 		</div>

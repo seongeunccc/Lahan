@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
 
+import kr.hotel.lahan.dao.AskDao;
 import kr.hotel.lahan.dao.NoticeDao;
 import kr.hotel.lahan.util.Constant;
 
@@ -17,7 +18,7 @@ public class AskDeleteCommand implements LCommand {
       HttpServletRequest request = (HttpServletRequest) map.get("request");
 
      int board_num = Integer.parseInt(request.getParameter("board_num"));
-     NoticeDao dao = Constant.noticeDao;
+     AskDao dao = Constant.askDao;
  
      dao.delete(board_num);
  }

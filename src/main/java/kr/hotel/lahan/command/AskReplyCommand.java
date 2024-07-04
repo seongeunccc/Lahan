@@ -6,10 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
 
-import kr.hotel.lahan.dao.NoticeDao;
+import kr.hotel.lahan.dao.AskDao;
 import kr.hotel.lahan.util.Constant;
 
-public class AskModifyCommand implements LCommand {
+
+public class AskReplyCommand implements LCommand {
 
     @Override
     public void execute(Model model) {
@@ -17,17 +18,16 @@ public class AskModifyCommand implements LCommand {
         HttpServletRequest request = (HttpServletRequest) map.get("request");
 
         int board_num = Integer.parseInt(request.getParameter("board_num"));
+        String id = request.getParameter("id");
+        String hotel = request.getParameter("hotel");
+        String sort = request.getParameter("sort");
         String title = request.getParameter("title");
         String contents = request.getParameter("contents");
+        String reply = request.getParameter("reply");
+        
 
-        NoticeDao dao = Constant.noticeDao;
-
-        // 로그로 확인
-        System.out.println("board_num: " + board_num);
-        System.out.println("title: " + title);
-        System.out.println("contents: " + contents);
-
-        // 가져온 파라미터들을 사용하여 게시물을 수정합니다.
-        dao.modify(board_num, title, contents);
+        AskDao dao = Constant.askDao;
+		/* dao.replyShape(bGroup, bStep); */
+        dao.reply(board_num, id, hotel, sort, title, contents, reply);
     }
 }
