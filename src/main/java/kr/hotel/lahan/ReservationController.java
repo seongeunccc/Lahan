@@ -28,39 +28,24 @@ public class ReservationController {
 
 	@RequestMapping(value = "/main")
 	public String home(Model model) {
-
 		return "reservation/main";
 	}
-
-	@RequestMapping(value = "/header")
-	public String header(Model model) {
-
-		return "header";
-	}
-
+	
 	@RequestMapping(value = "resv/calendar")
 	public String calendar(Model model) {
-
 		return "reservation/calendar";
 	}
 
 	@RequestMapping(value = "resv/step1")
 	public String step1(Model model) {
-
 		return "reservation/step1";
 	}
 
 //
-//	@RequestMapping(value = "resv/step3")
-//	public String step3(Model model) {
-//
-//		return "reservation/step3";
-//	}
+	@RequestMapping(value = "resv/step5")
+	public String step5(Model model) {
 
-	@RequestMapping(value = "resv/step4")
-	public String step4(Model model) {
-
-		return "reservation/step4";
+		return "reservation/step5";
 	}
 
 	@RequestMapping(value = "clublahan/membership")
@@ -111,8 +96,7 @@ public class ReservationController {
 		return "hotel/mokpoDc";
 	}
 
-	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =
-																											// RequestMethod.POST
+	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
 	public @ResponseBody String searchProcode(@RequestParam("promoCode") String promoCode) throws Exception {
 		System.out.println("serchProcode 실행");
 		System.out.println("사용자가 입력한 promoCode : " + promoCode);
@@ -133,7 +117,6 @@ public class ReservationController {
 
 		String json = mapper.writeValueAsString(proCodeDto);
 		return json;
-
 	}
 
 // JSON 쓰는 방법	
@@ -191,11 +174,15 @@ public class ReservationController {
 		return "reservation/step3";
 	}
 
-	@RequestMapping(value = "resv/test", method = RequestMethod.POST)
+	@RequestMapping(value = "resv/step4", method = RequestMethod.POST)
 	public String test2(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
 		dto.setTotal(dto.getAdult() + dto.getChildren());
 		System.out.println(dto.getCheck_In_Day());
-
+		
+		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
+			System.out.println(request.getParameter("totalPrices"));
+			model.addAttribute("totalPrice", request.getParameter("totalPrices"));
+		}
 		// 프로모션 코드 있으면 값 넘김
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
 			System.out.println("프로모션 코드 : " + dto.getPrm_code());
@@ -203,10 +190,13 @@ public class ReservationController {
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
 		}
+		
 		model.addAttribute("dto", dto); // resvDto
 		model.addAttribute("roomdto", roomdto); // roomDto
 		model.addAttribute("request", request);
 
 		return "reservation/step4";
 	}
+	
+	
 }
