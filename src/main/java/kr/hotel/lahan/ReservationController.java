@@ -53,7 +53,7 @@ public class ReservationController {
 
 		return "clublahan/membership";
 	}
-//	������� ���� �߰�
+//	여기부터 지금 추가
 	@RequestMapping(value = "ethical/terms")
 	public String ethical(Model model) {
 		return "reservation/ethical";
@@ -66,7 +66,19 @@ public class ReservationController {
 	public String terms(Model model) {
 		return "reservation/terms";
 	}
-//	������� ���� �߰�
+	@RequestMapping(value = "sitemap")
+	public String sitemap(Model model) {
+		return "sitemap";
+	}
+	
+	@RequestMapping(value = "mypage/update")
+	public String memberInfoUpdate(HttpServletRequest request, Model model) {
+		String id = (String) request.getSession().getAttribute("id");
+		JCommand jcommand = new JCommand(sqlSession);
+		jcommand.memberinfo(model,id);
+		return "member/pwCheckForm";
+	}
+//	여기까지 지금 추가
 	@RequestMapping(value = "hotel/brandIntroduce")
 	public String brandIntroduce(Model model) {
 
@@ -125,40 +137,40 @@ public class ReservationController {
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
 	public @ResponseBody String searchProcode(@RequestParam("promoCode") String promoCode) throws Exception {
-		System.out.println("serchProcode 실행");
-		System.out.println("사용자가 입력한 promoCode : " + promoCode);
+		System.out.println("serchProcode �떎�뻾");
+		System.out.println("�궗�슜�옄媛� �엯�젰�븳 promoCode : " + promoCode);
 
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		ProCodeDto proCodeDto = dao.serchProcode(promoCode);
 
 		if (proCodeDto != null) {
-			System.out.println("프로모션 코드 DB 존재 코드 : " + proCodeDto.getProcode());
-			System.out.println("프로모션 코드 DB 존재 할인율 : " + proCodeDto.getRate());
+			System.out.println("�봽濡쒕え�뀡 肄붾뱶 DB 議댁옱 肄붾뱶 : " + proCodeDto.getProcode());
+			System.out.println("�봽濡쒕え�뀡 肄붾뱶 DB 議댁옱 �븷�씤�쑉 : " + proCodeDto.getRate());
 		} else {
-			System.out.println("DB조회 결과 없음");
+			System.out.println("DB議고쉶 寃곌낵 �뾾�쓬");
 			proCodeDto = new ProCodeDto();
 		}
 
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.enable(SerializationFeature.INDENT_OUTPUT); // 들여쓰기 설정 (옵션)
+		mapper.enable(SerializationFeature.INDENT_OUTPUT); // �뱾�뿬�벐湲� �꽕�젙 (�샃�뀡)
 
 		String json = mapper.writeValueAsString(proCodeDto);
 		return json;
 	}
 
-// JSON 쓰는 방법	
+// JSON �벐�뒗 諛⑸쾿	
 //	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	@ResponseBody
 	public String serchProcode2() throws Exception {
-		System.out.println("serchProcode2 실행");
+		System.out.println("serchProcode2 �떎�뻾");
 		ProCodeDto dto = new ProCodeDto();
 		dto.setProcode("ABC123");
 		dto.setRate(0.15);
 		dto.setStart_date(new java.sql.Date(System.currentTimeMillis()));
-		dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // 하루 후
+		dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // �븯猷� �썑
 
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.enable(SerializationFeature.INDENT_OUTPUT); // 들여쓰기 설정 (옵션)
+		mapper.enable(SerializationFeature.INDENT_OUTPUT); // �뱾�뿬�벐湲� �꽕�젙 (�샃�뀡)
 
 		String json = mapper.writeValueAsString(dto);
 
@@ -176,7 +188,7 @@ public class ReservationController {
 		
 		System.out.println("adult : " + dto.getAdult());
 		System.out.println("total : " + dto.getTotal());
-		System.out.println("호텔이름 : " + (dto.getHotel()));
+		System.out.println("�샇�뀛�씠由� : " + (dto.getHotel()));
 
 		command = new FindRoomCommand(sqlSession);
 		command.execute(model);
@@ -187,9 +199,9 @@ public class ReservationController {
 	@RequestMapping(value = "resv/step3", method = RequestMethod.POST)
 	public String test1(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
 
-		// 프로모션 코드 있으면 값 넘김
+		// �봽濡쒕え�뀡 肄붾뱶 �엳�쑝硫� 媛� �꽆源�
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
-			System.out.println("프로모션 코드 : " + dto.getPrm_code());
+			System.out.println("�봽濡쒕え�뀡 肄붾뱶 : " + dto.getPrm_code());
 			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
@@ -208,9 +220,9 @@ public class ReservationController {
 			System.out.println(request.getParameter("totalPrices"));
 			model.addAttribute("totalPrice", request.getParameter("totalPrices"));
 		}
-		// 프로모션 코드 있으면 값 넘김
+		// �봽濡쒕え�뀡 肄붾뱶 �엳�쑝硫� 媛� �꽆源�
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
-			System.out.println("프로모션 코드 : " + dto.getPrm_code());
+			System.out.println("�봽濡쒕え�뀡 肄붾뱶 : " + dto.getPrm_code());
 			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
@@ -238,16 +250,16 @@ public class ReservationController {
 		reservationDto.setCheckout(sqlDate1);
 		reservationDto.setRoom_name(roomdto.getRoom_name());
 
-		System.out.println("�Ѱܹ��� üũ�� + üũ�ƿ� ��¥ ������ : "+dto.getCheck_in() + dto.getCheck_out());
+		System.out.println("넘겨받은 체크인 + 체크아웃 날짜 데이터 : "+dto.getCheck_in() + dto.getCheck_out());
 		
-		// �� �����ݾ� �ֱ�
+		// 총 결제금액 넣기
 		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
 			System.out.println(request.getParameter("totalPrices"));
 			reservationDto.setPrice(Integer.parseInt(request.getParameter("totalPrices")));
 		}
-		// ���θ�� �ڵ� �ִ��� üũ �� �� �ѱ�
+		// 프로모션 코드 있는지 체크 후 값 넘김
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
-			System.out.println("���θ�� �ڵ� : " + dto.getPrm_code());
+			System.out.println("프로모션 코드 : " + dto.getPrm_code());
 			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			reservationDto.setPromotion(true);
