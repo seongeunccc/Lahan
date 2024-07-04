@@ -67,7 +67,7 @@
 										<li><a href="https://www.lahanhotels.com/pohang/ko/main.do" title="POHANG" class="option" target="_blank">라한호텔 포항<!-- 라한호텔 포항 --></a></li>
 										<li><a href="https://www.lahanhotels.com/jeonju/ko/main.do" title="JEONJU" class="option" target="_blank">라한호텔 전주<!-- 라한호텔 전주 --></a></li>
 										<li><a href="https://www.lahanhotels.com/gyeongju/ko/main.do" title="GYEONGJU" class="option" target="_blank">라한셀렉트 경주<!-- 라한셀렉트 경주 --></a></li>
-										<li><a href="https://www.lahanhotels.com/hub/ko/main.do" title="LAHAN" class="option" target="_blank">라한<!-- 라한 --></a></li>
+										<li><a href="${pageContext.request.contextPath}/main" title="LAHAN" class="option" target="_blank">라한<!-- 라한 --></a></li>
 									</ul>
 								</div>
 								<div class="f-sns-wrap">
@@ -83,12 +83,7 @@
 			</div>
 		
 		</footer>
-		<div class="loading-box" style="display: none;">
-			<div class="loading"></div>
-			<p class="loading-txt">LOADING</p>
-	    </div>
-		<div class="dimmed"></div>
-		<div class="dimmed2"></div>
+
     <!-- 호텔 찾기 popup -->
 	<div id="layerPopup">
 		<div id="searchLahan" class="layerPop" layer-data="search1">
@@ -135,7 +130,7 @@
 					</div>
 					<div class="lahan-item lahan-item6">
                         <a href="https://www.lahanhotels.com/mokpo/ko/main.do" title="호텔현대 바이 라한 목포" target="_blank">
-						    <span class="lahan-item-hover"><img src="/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 목포"/></span>
+						    <span class="lahan-item-hover"><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_wh.png" alt="호텔현대 바이 라한 목포"/></span>
 						    <span><img src="https://www.lahanhotels.com/static/pc/images/hub/search/lahan_hd_bl.png" alt="호텔현대 바이 라한 목포"/></span>
 						    <p>호텔현대 바이 라한 목포<!-- 호텔현대 바이 라한 목포 --></p>
                         </a>

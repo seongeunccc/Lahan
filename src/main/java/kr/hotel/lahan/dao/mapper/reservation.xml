@@ -4,8 +4,11 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.hotel.lahan.dao.ReservationDao">
 
-  <select id="serchProcode" resultType="kr.hotel.lahan.dto.ProCodeDto">
+  	<select id="serchProcode" resultType="kr.hotel.lahan.dto.ProCodeDto">
        select * from procode where procode = #{param1}
+    </select>
+    <select id="findRoom" resultType="kr.hotel.lahan.dto.ResvDto">
+    
     </select>
 </mapper>
 

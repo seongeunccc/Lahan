@@ -140,7 +140,7 @@ public class ReservationController {
 			return json;
 	
 	}
-	
+// JSON ¾²´Â ¹æ¹ý	
 //	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	@ResponseBody
 	public  String serchProcode2() throws Exception {
@@ -162,10 +162,9 @@ public class ReservationController {
 
 	@RequestMapping(value = "test", method = RequestMethod.POST)
 	public String test(HttpServletRequest request, Model model) {
-		// model.addAttribute("request",request);
 		String hotel = request.getParameter("hotel");
-		String adult = request.getParameter("adult");
-		String children = request.getParameter("children");
+		int adult = Integer.parseInt(request.getParameter("adult"));
+		int children = Integer.parseInt(request.getParameter("children"));
 		String night = request.getParameter("night");
 		String check_in_text = request.getParameter("check_in_text");
 		String check_out_text = request.getParameter("check_out_text");
@@ -175,7 +174,8 @@ public class ReservationController {
 		String check_Out_Day = request.getParameter("check_Out_Day");
 		String check_In_Day = request.getParameter("check_In_Day");
 		
-		System.out.println("Prm_code : "+Prm_code);
+		System.out.println("adult : "+adult);
+		System.out.println("ÃÑ ¼÷¹ÚÀÎ¿ø : "+ (adult+children));
 		
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("adult", adult);
@@ -188,6 +188,12 @@ public class ReservationController {
 		model.addAttribute("Prm_code", Prm_code);
 		model.addAttribute("check_Out_Day", check_Out_Day);
 		model.addAttribute("check_In_Day", check_In_Day);
+		
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		ProCodeDto proCodeDto = dao.serchProcode(promoCode);
+		
+		
+		
 		
 		return "testPage";
 	}
