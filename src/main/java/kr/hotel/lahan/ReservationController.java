@@ -118,40 +118,40 @@ public class ReservationController {
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	public @ResponseBody String searchProcode(@RequestParam ("promoCode") String promoCode) throws Exception  {
-		System.out.println("serchProcode ½ÇÇà");
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ promoCode : "+promoCode);
+		System.out.println("serchProcode ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ promoCode : "+promoCode);
 		
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		ProCodeDto proCodeDto = dao.serchProcode(promoCode);
 		
 		if(proCodeDto!=null) {
-			System.out.println("ÇÁ·Î¸ð¼Ç ÄÚµå DB Á¸Àç ÄÚµå : " +proCodeDto.getProcode());
-			System.out.println("ÇÁ·Î¸ð¼Ç ÄÚµå DB Á¸Àç ÇÒÀÎÀ² : " +proCodeDto.getRate());
+			System.out.println("ï¿½ï¿½ï¿½Î¸ï¿½ï¿½ ï¿½Úµï¿½ DB ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ : " +proCodeDto.getProcode());
+			System.out.println("ï¿½ï¿½ï¿½Î¸ï¿½ï¿½ ï¿½Úµï¿½ DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " +proCodeDto.getRate());
 		}else {
-			System.out.println("DBÁ¶È¸ °á°ú ¾øÀ½");
+			System.out.println("DBï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			proCodeDto = new ProCodeDto();
 		}
 		
 		  ObjectMapper mapper = new ObjectMapper();
-	      mapper.enable(SerializationFeature.INDENT_OUTPUT); // µé¿©¾²±â ¼³Á¤ (¿É¼Ç)
+	      mapper.enable(SerializationFeature.INDENT_OUTPUT); // ï¿½é¿©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½É¼ï¿½)
 	        
 	        String json = mapper.writeValueAsString(proCodeDto);
 			return json;
 	
 	}
-// JSON ¾²´Â ¹æ¹ý	
+// JSON ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½	
 //	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	@ResponseBody
 	public  String serchProcode2() throws Exception {
-		System.out.println("serchProcode2 ½ÇÇà");
+		System.out.println("serchProcode2 ï¿½ï¿½ï¿½ï¿½");
 		ProCodeDto dto = new ProCodeDto();
         dto.setProcode("ABC123");
         dto.setRate(0.15);
         dto.setStart_date(new java.sql.Date(System.currentTimeMillis()));
-        dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // ÇÏ·ç ÈÄ
+        dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // ï¿½Ï·ï¿½ ï¿½ï¿½
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT); // µé¿©¾²±â ¼³Á¤ (¿É¼Ç)
+        mapper.enable(SerializationFeature.INDENT_OUTPUT); // ï¿½é¿©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½É¼ï¿½)
         
         String json = mapper.writeValueAsString(dto);
 		return json;
@@ -164,13 +164,11 @@ public class ReservationController {
 		System.out.println(dto.getCheck_In_Day());
 		model.addAttribute("dto", dto);
 		model.addAttribute("request", request);
-		
-		
+				
 		System.out.println("adult : "+ dto.getAdult());
 		System.out.println("total : "+ dto.getTotal());
-		System.out.println("È£ÅÚÀÌ¸§ : "+ (dto.getHotel()));
-		
-		
+		System.out.println("È£ï¿½ï¿½ï¿½Ì¸ï¿½ : "+ (dto.getHotel()));
+				
 		command = new FindRoomCommand(sqlSession);
 		command.execute(model);
 		

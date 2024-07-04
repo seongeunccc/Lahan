@@ -24,8 +24,10 @@ import kr.hotel.lahan.command.NoticeDeleteCommand;
 import kr.hotel.lahan.command.NoticeListCommand;
 import kr.hotel.lahan.command.NoticeModifyCommand;
 import kr.hotel.lahan.command.NoticeViewCommand;
+import kr.hotel.lahan.command.UpPrdouctCommand;
 import kr.hotel.lahan.dao.HotelDao;
 import kr.hotel.lahan.dao.NoticeDao;
+import kr.hotel.lahan.dao.ProductDao;
 import kr.hotel.lahan.dto.NoticeDto;
 import kr.hotel.lahan.util.Constant;
 
@@ -43,8 +45,7 @@ public SqlSession sqlSession;
 	public AdminController(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
         Constant.hotelDao = sqlSession.getMapper(HotelDao.class);
-      
-           
+        Constant.productDao = sqlSession.getMapper(ProductDao.class);
 	}
 	
 	@RequestMapping("/admin/admin.do")
@@ -95,8 +96,24 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/product.do")
 	public String adminproduct(Model model) {
-		System.out.println("��ǰ���� ȭ��");
+		System.out.println("이게어디야");
 		return "/admin/admin_product";
+	}
+	
+	@RequestMapping("/admin/upproduct") // 상준 부분 성은아 머지할때 지우지마!!
+	public String adminUpProduct(Model model) {
+		System.out.println("상품 올리는 화면");
+		return "/admin/admin_up_product";
+	}
+	
+	@RequestMapping("/admin/upproductCommand") //상준 부분 성은아 머지할때 지우지마!!
+	public String adminUpProductCommand(HttpServletRequest request, Model model) {
+		System.out.println("12345");
+		model.addAttribute("request", request);
+		command = new UpPrdouctCommand();
+		command.execute(model);
+		
+		return "/admin/admin_up_product";
 	}
 	
 }
