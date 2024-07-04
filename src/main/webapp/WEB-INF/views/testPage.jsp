@@ -8,7 +8,7 @@
 <title>데이터 잘 넘어오는지 테스트~~</title>
 </head>
 <body>
-hotel 이름 : ${hotel} <br>
+ hotel 이름 : ${hotel} <br>
 성인 : ${adult}명  <br>
 소인 : ${children}명  <br>
 총 숙박인원  : ${adult+children }명 <br>
@@ -21,6 +21,15 @@ hotel 이름 : ${hotel} <br>
 체크인 요일  : ${check_In_Day} <br>
 체크아웃 요일 : ${check_Out_Day} <br>
 
-
+<hr> 
+<table>
+<c:forEach var="dto" items="${roomList}">
+	<tr>
+	<td>${dto.name } </td>
+	<td>${dto.room_name } </td>
+	<td>${dto.price } </td>
+	</tr>
+</c:forEach>
+</table>
 </body>
 </html>

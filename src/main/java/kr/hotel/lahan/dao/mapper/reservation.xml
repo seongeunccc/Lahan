@@ -7,8 +7,10 @@
   	<select id="serchProcode" resultType="kr.hotel.lahan.dto.ProCodeDto">
        select * from procode where procode = #{param1}
     </select>
-    <select id="findRoom" resultType="kr.hotel.lahan.dto.ResvDto">
-    
+    <select id="findRoom" 
+    parameterType="kr.hotel.lahan.dto.ResvDto"
+    resultType="kr.hotel.lahan.dto.RoomDto">
+    	select * from hotel where name = #{hotel} and room_max >= #{total}
     </select>
 </mapper>
 
