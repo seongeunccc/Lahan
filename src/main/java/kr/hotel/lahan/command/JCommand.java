@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
 import kr.hotel.lahan.dao.JoinDao;
+import kr.hotel.lahan.dao.ProductDao;
 
 @Component
 public class JCommand {
@@ -105,6 +106,11 @@ public class JCommand {
 		System.out.println("foundId 의 id : " + foundId);
 		return foundId;
 	}
+	
+	public void viewProduct(Model model) {		
+	ProductDao dao = sqlSession.getMapper(ProductDao.class);
+	model.addAttribute("list", dao.list());
+}
 	
 
 }

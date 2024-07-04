@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,62 +9,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>라한</title>
-    <meta http-equiv="content-language" content="kr">
-	<meta name="robots" content="index,follow">
-	<meta name="title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
-	<meta name="author" content="라한셀렉트">
-	<meta name="description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
-	<meta name="keywords" content="라한호텔, 라한셀렉트, 라한호텔 경주, 라한호텔 포항, 라한호텔 전주, 호텔현대 바이 라한 울산, 호텔현대 바이 라한 목포">
-
-	<meta property="og:locale" content="ko_KR">
-	<meta property="og:type" content="website">
-	<meta property="og:rich_attachment" content="true">
-	<meta property="og:site_name" content="라한셀렉트">
-	<meta property="og:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
-	<meta property="og:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
-	<meta property="og:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
-	<meta property="og:url" content="https://www.lahanhotel.com/gyeongju/ko/main.do">
-
-	<meta name="twitter:card" content="main_logo_bl">
-	<meta name="twitter:site" content="라한셀렉트">
-	<meta name="twitter:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
-	<meta name="twitter:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
-	<meta name="twitter:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
-	<meta name="twitter:creator" content="라한셀렉트">
+    
 	<link rel="canonical" href="https://www.lahanhotels.com/">
 
 	<!-- css -->
-	<link rel="stylesheet" href="/static/pc/css/jquery-ui.min.css">
-	<link rel="stylesheet" href="/static/pc/css/common/font.css">
-	<link rel="stylesheet" href="/static/pc/css/common/common.css">
-	<link rel="stylesheet" href="/static/pc/css/hub/ko/h-common.css">
-    <link rel="stylesheet" href="/static/pc/css/swiper-bundle.min.css">
-	
-	
-	<link rel="stylesheet" href="/static/pc/css/hub/ko/contents.css">
-    <link rel="stylesheet" href="/static/pc/css/hub/ko/contents1.css">
-    <link rel="stylesheet" href="/static/pc/css/hub/ko/contents2.css">
-	
-	<!-- js -->
-	<script src="/static/pc/js/jquery-3.5.1.js"></script>
-	<script src="/static/pc/js/swiper-bundle.min.js"></script>
-	<script src="/static/pc/js/jquery-ui.min.js"></script>
-	<script src="/static/pc/js/common.js"></script>
-    <script src="/static/pc/js/hub/contents.js"></script>
-    <script src="/static/pc/js/hub/contents1.js"></script>
-    <script src="/static/pc/js/hub/contents2.js"></script>
-    <script src="/static/pc/js/hub/h-common.js"></script>
-    <script src="/static/pc/js/printThis.js"></script>
-	<script src="/static/pc/js/resv-cal.js"></script>
-	<script src="/static/pc/js/resv.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
+		
+	<link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/contents.css">
+    <link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/contents1.css">
+    <link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/contents2.css">
+    
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+     <style>
+        .card-columns {
+            column-count: 3;
+        }
+        
+                .card-columns {
+            column-count: 3;
+        }
+        .card {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+    
+    <!-- js -->
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-3.5.1.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/swiper-bundle.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/jquery-ui.min.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents1.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/contents2.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/hub/h-common.js"></script>
+    <script src="https://www.lahanhotels.com/static/pc/js/printThis.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv-cal.js"></script>
+	<script src="https://www.lahanhotels.com/static/pc/js/resv.js"></script>
 
-    <script type="text/javascript" src="/static/bluewaves/js/date_util.js"></script>
-    <script type="text/javascript" src="/static/bluewaves/js/num_util.js"></script>
-    <script type="text/javascript" src="/static/bluewaves/js/string_util.js"></script>
-    <script type="text/javascript" src="/static/bluewaves/js/bluewaves_common.js"></script>
-    <script type="text/javascript" src="/static/bluewaves/js/paging_util.js"></script>
-   
-    <style>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/date_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/num_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/string_util.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/bluewaves_common.js"></script>
+    <script type="text/javascript" src="https://www.lahanhotels.com/static/bluewaves/js/paging_util.js"></script>
+    
+        <style>
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -149,13 +148,70 @@
 							<p>ONLINE SHOP</p>
 						</div>
             
-            <img src="/revolution/content/fileImage.do?fileId=10144&cntntsSn=10142" alt="">
+            <img src="${pageContext.request.contextPath}/resources/images/onlineshop.jpg" alt="">
   
 					</div>
 				</div>
 			</section>
+			
+			
+			
+			
+<%-- 테스트
+<c:forEach items="${list }" var="dto">
+<tr>
+<td>${dto.proId }</td>
+<td>${dto.proName }</td>
+<td>${dto.proTitle }</td>
+<td>${dto.proScript }</td>
+<td>${dto.proQuant }</td>
+<td>${dto.proPrice }</td>
+<td>${dto.proPriceDis }</td>
+<td><img src="${pageContext.request.contextPath}/boardupload/${dto.proFile }" alt=""></td>
+<td>${dto.proFile }</td>
+<td>${dto.proCate }</td>
+</tr>
+</c:forEach> --%>
 
-	<section class="sub-contents">
+<%-- <div class="container mt-5">
+        <div class="card-columns">
+            <c:forEach items="${list}" var="dto">
+                <div class="card mb-4">
+                    <img src="${pageContext.request.contextPath}/boardupload/${dto.proFile}" class="card-img-top" alt="${dto.proName}">
+                    <div class="card-body">
+                        <h5 class="card-title">${dto.proName}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${dto.proTitle}</h6>
+                        <p class="card-text">${dto.proScript}</p>
+                        <p class="card-text"><strong>Price:</strong> ${dto.proPrice}</p>
+                        <p class="card-text"><strong>Discount Price:</strong> ${dto.proPriceDis}</p>
+                    </div>
+                </div>
+            </c:forEach>
+        </div> --%>
+        
+        <div class="container mt-5">
+        <div class="card-columns">
+            <c:forEach items="${list}" var="dto">
+                <a href="${pageContext.request.contextPath}/productDetail?proId=${dto.proId}" class="card mb-4">
+                    <img src="${pageContext.request.contextPath}/boardupload/${dto.proFile}" class="card-img-top" alt="${dto.proName}">
+                    <div class="card-body">
+                        <h5 class="card-title">${dto.proName}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${dto.proTitle}</h6>
+                        <p class="card-text">${dto.proScript}</p>
+                        <p class="card-text"><strong>Price:</strong> ${dto.proPrice}</p>
+                        <p class="card-text"><strong>Discount Price:</strong> ${dto.proPriceDis}</p>
+                    </div>
+                </a>
+            </c:forEach>
+        </div>
+    </div>
+
+
+				
+			
+			
+
+	<!-- <section class="sub-contents">
 		<div class="sub-contents-wrap ty-01">
 			<div class="tab-contents">
 				<ul class="tab-contents-list" id="seList">
@@ -168,10 +224,10 @@
 		            <span class="select-recommond selected-value" id="reSort">추천순</span>
 		          </div>
 		          <ul class="recommond-wrap">
-		            <li class="option" value="01" onclick="fncSearchList('01');">추천순</li><!-- 추천순 -->
-                   	<li class="option" value="02" onclick="fncSearchList('02');">낮은가격순</li><!-- 낮은가격순 -->
-                   	<li class="option" value="03" onclick="fncSearchList('03');">높은가격순</li><!-- 높은가격순 -->
-                   	<li class="option" value="04" onclick="fncSearchList('04');">최신순</li><!-- 최신순 -->
+		            <li class="option" value="01" onclick="fncSearchList('01');">추천순</li>추천순
+                   	<li class="option" value="02" onclick="fncSearchList('02');">낮은가격순</li>낮은가격순
+                   	<li class="option" value="03" onclick="fncSearchList('03');">높은가격순</li>높은가격순
+                   	<li class="option" value="04" onclick="fncSearchList('04');">최신순</li>최신순
 		          </ul>
 		        </div>
 		      </div>
@@ -189,7 +245,7 @@
 
 	<form id="form" name="form">
 		<input type="hidden" id="onshopSn" name="onshopSn" />
-	</form>
+	</form> -->
 
 
 			<!-- 컨텐츠 끝 -->
@@ -259,31 +315,6 @@
 			</div>
 		</div>
 	</div>
-
-<form id="form" method="post" action="https://www.lahanhotels.com/hub/ko/resv/step2.do">
-    <input type="hidden" name="adult" id="adult" value="">
-	<input type="hidden" name="children" id="children" value="">
-	<input type="hidden" name="night" id="night" value="">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="">
-	<input type="hidden" name="check_in" id="check_in" value="">
-	<input type="hidden" name="check_out" id="check_out"value="">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="">
-	<input type="hidden" name="Prm_code" id="Prm_code" value="">
-	<input type="hidden" name="htNm" id="htNm" value="">
-	<input type="hidden" name="sysCode" id="sysCode" value="">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input id="searchMonth" name="month" value="" type="hidden">
-	<input id="searchYear" name="year" value="" type="hidden">
-
-</form>
 
     <script>
         $(document).ready(function() {

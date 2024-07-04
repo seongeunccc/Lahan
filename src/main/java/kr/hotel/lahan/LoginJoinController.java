@@ -95,10 +95,13 @@ public class LoginJoinController {
 		return "/login/logout";
 	}
 	
-	/*
-	 * @RequestMapping("/clublahan/membership") public String viewProduct(Model
-	 * model) { return "/product/viewProduct"; }
-	 */
+	
+	 @RequestMapping("/clublahan/viewproduct") 
+	 public String viewProduct(Model model) {
+		 jCommand.viewProduct(model);
+		 return "/product/viewProduct"; 
+	}
+	 
 	
 	@RequestMapping("/member/memberinfo")
 	public String memberInfo(HttpServletRequest request, Model model) {

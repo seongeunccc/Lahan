@@ -114,8 +114,8 @@
 		<div class="top-menu-wrap">
 <ul class="top-menu">
     <li  ><a href="${pageContext.request.contextPath}/member/memberinfo">마이페이지<!-- 마이페이지 --></a></li>
-    <li ><a href="/hub/ko/mypage/mypoint/myPointForm.do">마이포인트<!-- 마이포인트 --></a></li>
-    <li ><a href="/hub/ko/mypage/mycoupon/myCouponForm.do">마이쿠폰<!-- 마이쿠폰 --></a></li>
+   <!--  <li ><a href="/hub/ko/mypage/mypoint/myPointForm.do">마이포인트마이포인트</a></li>
+    <li ><a href="/hub/ko/mypage/mycoupon/myCouponForm.do">마이쿠폰마이쿠폰</a></li> -->
 	<li  class="on" ><a href="${pageContext.request.contextPath}/mypage/myResv">예약조회/확인<!-- 예약조회/확인 --></a></li>
     
     <li>
