@@ -113,6 +113,9 @@
 	<div id="container" class="container">
 			<!--(페이지 URL)-->
 			
+<c:set var="dto" value="${dto}"/>
+<c:set var="roomList" value="${roomList}"/>
+
 
 	<link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/resv.css">
 		<div id="container" class="container">
@@ -123,11 +126,11 @@
 						<ul>
 							<li>
 								<span>Step1<!-- Step1 --></span>
-								<a href="/hub/ko/resv/step1.do"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
+								<a href="${pageContext.request.contextPath}/resv/step1"><p>호텔/날짜/인원 선택<!-- 호텔/날짜/인원 선택 --></p></a>
 							</li>
 							<li >
 								<span>Step2<!-- Step2 --></span>
-								<a href="/hub/ko/resv/step2.do?adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=231&SS_PMS_CODE=HLP1&SS_PMS_SEQ_NO=231&htNm=%EB%9D%BC%ED%95%9C%ED%98%B8%ED%85%94%20%ED%8F%AC%ED%95%AD&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHPOH&room_code=&rate_code=&rate_seq_no=&room_seq_no=&hotelCode=16&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D231%26SS_PMS_CODE%3DHLP1%26SS_PMS_SEQ_NO%3D231%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25ED%2598%25B8%25ED%2585%2594%2520%25ED%258F%25AC%25ED%2595%25AD%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHPOH%26room_code%3D%26rate_code%3D%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D16%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526prm_seq_no%253D%2526pms_seq_no%253D231%2526SS_PMS_CODE%253DHLP1%2526SS_PMS_SEQ_NO%253D231%2526Prm_code%253D%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525ED%252598%2525B8%2525ED%252585%252594%252520%2525ED%25258F%2525AC%2525ED%252595%2525AD%2526sysCode%253DLHPOH%2526hotelCode%253D16%2526step1Param%253D%2526step2Param%253D%2526step3Param%253D%2526step4Param%253D%2526month%253D%2526year%253D%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&step2Type=room&step2Sort=&month=&year=&searchRoomDivisArr="><p>객실 선택<!-- 객실 선택 --></p></a>
+								<p>객실 선택<!-- 객실 선택 --></p>
 							</li>
 							<li class="on">
 								<span>Step3<!-- Step3 --></span>
@@ -147,7 +150,7 @@
 								<strong>스페셜 옵션<!-- 스페셜 옵션 --></strong>
 								<div class="resvbox-wrap-list conseNights">
 									
-										<span class="conseNights-tit">07/23 (화)</span>
+										<span class="conseNights-tit"> 07/23 (화)</span>
 										<ul class="optionWrap last" >
 											<!-- 여기 li 속성에 DB에서 불러온 값 for 문 돌리면 될듯-->
 													<li>
@@ -214,9 +217,17 @@
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>인원<!-- 인원 --></span>
-											<p>성인<!-- 성인 --> ${dto.audlt} / 소인<!-- 소인 --> ${dto.children}</p>
+											<p>성인<!-- 성인 --> ${dto.adult} / 소인<!-- 소인 --> ${dto.children}</p>
 										</div>
 									</div>
+									<c:if test="${not empty proCodeDto}">
+									<div class="resvbox-wrap-list ty-02">
+										<div class="resvbox-option-left">
+											<span>프로모션</span>
+											<p>프로모션 코드<!-- 성인 --> ${proCodeDto.procode} / 할인율<!-- 소인 --> ${proCodeDto.rate*100}%</p>
+										</div>
+									</div>
+									</c:if>
 								</div>
 								<div class="resvbox-wrap-right-inner last">
 									<strong class="resvbox-option-tit">${roomdto.room_name}</strong>
@@ -276,7 +287,7 @@
 									<span>VAT 포함<!-- VAT 포함 --></span>
 									<div class="resvbox-charge-table">
 										<strong>최종 결제 예정 금액<!-- 최종 결제 예정 금액 --></strong>
-										<span><strong id="totalPrice">152,000</strong> 원<!-- 원 --></span>
+										<span><strong id="totalPrice">${roomdto.price}</strong> 원<!-- 원 --></span>
 									</div>
 									
 									
@@ -309,7 +320,7 @@
 	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
 	<!-- RoomDto  -->
 	<input type="hidden" name="room_name" id="room_name" value="">
-	<input type="hidden" name="price" id="price" value="${dto.price}">
+	<input type="hidden" name="price" id="price" value="${roomdto.price}">
 	
 	</form>
 	</div>
@@ -317,8 +328,8 @@
 	<script>
 	const langCode = "ko";
 	const loignUrl = window.location.origin+"/hub/"+langCode+"/login/loginForm.do?nextURL="+window.location.href+"?"+$('#form').serialize();
-	const pckrmPriceOnly = "152000.0";
-	let pckrmPrice = "152000.0";
+	const pckrmPriceOnly = $(#price).val();
+	let pckrmPrice = $(#price).val();
 	let initIdxOpt = 0; //옵션인풋 생성 인덱스
 	let optPrice = 0; // 옵션값
 	let couponPrice = 0;//쿠폰값
