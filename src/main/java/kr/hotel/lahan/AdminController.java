@@ -52,9 +52,7 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
-		/*
-		 * command = new AskListCommand(); command.execute(model);
-		 */
+		
 		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
 
 		return "/admin/admin_main";
