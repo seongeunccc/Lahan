@@ -54,15 +54,15 @@ public SqlSession sqlSession;
         Constant.productDao = sqlSession.getMapper(ProductDao.class);
 	}
 	
-	@RequestMapping("/admin/admin.do")
-	public String adminmain(Model model) {
-		
-		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
-
-		return "/admin/admin_main";
-	}
+	/*
+	 * @RequestMapping("/admin/admin.do") public String adminmain(Model model) {
+	 * 
+	 * System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
+	 * 
+	 * return "/admin/admin_main"; }
+	 */
 	
-	@RequestMapping("/admin/member.do")
+	@RequestMapping("/admin/admin.do")
 	public String adminmem(Model model) {
 		System.out.println("member1");
 		command = new MemberListCommand();
@@ -78,7 +78,7 @@ public SqlSession sqlSession;
 	        command = new MemberDeleteCommand();
 	        command.execute(model);
 	        System.out.println("memberDel");
-	        return "redirect:/admin/member.do"; 
+	        return "redirect:/admin/admin.do"; 
 	  }
 	
 
