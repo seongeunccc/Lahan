@@ -12,6 +12,10 @@
     resultType="kr.hotel.lahan.dto.RoomDto">
     	select * from hotel where name = #{hotel} and room_max >= #{total}
     </select>
+    <insert id="insertResv" parameterType="kr.hotel.lahan.dto.ReservationDto"> 
+    	insert into reservation (id, hotel, reserv_date, checkin, checkout,	promotion, procode, adult, children, price, requestMessage, creditcardNo) values 
+    	(#{id}, #{hotel}, #{reserv_date}, #{checkin}, #{checkout},#{promotion}, #{procode}, #{adult}, #{children}, #{price}, #{requestMessage}, #{creditcardNo})
+    </insert>
 </mapper>
 
 <!--  INSERT INTO hotel
