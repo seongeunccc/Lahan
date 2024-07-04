@@ -18,16 +18,11 @@ public class AskReplyCommand implements LCommand {
         HttpServletRequest request = (HttpServletRequest) map.get("request");
 
         int board_num = Integer.parseInt(request.getParameter("board_num"));
-        String id = request.getParameter("id");
-        String hotel = request.getParameter("hotel");
-        String sort = request.getParameter("sort");
-        String title = request.getParameter("title");
-        String contents = request.getParameter("contents");
         String reply = request.getParameter("reply");
-        
+        System.out.println("´äº¯ : " + reply);
 
         AskDao dao = Constant.askDao;
 		/* dao.replyShape(bGroup, bStep); */
-        dao.reply(board_num, id, hotel, sort, title, contents, reply);
+        dao.reply(board_num, reply);
     }
 }

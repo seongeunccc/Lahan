@@ -24,7 +24,8 @@ public class JoinDto {
 	}
 	
 	public JoinDto(String id, String pw, String name, String en_name, int birth, String phone, 
-			String email, String adrs, String agreeEmail, String recomId, String proCode) {
+			String email, String adrs, String agreeEmail, String recomId, String proCode,
+			String membership, int point) {
 		this.id = id;
 		this.pw = pw;
 		this.name=name;
@@ -36,10 +37,8 @@ public class JoinDto {
 		this.agreeEmail = agreeEmail;
 		this.recomId=recomId;
 		this.proCode=proCode;
-//		this.membership=membership;
-//		this.point=point;
-//		this.joindate=joindate;
-//		this.withdraw=withdraw;
+		this.membership=membership;
+		this.point=point;
 	}
 	
 	
@@ -134,5 +133,7 @@ public class JoinDto {
 	public void setWithdraw(Date withdraw) {
 		this.withdraw = withdraw;
 	}
+	
+	
 
 }

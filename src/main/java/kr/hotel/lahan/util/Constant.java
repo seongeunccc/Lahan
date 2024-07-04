@@ -8,4 +8,6 @@ public class Constant{
 	public static HotelDao hotelDao;
 	public static NoticeDao noticeDao;
 	public static AskDao askDao;
+	public static JoinDao joinDao;
+	
 }
