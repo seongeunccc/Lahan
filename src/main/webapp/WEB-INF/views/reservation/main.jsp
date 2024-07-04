@@ -110,8 +110,6 @@
 var today = new Date();
 const dayNames = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
 
-
-
 function setCalendar(){
 	var setNextDate = today.toISOString().substring(0, 10);
 	var nextDay = new Date(today);
@@ -168,7 +166,7 @@ function calculateDateDifference() {
 function setDay(date, day){
 	var checkDay = new Date(document.getElementById(date).value);
 	console.log(checkDay);
-	document.getElementById(day).innerHTML = '<span >'+dayNames[checkDay.getDay()] +'</span>';
+	document.getElementById(day).innerHTML = '<span>'+dayNames[checkDay.getDay()] +'</span>';
 }
 
 //처음에 실행할 것.
@@ -176,15 +174,7 @@ window.onload = function() {
 setCalendar();
 removeOffClass();
 };
-/* 
-//프로모션 코드 검색해서 결과 찾으면 폼에 등록
-function setPromo(){
-	//여기서 DB에서 유효한 코드인지 확인하는 작업 필요 (아이디 중복확인처럼~)
-	
-	$('#Prm_code').val($('#prtmCode').val());
-
-}
- */
+//프로모션 코드 유효성 검사 / 비동기 fetch
 function setPromo() {
   	 var promoCode = $("#prtmCode").val();
   	 console.log(promoCode)
@@ -212,11 +202,22 @@ function setPromo() {
 	    });
 }
     
-
+//호텔 체크 여부 확인
+function ckSelectHotel(){
+	if($("#hotel").val()!= null){
+		return false;
+	}else{
+		alert("호텔을 선택해주세요.");
+		return true;
+	}
+}
 
 
 //예약하기 누르면 값 넘기기~
 function resvStart1(){
+	if(ckSelectHotel())
+		return;
+	
 	document.getElementById('adult').value = document.getElementById('num1').value;
 	document.getElementById('children').value = document.getElementById('num2').value;
 	$('#night').val($('#nightText').text());
