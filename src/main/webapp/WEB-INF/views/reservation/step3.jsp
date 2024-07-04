@@ -103,6 +103,13 @@ function discount(){
 	  $("#totalPrice").text(newPrice.toFixed(0) + " 원");
 }
 
+function goToNextPage(){
+	$("#totalPrices").val($("#totalPrice").text());
+	$("#request").val( $("#requestOp").val());
+	document.getElementById('form').submit();
+	
+}
+
 window.onload = function() {
 	if( $("#discountRate").text()!=null && $("#discountRate").text()!="")
 	discount();
@@ -127,7 +134,7 @@ window.onload = function() {
 			
 <c:set var="dto" value="${dto}"/>
 <c:set var="roomList" value="${roomList}"/>
-
+	
 
 	<link rel="stylesheet" href="https://www.lahanhotels.com/static/pc/css/hub/ko/resv.css">
 		<div id="container" class="container">
@@ -334,7 +341,7 @@ window.onload = function() {
 									
 									
 										<div class="btn-inline-box"><!-- 기본 및 비회원일 때 -->
-											<a href="#none" title="비회원예약" onclick="next()" class="btn-memResv btn-gold-line">비회원예약<!-- 비회원예약 --></a>
+											<a href="#none" title="비회원예약" onclick="goToNextPage()" class="btn-memResv btn-gold-line">비회원예약<!-- 비회원예약 --></a>
 											<a href="#none" title="회원예약" onclick="loginPage()" class="btn-memResv btn-gold">회원예약<!-- 회원예약 --></a>
 										</div>
 									
@@ -347,7 +354,7 @@ window.onload = function() {
 			</section>
 		</div>
 
-<form id="form" method="post" action="./test">
+<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step4" >
 	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
 	<input type="hidden" name="children" id="children" value="${dto.children}">
 	<input type="hidden" name="night" id="night" value="${dto.night}">
@@ -363,6 +370,8 @@ window.onload = function() {
 	<!-- RoomDto  -->
 	<input type="hidden" name="room_name" id="room_name" value="">
 	<input type="hidden" name="price" id="price" value="${roomdto.price}">
+	<input type="hidden" name="totalPrices" id="totalPrices" value="">
+	<input type="hidden" name="request" id="request" value="">
 	
 	</form>
 	</div>
@@ -521,15 +530,7 @@ window.onload = function() {
 			}
 			initIdxOpt++;
 		}
-
 	}
-
-
-
-	
-
-
-
 	function addReqmatter(e,msg){
 		if($(e).prop("checked")){
 			$("#memBeneDiv").show();
@@ -559,34 +560,9 @@ window.onload = function() {
 		}
 	}
 
-	//스텝4
-	function next(){
-		if(optAsync == false){
-			optAsync = true;
-			//스페셜옵션List 넘길값 세팅
-			$("[class*='spclInput']").each(function(index, item){
-				setOptionInput(item);
-			});
-			$("#spclHtml").val($("#spclOptionDiv")[0].outerHTML);
-			//옵션List 넘길값 세팅
-			$("[class*='optInput']").each(function(index, item){
-				setOptionInput(item);
-			});
-			$("#optHtml").val($("#optionDiv")[0].outerHTML);
-			//쿠폰값 세팅
 
-			//요청사항
-			$("#rsvn_reqmatter").val($("#requestOp").val());
-
-			const step4Param = $("#form").serialize();
-			$("#step4Param").val(step4Param);
-
-			$("#form").attr("action","/hub/ko/resv/step4.do");
-			showLoading();
-			$("#form").submit();
-		}
-	}
 	</script>
+	
 		</div>
 <%@ include file="/WEB-INF/views/footer.jsp" %> 
 </body>
