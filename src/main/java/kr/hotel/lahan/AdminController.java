@@ -19,6 +19,7 @@ import kr.hotel.lahan.command.AskListCommand;
 import kr.hotel.lahan.command.AskViewCommand;
 import kr.hotel.lahan.command.HotelAddCommand;
 import kr.hotel.lahan.command.LCommand;
+import kr.hotel.lahan.command.MemberListCommand;
 import kr.hotel.lahan.command.NoticeAddCommand;
 import kr.hotel.lahan.command.NoticeDeleteCommand;
 import kr.hotel.lahan.command.NoticeListCommand;
@@ -50,45 +51,49 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
-		 command = new AskListCommand();
-	        command.execute(model);
-		System.out.println("���� ���� ȭ��");
+		/*
+		 * command = new AskListCommand(); command.execute(model);
+		 */
+		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
 
 		return "/admin/admin_main";
 	}
 	
 	@RequestMapping("/admin/member.do")
 	public String adminmem(Model model) {
-		System.out.println("���� ȸ������ ȭ��");
+		System.out.println("member1");
+		command = new MemberListCommand();
+		command.execute(model);
+		System.out.println("memberList");
 		return "/admin/admin_member";
 	}
 
 	@RequestMapping("/admin/reservation.do")
 	public String adminreserv(Model model) {
-		System.out.println("���� ������� ȭ��");
+		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占� 화占쏙옙");
 		return "./admin/admin_reservation";
 	}
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
 	
-		System.out.println("ȣ�ڰ��� ȭ��");
+		System.out.println("호占쌘곤옙占쏙옙 화占쏙옙");
 		
 		return "/admin/admin_hotel";
 	}
 	@RequestMapping("/admin/hoteladd.do")
 	public String adminhoteladd(Model model) {
-		System.out.println("ȣ���߰� ȭ��");
+		System.out.println("호占쏙옙占쌩곤옙 화占쏙옙");
 		return "/admin/admin_hotel_add";
 	}
 	
 	
 	 @RequestMapping("/admin/hoteladding.do") 
 	 public String hoteladd(HttpServletRequest request, Model model) {
-	  System.out.println("ȣ���߰�_DB"); 
+	  System.out.println("호占쏙옙占쌩곤옙_DB"); 
 	  model.addAttribute("request",request); 
 	  command = new HotelAddCommand();
-	  System.out.println("ȣ���߰�_DB2"); 
+	  System.out.println("호占쏙옙占쌩곤옙_DB2"); 
 	  command.execute(model);
 	 
 	 return "redirect:/admin/hotel.do"; }
@@ -96,7 +101,10 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/product.do")
 	public String adminproduct(Model model) {
+
+
 		System.out.println("이게어디야");
+
 		return "/admin/admin_product";
 	}
 	

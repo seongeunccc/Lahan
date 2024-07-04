@@ -197,8 +197,53 @@ rotate(
                 window.location.href = "/lahan/admin/askdelete.do?board_num=" + board_num;
             }
         }
+        
+     // 모달 창 열기
+        function openReplyModal(board_num, title, contents) {
+            document.getElementById('board_num').value = board_num;
+            document.getElementById('replyTitle').value = title;
+            document.getElementById('replyContents').value = contents;
+            document.getElementById('replyModal').style.display = "block";
+        }
+
+        // 모달 창 닫기
+        var modal = document.getElementById("replyModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 답변 전송
+        function submitReply() {
+            var board_num = document.getElementById('board_num').value;
+            var reply = document.getElementById('reply').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/lahan/admin/askreply.do", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert('답변이 등록되었습니다.');
+                    modal.style.display = "none";
+                    location.reload(); // 페이지 새로고침
+                }
+            };
+            xhr.send("board_num=" + board_num + "&reply=" + encodeURIComponent(reply));
+        }
+
+        
+        
     </script>
 </head>
+
+
 <body>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript>
@@ -327,12 +372,22 @@ rotate(
 										&nbsp;
 									</div>
 
+								</div><br><br>
+								
+									<div class="intWrap">
+									<div class="intBox">
+										
+										<div class="txt-wrap">
+											<div class="input-wrap"><!-- 내용을 입력해 주세요.  최대 2,000byte 까지 입력이 가능합니다. -->
+											  <textarea name="contents" id="contents" cols="40" rows="10" placeholder="답변 내용을 입력해 주세요." ></textarea>
+											</div>
+										</div>
+									</div>
 								</div>
 			</form>
 			<div class="brd-detailView-btn">
 				<a
-					href="#" class="btn-list btn-navy-line" style="background-color: #B1B0AC;"
-   onclick="openReplyModal(${askcontentView.board_num}, '${askcontentView.title}', '${askcontentView.contents}')">>답변히기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+					href="/lahan/admin/askreply.do" class="btn-list btn-navy-line" style="background-color: #B1B0AC;">답변하기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 					href="/lahan/admin/ask.do" class="btn-list btn-navy-line">목록보기</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
 					href="javascript:void(0);" onclick="confirmDelete(${askcontentView.board_num})"
    class="btn-list btn-navy-line" style="background-color: #ffcece">삭제하기</a>

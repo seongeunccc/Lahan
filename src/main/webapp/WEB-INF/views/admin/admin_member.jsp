@@ -1,27 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>라한</title>
+    <meta http-equiv="content-language" content="kr">
+	<meta name="robots" content="index,follow">
+	<meta name="title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="author" content="라한셀렉트">
+	<meta name="description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta name="keywords" content="라한호텔, 라한셀렉트, 라한호텔 경주, 라한호텔 포항, 라한호텔 전주, 호텔현대 바이 라한 울산, 호텔현대 바이 라한 목포">
 
+	<meta property="og:locale" content="ko_KR">
+	<meta property="og:type" content="website">
+	<meta property="og:rich_attachment" content="true">
+	<meta property="og:site_name" content="라한셀렉트">
+	<meta property="og:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta property="og:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta property="og:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
+	<meta property="og:url" content="https://www.lahanhotel.com/gyeongju/ko/main.do">
 
+	<meta name="twitter:card" content="main_logo_bl">
+	<meta name="twitter:site" content="라한셀렉트">
+	<meta name="twitter:title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="twitter:description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
+	<meta name="twitter:image" content="https://www.lahanhotel.com/static/pc/assets/img/header/logo_glad.svg">
+	<meta name="twitter:creator" content="라한셀렉트">
+	<link rel="canonical" href="https://www.lahanhotels.com/">
 
 	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_codmmon.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_kor_common.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_swiper.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_jquery-ui.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_font.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_common.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_h-common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_swiper-bundle.min.css">
 	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_main.css">
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents1.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/라한_contents2.css">
-	
-	
 	
 	<!-- js -->
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.js"></script>
@@ -29,23 +51,45 @@
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/common.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/contents.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/contents1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/contents2.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/h-common.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/printThis.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/resv-cal.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/resv.js"></script>
-	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
+
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/date_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/num_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/string_util.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bluewaves_common.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/paging_util.js"></script>
-	
-	
-	
-	
-	
-	
-	<style>
+    
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+    .myInfoList {
+            width: 100%;
+            border-collapse: collapse;
+			
+        }
+        .myInfoList th, .myInfoList td {
+            border: 1px solid #ddd;
+            padding: 8px;
+             text-align: center;
+        }
+        .myInfoList th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -103,21 +147,23 @@
 			z-index: 9999;
 		}
      </style>
-
+     <script>
+        function confirmDelete(id) {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                window.location.href = "/lahan/admin/memberdelete.do?id=" + id;
+            }
+        }
+    </script>
 </head>
 <body>
-  <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTWJWS8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-
-
-<div class="wrap main">
     
+    
+    <div class="wrap sub">
     
 		<div class="skip-nav">
 			<a href="#header">푸터 영역 바로가기</a>
@@ -125,8 +171,7 @@
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
         
-            
-<header id="header" class="header">
+		<header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
 			<div class="h-wrap">
@@ -174,19 +219,23 @@
 				</div>
 			</div>	
 		</header>
-		
 		<div id="container" class="container">
-			<!--(레이아웃명([PC][국문] - MAIN 레이아웃) 최종수정일 : 2023-07-27 16:47)-->
-
-			<section class="main-visual">
-				<div class="btn-bell-wrap">
-					<button type="button" class="btn-bell">BELL<span class="bell-count">0</span></button>
-				</div>
-                <!-- 메인팝업 include -->
-                
-
-
-
+			<!--(레이아웃명([PC][국문] - 라한 소개 > 호텔소개 레이아웃) 최종수정일 : 2022-12-01 18:14)-->
+			
+			
+			<section class="sub-visual">
+	            <div class="sub-visual-wrap">
+	               <div class="sub-visual-list">	                  
+	                                    
+	                  	<div class="sub-visual-txt brand-lahan">
+	                  		<h3 class="sub-tit02">MEMBER</h3>
+                            <p>Lahan hotel 고객관리 페이지입니다 .</p>
+	                  	</div>
+	                	<img src="${pageContext.request.contextPath}/resources/images/main_background.jpg" alt="sub visual">
+	               </div>
+	            </div>
+	         </section>
+			
 
 
 
@@ -206,61 +255,49 @@
                 
                 
 
-<input type="hidden" id="langCode" value="ko"/>
-<form id="form" name="form">
-</form>
+    
+    
 <div id="container" class="container">
     <section class="sub-contents mypage">
         <div class="sub-contents-wrap">
-        
-        
-
             <div class="sub-tit-wrap">
                 <h3 class="sub-tit01">회원관리<!-- 마이페이지 --></h3>
             </div>
-               <div class="myAccountInfo">
-                <dl class="myInfoList">
-                    <dt>아이디 </dt>
-                    <dd id="mbrId">${member.id}</dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt>이름 </dt>
-                    <dd id="mbrName">${member.name}</dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt>생년월일 </dt>
-                    <dd id="mbrBirth">${member.birth}</dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt>회원등급 </dt>
-                    <dd class="grade" id="currentGrade">${member.membership}</dd><!-- 등급별 클래스 silver / gold / diamond 입니다  -->
-                </dl>
-                <dl class="myInfoList">
-                    <dt>보유 포인트 </dt>
-                    <dd id="point"><a href="/hub/ko/mypage/mypoint/myPointForm.do">${member.point} P</a></dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt> 회원가입일 </dt>
-                    <dd id="joinDate">${member.joindate}</dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt> 탈퇴일 </dt>
-                    <dd id="withdrawdate">${member.withdraw}</dd>
-                </dl>
-                <dl class="myInfoList">
-                    <dt>탈퇴 </dt>
-                    <dd id="withdraw"> <form action="${pageContext.request.contextPath}/member/withdraw" method="post">
-                    <input type="hidden" name="id" value="${member.id}">
-                    <button type="submit">탈퇴</button>
-                </form></dd><!-- 등급별 클래스 silver / gold / diamond 입니다  -->
-                </dl>
-            </div>
-		</div>
-		
-		</section>
-		</div>
-		</section>
-		</div>
+            
+            <table class="myInfoList">
+        <thead>
+            <tr>
+                <th style="width: 50px;">아이디</th>
+                <th style="width: 50px;">이름</th>
+                <th style="width: 50px;">생년월일</th>
+                <th style="width: 50px;">회원등급</th>
+                 <th style="width: 50px;">보유 포인트</th> 
+                  <th style="width: 50px;">회원가입일</th> 
+                   <th style="width: 50px;">탈퇴일</th>
+                    <th style="width: 50px;">탈퇴</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="member" items="${list}">
+                <tr>
+                    <td>${member.id}</td>
+                    <td>${member.name}</td>
+                    <td>${member.birth}</td>
+                    <td>${member.membership}</td>
+                    <td>${member.point}</td>
+                    <td>${member.joindate}</td>
+                    <td>${member.withdraw}</td>
+                    <td> <div class="brd-detailView-btn"><a href="javascript:void(0);" onclick="confirmDelete(${member.id})"
+   class="btn-list btn-navy-line" style="background-color: #ffcece">탈퇴</a>
+			</div> </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+            
+        </div>
+    </section>
+</div>
 		
 				
 		

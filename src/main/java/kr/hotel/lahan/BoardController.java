@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.hotel.lahan.command.AskAddCommand;
 import kr.hotel.lahan.command.AskDeleteCommand;
 import kr.hotel.lahan.command.AskListCommand;
+import kr.hotel.lahan.command.AskReplyCommand;
 import kr.hotel.lahan.command.AskViewCommand;
 import kr.hotel.lahan.command.LCommand;
 import kr.hotel.lahan.command.NoticeAddCommand;
@@ -22,6 +23,7 @@ import kr.hotel.lahan.command.NoticeModifyCommand;
 import kr.hotel.lahan.command.NoticeViewCommand;
 import kr.hotel.lahan.dao.AskDao;
 import kr.hotel.lahan.dao.HotelDao;
+import kr.hotel.lahan.dao.JoinDao;
 import kr.hotel.lahan.dao.NoticeDao;
 import kr.hotel.lahan.util.Constant;
 
@@ -39,7 +41,7 @@ public SqlSession sqlSession;
         this.sqlSession = sqlSession;
         Constant.noticeDao = sqlSession.getMapper(NoticeDao.class);
         Constant.askDao = sqlSession.getMapper(AskDao.class);
-           
+        Constant.joinDao =  sqlSession.getMapper(JoinDao.class);
 	}
 	
 	@RequestMapping("/admin/notice.do")
@@ -127,6 +129,15 @@ public SqlSession sqlSession;
 	     System.out.println("delete()");
 	     model.addAttribute("request", request);
 	     command = new AskDeleteCommand();
+	     command.execute(model);
+	     return "redirect:/admin/ask.do";
+	 }
+	
+	@RequestMapping("/admin/askreply.do")
+	 public String askreply(HttpServletRequest request, Model model) {
+	     System.out.println("askreply()");
+	     model.addAttribute("request", request);
+	     command = new AskReplyCommand();
 	     command.execute(model);
 	     return "redirect:/admin/ask.do";
 	 }

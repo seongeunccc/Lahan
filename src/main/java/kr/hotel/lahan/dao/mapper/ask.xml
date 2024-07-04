@@ -22,4 +22,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <delete id="delete">
         DELETE FROM askboard WHERE board_num = #{board_num}
     </delete>
+    <insert id="reply">
+        insert into askboard (reply) values (#{param1}) where board_num = #{board_num}
+    </insert>
+   
 </mapper>

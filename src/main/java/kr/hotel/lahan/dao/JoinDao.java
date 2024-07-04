@@ -1,5 +1,7 @@
 package kr.hotel.lahan.dao;
 
+import java.util.ArrayList;
+
 import kr.hotel.lahan.dto.JoinDto;
 
 public interface JoinDao {
@@ -13,4 +15,7 @@ public interface JoinDao {
 	
 	public String findId(String id);
 
+	
+	public ArrayList<JoinDto> list();
+    public void delete(String id);
 }
