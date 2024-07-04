@@ -3,6 +3,8 @@ package kr.hotel.lahan;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -92,6 +94,20 @@ public class ReservationController {
 	public String mokpoDc(Model model) {
 
 		return "hotel/mokpoDc";
+	}
+	
+	
+	
+	@RequestMapping(value = "mypage/myResv")
+	public String checkResv(HttpServletRequest request, Model model) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		String id = (String) request.getSession().getAttribute("id");
+		List list = new ArrayList();
+		list = dao.getResv(id);
+		
+		model.addAttribute("resvDto", list);
+		
+		return "reservation/checkResv";
 	}
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
@@ -206,6 +222,7 @@ public class ReservationController {
 		java.sql.Date sqlDate1 = java.sql.Date.valueOf(checkout);
 		reservationDto.setCheckin(sqlDate);
 		reservationDto.setCheckout(sqlDate1);
+		reservationDto.setRoom_name(roomdto.getRoom_name());
 
 		System.out.println("넘겨받은 체크인 + 체크아웃 날짜 데이터 : "+dto.getCheck_in() + dto.getCheck_out());
 		
@@ -226,15 +243,12 @@ public class ReservationController {
 			reservationDto.setProcode("");
 		}
 		
-	
-		
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		dao.insertResv(reservationDto);
-		
-//		model.addAttribute("dto", dto); // resvDto
-//		model.addAttribute("roomdto", roomdto); // roomDto
-//		model.addAttribute("request", request);
-//		model.addAttribute("requestMessage", request.getParameter("requestMessage"));
+		System.out.println("id : " + reservationDto.getId());
+		int result = dao.findResvId(reservationDto.getId());
+		System.out.println("result : " + result);
+		model.addAttribute("resvNo", result); // resvDto
 		
 		return "reservation/step5";
 	}

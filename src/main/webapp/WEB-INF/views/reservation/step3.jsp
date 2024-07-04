@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>라한 : 예약하기</title>
 
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/라한_jquery.css">
@@ -100,7 +100,7 @@ function discount(){
 	var currentPrice = $("#totalPrice").text()
 	var discountRate = parseFloat($("#discountRate").text())/100;;
 	 var newPrice = currentPrice * (1-discountRate);
-	  $("#totalPrice").text(newPrice.toFixed(0) + " 원");
+	  $("#totalPrice").text(newPrice.toFixed(0));
 }
 
 function goToNextPage(){
@@ -368,7 +368,7 @@ window.onload = function() {
 	<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="${dto.check_Out_Day}">
 	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
 	<!-- RoomDto  -->
-	<input type="hidden" name="room_name" id="room_name" value="">
+	<input type="hidden" name="room_name" id="room_name" value="${roomdto.room_name}">
 	<input type="hidden" name="price" id="price" value="${roomdto.price}">
 	<input type="hidden" name="totalPrices" id="totalPrices" value="">
 	<input type="hidden" name="requestMessage" id="requestMessage" value="">
