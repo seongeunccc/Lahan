@@ -9,8 +9,8 @@
 				<div class="f-box-top">
 					<div class="box-top-inner">
 						<ul class="f-nav-list">
-                            <li><a href="https://www.lahanhotels.com/hub/ko/hotel/brandIntroduce.do" title="라한 브랜드">라한 브랜드<!-- 라한 브랜드 --></a></li>
-							<li><a href="https://www.lahanhotels.com/hub/ko/clublahan/membership.do" title="멤버십">멤버십<!-- 무료멤버십 --></a></li>
+                            <li><a href="${pageContext.request.contextPath}/hotel/brandIntroduce" title="라한 브랜드">라한 브랜드<!-- 라한 브랜드 --></a></li>
+							<li><a href="${pageContext.request.contextPath}/clublahan/membership" title="멤버십">멤버십<!-- 무료멤버십 --></a></li>
 							<li><a href="https://www.lahanhotels.com/hub/ko/notice/generalInfo/list.do" title="공지사항">공지사항<!-- 공지사항 --></a></li>
 							<li><a href="https://www.lahanhotels.com/hub/ko/customer/contact.do" title="제안/제보">제안/제보<!-- 고객문의 --></a></li>
 							<li><a href="https://www.lahanhotels.com/hub/ko/ethical/terms.do" title="윤리경영">윤리경영<!-- 윤리경영 --></a></li>

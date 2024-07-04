@@ -53,7 +53,20 @@ public class ReservationController {
 
 		return "clublahan/membership";
 	}
-
+//	여기부터 지금 추가
+	@RequestMapping(value = "ethical/terms")
+	public String ethical(Model model) {
+		return "reservation/ethical";
+	}
+	@RequestMapping(value = "termsUse/terms")
+	public String termsUse(Model model) {
+		return "reservation/termsUse";
+	}
+	@RequestMapping(value = "terms/terms")
+	public String terms(Model model) {
+		return "reservation/terms";
+	}
+//	여기까지 지금 추가
 	@RequestMapping(value = "hotel/brandIntroduce")
 	public String brandIntroduce(Model model) {
 
