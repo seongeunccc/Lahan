@@ -10,12 +10,13 @@ public class ResvDto {
 	private String check_out_text;
 	private String check_in;
 	private String check_out;
-	private String Prm_code;
+	private String prm_code;
 	private String check_Out_Day;
 	private String check_In_Day;
+	
 	ResvDto(){
 		this.adult = 1;
-		this.adult = 1;
+		this.children = 0;
 	}
 	
 	public int getTotal() {
@@ -91,11 +92,11 @@ public class ResvDto {
 	}
 
 	public String getPrm_code() {
-		return Prm_code;
+		return prm_code;
 	}
 
 	public void setPrm_code(String prm_code) {
-		Prm_code = prm_code;
+		this.prm_code = prm_code;
 	}
 
 	public String getCheck_Out_Day() {

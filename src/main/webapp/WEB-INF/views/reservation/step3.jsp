@@ -208,32 +208,32 @@
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>체크인 / 체크아웃<!-- 체크인 / 체크아웃 --></span>
-											<p><span>2024.07.23 (화) - 2024.07.24 (수)</span><span> 1박<!-- 박 --></span></p>
+											<p><span>${dto.check_in_text} - ${dto.check_out_text}</span><span> ${dto.night}박<!-- 박 --></span></p>
 										</div>
 									</div>
 									<div class="resvbox-wrap-list ty-02">
 										<div class="resvbox-option-left">
 											<span>인원<!-- 인원 --></span>
-											<p>성인<!-- 성인 --> 2 / 소인<!-- 소인 --> 0</p>
+											<p>성인<!-- 성인 --> ${dto.audlt} / 소인<!-- 소인 --> ${dto.children}</p>
 										</div>
 									</div>
 								</div>
 								<div class="resvbox-wrap-right-inner last">
-									<strong class="resvbox-option-tit">[5%할인] 홈페이지 예약 특별가 / 디럭스 더블</strong>
+									<strong class="resvbox-option-tit">${roomdto.room_name}</strong>
 									<div class="resvbox-wrap-list ty-03">
 										<div class="resvbox-wrap-list-inner">
 											<div class="resvbox-option-left">
 												<p>상품 / 객실<!-- 패키지/객실 --></p>
 											</div>
 											<div class="resvbox-option-right">
-												<p>152,000</strong> 원<!-- 원 --></p>
+												<p>${roomdto.price}</strong> 원<!-- 원 --></p>
 											</div>
 										</div>
 									</div>
 									<div class="resvbox-wrap-list ty-03 conseNights-list" id="optionDiv" style="display: none;" >
 										<span>스페셜 옵션<!-- 스페셜 옵션 --></span>
 										
-											<span class="conseNights-subtit" id="0dateSpan" style="display: none;">07/23 (화)</span>
+											<span class="conseNights-subtit" id="0dateSpan" style="display: none;"> 07/23 (화)</span>
 											
 												<div class="resvbox-wrap-list-inner" id="0optDiv0" style="display: none;">
 													<div class="resvbox-option-left">
@@ -294,47 +294,24 @@
 			</section>
 		</div>
 
-		<form id="form" method="post" action="/hub/ko/resv/step3.do">
-			
-
-
-	<input type="hidden" name="adult" id="adult" value="2">
-	<input type="hidden" name="children" id="children" value="0">
-	<input type="hidden" name="night" id="night" value="1">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="2024.07.23 (화)">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="2024.07.24 (수)">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="231">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="HLP1">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="231">
-	<input type="hidden" name="htNm" id="htNm" value="라한호텔 포항">
-	<input type="hidden" name="check_in" id="check_in" value="2024-07-23">
-	<input type="hidden" name="check_out" id="check_out" value="2024-07-24">
-	<input type="hidden" name="sysCode" id="sysCode" value="LHPOH">
-	<input type="hidden" name="room_code" id="room_code" value="DDB">
-	<input type="hidden" name="rate_code" id="rate_code" value="RO5DC">
-	<input type="hidden" name="rate_seq_no" id="rate_seq_no" value="2585">
-	<input type="hidden" name="room_seq_no" id="room_seq_no" value="2414">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="16">
-	<input type="hidden" name="rsvn_reqmatter" id="rsvn_reqmatter" value="">
-	<input type="hidden" name="memberCouponSeq" id="memberCouponSeq" value="">
-	<input type="hidden" name="memberBene" id="memberBene" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="adult=2&children=0&night=1&check_in_text=2024.07.23%20(%ED%99%94)&check_out_text=2024.07.24%20(%EC%88%98)&prm_seq_no=&pms_seq_no=231&SS_PMS_CODE=HLP1&SS_PMS_SEQ_NO=231&htNm=%EB%9D%BC%ED%95%9C%ED%98%B8%ED%85%94%20%ED%8F%AC%ED%95%AD&check_in=2024-07-23&check_out=2024-07-24&sysCode=LHPOH&room_code=&rate_code=&rate_seq_no=&room_seq_no=&hotelCode=16&rsvn_reqmatter=&memberCouponSeq=&memberBene=&step1Param=&step2Param=adult%3D2%26children%3D0%26night%3D1%26check_in_text%3D2024.07.23%2520(%25ED%2599%2594)%26check_out_text%3D2024.07.24%2520(%25EC%2588%2598)%26prm_seq_no%3D%26pms_seq_no%3D231%26SS_PMS_CODE%3DHLP1%26SS_PMS_SEQ_NO%3D231%26htNm%3D%25EB%259D%25BC%25ED%2595%259C%25ED%2598%25B8%25ED%2585%2594%2520%25ED%258F%25AC%25ED%2595%25AD%26check_in%3D2024-07-23%26check_out%3D2024-07-24%26sysCode%3DLHPOH%26room_code%3D%26rate_code%3D%26rate_seq_no%3D%26room_seq_no%3D%26hotelCode%3D16%26rsvn_reqmatter%3D%26memberCouponSeq%3D%26memberBene%3D%26step1Param%3D%26step2Param%3Dadult%253D2%2526children%253D0%2526night%253D1%2526check_in_text%253D2024.07.23%252520(%2525ED%252599%252594)%2526check_out_text%253D2024.07.24%252520(%2525EC%252588%252598)%2526check_in%253D2024-07-23%2526check_out%253D2024-07-24%2526prm_seq_no%253D%2526pms_seq_no%253D231%2526SS_PMS_CODE%253DHLP1%2526SS_PMS_SEQ_NO%253D231%2526Prm_code%253D%2526htNm%253D%2525EB%25259D%2525BC%2525ED%252595%25259C%2525ED%252598%2525B8%2525ED%252585%252594%252520%2525ED%25258F%2525AC%2525ED%252595%2525AD%2526sysCode%253DLHPOH%2526hotelCode%253D16%2526step1Param%253D%2526step2Param%253D%2526step3Param%253D%2526step4Param%253D%2526month%253D%2526year%253D%2526searchRoomCode%253D%2526searchRateCode%253D%2526step2Type%253D%26step3Param%3D%26step4Param%3D%26langCode%3Dko%26searchRoomCode%3D%26searchRateCode%3D%26step2Type%3Dpackage%26step2Sort%3D%26month%3D%26year%3D%26searchRoomDivisArr%3D&step3Param=&step4Param=&langCode=ko&searchRoomCode=&searchRateCode=&step2Type=room&step2Sort=&month=&year=&searchRoomDivisArr=">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input type="hidden" name="langCode" id="langCode" value="ko">
-	<input type="hidden" name="searchRoomCode" id="searchRoomCode" value="">
-	<input type="hidden" name="searchRateCode" id="searchRateCode" value="">
-
-
-
-
-
-			<input type="hidden" name="spclHtml" id="spclHtml">
-			<input type="hidden" name="optHtml" id="optHtml">
-
-		</form>
+<form id="form" method="post" action="./test">
+	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
+	<input type="hidden" name="children" id="children" value="${dto.children}">
+	<input type="hidden" name="night" id="night" value="${dto.night}">
+	<input type="hidden" name="check_in_text" id="check_in_text" value="${dto.check_in_text}">
+	<input type="hidden" name="check_out_text" id="check_out_text" value="${dto.check_out_text}">
+	<input type="hidden" name="hotel" id="hotel" value="${dto.hotel}">
+	<input type="hidden" name="check_in" id="check_in" value="${dto.check_in}">
+	<input type="hidden" name="check_out" id="check_out" value="${dto.check_out}">
+	<input type="hidden" name="total" id="total" value="${dto.total}">
+	<input type="hidden" name="prm_code" id="prm_code" value="${dto.prm_code}">
+	<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="${dto.check_Out_Day}">
+	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
+	<!-- RoomDto  -->
+	<input type="hidden" name="room_name" id="room_name" value="">
+	<input type="hidden" name="price" id="price" value="${dto.price}">
+	
+	</form>
 	</div>
 
 	<script>

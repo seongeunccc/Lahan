@@ -97,5 +97,4 @@ public class RoomDto {
 		this.price = price;
 	}
 	
-	
 }

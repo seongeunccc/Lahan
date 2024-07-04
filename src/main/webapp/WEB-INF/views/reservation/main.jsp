@@ -174,6 +174,7 @@ window.onload = function() {
 setCalendar();
 removeOffClass();
 };
+
 //프로모션 코드 유효성 검사 / 비동기 fetch
 function setPromo() {
   	 var promoCode = $("#prtmCode").val();

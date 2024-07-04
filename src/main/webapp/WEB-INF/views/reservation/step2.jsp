@@ -100,7 +100,27 @@
 			z-index: 9999;
 		}
      </style>
+	<script>
+	function goToResvStep3(roomName){
+/* 		document.getElementById('adult').value = document.getElementById('num1').value;
+		document.getElementById('children').value = document.getElementById('num2').value;
+		$('#night').val($('#nightText').text());
+	 	$("#check_in_text").val($("#checkInDate").val() +" "+$("#checkInDay").text()); // 체크인 텍스트 
+		$("#check_out_text").val($("#checkOutDate").val() +" "+$("#checkOutDay").text()); // 체크아웃 텍스트
+	    $("#check_in").val($("#checkInDate").val().replace(/\./gi, "-").trim()); // 체크인 날짜
+	    $("#check_out").val($("#checkOutDate").val().replace(/\./gi, "-").trim()); // 체크아웃 날짜
+	    $("#check_In_Day").val($("#checkInDay").text());
+	    $("#check_Out_Day").val($("#checkOutDay").text());
+	     */
+	   
+	    $('#room_name').val(roomName);
+		document.getElementById('form').submit();
+	}
 
+
+	</script>
+	
+	
 </head>
 <body>
     <div class="wrap sub">
@@ -193,8 +213,7 @@
 						<!-- 4. 재검색/ 예약 첫 페이지로 이동합니다 -->
 						<a href="${pageContext.request.contextPath}/resv/step1" title="재검색" class="m-btn-resv btn-navy">재검색<!-- 재검색 --></a>
 					</div>
-					
-					
+
 					<!-- 패키지, 객실, 회원전용 탭 메뉴 -->
 					<div class="tab-contents">
 						<ul class="tab-contents-list">
@@ -222,7 +241,7 @@
 										<div class="content-info-show">
 											<div class="contents-info-left">
 												<!--  이미지 들어오는 부분 -->
-												<img src="https://www.lahanhotels.com/util/file/download.do?fileSn=153388&sysCode=LHPOH" alt=""/>
+												<img src="${dto.url} " alt=""/>
 											</div>
 											<div class="contents-info-right">
 												<div class="info-bottom-inner ty-02">
@@ -231,98 +250,59 @@
 														<a href="#none" onclick="packageInfo(this,'DDB')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
 													</p><!-- 패키지설명 popup 불러오기 -->
 													
-<div class="cont-room-type">
-<dl>		
-	<dt>투숙인원</dt>	
-	<dd>${dto.room_min}인 (최대 ${dto.room_max}인)</dd>	
-</dl>		
-<dl>		
-	<dt>침대타입</dt>	
-	<dd>${dto.bed_type}</dd>	
-</dl>		
-<dl>		
-	<dt>면적</dt>	
-	<dd>	
-		${dto.room_size}
-	</dd>	
-</dl>		
+													<div class="cont-room-type">
+													<dl>		
+														<dt>투숙인원</dt>	
+														<dd>${dto.room_min}인 (최대 ${dto.room_max}인)</dd>	
+													</dl>		
+													<dl>		
+														<dt>침대타입</dt>	
+														<dd>${dto.bed_type}</dd>	
+													</dl>		
+													<dl>		
+														<dt>면적</dt>	
+														<dd>	
+															${dto.room_size}
+														</dd>	
+													</dl>		
 
-														</div>
+												</div>
 														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>${dto.price}</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="곧수정예정()" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
+												<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>${dto.price}</b>원 ~<!-- 원 ~ --></p>
+												<button type="button" onclick="goToResvStep3('${dto.room_name}')" class="btn-select btn-gold"><span>예약하기<!-- 객실 선택 --></span></button>
 												</div>
 											</div>
 										</div>
-										<div class="content-info-hide" id="packRoom11632">
-
+										<div class="content-info-hide" id="">
 										</div>
 									</li>
 								</c:forEach>
-								
-								
-					
 							</ul>
 						</div>
-						
-						
-					
-					<!-- ####### 패키지 ####### -->
-
-					<!-- ####### 룸 ####### -->
-					
-					<!-- ####### 룸 ####### -->
 
 
 					<!-- 컨텐츠 끝 -->
 				</div>
 			</section>
-			<form id="form" method="post" action="/api/resv/step3.do">
-				
-
-
-	<input type="hidden" name="adult" id="adult" value="2">
-	<input type="hidden" name="children" id="children" value="0">
-	<input type="hidden" name="night" id="night" value="1">
-	<input type="hidden" name="check_in_text" id="check_in_text" value="2024.07.16 (화)">
-	<input type="hidden" name="check_out_text" id="check_out_text" value="2024.07.17 (수)">
-	<input type="hidden" name="prm_seq_no" id="prm_seq_no" value="">
-	<input type="hidden" name="pms_seq_no" id="pms_seq_no" value="231">
-	<input type="hidden" name="SS_PMS_CODE" id="SS_PMS_CODE" value="HLP1">
-	<input type="hidden" name="SS_PMS_SEQ_NO" id="SS_PMS_SEQ_NO" value="231">
-	<input type="hidden" name="htNm" id="htNm" value="라한호텔 포항">
-	<input type="hidden" name="check_in" id="check_in" value="2024-07-16">
-	<input type="hidden" name="check_out" id="check_out" value="2024-07-17">
-	<input type="hidden" name="sysCode" id="sysCode" value="LHPOH">
-	<input type="hidden" name="room_code" id="room_code" value="">
-	<input type="hidden" name="rate_code" id="rate_code" value="">
-	<input type="hidden" name="rate_seq_no" id="rate_seq_no" value="">
-	<input type="hidden" name="room_seq_no" id="room_seq_no" value="">
-	<input type="hidden" name="hotelCode" id="hotelCode" value="16">
-	<input type="hidden" name="rsvn_reqmatter" id="rsvn_reqmatter" value="">
-	<input type="hidden" name="memberCouponSeq" id="memberCouponSeq" value="">
-	<input type="hidden" name="memberBene" id="memberBene" value="">
-	<input type="hidden" name="step1Param" id="step1Param" value="">
-	<input type="hidden" name="step2Param" id="step2Param" value="adult=2&children=0&night=1&check_in_text=2024.07.16%20(%ED%99%94)&check_out_text=2024.07.17%20(%EC%88%98)&check_in=2024-07-16&check_out=2024-07-17&prm_seq_no=&pms_seq_no=231&SS_PMS_CODE=HLP1&SS_PMS_SEQ_NO=231&Prm_code=&htNm=%EB%9D%BC%ED%95%9C%ED%98%B8%ED%85%94%20%ED%8F%AC%ED%95%AD&sysCode=LHPOH&hotelCode=16&step1Param=&step2Param=&step3Param=&step4Param=&month=&year=&searchRoomCode=&searchRateCode=&step2Type=">
-	<input type="hidden" name="step3Param" id="step3Param" value="">
-	<input type="hidden" name="step4Param" id="step4Param" value="">
-	<input type="hidden" name="langCode" id="langCode" value="ko">
-	<input type="hidden" name="searchRoomCode" id="searchRoomCode" value="">
-	<input type="hidden" name="searchRateCode" id="searchRateCode" value="">
-
-
-
-
-
-				<input type="hidden" name="step2Type" id="step2Type" value="package">
-				<input type="hidden" name="step2Sort" id="step2Sort" value="">
-				<input id="searchMonth" name="month" value="" type="hidden">
-				<input id="searchYear" name="year" value="" type="hidden">
-				<input id="searchRoomDivisArr" name="searchRoomDivisArr" value="" type="hidden">
-			</form>
-		</div>
+	<form id="form" method="post" action="./test">
+	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
+	<input type="hidden" name="children" id="children" value="${dto.children}">
+	<input type="hidden" name="night" id="night" value="${dto.night}">
+	<input type="hidden" name="check_in_text" id="check_in_text" value="${dto.check_in_text}">
+	<input type="hidden" name="check_out_text" id="check_out_text" value="${dto.check_out_text}">
+	<input type="hidden" name="hotel" id="hotel" value="${dto.hotel}">
+	<input type="hidden" name="check_in" id="check_in" value="${dto.check_in}">
+	<input type="hidden" name="check_out" id="check_out" value="${dto.check_out}">
+	<input type="hidden" name="total" id="total" value="${dto.total}">
+	<input type="hidden" name="prm_code" id="prm_code" value="${dto.prm_code}">
+	<input type="hidden" name="check_Out_Day" id="check_Out_Day" value="${dto.check_Out_Day}">
+	<input type="hidden" name="check_In_Day" id="check_In_Day" value="${dto.check_In_Day}">
+	<!-- RoomDto  -->
+	<input type="hidden" name="room_name" id="room_name" value="">
+	<input type="hidden" name="price" id="price" value="${dto.price}">
+	
+	</form>
+	</div>
 
 	</div>
 	<!-- 객실 설명 -->
@@ -342,7 +322,6 @@
 
 		</div>
 	</div>
-
 	<script>
 	const langCode = "ko";
 	const loignUrl = window.location.origin+"/hub/"+langCode+"/login/loginForm.do?nextURL="+window.location.href+"?"+$('#form').serialize();
@@ -443,58 +422,7 @@
 		alert(txt);
 	}
 
-	//객설 설명
-	function roomInfo(e, room_code){
-		$("#room_code").val(room_code);
 
-		$.ajax({
-			type : "POST"
-			,url : "/api/resv/roomInfo.do"
-			,cache : false
-			,dataType : "html"
-			,data : $("#form").serialize()
-			,async : true
-			,success:function(data){
-				$("#roomDetailPop").html(data);
-			},
-			error:function(r, s, e){
-				alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
-			},
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-
-		});
-	}
-
-	//패키지 설명
-	function packageInfo(e, rate_code){
-		$("#rate_code").val(rate_code);
-
-		$.ajax({
-			type : "POST"
-			,url : "/api/resv/packageInfo.do"
-			,cache : false
-			,dataType : "html"
-			,data : $("#form").serialize()
-			,async : true
-			,success:function(data){
-				$("#packDetailPop").html(data);
-			},
-			error:function(r, s, e){
-				alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
-			},
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-	}
 
 	function step2Page(type){
 		$("#step2Sort").val("");
@@ -530,87 +458,7 @@
 		$("#form").submit();
 	}
 
-	function next(room_seq_no, rate_seq_no, rate_code, goLogin){
-		if($("#step2Type").val()=="member"){
-			const isLogin = "false";
-			if(isLogin == "false"){
-				alert("해당 상품은클럽라한 회원에게만 제공됩니다.\n로그인페이지로 이동합니다."); /* 해당 상품은클럽라한 회원에게만 제공됩니다.\n로그인페이지로 이동합니다. */
-				location.href = loignUrl;
-				return;
-			} else {
-				var sysCode = $("#sysCode").val();
 	
-				$.ajax({
-					type : "GET"
-					,url : "/hub/api/resv/resveHistChk.json?sysCode="+sysCode+"&check_in="+$("#check_in").val()
-					,cache : false
-					,async : true
-					,success:function(data){
-						if(data.isLogin === true) {
-							var roomCnt = 5;
-							if(sysCode === "LHGYJ") {	// 경주
-								roomCnt = 5;
-							} else {
-								roomCnt = 3;
-							}
-							if(data.result >= roomCnt) {
-								alert("체크인 날짜 기준, 예약 가능한 횟수를 초과하였습니다. 추가 문의사항은 통합예약실(1644-8005)로 연락 바랍니다.");
-								return;
-							}
-						} 
-						
-						$("#room_seq_no").val(room_seq_no);
-						$("#rate_code").val(rate_code);
-						$("#rate_seq_no").val(rate_seq_no);
-
-						//호텔 선택여부
-						if($("#pms_seq_no").val() == "" || $("#SS_PMS_SEQ_NO").val() == "" || $("#SS_PMS_CODE").val() == ""){
-							alert("호텔을 선택해주세요.");
-							return;
-						}
-
-						//객실 / 패키지 선택 여부
-						if($("#room_seq_no").val() == "" || $("#rate_seq_no").val() == "" || $("#rate_code").val() == "" ){
-							alert("호텔을 선택해주세요.");
-							return;
-						}
-
-						showLoading();
-						$("#form").attr("action","/hub/ko/resv/step3.do");
-						$("#form").submit();
-						
-					},
-					error:function(r, s, e){
-						alert(alertAjaxError.replace("{1}", r.status).replace("{2}", r.responseText));
-					}
-				});
-				
-				
-			}
-		} else {			
-			$("#room_seq_no").val(room_seq_no);
-			$("#rate_code").val(rate_code);
-			$("#rate_seq_no").val(rate_seq_no);
-	
-			//호텔 선택여부
-			if($("#pms_seq_no").val() == "" || $("#SS_PMS_SEQ_NO").val() == "" || $("#SS_PMS_CODE").val() == ""){
-				alert("호텔을 선택해주세요.");
-				return;
-			}
-	
-			//객실 / 패키지 선택 여부
-			if($("#room_seq_no").val() == "" || $("#rate_seq_no").val() == "" || $("#rate_code").val() == "" ){
-				alert("호텔을 선택해주세요.");
-				return;
-			}
-	
-			showLoading();
-			$("#form").attr("action","/hub/ko/resv/step3.do");
-			$("#form").submit();
-		}
-
-	}
-
 	//재검색
 	function reSearch(){
 		$("#rate_seq_no").val("");

@@ -161,11 +161,13 @@ public class ReservationController {
 	@RequestMapping(value = "resv/step2", method = RequestMethod.POST)
 	public String test(HttpServletRequest request, Model model, ResvDto dto) {
 		dto.setTotal(dto.getAdult()+dto.getChildren());
+		System.out.println(dto.getCheck_In_Day());
 		model.addAttribute("dto", dto);
 		model.addAttribute("request", request);
 		
 		
 		System.out.println("adult : "+ dto.getAdult());
+		System.out.println("total : "+ dto.getTotal());
 		System.out.println("호텔이름 : "+ (dto.getHotel()));
 		
 		
@@ -173,5 +175,19 @@ public class ReservationController {
 		command.execute(model);
 		
 		return "reservation/step2";
+	}
+	@RequestMapping(value = "resv/test", method = RequestMethod.POST)
+	public String test1(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
+		dto.setTotal(dto.getAdult()+dto.getChildren());
+		System.out.println(dto.getCheck_In_Day());
+		
+		model.addAttribute("dto", dto);
+		model.addAttribute("roomdto", roomdto);
+		model.addAttribute("request", request);
+
+		
+	
+		
+		return "reservation/step3";
 	}
 }
