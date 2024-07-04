@@ -276,7 +276,7 @@
 					<!-- 컨텐츠 끝 -->
 				</div>
 			</section>
-	<form id="form" method="post" action="./test">
+	<form id="form" method="post" action="${pageContext.request.contextPath}/resv/step3">
 	<input type="hidden" name="adult" id="adult" value="${dto.adult}">
 	<input type="hidden" name="children" id="children" value="${dto.children}">
 	<input type="hidden" name="night" id="night" value="${dto.night}">
