@@ -342,7 +342,7 @@ window.onload = function() {
 									
 										<div class="btn-inline-box"><!-- 기본 및 비회원일 때 -->
 											<a href="#none" title="비회원예약" onclick="goToNextPage()" class="btn-memResv btn-gold-line">비회원예약<!-- 비회원예약 --></a>
-											<a href="#none" title="회원예약" onclick="loginPage()" class="btn-memResv btn-gold">회원예약<!-- 회원예약 --></a>
+											<a href="#none" title="회원예약" onclick="goToNextPage()" class="btn-memResv btn-gold">회원예약<!-- 회원예약 --></a>
 										</div>
 									
 								</div>
