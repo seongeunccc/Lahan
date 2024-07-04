@@ -224,13 +224,13 @@
 	               <div class="sub-visual-list">	                  
 	                  <div class="sub-nav-wrap bgType dotColor1">
 	                     	                     <ul class="sub-nav">
-	                        <li><a href="/lahan/admin/notice.do" class="on">공지사항</a></li>
-	                        <li><a href="/lahan/admin/ask.do">1:1문의하기</a>	</li>
+	                        <li><a href="/lahan/admin/notice.do" >공지사항</a></li>
+	                        <li><a href="/lahan/admin/ask.do" class="on">1:1문의하기</a>	</li>
 	                     </ul>
 	                  </div>	                  
 	                  	<div class="sub-visual-txt brand-lahan">
-	                  		<h3 class="sub-tit02">NOTICE</h3>
-                            <p>Lahan hotel의 공지사항을 관리하세요.</p>
+	                  		<h3 class="sub-tit02">Q and A</h3>
+                            <p>Lahan hotel 고객님들의 의견을 확인하세요.</p>
 	                  	</div>
 	                	<img src="${pageContext.request.contextPath}/resources/images/admin_notice_topimg.jpg" alt="sub visual">
 	               </div>
@@ -242,7 +242,7 @@
 			<section class="sub-contents">
 				<div class="sub-contents-wrap ty-01">
 					<!-- 컨텐츠 시작 -->
-					<button onclick="window.location.href='/lahan/admin/noticeadd.do'" class="more_btn">추가</button>
+					<button onclick="window.location.href='/lahan/ask/add.do'" class="more_btn">추가</button>
 					
 					<div id="container" class="container">
     
@@ -259,13 +259,13 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="notice" items="${list}">
+            <c:forEach var="ask" items="${list}">
                 <tr>
-                    <td>${notice.board_num}</td>
+                    <td>${ask.board_num}</td>
                     <td>
-                        <a href="noticeview.do?board_num=${notice.board_num}">${notice.title}</a>
+                        <a href="ask.do?board_num=${ask.board_num}">${ask.title}</a>
                     </td>
-                    <td>${notice.date}</td>
+                    <td>${ask.date}</td>
                 </tr>
             </c:forEach>
         </tbody>

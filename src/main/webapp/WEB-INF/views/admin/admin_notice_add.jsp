@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -13,7 +11,7 @@
     <title>라한</title>
     <meta http-equiv="content-language" content="kr">
 	<meta name="robots" content="index,follow">
-	<meta name="title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="title" content="LA HAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
 	<meta name="author" content="라한셀렉트">
 	<meta name="description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
 	<meta name="keywords" content="라한호텔, 라한셀렉트, 라한호텔 경주, 라한호텔 포항, 라한호텔 전주, 호텔현대 바이 라한 울산, 호텔현대 바이 라한 목포">
@@ -75,23 +73,6 @@
     })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
     <!-- End Google Tag Manager -->
     <style>
-       .myInfoList {
-            width: 100%;
-            border-collapse: collapse;
-			
-        }
-        .myInfoList th, .myInfoList td {
-            border: 1px solid #ddd;
-            padding: 8px;
-             text-align: center;
-        }
-        .myInfoList th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: #f2f2f2;
-        }
-        
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -149,7 +130,6 @@
 			z-index: 9999;
 		}
      </style>
-      
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -237,50 +217,64 @@
 	            </div>
 	         </section>
 			
-			
-			
 			<section class="sub-contents">
 				<div class="sub-contents-wrap ty-01">
 					<!-- 컨텐츠 시작 -->
-					<button onclick="window.location.href='/lahan/admin/noticeadd.do'" class="more_btn">추가</button>
+					<div class="sub-cont-tit">
+						<h3 class="sub-tit02">ADD NOTICE</h3>
+					</div>
 					
-					<div id="container" class="container">
-    
-  
-            <div>
+					
+					<div class="hotel_cont_wrap">
+					
+					
+            <form action="/lahan/admin/noticeadding.do" method="post">
+   <div class="intList-wrap">
+						<div class="intList-tit-wrap">
+							<h3><!-- 문의내용 -->공지사항</h3>
+							
+						</div>
+						<ul class="intList">
+							<li>
+								
+								<div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 제목 -->제목</span>
+										<div class="txt-wrap">
+											<div class="input-wrap"><!-- 제목 입력해 주세요. -->
+											  <input name="title" id="title" type="text" placeholder="제목 입력해 주세요." >
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 내용 -->내용</span>
+										<div class="txt-wrap">
+											<div class="input-wrap"><!-- 내용을 입력해 주세요.  최대 2,000byte 까지 입력이 가능합니다. -->
+											  <textarea name="contents" id="contents" cols="30" rows="10" onkeyup="fnChkByte(this,'2000');" placeholder="내용을 입력해 주세요." ></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							
+						</ul>
+					</div>
+						<div class="btn-inline-box">
+						<button type="submit" class="btn btn-gold"><!-- 문의글 전송하기 -->등록하기</button>
+					</div>
+</form>
 
-               <div>
-    <table class="myInfoList">
-        <thead>
-            <tr>
-                <th style="width: 60px;">번호</th>
-                <th style="width: 200px;">제목</th>
-                <th style="width: 100px;">게시일</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="notice" items="${list}">
-                <tr>
-                    <td>${notice.board_num}</td>
-                    <td>
-                        <a href="noticeview.do?board_num=${notice.board_num}">${notice.title}</a>
-                    </td>
-                    <td>${notice.date}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-</div>
-		</div>
-		</div>
-		</div>
-		
-		</section>
-		</div>
+					</div>
+					
+					
+					<!-- 컨텐츠 끝 -->
 				</div>
-	
-		
-		
+			
+			</section>
+			
 		<footer id="footer" class="footer">
 			<!--(FOOTER 최종수정일 : 2023-02-28 08:19)-->
 
