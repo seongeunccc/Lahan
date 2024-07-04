@@ -50,11 +50,7 @@ public class ReservationController {
 		return "reservation/step1";
 	}
 
-//	@RequestMapping(value = "resv/step2")
-	public String step2(Model model) {
 
-		return "reservation/step2";
-	}
 
 	@RequestMapping(value = "resv/step3")
 	public String step3(Model model) {
@@ -176,13 +172,22 @@ public class ReservationController {
 		
 		return "reservation/step2";
 	}
+	
+	
 	@RequestMapping(value = "resv/test", method = RequestMethod.POST)
 	public String test1(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
 		dto.setTotal(dto.getAdult()+dto.getChildren());
 		System.out.println(dto.getCheck_In_Day());
 		
-		model.addAttribute("dto", dto);
-		model.addAttribute("roomdto", roomdto);
+		//프로모션 코드 있으면 값 넘김
+		if(dto.getPrm_code()!=null&&!dto.getPrm_code().equals("")) {
+			System.out.println("프로모션 코드 : "+dto.getPrm_code());
+			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
+			model.addAttribute("proCodeDto", proCodeDto);
+		}
+		model.addAttribute("dto", dto); //resvDto
+		model.addAttribute("roomdto", roomdto); //roomDto
 		model.addAttribute("request", request);
 
 		
