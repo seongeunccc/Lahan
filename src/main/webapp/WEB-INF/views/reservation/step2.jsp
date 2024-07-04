@@ -119,6 +119,8 @@
 			<section class="sub-contents">
 				<div class="sub-contents-wrap resv-contents">
 					<!-- 컨텐츠 시작 -->
+					
+					<c:set var="resv" value="${dto}"/>
 					<div class="resvStepWrap">
 						<ul>
 							<li>
@@ -145,7 +147,7 @@
 								<!-- 1. 호텔 -->
 								<div class="m-resv-list step1">
 									<span class="selected-badge">호텔<!-- 호텔 --></span>
-									<p id="htNmText">라한호텔 포항</p>
+									<p id="htNmText">${dto.hotel}</p>
 								</div>
 								<!-- 2. 날짜 -->
 								<div class="m-resv-list step2 revArea">
@@ -155,23 +157,20 @@
 										<div class="resv-step2-box">
 											<div>
 												<div class="resv-selected-txt checkDate" id="ChekinDate">
-													<span id="chkInDate">${ } </span>
-													<span class="mini-date" id="ckinDay">(화)</span>
+													<span id="chkInDate">${dto.check_in} </span>
+													<span class="mini-date" id="ckinDay">${dto.check_In_Day}</span>
 												</div>
 											</div>
 											<span class="code-text">−</span>
 											<div>
 												<div class="resv-selected-txt checkDate" id="ChekoutDate">
-													<span id="chkOutDate">2024.07.17 </span>
-													<span class="mini-date" id="ckoutDay">(수)</span>
+													<span id="chkOutDate"> ${dto.check_out} </span>
+													<span class="mini-date" id="ckoutDay">${dto.check_Out_Day}</span>
 												</div>
 											</div>
-											<p class="night-txt"><span id="nightText">1</span>박<!-- 박 --></p>
+											<p class="night-txt"><span id="nightText">${dto.night}</span>박<!-- 박 --></p>
 										</div>
-										<!-- 달력 -->
-										<div class="mainCalendar clearCont">
-											<div class="calContainer calendarS"></div>
-										</div>
+										
 									</div>
 								</div>
 								<!-- 3. 인원 -->
@@ -179,57 +178,38 @@
 									<span class="selected-badge first">성인<!-- 성인 --></span>
 									<div class="numPeople">
 										<button type="button" count_range="minus" class="ppBtn btnDown" onclick="minus('num1',this,1)"></button><!-- 더이상 줄지 않을때 blank 클래스추가해주세요 -->
-										<input type="text" class="count" name="num1" id="num1" value="2" readonly="readonly">
+										<input type="text" class="count" name="num1" id="num1" value="${dto.adult}" readonly="readonly">
 										<button type="button" count_range="plus" class="ppBtn btnUp" onclick="plus('num1',this)"></button><!-- 더이상 눌리지 않을때 blank 클래스추가해주세요 -->
 									</div>
 									<span class="selected-badge last">소인<!-- 소인 --></span>
 									<div class="numPeople">
 										<button type="button" count_range="minus" class="ppBtn btnDown" onclick="minus('num2',this,0)"></button><!-- 더이상 줄지 않을때 blank 클래스추가해주세요 -->
-										<input type="text" class="count" name="num2" id="num2" value="0" readonly="readonly">
+										<input type="text" class="count" name="num2" id="num2" value="${dto.children}" readonly="readonly">
 										<button type="button" count_range="plus" class="ppBtn btnUp" onclick="plus('num2',this)"></button><!-- 더이상 눌리지 않을때 blank 클래스추가해주세요 -->
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- 4. 재검색/ 예약 첫 페이지로 이동합니다 -->
-						<a href="#none" onclick="reSearch()" title="재검색" class="m-btn-resv btn-navy">재검색<!-- 재검색 --></a>
+						<a href="${pageContext.request.contextPath}/resv/step1" title="재검색" class="m-btn-resv btn-navy">재검색<!-- 재검색 --></a>
 					</div>
+					
+					
 					<!-- 패키지, 객실, 회원전용 탭 메뉴 -->
-
 					<div class="tab-contents">
 						<ul class="tab-contents-list">
-							<li class="active" onclick="step2Page('package')"><a href="#none" title="패키지/상품">패키지/상품<!-- 패키지/상품 --></a></li>
 							<li  onclick="step2Page('room')"><a href="#none" title="객실">객실<!-- 객실 --></a></li>
-							<li  onclick="step2Page('member')"><a href="#none" title="회원전용">회원전용<!-- 회원전용 --></a></li>
 						</ul>
 						
 						<div class="club-joinbox">
 							<span>CLUB LAHAN</span>
 							<p>지금 바로 무료멤버십 가입하고, 포인트 적립 및 할인혜택을 받으세요!<!-- 지금 바로 무료멤버십 가입하고, 포인트 적립 및 할인혜택을 받으세요! --></p>
-							<a href="/hub/ko/join/step1.do" title="멤버십 가입하기">멤버십 가입하기<!-- 멤버십 가입하기 --></a>
+							<a href="${pageContext.request.contextPath}/join/step1" title="멤버십 가입하기">멤버십 가입하기<!-- 멤버십 가입하기 --></a>
 						</div>
 						
 						
-						<div class="recommond-contents row-reverse-list">
-							<div class="recommond-box select">
-								<div class="as-select selected">
-									
-										<span class="select-recommond selected-value">추천순<!-- 추천순 --></span>
-									
-									
-									
-									
-								</div>
-								<ul class="recommond-wrap">
-									<li class="option" onclick="setSort('r')">추천순<!-- 추천순 --></li>
-									<li class="option" onclick="setSort('lp')">낮은가격순<!-- 낮은가격순 --></li>
-									<li class="option" onclick="setSort('hp')">높은가격순<!-- 높은가격순 --></li>
-									<li class="option" onclick="setSort('d')">최신순<!-- 최신순 --></li>
-								</ul>
-							</div>
-						</div>
-						
-						
+					<div class="recommond-contents row-reverse-list">
+
 					</div>
 
 					<!-- ####### 패키지 ####### -->
@@ -237,31 +217,40 @@
 						
 						<div class="tab-contents-info2">
 							<ul>
-								
-									<li>
+								<c:forEach var="dto" items="${roomList}">
+									<li class="roomLi" room-divison="NOMAL">
 										<div class="content-info-show">
 											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시즌</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=257747&sysCode=LHPOH" alt=""/>
+												<!--  이미지 들어오는 부분 -->
+												<img src="https://www.lahanhotels.com/util/file/download.do?fileSn=153388&sysCode=LHPOH" alt=""/>
 											</div>
 											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">여행의 백미 with 백미당</p>
-													<p class="cont-pack">달콤한 백미당 아이스크림과 시원한 여름 호캉스 즐기기</p>
-													<p class="cont-info">객실 1박 + 조식 2인 + 백미당 아이스크림 2개 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2024.07.01 &#45; 2024.08.31</p>
+												<div class="info-bottom-inner ty-02">
+													<p class="cont-tit">${dto.room_name }</p>
 													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'BMD1')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
+														<a href="#none" onclick="packageInfo(this,'DDB')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
 													</p><!-- 패키지설명 popup 불러오기 -->
 													
+<div class="cont-room-type">
+<dl>		
+	<dt>투숙인원</dt>	
+	<dd>${dto.room_min}인 (최대 ${dto.room_max}인)</dd>	
+</dl>		
+<dl>		
+	<dt>침대타입</dt>	
+	<dd>${dto.bed_type}</dd>	
+</dl>		
+<dl>		
+	<dt>면적</dt>	
+	<dd>	
+		${dto.room_size}
+	</dd>	
+</dl>		
+
+														</div>
 														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>173,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'11632','BMD1')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
+															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>${dto.price}</b>원 ~<!-- 원 ~ --></p>
+															<button type="button" onclick="곧수정예정()" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
 														
 													
 												</div>
@@ -271,279 +260,10 @@
 
 										</div>
 									</li>
+								</c:forEach>
 								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시즌</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=230550&sysCode=LHPOH" alt="    "/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">레디 투 트래블 with 위글위글</p>
-													<p class="cont-pack">여행하기 좋은 이 달, 라한호텔과 위글위글이 준비한 레디백 받고, 특별한 호캉스 즐기기!</p>
-													<p class="cont-info">객실 1박 + 위글위글 레디백 1개 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2024.05.02 &#45; 2024.07.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'RTT')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>138,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'11012','RTT')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom11012">
-
-										</div>
-									</li>
 								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시그니처</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=95067&sysCode=LHPOH" alt="나혼포 썸네일"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">나 혼자 포항</p>
-													<p class="cont-pack">비즈니스 고객을 위한 여유로운 구성의 맞춤 혜택</p>
-													<p class="cont-info">객실 + 조식 뷔페 1인 + 주중 14시 체크인</p>
-													<p class="cont-date">2022.12.14 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'SAP')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>153,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'1564','SAP')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom1564">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시그니처</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=95220&sysCode=LHPOH" alt="BED&amp;BREAKFAST 썸네일"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">BED & BREAKFAST</p>
-													<p class="cont-pack">요일 별 특선 메뉴로 매일 맛있는 조식 뷔페</p>
-													<p class="cont-info">객실 + 조식 뷔페 2인 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2023.01.01 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'BFINC1')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>173,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'7304','BFINC1')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom7304">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시즌</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=239603&sysCode=LHPOH" alt=""/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">스페셜 쿠폰</p>
-													<p class="cont-pack">3인 이상 투숙 고객에게 안성맞춤</p>
-													<p class="cont-info">객실 1박(코리안, 스위트타입 객실 한정) + 쿠폰 2종(조식 2인 이용시 추가 1인 무료, 엑스트라베드 또는 이불 1채 무료제공)</p>
-													<p class="cont-date">2024.04.22 &#45; 2024.08.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'SCOU')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>134,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'11138','SCOU')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom11138">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시그니처</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=237936&sysCode=LHPOH" alt="bar"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">[5%할인] 홈페이지 예약 특별가</p>
-													<p class="cont-pack">라한호텔을 이용할 수 있는 최적가 상품</p>
-													<p class="cont-info">룸온니 상품</p>
-													<p class="cont-date">2023.01.01 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'RO5DC')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>133,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'2585','RO5DC')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom2585">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">시그니처</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=224802&sysCode=LHPOH" alt="OCEAN BUBBLE 썸네일"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">OCEAN HEALING</p>
-													<p class="cont-pack">  </p>
-													<p class="cont-info">객실 1박 + 조식 2인 + 사해소금 입욕제 1종 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2024.03.22 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'OCHL')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>174,000</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'10911','OCHL')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom10911">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">스위트</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=212063&sysCode=LHPOH" alt="1"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">스윗 스위트</p>
-													<p class="cont-pack">스위트 객실에서 즐기는 스윗한 시간</p>
-													<p class="cont-info">스위트 객실 1박 + 컵와인 2개 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2024.02.01 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'SWS')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>220,400</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'10497','SWS')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom10497">
-
-										</div>
-									</li>
-								
-									<li>
-										<div class="content-info-show">
-											<div class="contents-info-left">
-												<span class="badge-box">
-													
-														<i class="cont-badge badge-ty01">스위트</i>
-													
-												</span>
-												<img src="https://www.lahanhotels.com//util/file/download.do?fileSn=95314&sysCode=LHPOH" alt="STAY HAPPY 썸네일"/>
-											</div>
-											<div class="contents-info-right">
-												<div class="info-bottom-inner">
-													<p class="cont-tit">STAY HAPPY TOGETHER</p>
-													<p class="cont-pack">가족 모두가 편안하게 즐길 수 있는 스위트 패키지</p>
-													<p class="cont-info">패밀리/코리안 스위트 + 조식 뷔페 2인 + 키즈 기프트 + 주중 레이트 체크아웃 13시</p>
-													<p class="cont-date">2022.12.14 &#45; 2024.12.31</p>
-													<p class="cont-more">
-														<a href="#none" onclick="packageInfo(this,'SHT')" title="자세히보기" class="link-txt">자세히보기<!-- 자세히보기 --></a>
-													</p><!-- 패키지설명 popup 불러오기 -->
-													
-														
-														
-															<p class="cont-price"><span>1박(VAT)포함<!-- 1박(VAT 포함) --></span><b>279,400</b>원 ~<!-- 원 ~ --></p>
-															<button type="button" onclick="selRoom(this,'4099','SHT')" class="btn-select btn-gold"><span>객실 선택<!-- 객실 선택 --></span></button>
-														
-													
-												</div>
-											</div>
-										</div>
-										<div class="content-info-hide" id="packRoom4099">
-
-										</div>
-									</li>
-								
+					
 							</ul>
 						</div>
 						
@@ -671,64 +391,7 @@
 		}
 	});
 
-	//패키지 객실선택
-	function selRoom(e,rate_seq_no,rate_code){
-		if($(e).hasClass("on") ){
-			return;
-		}
 
-		$("#rate_seq_no").val(rate_seq_no);
-		var pram = $("#form").serialize()+"&rate_code="+rate_code
-		$.ajax({
-			type : "POST"
-			,url : "/hub/ko/api/resv/packageRoomList.do?"
-			,cache : false
-			,dataType : "html"
-			,data : pram
-			,async : true
-			,success:function(data){
-				$("#packRoom"+rate_seq_no).html(data);
-			},
-			error:function(r, s, e){
-				alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
-			},
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-	}
-
-	//객실 패키지 선택
-	function selPackage(e,room_seq_no){
-		if($(e).hasClass("on") ){
-			return;
-		}
-
-		$("#room_seq_no").val(room_seq_no);
-		$.ajax({
-			type : "POST"
-			,url : "/hub/ko/api/resv/roomPackageList.do"
-			,cache : false
-			,dataType : "html"
-			,data : $("#form").serialize()
-			,async : true
-			,success:function(data){
-				$("#roomPackage"+room_seq_no).html(data);
-			},
-			error:function(r, s, e){
-				alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
-			},
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				hideLoading();
-		    },
-		});
-	}
 
 	//다른날짜 객실 요금
 	function diffPriceRoom(e,room_code){
@@ -759,34 +422,6 @@
 		});
 	}
 
-	//다른날짜 패키지 요금
-	function diffPricePackage(e,rate_code){
-		$("#rate_code").val(rate_code);
-
-		$.ajax({
-			type : "POST"
-			,url : "/api/resv/diffPricePackage.do"
-			,cache : false
-			,dataType : "html"
-			,data : $("#form").serialize()
-			,async : true
-			,success:function(data){
-				$("#chargeDetailPop").html(data);
-				$("body").addClass("scrollLock");
-				$("#chargeDetailPop, .dimmed2").show();
-			},
-			beforeSend: function() {
-		    	showLoading();
-		    },
-		    complete: function() {
-				//hideLoading();
-		    	$(".loading-box").hide();
-		    },
-			error:function(r, s, e){
-				alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
-			}
-		});
-	}
 
 	//다른날짜요금 ㄴ토글
 	function chargeView(e,type){

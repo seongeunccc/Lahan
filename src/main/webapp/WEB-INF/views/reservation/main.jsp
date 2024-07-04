@@ -314,7 +314,7 @@ width: 170px;
 						<div class="m-resv-list step1" >
 							<div class="resv-step1-select select">
 								<span class="badge resv-tit" style="margin-top: 20px;">호텔선택<!--호텔--></span>
-								<form action="./test" method="post" id="reservation_Main" >
+								<form action="./resv/step2" method="post" id="reservation_Main" >
 								<select id="hotel" name="hotel" class="hotel-select-box" style=" --swiper-theme-color: #007aff; background-color : transparent;
     --swiper-navigation-size: 44px; color: #222; cursor: pointer;  padding: 0;    margin: 0;    box-sizing: border-box;    outline: none;    -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;    word-break: keep-all;    -webkit-font-smoothing: antialiased;    display: inline-block;    border : none;    font-size: 20px;    font-family: 'Yoon770';    letter-spacing: -0.8px;" >
