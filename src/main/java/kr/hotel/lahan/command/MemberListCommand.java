@@ -25,16 +25,17 @@ import kr.hotel.lahan.dto.NoticeDto;
 import kr.hotel.lahan.util.Constant;
 
 @Component
-public class AskListCommand implements LCommand{
+public class MemberListCommand implements LCommand{
 	 
 	@Override
 	    public void execute(Model model) {
-
-			AskDao dao = Constant.askDao;    	   
-	        ArrayList<AskDto> dtos = dao.list();
-	        
+			System.out.println("member2");
+			JoinDao dao = Constant.joinDao;    
+			System.out.println("member3");
+	        ArrayList<JoinDto> dtos = dao.list();
+	        System.out.println("member4");
 	        System.out.println("리스트 길이: " + dtos.size());
-	        
+	        System.out.println("member5");
 	        model.addAttribute("list", dtos);
 	    }
 	}
