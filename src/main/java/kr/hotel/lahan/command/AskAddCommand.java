@@ -29,18 +29,23 @@ public class AskAddCommand implements LCommand{
 
 	     HttpServletRequest request = (HttpServletRequest) map.get("request");
 
-	     	String id = request.getParameter("id");
+	     HttpSession session = request.getSession();
+	        String id = (String) session.getAttribute("id");
 	     	String hotel = request.getParameter("hotel");
 	     	String sort = request.getParameter("sort");
 	        String title = request.getParameter("title"); 
 	        String contents = request.getParameter("contents");
-
+	        
+	        System.out.println(id);
+	        System.out.println(hotel);
+	        System.out.println(sort);
 	        System.out.println(title);
 	        System.out.println(contents);
-
+	     
 	        AskDao dao = Constant.askDao;
 	     
 	     
 	        dao.write(id, hotel, sort, title, contents);
 	 }
-	}
+}
+	

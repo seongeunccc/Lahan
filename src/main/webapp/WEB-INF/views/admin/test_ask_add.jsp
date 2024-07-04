@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -13,7 +11,7 @@
     <title>라한</title>
     <meta http-equiv="content-language" content="kr">
 	<meta name="robots" content="index,follow">
-	<meta name="title" content="LAHAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
+	<meta name="title" content="LA HAN ||  여행이 더 즐거운 곳, 라한셀렉트 공식 홈페이지">
 	<meta name="author" content="라한셀렉트">
 	<meta name="description" content="라한셀렉트 공식 홈페이지, 라한호텔 경주/포항/전주/울산/목포, 호텔 소개, 위치안내, 객실소개, 요금 및 예약, 리조트 및 컨벤션 호텔, 부대시설 안내">
 	<meta name="keywords" content="라한호텔, 라한셀렉트, 라한호텔 경주, 라한호텔 포항, 라한호텔 전주, 호텔현대 바이 라한 울산, 호텔현대 바이 라한 목포">
@@ -75,23 +73,6 @@
     })(window,document,'script','dataLayer','GTM-MTWJWS8');</script>
     <!-- End Google Tag Manager -->
     <style>
-       .myInfoList {
-            width: 100%;
-            border-collapse: collapse;
-			
-        }
-        .myInfoList th, .myInfoList td {
-            border: 1px solid #ddd;
-            padding: 8px;
-             text-align: center;
-        }
-        .myInfoList th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: #f2f2f2;
-        }
-        
 		.loading-box {
 			position: fixed;
 			top: 50%;
@@ -149,7 +130,6 @@
 			z-index: 9999;
 		}
      </style>
-      
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -217,72 +197,357 @@
 		</header>
 		<div id="container" class="container">
 			<!--(레이아웃명([PC][국문] - 라한 소개 > 호텔소개 레이아웃) 최종수정일 : 2022-12-01 18:14)-->
-			
+			<script type="text/javascript">
+$(document).ready(function(){
+	$(".select-box li").click(function(){
+
+		var $selected = $(this).closest('.select-box').siblings('.selected');
+
+		var val = $(this).attr("value");
+		var hiddenId = $(this).attr("hiddenId");
+		if(hiddenId != "" && hiddenId != undefined) {
+			$("#"+hiddenId).val(val);
+		}
+
+	});
+	$("#registBtn").hide();
+
+	$("#qaType > li").each(function() {
+		var this_ = $(this);
+		if(this_.attr("selected") == "selected") {
+			$("#ty").val(this_.attr("value"));
+			$("#tyText").text(this_.text());
+		}
+	});
+});
+
+
+
+}
+
+// 바이트 체크
+function fnChkByte(obj, maxByte){
+    var str = obj.value;
+    var str_len = str.length;
+
+    var rbyte = 0;
+    var rlen = 0;
+    var one_char = "";
+    var str2 = "";
+
+   for(var i=0; i<str_len; i++){
+     one_char = str.charAt(i);
+     if(escape(one_char).length > 4){
+        rbyte += 2;                                         //한글2Byte
+     }else{
+        rbyte++;                                            //영문 등 나머지 1Byte
+     }
+
+     if(rbyte <= maxByte){
+        rlen = i+1;                                          //return할 문자열 갯수
+     }
+ }
+
+    if(rbyte > maxByte){
+      alert("최대 2,000byte 까지 입력이 가능합니다.");
+      str2 = str.substr(0,rlen);                                  //문자열 자르기
+      obj.value = str2;
+      fnChkByte(obj, maxByte);
+    }else{
+      document.getElementById('cn').innerText = rbyte;
+    }
+ }
+
+
+
+function fncRegist() {
+    var form = document.getElementById('askForm');
+
+    // 폼 필드 설정
+    form.hotel.value = document.getElementById('hotelInput').value;
+    form.sort.value = document.getElementById('sortInput').value;
+    form.title.value = document.getElementById('titleInput').value;
+    form.contents.value = document.getElementById('contentsInput').value;
+
+    // 폼 제출
+    form.submit();
+}
+/* 
+function fncRegist() {
+
+	
+	
+	
+	//이메일,전화번호 정규식
+	var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+	var regExp = /^\d{2,3}-\d{3,4}-\d{4}$/;
+
+	if ($.trim($('#place').val()) == "") {
+		alert('호텔을 선택해 주세요');//지점을 선택해 주세요
+		$("#place").val();
+		$("#placeFc").attr("tabindex", -1).focus();
+		return false;
+	}
+	if ($.trim($('#ty').val()) == "") {
+		alert('문의 유형을 선택해 주세요');//문의 유형을 선택해 주세요
+		$("#ty").val();
+		$("#tyFc").attr("tabindex", -1).focus();
+		return false;
+	}
+
+	if ($.trim($('#title').val()) == "") {
+		alert('제목을 입력해주세요');//제목을 입력해주세요
+		$("#title").val();
+		$("#title").focus();
+		return false;
+	}
+	if ($.trim($('#cn').val()) == "") {
+		alert('내용을 입력해주세요');//내용을 입력해주세요
+		$("#cn").val();
+		$("#cn").focus();
+		return false;
+	}
+
+	var file = $("#uploadBtn03");
+	var fileVal = file.val();
+	if( fileVal != "" ){
+		var ext = fileVal.split('.').pop().toLowerCase(); //확장자분리 pop 마지막요소 반환
+		//아래 확장자가 있는지 체크
+		if($.inArray(ext, ['png', 'jpg' , 'pdf']) == -1) {
+		  alert('10BM 미만의 파일형식 [png, jpg, pdf ] 파일만 업로드 할수 있습니다.');  //10BM 미만의 파일형식 [png, jpg , pdf ] 파일만 업로드 할수 있습니다.
+		  $("#fileName").focus();
+		  return false;
+		}
+
+		//파일사이즈 체크
+		var sizeinbytes = $("#uploadBtn03")[0].files[0].size;
+		var fSExt = new Array('Bytes', 'KB', 'MB', 'GB');
+	    var i = 0;
+	    var checkSize = 1024 * 1024 * 10;
+	    var size = 1024 * 1024 * 10;
+
+	    while (checkSize > 900) {
+	        checkSize /= 1024;
+	        i++;
+	    }
+
+	    checkSize = (Math.round(checkSize * 100) / 100) + ' ' + fSExt[i];
+	    var fSize = sizeinbytes;
+
+
+	    if (fSize > size) {
+    		alert('10BM 미만의 파일형식 [png, jpg, pdf ] 파일만 업로드 할수 있습니다.');  //10BM 미만의 파일형식 [png, jpg , pdf ] 파일만 업로드 할수 있습니다.
+			$("#fileName").focus();
+			return false;
+	    }
+	}
+ */
+	
+
+	
+
+	
+
+
+	if(!confirm("등록하시겠습니까?")) {//등록하시겠습니까?
+		return false;
+	}
+
+	var form = $('#inquiry')[0];
+	var formData = new FormData(form);
+	var langCode = $("#langCode").val();
+
+	jQuery.ajax({
+		type: "POST",
+		url: "/hub/"+langCode+"/customer/qna.json",
+		data: formData,
+		enctype:'multipart/form-data',
+		processData: false,
+		contentType: false,
+		cache: false,
+		success: function(data) {
+			var resultCode = data.resultCode;
+
+			if (resultCode == "FAIL") {
+				alert('문의글 전송이 실패했습니다.'); //문의글 전송이 실패했습니다.
+				return false;
+			}else if (resultCode == "SUCCESS") {
+				$(".modal").addClass("show");
+				alert('문의글 전송이 완료되었습니다');//문의글 전송이 완료되었습니다
+				location.reload();
+			}
+
+		},
+		error:function(r, s, e){
+			alert('Ajax 통신중 에러가 발생하였습니다.\nError Code : \"{1}\"\nError : \"{2}\"'.replace("{1}", r.status).replace("{2}", r.responseText));
+		}
+
+	});
+
+	/* location.reload(); */
+}
+
+
+
+
+
+</script>
+
+
 			
 			<section class="sub-visual">
 	            <div class="sub-visual-wrap">
 	               <div class="sub-visual-list">	                  
 	                  <div class="sub-nav-wrap bgType dotColor1">
 	                     	                     <ul class="sub-nav">
-	                        <li><a href="/lahan/admin/notice.do" >공지사항</a></li>
-	                        <li><a href="/lahan/admin/ask.do" class="on">1:1문의하기</a>	</li>
+	                        <li><a href="/lahan/admin/notice.do" class="on">공지사항</a></li>
+	                        <li><a href="/lahan/admin/ask.do">1:1문의하기</a>	</li>
 	                     </ul>
 	                  </div>	                  
 	                  	<div class="sub-visual-txt brand-lahan">
-	                  		<h3 class="sub-tit02">Q and A</h3>
-                            <p>Lahan hotel 고객님들의 의견을 확인하세요.</p>
+	                  		<h3 class="sub-tit02">NOTICE</h3>
+                            <p>Lahan hotel의 공지사항을 관리하세요.</p>
 	                  	</div>
 	                	<img src="${pageContext.request.contextPath}/resources/images/admin_notice_topimg.jpg" alt="sub visual">
 	               </div>
 	            </div>
 	         </section>
+	        
+			<%-- form id="inquiry" name="inquiry">
 			
-			
-			
-			<section class="sub-contents">
-				<div class="sub-contents-wrap ty-01">
-					<!-- 컨텐츠 시작 -->
-					<button onclick="window.location.href='/lahan/ask/add.do'" class="more_btn">추가</button>
-					
-					<div id="container" class="container">
-    
-  
-            <div>
+	<input type="hidden" id="id" name="id" value='id'>
+	<input type="hidden" id="hotel" name="hotel" value="${hotel}">
+	<input type="hidden" id="sort" name="sort" value="${sort}">
+	<input type="hidden" id="title" name="title" value="${title}">
+	<input type="hidden" id="contents" name="contents" value="${contents}"> --%>
+			<section class="sub-contents customer">
+			 <form id="askForm" action="/lahan/ask/adding.do" method="post">
+				<div class="sub-contents-wrap">
 
-               <div>
-    <table class="myInfoList">
-        <thead>
-            <tr>
-                <th style="width: 60px;">번호</th>
-                <th style="width: 150px;">제목</th>
-                <th style="width: 100px;">게시일</th>
-                <th style="width: 100px;">글쓴이</th> 
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="ask" items="${list}">
-                <tr>
-                    <td>${ask.board_num}</td>
-                    <td>
-                        <a href="askview.do?board_num=${ask.board_num}">${ask.title}</a>
-                    </td>
-                    <td>${ask.date}</td>
-                    <td>${ask.id}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-</div>
-		</div>
-		</div>
-		</div>
-		
-		</section>
-		</div>
+					<!-- 컨텐츠 시작 -->
+
+					<div class="sub-tit-wrap">
+						<h3 class="sub-tit01"><!-- 일반문의 -->1:1 문의</h3>
+					</div>
+				
+					<div class="intList-wrap">
+						<div class="intList-tit-wrap">
+							<h3><!-- 문의내용 -->문의내용</h3>
+							<span><!-- * 표시 필수 입력 사항 -->* 표시 필수 입력 사항</span>
+						</div>
+						<ul class="intList">
+							<li>
+								<div class="intWrap">
+									<div class="intBox">
+										<div class="intArea">
+											<span class="tit-wrap"><!-- 호텔 -->호텔<em class="essential"><!-- 필수 -->필수</em></span>
+											<div class="txt-wrap">
+												<div class="select-wrap">
+												  <div class="selected" id="placeFc">
+												      <input type="hidden" name="hotel" id="hotelInput">
+												    <span class="selected-value" id="hotelText"><!-- 호텔을 선택해주세요. -->호텔을 선택해주세요.</span>
+												    <em class="select-arrow"></em>
+												 </div>
+											   	    <ul class="select-box" id="hotelSelectBox">
+                        <li class="option" onclick="selectHotel('라한셀렉트 경주')">라한셀렉트 경주</li>
+                        <li class="option" onclick="selectHotel('라한호텔 전주')">라한호텔 전주</li>
+                        <li class="option" onclick="selectHotel('라한호텔 포항')">라한호텔 포항</li>
+                        <li class="option" onclick="selectHotel('호텔현대 바이 라한 울산')">호텔현대 바이 라한 울산</li>
+                        <li class="option" onclick="selectHotel('호텔현대 바이 라한 목포')">호텔현대 바이 라한 목포</li>
+                    </ul>
+												</div>
+											</div>
+										</div>
+									
+										<div class="intArea">
+											<span class="tit-wrap"><!-- 문의 유형 -->문의 유형<em class="essential"><!-- 필수 -->필수</em></span>
+											<div class="txt-wrap">
+												<div class="select-wrap">
+												  <div class="selected" id="sort" >
+												 	   <input type="hidden" name="sort" id="sortInput">
+                    <span class="selected-value" id="sortText"><!-- 문의 유형을 선택해 주세요. -->문의 유형을 선택해 주세요.</span>
+												    
+												    <em class="select-arrow"></em>
+												  </div>
+												  <ul class="select-box" id="sortSelectBox">
+                    <li class="option" onclick="selectSort('예약문의')">예약문의</li>
+                    <li class="option" onclick="selectSort('상품/서비스')">상품/서비스</li>
+                    <li class="option" onclick="selectSort('멤버십')">멤버십</li>
+                    <li class="option" onclick="selectSort('제휴제안')">제휴제안</li>
+                    <li class="option" onclick="selectSort('불편사항')">불편사항</li>
+                    <li class="option" onclick="selectSort('기타')">기타</li>
+                    <li class="option" onclick="selectSort('칭찬')">칭찬</li>
+                </ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 제목 -->제목<em class="essential"><!-- 필수 -->필수</em></span>
+										<div class="txt-wrap">
+											<div class="input-wrap"><!-- 제목 입력해 주세요. -->
+											  <input name="title" id="title" type="text" value="${title}" placeholder="제목 입력해 주세요." >
+											  
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 내용 -->내용<em class="essential"><!-- 필수 -->필수</em></span>
+										<div class="txt-wrap">
+											<div class="input-wrap"><!-- 내용을 입력해 주세요.  최대 2,000byte 까지 입력이 가능합니다. -->
+											  <textarea name="contents" id="contents" value="${contents}" cols="30" rows="10" onkeyup="fnChkByte(this,'2000');" placeholder="내용을 입력해 주세요.  최대 2,000byte 까지 입력이 가능합니다." ></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="intWrap">
+									<div class="intBox">
+										<span class="tit-wrap"><!-- 첨부파일 -->첨부파일</span>
+										<div class="txt-wrap">
+											<div class="fileUpload">
+												<div class="intDel">
+													<input type="text" id="fileName" placeholder='첨부파일( 파일형식 png, jpg , pdf /10MB 이하)' class="fileName" placeholder="" readonly="">
+													<button type="button" class="btnDel">삭제</button>
+												</div>
+												<label for="uploadBtn03" class="fileBtn"><!-- 파일첨부 -->파일첨부</label>
+												<input type="file" name="attachment"  id="uploadBtn03" class="uploadBtn">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					
+<br><br><br>					<div class="btn-inline-box">
+						<button type ="submit" class="btn btn-gold"><!-- 문의글 전송하기 -->문의글 전송하기</button>
+					</div>
+					<!-- 컨텐츠 끝 -->
 				</div>
-	
-		
-		
+				</form>
+			</section>
+<script>
+function selectHotel(hotel) {
+    document.getElementById('hotelInput').value = hotel;
+    document.getElementById('hotelText').innerText = hotel;
+}
+
+function selectSort(sort) {
+    document.getElementById('sortInput').value = sort;
+    document.getElementById('sortText').innerText = sort;
+}
+</script>
+		<div class="dimmed"></div>
+	</div>
+
+
+		</div>
+			
 		<footer id="footer" class="footer">
 			<!--(FOOTER 최종수정일 : 2023-02-28 08:19)-->
 

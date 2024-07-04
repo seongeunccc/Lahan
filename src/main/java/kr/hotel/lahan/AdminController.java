@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.hotel.lahan.command.AskAddCommand;
+import kr.hotel.lahan.command.AskDeleteCommand;
+import kr.hotel.lahan.command.AskListCommand;
 import kr.hotel.lahan.command.AskViewCommand;
 import kr.hotel.lahan.command.HotelAddCommand;
 import kr.hotel.lahan.command.LCommand;
@@ -41,13 +43,16 @@ public SqlSession sqlSession;
 	public AdminController(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
         Constant.hotelDao = sqlSession.getMapper(HotelDao.class);
-        Constant.noticeDao = sqlSession.getMapper(NoticeDao.class);
+      
            
 	}
 	
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
+		 command = new AskListCommand();
+	        command.execute(model);
 		System.out.println("���� ���� ȭ��");
+
 		return "/admin/admin_main";
 	}
 	
@@ -94,104 +99,4 @@ public SqlSession sqlSession;
 		return "/admin/admin_product";
 	}
 	
-	@RequestMapping("/admin/notice.do")
-	public String adminnotice(Model model) {
-		command = new NoticeListCommand();
-		command.execute(model);
-
-		System.out.println("���� �������� ȭ��");
-		return "/admin/admin_notice";
-	}
-	@RequestMapping("/admin/noticeadd.do")
-	public String adminnoticeadd(Model model) {
-		System.out.println("���� �������� ��� ȭ��");
-		return "/admin/admin_notice_add";
-	}
-	
-	@RequestMapping("/admin/noticeadding.do") 
-	 public String noticeadd(HttpServletRequest request, Model model) {
-	  System.out.println("�������� �߰�_DB"); 
-	  model.addAttribute("request",request);
-	  command = new NoticeAddCommand();
-	  System.out.println("��������_DB2"); 
-	  command.execute(model); 
-	 return "redirect:/admin/notice.do"; }
-	
-	@RequestMapping("/admin/noticeview.do") 
-	 public String contentView(HttpServletRequest request, Model model) {
-	  System.out.println("�������� Ȯ��"); 
-	 model.addAttribute("request",request);
-	command = new NoticeViewCommand();
-	  System.out.println("�������� Ȯ��2"); 
-	command.execute(model); 
-	 return "/admin/admin_notice_detail"; }
-	
-	
-	 @RequestMapping("/admin/noticemodify.do")
-	 public String modifyview( Model model, HttpServletRequest request) {
-		 int board_num = Integer.parseInt(request.getParameter("board_num"));
-	     String title = request.getParameter("title");
-	     String contents = request.getParameter("contents");     
-	     model.addAttribute("board_num", board_num);
-	     model.addAttribute("title", title);
-	     model.addAttribute("contents", contents);
-	     return "/admin/admin_notice_modify";
-	 }
-	 
-	 @RequestMapping("/admin/noticemodifing.do")
-	 public String modify(HttpServletRequest request, Model model) {
-	     System.out.println("modify()");
-	     model.addAttribute("request", request);
-	     command = new NoticeModifyCommand();
-	     command.execute(model);
-	     return "redirect:/admin/notice.do";
-	 }
-	
-	 @RequestMapping("/admin/delete.do")
-	 public String delete(HttpServletRequest request, Model model) {
-	     System.out.println("delete()");
-	     model.addAttribute("request", request);
-	     command = new NoticeDeleteCommand();
-	     command.execute(model);
-	     return "redirect:/admin/notice.do";
-	 }
-	 
-	
-	@RequestMapping("/admin/ask.do")
-	public String adminmqanda(Model model) {
-		System.out.println("���� 1:1���� ȭ��");
-		return "/admin/admin_ask";
-	}
-	
-	@RequestMapping("/admin/askview.do") 
-	 public String askcontentView(HttpServletRequest request, Model model) {
-	  System.out.println("�������� Ȯ��"); 
-	 model.addAttribute("request",request);
-	command = new AskViewCommand();
-	  System.out.println("�������� Ȯ��2"); 
-	command.execute(model); 
-	 return "/admin/admin_ask_detail"; }
-	
-
-	@RequestMapping("/ask/add.do")
-	public String testaskadd(Model model) {
-		System.out.println("���� �������� ��� ȭ��");
-		return "/admin/test_ask_add";
-	}
-	
-	@RequestMapping("/ask/adding.do") 
-	 public String askadd(HttpServletRequest request, Model model) {
-	  model.addAttribute("request",request);
-	  command = new AskAddCommand(); 
-	  command.execute(model); 
-	 return "redirect:/admin/ask.do"; }
-	
-	@RequestMapping("/admin/upproduct")
-	public String upProduct(Model model) {
-		System.out.println("���� �������� ��� ȭ��");
-		return "/admin/admin_up_product";
-	}
-	
-	
-
 }
