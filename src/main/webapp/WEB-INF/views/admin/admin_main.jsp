@@ -149,8 +149,7 @@
 				<div class="h-box-right">
 					<ul class="set-wrap">
 						
-						<li><a href="/api/login/logout.json" title="로그아웃">로그아웃<!-- 로그아웃 --></a></li>
-                     
+						<li><a href="${pageContext.request.contextPath}/login/logout" title="로그아웃">로그아웃<!-- 로그아웃 --></a></li>
 					</ul>
 					
 					<div class="lang-box select">
