@@ -173,10 +173,10 @@
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동">
-							<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN"/>
-							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>
-							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png" alt="LAHAN3"/></span>
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
+						 	<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN" id="header_icon" class="off"/>
+							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>  
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
 					</h1> 
 					
@@ -256,7 +256,8 @@
                 <th style="width: 60px;">번호</th>
                 <th style="width: 150px;">제목</th>
                 <th style="width: 100px;">게시일</th>
-                <th style="width: 100px;">글쓴이</th> 
+                <th style="width: 100px;">글쓴이</th>
+                <th style="width: 50px;">답변여부</th> 
             </tr>
         </thead>
         <tbody>
@@ -268,6 +269,14 @@
                     </td>
                     <td>${ask.date}</td>
                     <td>${ask.id}</td>
+                    <td> <c:choose>
+                <c:when test="${not empty ask.reply}">
+                    Y
+                </c:when>
+                <c:otherwise>
+                    N
+                </c:otherwise>
+            </c:choose></td>
                 </tr>
             </c:forEach>
         </tbody>

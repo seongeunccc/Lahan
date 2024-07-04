@@ -1,5 +1,7 @@
 package kr.hotel.lahan.command;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,10 +19,13 @@ public class MemberDeleteCommand implements LCommand {
  public void execute(Model model) {
      Map<String, Object> map = model.asMap();
       HttpServletRequest request = (HttpServletRequest) map.get("request");
-
-     String id = request.getParameter("board_num");
+    
+     String id = request.getParameter("id");
+     String withdraw = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+     System.out.println("id : " + id);
+     System.out.println("withdraw : " + withdraw);
      JoinDao dao = Constant.joinDao;
  
-     dao.delete(id);
+     dao.withdraw(id, withdraw);
  }
 }
