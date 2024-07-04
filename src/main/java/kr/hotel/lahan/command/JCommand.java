@@ -98,5 +98,13 @@ public class JCommand {
 		
 	}
 	
+	public String findId(String id) {
+		System.out.println("J커멘드의 find id" + id);
+		JoinDao dao = sqlSession.getMapper(JoinDao.class);
+		String foundId = dao.findId(id);
+		System.out.println("foundId 의 id : " + foundId);
+		return foundId;
+	}
+	
 
 }

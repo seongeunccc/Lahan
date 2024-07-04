@@ -123,6 +123,50 @@
 			z-index: 9999;
 		}
      </style>
+     
+     <script>
+     $(document).ready(function() {
+    	  $('#existsIdBtn').on('click', function() {
+    	    const idInput = $('#id').val().trim();
+    	    const idRangeAlert = $('#idRangeAlert');
+    	    const idDuplicateAlert = $('#idDuplicateAlert');
+
+    	    // 아이디 길이 및 형식 확인
+    	    if (!/^[a-z]{6,20}$/.test(idInput)) {
+    	      idRangeAlert.show();
+    	      idDuplicateAlert.hide();
+    	      return;
+    	    }
+
+    	    idRangeAlert.hide();
+
+    	    // 서버에 중복 확인 요청
+    	    $.ajax({
+    	      url: '/lahan/api/check-id-duplicate',
+    	      type: 'GET',
+    	      data: { id: idInput },
+    	      success: function(data) {
+    	    	 console.log(data);
+    	        if (data==="true") {
+    	          idDuplicateAlert.text('이미 사용 중인 아이디입니다.').show();
+    	        } else {
+    	          idDuplicateAlert.text('사용 가능한 아이디입니다     .').show()
+    	            .removeClass('alert_red')
+    	            .addClass('alert_green');
+    	        }
+    	      },
+    	      error: function(error) {
+    	        console.error('Error:', error);
+    	        idDuplicateAlert.text('서버 오류가 발생했습니다.').show();
+    	      }
+    	    });
+    	  });
+    	});
+     
+     
+     </script>
+     
+     
 <body>
 
 <!-- <form id="form" name="form" method="post"> -->
