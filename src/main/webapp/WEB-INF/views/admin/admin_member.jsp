@@ -147,13 +147,7 @@
 			z-index: 9999;
 		}
      </style>
-     <script>
-        function confirmDelete(id) {
-            if (confirm("정말 삭제하시겠습니까?")) {
-                window.location.href = "/lahan/admin/memberdelete.do?id=" + id;
-            }
-        }
-    </script>
+    
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -177,12 +171,12 @@
 			<div class="h-wrap">
 				<div class="h-box-left">
 					<h1 class="logo">
-						<a href="./main" title="메인으로 이동">
-							<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN"/>
-							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>
-							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/hub/main_logo_bl.png" alt="LAHAN3"/></span>
+						<a href="${pageContext.request.contextPath}/main" title="메인으로 이동">
+						 	<img src="${pageContext.request.contextPath}/resources/images/main_logo.png" alt="LAHAN" id="header_icon" class="off"/>
+							<img src="${pageContext.request.contextPath}/resources/images/main-logo-bold.png" alt="LAHAN" class="off"/>  
+							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
-					</h1> 
+					</h1>  
 					
 					<ul class="nav-list">
 						<li>
@@ -287,14 +281,22 @@
                     <td>${member.point}</td>
                     <td>${member.joindate}</td>
                     <td>${member.withdraw}</td>
-                    <td> <div class="brd-detailView-btn"><a href="javascript:void(0);" onclick="confirmDelete(${member.id})"
-   class="btn-list btn-navy-line" style="background-color: #ffcece">탈퇴</a>
-			</div> </td>
+                    <td> 
+                        <button style="width:150px;" onclick="deleteMember('${member.id}')" class="btn btn-gold">탈퇴하기</button>
+                    	
+                   </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
             
+ <script>
+        function deleteMember(id) {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                window.location.href = "/lahan/admin/memberdelete.do?id=" + id;
+            }
+        }
+    </script>
         </div>
     </section>
 </div>

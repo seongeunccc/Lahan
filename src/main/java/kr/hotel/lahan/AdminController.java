@@ -19,13 +19,18 @@ import kr.hotel.lahan.command.AskListCommand;
 import kr.hotel.lahan.command.AskViewCommand;
 import kr.hotel.lahan.command.HotelAddCommand;
 import kr.hotel.lahan.command.LCommand;
+import kr.hotel.lahan.command.MemberDeleteCommand;
 import kr.hotel.lahan.command.MemberListCommand;
 import kr.hotel.lahan.command.NoticeAddCommand;
 import kr.hotel.lahan.command.NoticeDeleteCommand;
 import kr.hotel.lahan.command.NoticeListCommand;
 import kr.hotel.lahan.command.NoticeModifyCommand;
 import kr.hotel.lahan.command.NoticeViewCommand;
+
+import kr.hotel.lahan.command.ReservConfirmCommand;
+
 import kr.hotel.lahan.command.UpPrdouctCommand;
+
 import kr.hotel.lahan.dao.HotelDao;
 import kr.hotel.lahan.dao.NoticeDao;
 import kr.hotel.lahan.dao.ProductDao;
@@ -51,9 +56,7 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
-		/*
-		 * command = new AskListCommand(); command.execute(model);
-		 */
+		
 		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
 
 		return "/admin/admin_main";
@@ -67,12 +70,27 @@ public SqlSession sqlSession;
 		System.out.println("memberList");
 		return "/admin/admin_member";
 	}
+	
+	  @RequestMapping("/admin/memberdelete.do")
+	    public String memdelete(HttpServletRequest request, Model model) {
+	        System.out.println("member1");
+	        model.addAttribute("request", request);
+	        command = new MemberDeleteCommand();
+	        command.execute(model);
+	        System.out.println("memberDel");
+	        return "redirect:/admin/member.do"; 
+	  }
+	
 
-	@RequestMapping("/admin/reservation.do")
-	public String adminreserv(Model model) {
-		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占� 화占쏙옙");
-		return "./admin/admin_reservation";
-	}
+		
+		 @RequestMapping("/admin/reservation.do")
+		 public String adminreserv(Model model) { 
+			 command = new ReservConfirmCommand(); 
+			 command.execute(model);
+		    System.out.println("reserv confirm"); 
+		    return "/admin/admin_reservation"; 
+		    }
+		
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
@@ -95,7 +113,7 @@ public SqlSession sqlSession;
 	  command = new HotelAddCommand();
 	  System.out.println("호占쏙옙占쌩곤옙_DB2"); 
 	  command.execute(model);
-	 
+	  
 	 return "redirect:/admin/hotel.do"; }
 	 
 	
