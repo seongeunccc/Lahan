@@ -80,13 +80,11 @@ public SqlSession sqlSession;
 	  }
 	
 
-	@RequestMapping("/admin/reservation.do")
-	public String adminreserv(Model model) {
-		command = new ReservConfirmCommand();
-		command.execute(model);
-		System.out.println("reserv confirm");
-		return "/admin/admin_reservation";
-	}
+		/*
+		 * @RequestMapping("/admin/reservation.do") public String adminreserv(Model
+		 * model) { command = new ReservConfirmCommand(); command.execute(model);
+		 * System.out.println("reserv confirm"); return "/admin/admin_reservation"; }
+		 */
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
