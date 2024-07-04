@@ -98,42 +98,43 @@ public class ReservationController {
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
 	public @ResponseBody String searchProcode(@RequestParam("promoCode") String promoCode) throws Exception {
-		System.out.println("serchProcode ½ÇÇà");
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ promoCode : " + promoCode);
+		System.out.println("serchProcode ì‹¤í–‰");
+		System.out.println("ì‚¬ìš©ìê°€ ì…ë ¥í•œ promoCode : " + promoCode);
 
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		ProCodeDto proCodeDto = dao.serchProcode(promoCode);
 
 		if (proCodeDto != null) {
-			System.out.println("ÇÁ·Î¸ğ¼Ç ÄÚµå DB Á¸Àç ÄÚµå : " + proCodeDto.getProcode());
-			System.out.println("ÇÁ·Î¸ğ¼Ç ÄÚµå DB Á¸Àç ÇÒÀÎÀ² : " + proCodeDto.getRate());
+			System.out.println("í”„ë¡œëª¨ì…˜ ì½”ë“œ DB ì¡´ì¬ ì½”ë“œ : " + proCodeDto.getProcode());
+			System.out.println("í”„ë¡œëª¨ì…˜ ì½”ë“œ DB ì¡´ì¬ í• ì¸ìœ¨ : " + proCodeDto.getRate());
 		} else {
-			System.out.println("DBÁ¶È¸ °á°ú ¾øÀ½");
+			System.out.println("DBì¡°íšŒ ê²°ê³¼ ì—†ìŒ");
 			proCodeDto = new ProCodeDto();
 		}
 
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.enable(SerializationFeature.INDENT_OUTPUT); // µé¿©¾²±â ¼³Á¤ (¿É¼Ç)
+		mapper.enable(SerializationFeature.INDENT_OUTPUT); // ë“¤ì—¬ì“°ê¸° ì„¤ì • (ì˜µì…˜)
 
 		String json = mapper.writeValueAsString(proCodeDto);
 		return json;
 	}
 
-// JSON ¾²´Â ¹æ¹ı	
+// JSON ì“°ëŠ” ë°©ë²•	
 //	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json")//, method = RequestMethod.POST
 	@ResponseBody
 	public String serchProcode2() throws Exception {
-		System.out.println("serchProcode2 ½ÇÇà");
+		System.out.println("serchProcode2 ì‹¤í–‰");
 		ProCodeDto dto = new ProCodeDto();
 		dto.setProcode("ABC123");
 		dto.setRate(0.15);
 		dto.setStart_date(new java.sql.Date(System.currentTimeMillis()));
-		dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // ÇÏ·ç ÈÄ
+		dto.setEnd_date(new java.sql.Date(System.currentTimeMillis() + 86400000)); // í•˜ë£¨ í›„
 
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.enable(SerializationFeature.INDENT_OUTPUT); // µé¿©¾²±â ¼³Á¤ (¿É¼Ç)
+		mapper.enable(SerializationFeature.INDENT_OUTPUT); // ë“¤ì—¬ì“°ê¸° ì„¤ì • (ì˜µì…˜)
 
 		String json = mapper.writeValueAsString(dto);
+
 		return json;
 
 	}
@@ -147,7 +148,7 @@ public class ReservationController {
 
 		System.out.println("adult : " + dto.getAdult());
 		System.out.println("total : " + dto.getTotal());
-		System.out.println("È£ÅÚÀÌ¸§ : " + (dto.getHotel()));
+		System.out.println("í˜¸í…”ì´ë¦„ : " + (dto.getHotel()));
 
 		command = new FindRoomCommand(sqlSession);
 		command.execute(model);
@@ -160,9 +161,9 @@ public class ReservationController {
 		dto.setTotal(dto.getAdult() + dto.getChildren());
 		System.out.println(dto.getCheck_In_Day());
 
-		// ÇÁ·Î¸ğ¼Ç ÄÚµå ÀÖÀ¸¸é °ª ³Ñ±è
+		// í”„ë¡œëª¨ì…˜ ì½”ë“œ ìˆìœ¼ë©´ ê°’ ë„˜ê¹€
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
-			System.out.println("ÇÁ·Î¸ğ¼Ç ÄÚµå : " + dto.getPrm_code());
+			System.out.println("í”„ë¡œëª¨ì…˜ ì½”ë“œ : " + dto.getPrm_code());
 			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
@@ -183,9 +184,9 @@ public class ReservationController {
 			System.out.println(request.getParameter("totalPrices"));
 			model.addAttribute("totalPrice", request.getParameter("totalPrices"));
 		}
-		// ÇÁ·Î¸ğ¼Ç ÄÚµå ÀÖÀ¸¸é °ª ³Ñ±è
+		// í”„ë¡œëª¨ì…˜ ì½”ë“œ ìˆìœ¼ë©´ ê°’ ë„˜ê¹€
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
-			System.out.println("ÇÁ·Î¸ğ¼Ç ÄÚµå : " + dto.getPrm_code());
+			System.out.println("í”„ë¡œëª¨ì…˜ ì½”ë“œ : " + dto.getPrm_code());
 			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
