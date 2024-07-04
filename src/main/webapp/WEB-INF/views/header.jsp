@@ -28,7 +28,7 @@
 							<a href="${pageContext.request.contextPath}/clublahan/membership">클럽라한</a>
 						</li>
 						<li>
-							<a href="/hub/ko/onlineshop/subMain.do">온라인샵</a>
+							<a href="${pageContext.request.contextPath}/clublahan/viewproduct">온라인샵</a>
 						</li>
 					</ul>
 				</div>

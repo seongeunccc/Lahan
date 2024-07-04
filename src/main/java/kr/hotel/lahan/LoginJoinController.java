@@ -92,6 +92,11 @@ public class LoginJoinController {
 		return "/login/logout";
 	}
 	
+	/*
+	 * @RequestMapping("/clublahan/membership") public String viewProduct(Model
+	 * model) { return "/product/viewProduct"; }
+	 */
+	
 	@RequestMapping("/member/memberinfo")
 	public String memberInfo(HttpServletRequest request, Model model) {
 		String id = (String) request.getSession().getAttribute("id");
