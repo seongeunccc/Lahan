@@ -629,7 +629,7 @@ width: 170px;
                     
                         <div class="m-instaimg-list">
                         	<a href="https://www.instagram.com/p/C3665U3x7P4/?utm_source=ig_web_c" target="_blank">
-                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/pics_wh_22x22.png" alt="icon image"></span>
+                            	<span class="icon-imgs"><img src="https://www.lahanhotels.com/static/pc/images/hub/icon/icon_pics_wh_22x22.png" alt="icon image"></span>
                             	<span><img src="https://www.lahanhotels.com/util/file/download.do?fileSn=220918&sysCode=HUBSITE" alt="코닥 이벤트"></span>
                             </a>
                         </div>

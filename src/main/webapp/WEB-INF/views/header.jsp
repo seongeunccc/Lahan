@@ -133,13 +133,13 @@
 						<li><a href="/hub/ko/customer/reports.do" title="제보">제보<!-- 제보 --></a></li>
 					</ul>
 					<ul class="all-1depth">
-						<li><a href="/hub/ko/mypage.do" title="마이페이지">마이페이지<!-- 마이페이지 --></a></li>
+						<li><a href="${pageContext.request.contextPath}/mypage/myResv" title="마이페이지">마이페이지<!-- 마이페이지 --></a></li>
 						<li><a href="/hub/ko/mypage/mypoint/myPointForm.do" title="마이포인트">마이포인트<!-- 마이포인트 --></a></li>
 						<li><a href="/hub/ko/mypage/mycoupon/myCouponForm.do" title="마이쿠폰">마이쿠폰<!-- 마이쿠폰 --></a></li>
 <!--			예약조회/확인			
      <li><a href="#none" title="예약조회/확인">예약조회/확인</a></li>
 -->
-						<li><a href="/hub/ko/mypage/update/pwCheckForm.do" title="개인정보관리/탈퇴">개인정보관리/탈퇴<!-- 개인정보관리/탈퇴 --></a></li>
+						<li><a href="${pageContext.request.contextPath}/mypage/update" title="개인정보관리/탈퇴">개인정보관리/탈퇴<!-- 개인정보관리/탈퇴 --></a></li>
 					</ul>
 				</div>
 			</div>
