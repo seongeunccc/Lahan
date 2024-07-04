@@ -1,5 +1,9 @@
 package kr.hotel.lahan;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -42,12 +46,6 @@ public class ReservationController {
 	}
 
 //
-	@RequestMapping(value = "resv/step5")
-	public String step5(Model model) {
-
-		return "reservation/step5";
-	}
-
 	@RequestMapping(value = "clublahan/membership")
 	public String membership(Model model) {
 
@@ -145,7 +143,8 @@ public class ReservationController {
 		System.out.println(dto.getCheck_In_Day());
 		model.addAttribute("dto", dto);
 		model.addAttribute("request", request);
-
+	
+		
 		System.out.println("adult : " + dto.getAdult());
 		System.out.println("total : " + dto.getTotal());
 		System.out.println("Ìò∏ÌÖîÏù¥Î¶Ñ : " + (dto.getHotel()));
@@ -158,8 +157,6 @@ public class ReservationController {
 
 	@RequestMapping(value = "resv/step3", method = RequestMethod.POST)
 	public String test1(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
-		dto.setTotal(dto.getAdult() + dto.getChildren());
-		System.out.println(dto.getCheck_In_Day());
 
 		// ÌîÑÎ°úÎ™®ÏÖò ÏΩîÎìú ÏûàÏúºÎ©¥ Í∞í ÎÑòÍπÄ
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
@@ -168,6 +165,7 @@ public class ReservationController {
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
 		}
+		
 		model.addAttribute("dto", dto); // resvDto
 		model.addAttribute("roomdto", roomdto); // roomDto
 		model.addAttribute("request", request);
@@ -177,9 +175,6 @@ public class ReservationController {
 
 	@RequestMapping(value = "resv/step4", method = RequestMethod.POST)
 	public String test2(HttpServletRequest request, Model model, ResvDto dto, RoomDto roomdto) {
-		dto.setTotal(dto.getAdult() + dto.getChildren());
-		System.out.println(dto.getCheck_In_Day());
-		
 		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
 			System.out.println(request.getParameter("totalPrices"));
 			model.addAttribute("totalPrice", request.getParameter("totalPrices"));
@@ -191,13 +186,58 @@ public class ReservationController {
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			model.addAttribute("proCodeDto", proCodeDto);
 		}
+		String id = (String) request.getSession().getAttribute("id");
+		JCommand jcommand = new JCommand(sqlSession);
+		jcommand.memberinfo(model,id);
 		
 		model.addAttribute("dto", dto); // resvDto
 		model.addAttribute("roomdto", roomdto); // roomDto
 		model.addAttribute("request", request);
+		model.addAttribute("requestMessage", request.getParameter("requestMessage"));
 
 		return "reservation/step4";
 	}
 	
+	@RequestMapping(value = "resv/step5")
+	public String step5(Model model, HttpServletRequest request, ResvDto dto, RoomDto roomdto, ReservationDto reservationDto, JoinDto joinDto) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate checkin = LocalDate.parse(dto.getCheck_in(), formatter);
+		LocalDate checkout = LocalDate.parse(dto.getCheck_out(), formatter);
+		java.sql.Date sqlDate = java.sql.Date.valueOf(checkin);
+		java.sql.Date sqlDate1 = java.sql.Date.valueOf(checkout);
+		reservationDto.setCheckin(sqlDate);
+		reservationDto.setCheckout(sqlDate1);
+
+		System.out.println("≥—∞‹πﬁ¿∫ √º≈©¿Œ + √º≈©æ∆øÙ ≥Ø¬• µ•¿Ã≈Õ : "+dto.getCheck_in() + dto.getCheck_out());
+		
+		// √— ∞·¡¶±›æ◊ ≥÷±‚
+		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
+			System.out.println(request.getParameter("totalPrices"));
+			reservationDto.setPrice(Integer.parseInt(request.getParameter("totalPrices")));
+		}
+		// «¡∑Œ∏º« ƒ⁄µÂ ¿÷¥¬¡ˆ √º≈© »ƒ ∞™ ≥—±Ë
+		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
+			System.out.println("«¡∑Œ∏º« ƒ⁄µÂ : " + dto.getPrm_code());
+			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
+			reservationDto.setPromotion(true);
+			reservationDto.setProcode(proCodeDto.getProcode());
+		}else {
+			reservationDto.setPromotion(false);
+			reservationDto.setProcode("");
+		}
+		
+	
+		
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		dao.insertResv(reservationDto);
+		
+//		model.addAttribute("dto", dto); // resvDto
+//		model.addAttribute("roomdto", roomdto); // roomDto
+//		model.addAttribute("request", request);
+//		model.addAttribute("requestMessage", request.getParameter("requestMessage"));
+		
+		return "reservation/step5";
+	}
 	
 }
