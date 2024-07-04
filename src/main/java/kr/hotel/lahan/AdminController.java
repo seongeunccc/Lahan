@@ -109,7 +109,7 @@ public SqlSession sqlSession;
 	  command = new HotelAddCommand();
 	  System.out.println("호占쏙옙占쌩곤옙_DB2"); 
 	  command.execute(model);
-	 
+	  
 	 return "redirect:/admin/hotel.do"; }
 	 
 	
