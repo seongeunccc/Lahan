@@ -70,6 +70,16 @@ public class ReservationController {
 	public String sitemap(Model model) {
 		return "sitemap";
 	}
+	@RequestMapping(value = "admin/reservation.do")
+	public String getAll(Model model) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		List list = new ArrayList();
+		list = dao.getAllResv();
+		System.out.println(list.size());
+		model.addAttribute("list", list);
+		
+		return "admin/admin_reservation";
+	}
 	
 	@RequestMapping(value = "mypage/update")
 	public String memberInfoUpdate(HttpServletRequest request, Model model) {
@@ -129,10 +139,16 @@ public class ReservationController {
 		String id = (String) request.getSession().getAttribute("id");
 		List list = new ArrayList();
 		list = dao.getResv(id);
-		
 		model.addAttribute("resvDto", list);
 		
 		return "reservation/checkResv";
+	}
+	@RequestMapping(value = "admin/reservdelete.do")
+	public String deleteResv(HttpServletRequest request, Model model, @RequestParam("id") String id) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		dao.deleteResv(id);
+		
+		return "redirect:admin/reservation.do";
 	}
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST

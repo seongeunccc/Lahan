@@ -250,26 +250,28 @@
             <table class="myInfoList">
         <thead>
             <tr>
-                <th style="width: 50px;">아이디</th>
-                <th style="width: 50px;">이름</th>
-                <th style="width: 50px;">생년월일</th>
-                <th style="width: 50px;">회원등급</th>
-                 <th style="width: 50px;">보유 포인트</th> 
-                  <th style="width: 50px;">회원가입일</th> 
-                   <th style="width: 50px;">탈퇴일</th>
-                    <th style="width: 50px;">탈퇴</th> 
+                <th style="width: 50px;">예약번호</th>
+                <th style="width: 50px;">회원 아이디</th>
+                <th style="width: 50px;">예약 호텔</th>
+                <th style="width: 50px;">룸 타입</th>
+                 <th style="width: 50px;">체크인 날짜</th> 
+                  <th style="width: 50px;">체크아웃 날짜</th> 
+                   <th style="width: 50px;">예약일</th>
+                    <th style="width: 50px;">결제금액</th> 
+                    <th style="width: 50px;">예약 삭제</th> 
             </tr>
         </thead>
         <tbody>
             <c:forEach var="member" items="${list}">
                 <tr>
+                    <td>${member.reservation_id}</td>
                     <td>${member.id}</td>
-                    <td>${member.name}</td>
-                    <td>${member.birth}</td>
-                    <td>${member.membership}</td>
-                    <td>${member.point}</td>
-                    <td>${member.joindate}</td>
-                    <td>${member.withdraw}</td>
+                    <td>${member.hotel}</td>
+                    <td>${member.room_name}</td>
+                    <td>${member.checkin}</td>
+                    <td>${member.checkout}</td>
+                    <td>${member.reserv_date}</td>
+                    <td>${member.price}</td>
                     <td> 
                         <button style="width:150px;" onclick="deleteMember('${member.id}')" class="btn btn-gold">예약 삭제</button>
                     	
@@ -281,7 +283,7 @@
             
  <script>
         function deleteMember(id) {
-            if (confirm("정말 삭제하시겠습니까?")) {
+            if (confirm("정말 취소하시겠습니까?")) {
                 window.location.href = "/lahan/admin/reservdelete.do?id=" + id;
             }
         }

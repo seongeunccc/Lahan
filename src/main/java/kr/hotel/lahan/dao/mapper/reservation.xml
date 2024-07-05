@@ -27,6 +27,13 @@
     <select id="findResvId" resultType="java.lang.Integer" >
     	select max(reservation_id) from reservation where id = #{param1}
     </select>
+    
+    <select id="getAllResv" resultType="kr.hotel.lahan.dto.ReservationDto" >
+    	select * from reservation
+    </select>
+    <delete id="deleteResv" >
+    	delete from reservation where reservation_id = #{param1}
+    </delete>
 </mapper>
 
 <!--  INSERT INTO hotel
