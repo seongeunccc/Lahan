@@ -57,7 +57,7 @@ public SqlSession sqlSession;
 	@RequestMapping("/admin/admin.do")
 	public String adminmain(Model model) {
 		
-		System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 화占쏙옙");
+		System.out.println("�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕 �솕�뜝�룞�삕");
 
 		return "/admin/admin_main";
 	}
@@ -82,36 +82,36 @@ public SqlSession sqlSession;
 	  }
 	
 
-		
-		 @RequestMapping("/admin/reservation.do")
-		 public String adminreserv(Model model) { 
-			 command = new ReservConfirmCommand(); 
-			 command.execute(model);
-		    System.out.println("reserv confirm"); 
-		    return "/admin/admin_reservation"; 
-		    }
+//		
+//		 @RequestMapping("/admin/reservation.do")
+//		 public String adminreserv(Model model) { 
+//			 command = new ReservConfirmCommand(); 
+//			 command.execute(model);
+//		    System.out.println("reserv confirm"); 
+//		    return "/admin/admin_reservation"; 
+//		    }
 		
 	
 	@RequestMapping("/admin/hotel.do")
 	public String adminhotel(Model model) {
 	
-		System.out.println("호占쌘곤옙占쏙옙 화占쏙옙");
+		System.out.println("�샇�뜝�뙓怨ㅼ삕�뜝�룞�삕 �솕�뜝�룞�삕");
 		
 		return "/admin/admin_hotel";
 	}
 	@RequestMapping("/admin/hoteladd.do")
 	public String adminhoteladd(Model model) {
-		System.out.println("호占쏙옙占쌩곤옙 화占쏙옙");
+		System.out.println("�샇�뜝�룞�삕�뜝�뙥怨ㅼ삕 �솕�뜝�룞�삕");
 		return "/admin/admin_hotel_add";
 	}
 	
 	
 	 @RequestMapping("/admin/hoteladding.do") 
 	 public String hoteladd(HttpServletRequest request, Model model) {
-	  System.out.println("호占쏙옙占쌩곤옙_DB"); 
+	  System.out.println("�샇�뜝�룞�삕�뜝�뙥怨ㅼ삕_DB"); 
 	  model.addAttribute("request",request); 
 	  command = new HotelAddCommand();
-	  System.out.println("호占쏙옙占쌩곤옙_DB2"); 
+	  System.out.println("�샇�뜝�룞�삕�뜝�뙥怨ㅼ삕_DB2"); 
 	  command.execute(model);
 	  
 	 return "redirect:/admin/hotel.do"; }
@@ -121,18 +121,18 @@ public SqlSession sqlSession;
 	public String adminproduct(Model model) {
 
 
-		System.out.println("이게어디야");
+		System.out.println("�씠寃뚯뼱�뵒�빞");
 
 		return "/admin/admin_product";
 	}
 	
-	@RequestMapping("/admin/upproduct") // 상준 부분 성은아 머지할때 지우지마!!
+	@RequestMapping("/admin/upproduct") // �긽以� 遺�遺� �꽦���븘 癒몄��븷�븣 吏��슦吏�留�!!
 	public String adminUpProduct(Model model) {
-		System.out.println("상품 올리는 화면");
+		System.out.println("�긽�뭹 �삱由щ뒗 �솕硫�");
 		return "/admin/admin_up_product";
 	}
 	
-	@RequestMapping("/admin/upproductCommand") //상준 부분 성은아 머지할때 지우지마!!
+	@RequestMapping("/admin/upproductCommand") //�긽以� 遺�遺� �꽦���븘 癒몄��븷�븣 吏��슦吏�留�!!
 	public String adminUpProductCommand(HttpServletRequest request, Model model) {
 		System.out.println("12345");
 		model.addAttribute("request", request);
