@@ -16,5 +16,6 @@ public interface ReservationDao {
 	public List<ReservationDto> getAllResv();
 	public int findResvId(String id);
 	public void deleteResv(String id);
+	public int totalPayment(String id);
 
 }
