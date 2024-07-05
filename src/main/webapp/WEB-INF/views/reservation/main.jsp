@@ -180,7 +180,7 @@ function setPromo() {
   	 var promoCode = $("#prtmCode").val();
   	 console.log(promoCode)
   	 console.log(typeof(promoCode))
-  	 	fetch('/lahan/searchProcode?promoCode=' + encodeURIComponent(promoCode))
+  	 	fetch(' ${pageContext.request.contextPath}/searchProcode?promoCode=' + encodeURIComponent(promoCode))
 	    .then(response => {
 	        if (!response.ok) {
 	            throw new Error('Network response was not ok');
