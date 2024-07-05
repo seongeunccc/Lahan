@@ -242,7 +242,8 @@
 					<!-- 컨텐츠 시작 -->
 					<div class="sub-cont-tit">
 						<h3 class="sub-tit02">ABOUT HOTEL</h3>
-						<button onclick="window.location.href='/lahan/admin/hoteladd.do'" class="more_btn">추가</button>
+						<button onclick="window.location.href='/lahan/admin/hoteladd.do'" class="btn btn-navy-line"
+						style="font-family: 'Yoon740', sans-serif; font-size: 18px; width: 200px; height: 56px; margin: 0px 20px 0px 0px; padding: 0px 5px;">추가</button>
 					</div>
 					<div class="hotel_cont_wrap">
 					

@@ -214,27 +214,32 @@
 	            </div>
 	         </section>
 			
+			<br/><br/><br/><br/>		
+			<button onclick="window.location.href='${pageContext.request.contextPath}/admin/upproduct'" class="btn btn-navy-line"
+						style="font-family: 'Yoon740', sans-serif; font-size: 18px; width: 200px; height: 56px; margin: 0px 20px 0px 0px; padding: 0px 5px;">추가</button>
+			<br/><br/><br/><br/>
 			
-	<div class="sub-contents-wrap ty-01">
+	<%-- <div class="sub-contents-wrap ty-01">
 			
 	<ul class="tab-contents-list" id="seList">
-	<li><a href="${pageContext.request.contextPath}/admin/upproduct" title="상품등록"> 상품등록</a></li>
+	<li><a href="${pageContext.request.contextPath}/admin/upproduct" title="상품등록"class="btn btn-navy-line"
+	style="font-family: 'Yoon740', sans-serif; font-size: 18px; width: 200px; height: 56px; margin: 0px 20px 0px 0px; padding: 0px 5px;"> 상품등록</a></li>
 	</ul>
-	</div>
+	</div> --%>
 			
-	<section class="sub-contents">
-		<div class="sub-contents-wrap ty-01">
-			<div class="tab-contents">
+	<!-- <section class="sub-contents">
+		<div class="sub-contents-wrap ty-01"> -->
+			<!-- <div class="tab-contents">
 				<ul class="tab-contents-list" id="seList">
 					<li value="" onclick="fncGetList('','01');" class="active"><a>전체</a></li>
 					<li value="S01" onclick="fncGetList('S01','01');" class=""><a>PB</a></li>				
 				<li value="S02" onclick="fncGetList('S02','01');" class=""><a>상품권</a></li>
 					<li value="S03" onclick="fncGetList('S03','01');" class=""><a>선물세트</a></li>
 				</ul>
-			</div>
+			</div> -->
 			
 			
-			<div class="recommond-contents row-reverse-list">
+			<%-- <div class="recommond-contents row-reverse-list">
 		        <div class="recommond-box select">
 		          <div class="as-select selected">
 		            <span class="select-recommond selected-value" id="reSort">낮은가격순</span>
@@ -265,7 +270,7 @@
 		            </li>
 		       
 		      </ul>
-		    </div>
+		    </div> --%>
 		
 	</section>
 			
