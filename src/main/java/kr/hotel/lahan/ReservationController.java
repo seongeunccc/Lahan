@@ -139,6 +139,7 @@ public class ReservationController {
 		String id = (String) request.getSession().getAttribute("id");
 		List list = new ArrayList();
 		list = dao.getResv(id);
+		model.addAttribute("currentDate", LocalDate.now());
 		model.addAttribute("resvDto", list);
 		
 		return "reservation/checkResv";

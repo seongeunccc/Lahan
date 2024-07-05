@@ -89,6 +89,13 @@
 		z-index: 9999;
 	}
     </style>
+    <script type="text/javascript">
+    function deleteMember(id) {
+        if (confirm("정말 예약을 취소하시겠습니까?")) {
+            window.location.href = "/lahan/admin/reservdelete.do?id=" + id;
+        }
+    }
+    </script>
 </head>
 <body>
  <div class="wrap sub">
@@ -155,7 +162,7 @@
 							<th>룸 타입<!-- 예약상태 --></th>
 							<th>예약일<!-- 예약일 --></th>
 							<th>투숙일<!-- 투숙일 --></th>
-							<th>예약상태<!-- 예약상태 --></th>
+							<th>예약삭제<!-- 예약상태 --></th>
 						
 	            		</tr>
 	            		<c:forEach var="resvDto" items="${resvDto}">
@@ -165,7 +172,8 @@
 							<th>${resvDto.room_name}<!-- 룸타입 --></th>
 							<th>${resvDto.reserv_date }<!-- 예약일 --></th>
 							<th>${resvDto.checkin } - ${resvDto.checkout }<!-- 투숙일 --></th>
-							<th>예약 완료<!-- 예약상태 --></th>
+							
+							<th><button style="width:150px;" onclick="deleteMember('${resvDto.reservation_id}')" class="btn btn-gold">예약 삭제<!-- 예약상태 --></button></th>
 						</tr>
 	            		</c:forEach>
 	            	</thead>
