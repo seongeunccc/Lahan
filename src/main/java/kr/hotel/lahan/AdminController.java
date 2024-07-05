@@ -118,15 +118,27 @@ public SqlSession sqlSession;
 	 return "redirect:/admin/hotel.do"; }
 	 
 	
-	@RequestMapping("/admin/product.do")
-	public String adminproduct(Model model) {
 
+//	@RequestMapping("/admin/product.do")
+//	public String adminproduct(Model model) {
+//
+//
+//		System.out.println("이게어디야");
+//
+//		return "/admin/admin_product";
+//	}
 
-		System.out.println("�씠寃뚯뼱�뵒�빞");
+//	@RequestMapping("/admin/product.do")
+//	public String adminproduct(Model model) {
+//
+//
+//		System.out.println("�씠寃뚯뼱�뵒�빞");
+//
+//		return "/admin/admin_product";
+//	}
 
-		return "/admin/admin_product";
-	}
 	
+
 	@RequestMapping("/admin/upproduct") // �긽以� 遺�遺� �꽦���븘 癒몄��븷�븣 吏��슦吏�留�!!
 	public String adminUpProduct(Model model) {
 		System.out.println("�긽�뭹 �삱由щ뒗 �솕硫�");
@@ -140,7 +152,7 @@ public SqlSession sqlSession;
 		command = new UpPrdouctCommand();
 		command.execute(model);
 		
-		return "/admin/admin_up_product";
+		return "redirect:/main";
 	}
 	
 }

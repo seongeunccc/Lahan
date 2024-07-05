@@ -214,7 +214,7 @@
 													<div class="gradeList">
 														<p>현재등급</p>							
 														<span class="grade" id="circleCurrentGrade">${memberinfo.membership }</span>														
-														<div class="occupy" id="totalPaymentAmount">지금까지 결재금액(포인트 아님, 칼럼 추가)</div>
+														<div class="occupy" id="totalPaymentAmount">지금까지 결재금액</div>
 													</div>
 												</div>
 												<div class="slice1 slice-list"></div>
@@ -285,7 +285,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="mypageMainTit">
+						<!-- <div class="mypageMainTit">
 							<h1>최근 포인트 적립/사용 내역</h1>
 							<a href="/hub/ko/mypage/mypoint/myPointForm.do" class="moreBtn">포인트내역
 								더보기 </a>
@@ -309,7 +309,7 @@
 								<tbody>
 									<tr>
 										<td colspan="4">
-											<!-- 테이블 안에 데이터 없음 이미지 넣어야 할 경우 colspan 맞춰줘야됨 -->
+											테이블 안에 데이터 없음 이미지 넣어야 할 경우 colspan 맞춰줘야됨
 											<div class="nodata-wrap">
 												<img src="/static/pc/images/hub/icon/ico_nodata.png"
 													class="nodata_img">
@@ -319,7 +319,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>
+						</div> -->
 						<div class="mpBottmGuide type02">
 							<ul>
 								<li>※ 적립 포인트는 2024년 07월 02일 기준입니다.</li>
