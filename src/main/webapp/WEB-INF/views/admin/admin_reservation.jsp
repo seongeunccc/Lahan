@@ -273,7 +273,7 @@
                     <td>${member.reserv_date}</td>
                     <td>${member.price}</td>
                     <td> 
-                        <button style="width:150px;" onclick="deleteMember('${member.id}')" class="btn btn-gold">예약 삭제</button>
+                        <button style="width:150px;" onclick="deleteMember('${member.reservation_id}')" class="btn btn-gold">예약 취소</button>
                     	
                    </td>
                 </tr>
@@ -283,7 +283,7 @@
             
  <script>
         function deleteMember(id) {
-            if (confirm("정말 취소하시겠습니까?")) {
+            if (confirm("정말 예약을 취소하시겠습니까?")) {
                 window.location.href = "/lahan/admin/reservdelete.do?id=" + id;
             }
         }

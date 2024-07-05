@@ -146,9 +146,10 @@ public class ReservationController {
 	@RequestMapping(value = "admin/reservdelete.do")
 	public String deleteResv(HttpServletRequest request, Model model, @RequestParam("id") String id) {
 		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		System.out.println("삭제를 원하는 예약번호 : " + id);
 		dao.deleteResv(id);
 		
-		return "redirect:admin/reservation.do";
+		return "redirect:/admin/reservation.do";
 	}
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
@@ -267,7 +268,9 @@ public class ReservationController {
 		reservationDto.setRoom_name(roomdto.getRoom_name());
 
 		System.out.println("넘겨받은 체크인 + 체크아웃 날짜 데이터 : "+dto.getCheck_in() + dto.getCheck_out());
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		
+		int beforeTotal = dao.totalPayment(joinDto.getId());
 		// 총 결제금액 넣기
 		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
 			System.out.println(request.getParameter("totalPrices"));
@@ -276,7 +279,7 @@ public class ReservationController {
 		// 프로모션 코드 있는지 체크 후 값 넘김
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
 			System.out.println("프로모션 코드 : " + dto.getPrm_code());
-			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			reservationDto.setPromotion(true);
 			reservationDto.setProcode(proCodeDto.getProcode());
@@ -285,7 +288,6 @@ public class ReservationController {
 			reservationDto.setProcode("");
 		}
 		
-		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		dao.insertResv(reservationDto);
 		System.out.println("id : " + reservationDto.getId());
 		int result = dao.findResvId(reservationDto.getId());
