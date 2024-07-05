@@ -138,7 +138,7 @@
             </div>
             <div class="joinInfo">
                 <p class="joinName">
-	                <span class="userName">1</span> 님,
+	                <span class="userName">${joinDto.id} </span> 님,
                 </p>
                 <div class="completeTxt">예약이 정상적으로 완료되었습니다.<Br/>회원 전용 혜택과 특별한 서비스를 만나보세요.</div>
                 <div class="numBox">

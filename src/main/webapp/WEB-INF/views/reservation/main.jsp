@@ -195,6 +195,7 @@ function setPromo() {
 	        	$("#Prm_code").val($("#prtmCode").val());
 	        }else{
 	        	alert("유효하지 않은 프로모션 코드입니다.");
+	        	$("#Prm_code").val("");
 	        }
 	    })
 	    .catch(error => {

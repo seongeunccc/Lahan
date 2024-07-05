@@ -70,6 +70,16 @@ public class ReservationController {
 	public String sitemap(Model model) {
 		return "sitemap";
 	}
+	@RequestMapping(value = "admin/reservation.do")
+	public String getAll(Model model) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		List list = new ArrayList();
+		list = dao.getAllResv();
+		System.out.println(list.size());
+		model.addAttribute("list", list);
+		
+		return "admin/admin_reservation";
+	}
 	
 	@RequestMapping(value = "mypage/update")
 	public String memberInfoUpdate(HttpServletRequest request, Model model) {
@@ -129,10 +139,17 @@ public class ReservationController {
 		String id = (String) request.getSession().getAttribute("id");
 		List list = new ArrayList();
 		list = dao.getResv(id);
-		
 		model.addAttribute("resvDto", list);
 		
 		return "reservation/checkResv";
+	}
+	@RequestMapping(value = "admin/reservdelete.do")
+	public String deleteResv(HttpServletRequest request, Model model, @RequestParam("id") String id) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		System.out.println("삭제를 원하는 예약번호 : " + id);
+		dao.deleteResv(id);
+		
+		return "redirect:/admin/reservation.do";
 	}
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST
@@ -251,7 +268,9 @@ public class ReservationController {
 		reservationDto.setRoom_name(roomdto.getRoom_name());
 
 		System.out.println("넘겨받은 체크인 + 체크아웃 날짜 데이터 : "+dto.getCheck_in() + dto.getCheck_out());
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		
+		int beforeTotal = dao.totalPayment(joinDto.getId());
 		// 총 결제금액 넣기
 		if(request.getParameter("totalPrices")!=null&&!request.getParameter("totalPrices").equals("")) {
 			System.out.println(request.getParameter("totalPrices"));
@@ -260,7 +279,7 @@ public class ReservationController {
 		// 프로모션 코드 있는지 체크 후 값 넘김
 		if (dto.getPrm_code() != null && !dto.getPrm_code().equals("")) {
 			System.out.println("프로모션 코드 : " + dto.getPrm_code());
-			ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		
 			ProCodeDto proCodeDto = dao.serchProcode(dto.getPrm_code());
 			reservationDto.setPromotion(true);
 			reservationDto.setProcode(proCodeDto.getProcode());
@@ -269,13 +288,13 @@ public class ReservationController {
 			reservationDto.setProcode("");
 		}
 		
-		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
 		dao.insertResv(reservationDto);
 		System.out.println("id : " + reservationDto.getId());
 		int result = dao.findResvId(reservationDto.getId());
 		System.out.println("result : " + result);
-		model.addAttribute("resvNo", result); // resvDto
 		
+		model.addAttribute("resvNo", result); // resvDto
+		model.addAttribute("joinDto", joinDto);
 		return "reservation/step5";
 	}
 	
