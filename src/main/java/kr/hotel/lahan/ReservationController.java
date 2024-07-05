@@ -139,10 +139,16 @@ public class ReservationController {
 		String id = (String) request.getSession().getAttribute("id");
 		List list = new ArrayList();
 		list = dao.getResv(id);
-		
 		model.addAttribute("resvDto", list);
 		
 		return "reservation/checkResv";
+	}
+	@RequestMapping(value = "admin/reservdelete.do")
+	public String deleteResv(HttpServletRequest request, Model model, @RequestParam("id") String id) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		dao.deleteResv(id);
+		
+		return "redirect:admin/reservation.do";
 	}
 
 	@RequestMapping(value = "/searchProcode", method = RequestMethod.GET, produces = "application/json") // , method =																										// RequestMethod.POST

@@ -283,7 +283,7 @@
             
  <script>
         function deleteMember(id) {
-            if (confirm("정말 삭제하시겠습니까?")) {
+            if (confirm("정말 취소하시겠습니까?")) {
                 window.location.href = "/lahan/admin/reservdelete.do?id=" + id;
             }
         }

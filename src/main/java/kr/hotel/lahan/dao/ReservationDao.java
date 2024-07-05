@@ -15,5 +15,6 @@ public interface ReservationDao {
 	public List<ReservationDto> getResv(String id);
 	public List<ReservationDto> getAllResv();
 	public int findResvId(String id);
+	public void deleteResv(String id);
 
 }
