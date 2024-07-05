@@ -166,8 +166,9 @@
 			<a href="#container">컨텐츠 바로가기</a>
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
+		 <%@ include file="/WEB-INF/views/header.jsp" %> 
         
-		<header id="header" class="header">
+		<%-- <header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
 			<div class="h-wrap">
@@ -179,7 +180,6 @@
 							<span class="fixedd_logo"><img src="${pageContext.request.contextPath}/resources/images/main_logo_bl.png" alt="LAHAN"/></span>
 						</a>
 					</h1> 
-					
 					<ul class="nav-list">
 						<li>
 							<a href="/lahan/admin/member.do">회원관리</a>
@@ -214,7 +214,7 @@
 					</div>					
 				</div>
 			</div>	
-		</header>
+		</header> --%>
 		<div id="container" class="container">
 			<!--(레이아웃명([PC][국문] - 라한 소개 > 호텔소개 레이아웃) 최종수정일 : 2022-12-01 18:14)-->
 			
@@ -223,14 +223,14 @@
 	            <div class="sub-visual-wrap">
 	               <div class="sub-visual-list">	                  
 	                  <div class="sub-nav-wrap bgType dotColor1">
-	                     	                     <ul class="sub-nav">
-	                        <li><a href="/lahan/admin/notice.do" >공지사항</a></li>
-	                        <li><a href="/lahan/admin/ask.do" class="on">1:1문의하기</a>	</li>
-	                     </ul>
+	                     	                    <!--  <ul class="sub-nav">
+	                        <li><a href="/lahan/admin/notice.do" class="on">공지사항</a></li>
+	                        <li><a href="/lahan/admin/ask.do">1:1문의하기</a>	</li>
+	                     </ul> -->
 	                  </div>	                  
 	                  	<div class="sub-visual-txt brand-lahan">
-	                  		<h3 class="sub-tit02">Q and A</h3>
-                            <p>Lahan hotel 고객님들의 의견을 확인하세요.</p>
+	                  		<h3 class="sub-tit02">NOTICE</h3>
+                            <p>Lahan hotel의 공지사항을 확인하세요.</p>
 	                  	</div>
 	                	<img src="${pageContext.request.contextPath}/resources/images/admin_notice_topimg.jpg" alt="sub visual">
 	               </div>
@@ -242,8 +242,8 @@
 			<section class="sub-contents">
 				<div class="sub-contents-wrap ty-01">
 					<!-- 컨텐츠 시작 -->
-				<!-- 	<button onclick="window.location.href='/lahan/ask/add.do'" class="more_btn">추가</button>
-				 -->	
+					
+					
 					<div id="container" class="container">
     
   
@@ -254,29 +254,18 @@
         <thead>
             <tr>
                 <th style="width: 60px;">번호</th>
-                <th style="width: 150px;">제목</th>
+                <th style="width: 200px;">제목</th>
                 <th style="width: 100px;">게시일</th>
-                <th style="width: 100px;">글쓴이</th>
-                <th style="width: 50px;">답변여부</th> 
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="ask" items="${list}">
+            <c:forEach var="notice" items="${list}">
                 <tr>
-                    <td>${ask.board_num}</td>
+                    <td>${notice.board_num}</td>
                     <td>
-                        <a href="askview.do?board_num=${ask.board_num}">${ask.title}</a>
+                        <a href="noticeview.do?board_num=${notice.board_num}">${notice.title}</a>
                     </td>
-                    <td>${ask.date}</td>
-                    <td>${ask.id}</td>
-                    <td> <c:choose>
-                <c:when test="${not empty ask.reply}">
-                    Y
-                </c:when>
-                <c:otherwise>
-                    N
-                </c:otherwise>
-            </c:choose></td>
+                    <td>${notice.date}</td>
                 </tr>
             </c:forEach>
         </tbody>
@@ -284,11 +273,13 @@
 </div>
 		</div>
 		</div>
-		</div>
-		
+		</div><br><br>
+		<!-- <button onclick="window.location.href='/lahan/admin/noticeadd.do'" class="btn btn-gold" style="width:150px; left-margin:150px;">공지사항 추가</button>
+		 -->
 		</section>
+		
 		</div>
-				</div>
+						</div>
 	
 		
 		

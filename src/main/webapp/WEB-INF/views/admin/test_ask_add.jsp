@@ -146,8 +146,10 @@
 			<a href="#container">컨텐츠 바로가기</a>
 			<a href="#footer">푸터 영역 바로가기</a>
 		</div>
+		
+		    <%@ include file="/WEB-INF/views/header.jsp" %> 
         
-		<header id="header" class="header">
+		<%-- <header id="header" class="header">
 			<!--(HEAD 최종수정일 : 2024-04-01 19:13)-->
 
 			<div class="h-wrap">
@@ -194,7 +196,7 @@
 					</div>					
 				</div>
 			</div>	
-		</header>
+		</header> --%>
 		<div id="container" class="container">
 			<!--(레이아웃명([PC][국문] - 라한 소개 > 호텔소개 레이아웃) 최종수정일 : 2022-12-01 18:14)-->
 			<script type="text/javascript">
@@ -400,13 +402,13 @@ function fncRegist() {
 	               <div class="sub-visual-list">	                  
 	                  <div class="sub-nav-wrap bgType dotColor1">
 	                     	                     <ul class="sub-nav">
-	                        <li><a href="/lahan/admin/notice.do" class="on">공지사항</a></li>
-	                        <li><a href="/lahan/admin/ask.do">1:1문의하기</a>	</li>
+	                      <!--   <li><a href="/lahan/admin/notice.do">공지사항</a></li>
+	                        <li><a href="/lahan/admin/ask.do"  class="on">1:1문의하기</a>	</li> -->
 	                     </ul>
 	                  </div>	                  
 	                  	<div class="sub-visual-txt brand-lahan">
-	                  		<h3 class="sub-tit02">NOTICE</h3>
-                            <p>Lahan hotel의 공지사항을 관리하세요.</p>
+	                  		<h3 class="sub-tit02">1:1 문의하기</h3>
+                            <p>Lahan hotel에게 궁금한 점을 남겨주세요.</p>
 	                  	</div>
 	                	<img src="${pageContext.request.contextPath}/resources/images/admin_notice_topimg.jpg" alt="sub visual">
 	               </div>
@@ -504,20 +506,20 @@ function fncRegist() {
 										</div>
 									</div>
 								</div>
-								<div class="intWrap">
+								<!-- <div class="intWrap">
 									<div class="intBox">
-										<span class="tit-wrap"><!-- 첨부파일 -->첨부파일</span>
+										<span class="tit-wrap">첨부파일첨부파일</span>
 										<div class="txt-wrap">
 											<div class="fileUpload">
 												<div class="intDel">
 													<input type="text" id="fileName" placeholder='첨부파일( 파일형식 png, jpg , pdf /10MB 이하)' class="fileName" placeholder="" readonly="">
 													<button type="button" class="btnDel">삭제</button>
 												</div>
-												<label for="uploadBtn03" class="fileBtn"><!-- 파일첨부 -->파일첨부</label>
+												<label for="uploadBtn03" class="fileBtn">파일첨부파일첨부</label>
 												<input type="file" name="attachment"  id="uploadBtn03" class="uploadBtn">
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</li>
 							

@@ -117,16 +117,16 @@ public SqlSession sqlSession;
 	 return "redirect:/admin/hotel.do"; }
 	 
 	
-	@RequestMapping("/admin/product.do")
-	public String adminproduct(Model model) {
-
-
-		System.out.println("이게어디야");
-
-		return "/admin/admin_product";
-	}
+//	@RequestMapping("/admin/product.do")
+//	public String adminproduct(Model model) {
+//
+//
+//		System.out.println("이게어디야");
+//
+//		return "/admin/admin_product";
+//	}
 	
-	@RequestMapping("/admin/upproduct") // 상준 부분 성은아 머지할때 지우지마!!
+	@RequestMapping("/admin/product.do") // 상준 부분 성은아 머지할때 지우지마!!
 	public String adminUpProduct(Model model) {
 		System.out.println("상품 올리는 화면");
 		return "/admin/admin_up_product";
@@ -139,7 +139,7 @@ public SqlSession sqlSession;
 		command = new UpPrdouctCommand();
 		command.execute(model);
 		
-		return "/admin/admin_up_product";
+		return "redirect:/main";
 	}
 	
 }

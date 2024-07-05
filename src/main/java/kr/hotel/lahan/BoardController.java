@@ -49,30 +49,30 @@ public SqlSession sqlSession;
 		command = new NoticeListCommand();
 		command.execute(model);
 
-		System.out.println("¾îµå¹Î °øÁö»çÇ× È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_notice";
 	}
 	@RequestMapping("/admin/noticeadd.do")
 	public String adminnoticeadd(Model model) {
-		System.out.println("¾îµå¹Î °øÁö»çÇ× µî·Ï È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		return "/admin/admin_notice_add";
 	}
 	
 	@RequestMapping("/admin/noticeadding.do") 
 	 public String noticeadd(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× Ãß°¡_DB"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½_DB"); 
 	  model.addAttribute("request",request);
 	  command = new NoticeAddCommand();
-	  System.out.println("°øÁö»çÇ×_DB2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_DB2"); 
 	  command.execute(model); 
 	 return "redirect:/admin/notice.do"; }
 	
 	@RequestMapping("/admin/noticeview.do") 
 	 public String contentView(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× È®ÀÎ"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"); 
 	 model.addAttribute("request",request);
 	command = new NoticeViewCommand();
-	  System.out.println("°øÁö»çÇ× È®ÀÎ2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½2"); 
 	command.execute(model); 
 	 return "/admin/admin_notice_detail"; }
 	
@@ -109,7 +109,7 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/ask.do")
 	public String adminmqanda(Model model) {
-		System.out.println("¾îµå¹Î 1:1¹®ÀÇ È­¸é");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ 1:1ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
 		command = new AskListCommand();
 		command.execute(model);
 		return "/admin/admin_ask";
@@ -117,10 +117,10 @@ public SqlSession sqlSession;
 	
 	@RequestMapping("/admin/askview.do") 
 	 public String askcontentView(HttpServletRequest request, Model model) {
-	  System.out.println("°øÁö»çÇ× È®ÀÎ"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"); 
 	 model.addAttribute("request",request);
 	command = new AskViewCommand();
-	  System.out.println("°øÁö»çÇ× È®ÀÎ2"); 
+	  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½2"); 
 	command.execute(model); 
 	 return "/admin/admin_ask_detail"; }
 	
@@ -142,19 +142,40 @@ public SqlSession sqlSession;
 	     return "redirect:/admin/ask.do";
 	 }
 	
-	@RequestMapping("/ask/add.do")
-	public String testaskadd(Model model) {
-		System.out.println("1:1¹®ÀÇ µî·Ï È­¸é");
-		return "/admin/test_ask_add";
-	}
+		/*
+		 * @RequestMapping("/ask/add.do") public String testaskadd(Model model) {
+		 * System.out.println("1:1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½"); return "/admin/test_ask_add"; }
+		 */
 	
 	@RequestMapping("/ask/adding.do") 
 	 public String askadd(HttpServletRequest request, Model model) {
 	  model.addAttribute("request",request);
 	  command = new AskAddCommand(); 
 	  command.execute(model); 
-	 return "redirect:/admin/ask.do"; }
+	 return "redirect:/main"; }
 
+	@RequestMapping("/hub/ko/customer/contact.do")
+	public String testaskadd(Model model) {
+		System.out.println("1:1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
+		return "/admin/test_ask_add";
+	}
+	
+	@RequestMapping("/hub/ko/notice/generalInfo/list.do")
+	public String customnotice(Model model) {
+		command = new NoticeListCommand();
+		command.execute(model);
 
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½");
+		return "/admin/admin_notice2";
+	}
+
+	@RequestMapping("hub/ko/notice/generalInfo/noticeview.do")
+	public String CcontentView(HttpServletRequest request, Model model) {
+		  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½"); 
+		 model.addAttribute("request",request);
+		command = new NoticeViewCommand();
+		  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½2"); 
+		command.execute(model); 
+		 return "/admin/admin_notice_detail2"; }
 
 }
