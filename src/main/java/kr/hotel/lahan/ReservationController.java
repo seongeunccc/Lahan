@@ -290,8 +290,9 @@ public class ReservationController {
 		System.out.println("id : " + reservationDto.getId());
 		int result = dao.findResvId(reservationDto.getId());
 		System.out.println("result : " + result);
-		model.addAttribute("resvNo", result); // resvDto
 		
+		model.addAttribute("resvNo", result); // resvDto
+		model.addAttribute("joinDto", joinDto);
 		return "reservation/step5";
 	}
 	
