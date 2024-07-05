@@ -71,6 +71,14 @@ public SqlSession sqlSession;
 		System.out.println("memberList");
 		return "/admin/admin_member";
 	}
+	@RequestMapping("/admin/member.do")
+	public String adminmember(Model model) {
+		System.out.println("member1");
+		command = new MemberListCommand();
+		command.execute(model);
+		System.out.println("memberList");
+		return "/admin/admin_member";
+	}
 	
 	  @RequestMapping("/admin/memberdelete.do")
 	    public String memdelete(HttpServletRequest request, Model model) {
