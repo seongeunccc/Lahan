@@ -180,16 +180,16 @@
 					
 					<ul class="nav-list">
 						<li>
-							<a href="/lahan/admin/member.do">회원관리</a>
+							<a href="${pageContext.request.contextPath}/admin/member.do">회원관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/reservation.do">예약관리</a>
+							<a href="${pageContext.request.contextPath}/admin/reservation.do">예약관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/hotel.do">호텔/상품 관리</a>
+							<a href="${pageContext.request.contextPath}/admin/hotel.do">호텔/상품 관리</a>
 						</li>
 						<li>
-							<a href="/lahan/admin/notice.do">공지/문의 관리</a>
+							<a href="${pageContext.request.contextPath}/admin/notice.do">공지/문의 관리</a>
 						</li>
 					</ul>
 				</div>
@@ -284,7 +284,7 @@
  <script>
         function deleteMember(id) {
             if (confirm("정말 예약을 취소하시겠습니까?")) {
-                window.location.href = "/lahan/admin/reservdelete.do?id=" + id;
+                window.location.href = "${pageContext.request.contextPath}/admin/reservdelete.do?id=" + id;
             }
         }
     </script>
