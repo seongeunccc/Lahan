@@ -101,6 +101,8 @@ public class LoginJoinController {
 		 jCommand.viewProduct(model);
 		 return "/product/viewProduct"; 
 	}
+//
+	 //
 	 
 //		@RequestMapping("/admin/upproduct") // 상준 부분 성은아 머지할때 지우지마!!
 //		public String adminUpProduct(Model model) {
