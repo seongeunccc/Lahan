@@ -70,6 +70,16 @@ public class ReservationController {
 	public String sitemap(Model model) {
 		return "sitemap";
 	}
+	@RequestMapping(value = "admin/reservation.do")
+	public String getAll(Model model) {
+		ReservationDao dao = sqlSession.getMapper(ReservationDao.class);
+		List list = new ArrayList();
+		list = dao.getAllResv();
+		System.out.println(list.size());
+		model.addAttribute("list", list);
+		
+		return "admin/admin_reservation";
+	}
 	
 	@RequestMapping(value = "mypage/update")
 	public String memberInfoUpdate(HttpServletRequest request, Model model) {

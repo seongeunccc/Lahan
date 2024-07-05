@@ -13,6 +13,7 @@ public interface ReservationDao {
 
 	public void insertResv(ReservationDto dto);
 	public List<ReservationDto> getResv(String id);
+	public List<ReservationDto> getAllResv();
 	public int findResvId(String id);
 
 }
