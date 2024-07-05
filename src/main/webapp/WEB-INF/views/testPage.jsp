@@ -36,7 +36,7 @@
 체크인 요일  : ${dto.check_In_Day} <br>
 체크아웃 요일 : ${dto.check_Out_Day} <br>
 선택한 객실 : ${roomdto.room_name} <br>
-
+<br/>
 <hr> 
 <table>
 <c:forEach var="dto" items="${roomList}">
